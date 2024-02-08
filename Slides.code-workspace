@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../Marp"
+	},
+	{
+		"path": "../Reveal Slides"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Slides"
+  }
+}
