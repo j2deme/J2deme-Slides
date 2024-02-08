@@ -1,0 +1,656 @@
+/*!
+* @theme j2deme
+* @author j2deme
+* @auto-scaling fittingHeader, math, code
+*/
+/*@import "https://unpkg.com/tailwindcss@^2/dist/utilities.min.css";*/
+@import "../src/styles/utilities.min.css";
+/*@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");*/
+
+@import "default";
+/*@import "schema";
+@import "structure";*/
+
+:root {
+  --base: #fcfcfc;
+  --base-inverted: #262626;
+  --surface: #090d13;
+  --overlay: #393552;
+  --muted: #6e6a86;
+  --subtle: #908caa;
+  --text: #27272a;
+  --text-inverted: #e0def4;
+  --love: #f87171;
+  --sunset: #fb923c;
+  --gold: #fbbf24;
+  --rose: #fb7185;
+  --pine: #34d399;
+  --lime: #84cc16;
+  --foam: #60a5fa;
+  --iris: #c084fc;
+  --highlight-low: #2a283e;
+  --highlight-muted: #44415a;
+  --highlight-high: #56526e;
+  --current-line: #e2e8f0;
+  --current-line-inverted: #1e293b;
+  --primary: #2563eb;
+  --secondary: #ebad25;
+
+  --font-sans: "Pier Sans", sans-serif;
+  --font-mono: "Victor Mono", "Fira Code", monospace;
+
+
+  font-family: Pier Sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+  font-weight: initial;
+
+  background-color: var(--base);
+}
+
+h1 {
+  color: var(--primary);
+  padding-bottom: -0.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  color: var(--surface);
+  margin-top: -0.7rem;
+  margin-bottom: -0.4em;
+  padding-bottom: 0.5em;
+}
+
+h3 {
+  color: var(--primary);
+  margin-top: -0.7rem;
+  font-weight: bold;
+}
+
+h4 {
+  color: var(--secondary);
+  margin-top: -0.7rem;
+}
+
+h5 {
+  color: var(--primary);
+}
+
+h6 {
+  color: var(--secondary);
+}
+
+a {
+  color: var(--primary);
+}
+
+p {
+  font-weight: 500;
+  color: var(--text);
+}
+
+code {
+  color: var(--text-inverted);
+  background-color: var(--highlight-low);
+  font-size: 0.8em;
+  letter-spacing: 0;
+}
+
+text {
+  color: var(--surface);
+}
+
+blockquote p {
+  color: var(--highlight-muted);
+}
+
+blockquote.cite {
+  border: none;
+}
+
+section {
+  padding: 1.8rem 2rem;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+  text-align: left;
+}
+
+.font-coding {
+  font-family: var(--font-mono);
+}
+
+td true,
+td false {
+  background-color: transparent;
+}
+
+true {
+  color: var(--pine);
+}
+
+false {
+  color: var(--love);
+}
+
+section table {
+  margin: 0 auto;
+  align-self: center;
+}
+
+section table thead th {
+  background: var(--primary);
+  color: var(--base);
+}
+
+section table tbody>tr:nth-child(even) td,
+section table tbody>tr:nth-child(even) th {
+  background: var(--current-line);
+}
+
+/* SECTION */
+section>ul,
+section>.flex ul {
+  color: var(--subtle);
+  list-style: none;
+}
+
+/*section>.flex ul>li p::before,*/
+section ul>li::before,
+section .flex>ul>li::before {
+  color: var(--secondary);
+  content: "\2023";
+  display: inline-block;
+  font-weight: bolder;
+  margin-left: -0.7em;
+  width: 1em;
+}
+
+section ul>li ul,
+section ul>li ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+section ul>li ul li::before {
+  content: "\2023";
+  /*25E6*/
+  font-weight: bold;
+  color: var(--primary);
+  width: 1em;
+  margin-left: -0.7em;
+}
+
+section ul>li ol li::before {
+  content: counter(li, ordinal) ".";
+  font-weight: bold;
+  color: var(--primary);
+  width: 1em;
+  margin-left: -0.7em;
+  padding-right: 0.5rem;
+}
+
+section>.flex>div>ol,
+section:not(.toc)>ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+section>.flex>div>ol>li::before,
+section:not(.toc)>ol>li::before {
+  content: counter(li) ".";
+  color: var(--secondary);
+  display: inline-block;
+  font-weight: 500;
+  width: 1em;
+  margin-left: -1em;
+}
+
+li {
+  color: var(--overlay);
+  font-family: inherit;
+  counter-increment: li;
+}
+
+strong {
+  color: var(--text);
+  font-weight: inherit;
+  font-weight: 800;
+}
+
+img {
+  background-color: transparent;
+}
+
+mjx-container {
+  color: var(--text);
+}
+
+marp-pre {
+  background-color: var(--surface);
+  border-color: var(--highlight-high);
+}
+
+svg[data-marp-fitting="svg"] {
+  max-height: 580px;
+}
+
+pre code svg[data-marp-fitting="svg"] {
+  max-height: calc(580px - 1em);
+}
+
+kbd {
+  background-color: var(--text-inverted);
+  color: var(--text);
+  border-radius: 0.2em;
+  padding: 0.4rem 0.3rem;
+  font-size: inherit;
+}
+
+/* LEAD SECTION */
+section.lead h1 {
+  background-color: var(--primary);
+  color: var(--base);
+  padding-left: -0.5em;
+  padding: 0.5em 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 0.2em;
+}
+
+section.lead {
+  text-align: center;
+}
+
+section.primary h1,
+section.secondary h1 {
+  color: inherit;
+  text-align: center;
+}
+
+/* PRIMARY SECTION */
+section.primary {
+  background-color: var(--primary);
+  color: var(--base);
+}
+
+section.primary :not(footer) a {
+  font-family: var(--font-mono);
+  font-size: 1.3em;
+  background-color: var(--base);
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+section.primary footer a {
+  color: var(--text-inverted);
+}
+
+
+/* SECONDARY SECTION */
+section.secondary {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+
+section.secondary.dark h1 {
+  color: var(--text);
+}
+
+section.secondary.light {
+  background-color: var(--secondary);
+  color: var(--text-inverted);
+}
+
+section.secondary.light h1 {
+  color: var(--text-inverted);
+}
+
+/* INVERTED SECTION */
+section.inverted {
+  background-color: var(--surface);
+  color: var(--text-inverted);
+}
+
+section.inverted h2 {
+  color: var(--text-inverted);
+}
+
+section.inverted p {
+  color: var(--text-inverted);
+}
+
+section.inverted li {
+  color: var(--text-inverted);
+}
+
+section.inverted strong {
+  color: var(--secondary);
+}
+
+section.inverted a {
+  color: var(--primary);
+}
+
+section.inverted a:hover {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+section.inverted table th {
+  color: var(--secondary);
+  background-color: none !important;
+}
+
+section.inverted table tr {
+  color: var(--text-inverted);
+  background-color: var(--surface) !important;
+}
+
+section.inverted table thead th {
+  background: var(--secondary);
+  color: var(--text);
+}
+
+section.inverted table tbody>tr:nth-child(even) td,
+section.inverted table tbody>tr:nth-child(even) th {
+  background: var(--current-line-inverted);
+}
+
+section.inverted mjx-container {
+  color: var(--text-inverted);
+}
+
+section.inverted marp-pre {
+  background-color: var(--text);
+  border-color: var(--secondary);
+}
+
+/* HEADER AND FOOTER */
+header,
+footer {
+  font-family: var(--font-mono);
+  font-size: 0.5em;
+  color: inherit;
+}
+
+footer a {
+  color: var(--secondary);
+}
+
+footer a:hover {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+section::after {
+  content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+}
+
+/* CUSTOM COLORED BLOCKS */
+div.info,
+div.ok,
+div.warning,
+div.error,
+div.primary {
+  padding-left: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+div.ok {
+  border-left: 0.25em solid var(--pine);
+}
+
+div.warning {
+  border-left: 0.25em solid var(--gold);
+}
+
+div.error {
+  border-left: 0.25em solid var(--rose);
+}
+
+div.info {
+  border-left: 0.25em solid var(--foam);
+}
+
+div.primary {
+  border-left: 0.25em solid var(--primary);
+}
+
+/* DEFINITION LIST */
+dt {
+  font-style: normal !important;
+  font-weight: 800 !important;
+}
+
+dd {
+  margin-bottom: 0.3rem;
+  color: var(--text);
+  font-style: normal !important;
+  font-weight: 500 !important;
+  padding-left: 0.7rem !important;
+}
+
+dd>ul {
+  color: var(--subtle);
+  list-style: none;
+}
+
+/* TOC */
+section.toc h1 {
+  margin-bottom: -0.3rem;
+}
+
+section.toc ol {
+  counter-reset: items;
+}
+
+section.toc ol li {
+  list-style: none;
+  counter-increment: items;
+  padding-bottom: -0.2rem;
+}
+
+section.toc ol li a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+section.toc ol li:nth-child(n) a:before {
+  content: "0" counter(items) " ";
+}
+
+section.toc ol li:nth-child(n + 10) a:before {
+  content: counter(items) " ";
+}
+
+section.toc ol li a::before {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+  font-family: var(--font-mono);
+}
+
+/* CODE BLOCK */
+.hljs-comment {
+  color: var(--subtle);
+}
+
+.hljs-regexp {
+  color: var(--rose);
+}
+
+.hljs-punctuation {
+  color: var(--subtle);
+}
+
+.hljs-string {
+  color: var(--gold);
+}
+
+.hljs-title {
+  color: var(--foam);
+}
+
+.hljs-attr,
+.hljs-attribute {
+  color: var(--love);
+}
+
+.hljs-keyword {
+  color: var(--pine);
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-subst {
+  color: var(--text-inverted);
+}
+
+.hljs-literal {
+  color: var(--rose);
+}
+
+.hljs-type {
+  color: var(--love);
+}
+
+.hljs-number {
+  color: var(--foam);
+}
+
+.hljs-built_in {
+  color: var(--sunset);
+}
+
+.hljs-params {
+  color: var(--iris);
+}
+
+.hljs-symbol {
+  color: var(--foam);
+}
+
+.hljs-meta {
+  color: var(--subtle);
+}
+
+.hljs-name {
+  color: var(--foam);
+}
+
+.hljs-addition {
+  color: var(--pine);
+  /*background-color: #eaffea;*/
+}
+
+.hljs-deletion {
+  color: var(--rose);
+  /*background-color: #ffecec;*/
+}
+
+.hljs-addition,
+.hljs-deletion {
+  background-color: transparent;
+}
+
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+  color: var(--gold);
+}
+
+.hljs-selector-tag {
+  color: var(--sunset);
+}
+
+.hljs-type {
+  color: var(--love);
+}
+
+.hljs-bullet {
+  color: var(--foam);
+}
+
+.hljs-section {
+  color: var(--pine);
+}
+
+.hljs-tag {
+  color: var(--text-inverted);
+}
+
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: var(--iris);
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-params,
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* JS CODE BLOCK CUSTOMIZATION */
+section code.language-js .hljs-variable.language_ {
+  color: var(--sunset);
+}
+
+/* PHP CODE BLOCK CUSTOMIZATION */
+code.language-php .hljs-meta {
+  color: var(--foam);
+}
+
+code.language-php .hljs-variable {
+  color: var(--sunset);
+}
+
+code.language-php .hljs-subst {
+  color: var(--rose);
+}
+
+code.language-php .hljs-built_in {
+  color: var(--iris);
+}
+
+/* CODE BLOCK LINE NUMBERING */
+pre ol {
+  all: unset;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  counter-reset: line-number 0;
+}
+
+pre ol li {
+  display: contents;
+  color: var(--text-inverted);
+}
+
+pre ol li span[data-marp-line-number]::before {
+  display: block;
+  color: var(--subtle);
+  content: counter(line-number) " ";
+  counter-increment: line-number;
+  text-align: right;
+}
