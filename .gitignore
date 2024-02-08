@@ -1,2 +1,5 @@
 src/*.html
 node_modules
+.vscode
+dist/*.html
+dist/*.pdf
