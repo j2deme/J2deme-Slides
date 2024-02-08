@@ -1,0 +1,24 @@
+{
+  "name": "j2deme-slides",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  },
+  "marp": {
+    "allowLocalFiles": true,
+    "math": "mathjax",
+    "theme": "j2deme",
+    "themeSet": "src/styles/j2deme.css",
+    "html": true,
+    "emoji": {
+      "shortcode": true
+    },
+    "author": "Jaime Jesús Delgado Meraz",
+    "engine": "./engine.js"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.12",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-deflist": "^3.0.0"
+  }
+}
