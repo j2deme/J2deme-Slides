@@ -407,7 +407,7 @@ Fragmentación de Android (2023), https://www.xatakandroid.com/sistema-operativo
 # _Observer 🧐, Watcher 👀 y Listener 👂🏻_
 
 - Los términos _Observer_, _Watcher_ y _Listener_ se suelen utilizar indistintamente para referirse a un objeto que se suscribe a un evento, pero son ligeramente diferentes.
-  - Un **_observer_** es un objeto que se subscribe a un evento. Cuando ocurre el evento, el _observer_ se ejecuta, sin embargo, no tiene ninguna capacidad para detectar cambios en el objeto que genera el evento.
+  - Un **_observer_** es un objeto que se suscribe a un evento. Cuando ocurre el evento, el _observer_ se ejecuta, sin embargo, no tiene ninguna capacidad para detectar cambios en el objeto que genera el evento.
   - Un **_watcher_** es un tipo de _observer_ que tiene la capacidad de detectar cambios en el estado del objeto que genera el evento.
   - Un **_listener_** es un tipo de _watcher_ que tiene la capacidad de detectar cambios en el objeto que genera el evento y también de ejecutar una acción cuando ocurre un cambio.
 
