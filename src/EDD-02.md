@@ -207,6 +207,43 @@ def fibonacci(n):
 
 ---
 
+# Recursividad VS Iteración
+
+- La recursividad y la iteración son dos técnicas que se pueden utilizar para resolver problemas de manera repetitiva, mientras que la recursividad se basa en la auto referencia, la iteración se basa en la repetición.
+
+:::: flex
+::: col 1/2 px-2
+
+### Recursividad
+
+```python
+def potenciaR(x, n):
+  if n == 0:
+    return 1
+  else:
+    return x * potenciaR(x, n - 1)
+```
+
+:::
+::: col 1/2 px-2
+
+### Iteración
+
+```python
+def potenciaI(x, n):
+  result = 1
+  for i in range(n):
+    result *= x
+  return result
+```
+
+:::
+::::
+
+- En este caso, la estructura de la función recursiva es más sencilla que la función iterativa, pero la función iterativa es más eficiente en términos de tiempo y memoria.
+
+---
+
 <!-- _class: lead -->
 
 # Funciones recursivas
