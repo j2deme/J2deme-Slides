@@ -303,7 +303,8 @@ match color:
 - La principal diferencia entre el ```switch``` de Java y el ```match``` de Python es que en Python no es necesario utilizar la instrucción ```break``` para indicar el final de cada caso.
   - Este ```break``` tiene la función de indicar que no se deben ejecutar los casos siguientes, sin embargo, en Python esto se hace de manera automática.
 - En Python, el ```match``` se puede utilizar con cualquier tipo de dato, no solo con números enteros o cadenas de texto.
-- Adicionalmente los casos pueden ser expresiones, no solo valores. _P.e._ un caso para números pares ```case x if x % 2 == 0```.
+- Adicionalmente los casos pueden ser expresiones, no solo valores.
+  - _P.e._ un caso para números pares ```case x if x % 2 == 0```.
 
 ---
 
@@ -428,8 +429,8 @@ for variable in lista:
 # Abarcando una lista de valores (foreach)
 
 ```python
-lista = [1, 2, 3, 4, 5]
-for i in lista:
+numeros = [1, 2, 3, 4, 5]
+for i in numeros:
     print(i * 2)
 
 lista = ["Hola", "Mundo", "!"]
