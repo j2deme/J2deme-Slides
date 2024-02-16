@@ -865,10 +865,61 @@ turtle.forward(100)
 | ```turtle.forward(x)``` y ```turtle.backward(x)``` | Avanza o retrocede `x` pasos |
 | ```turtle.left(x)``` y ```turtle.right(x)``` | Gira `x` grados a la izquierda o derecha |
 | ```turtle.circle(x)``` | Dibuja un círculo de radio `x` |
-| ```turtle.color("color")``` | Cambia el color de la pluma |
 | ```turtle.penup()``` y ```turtle.pendown()``` | Levanta o baja la pluma |
 | ```turtle.goto(x, y)``` | Mueve la pluma a la posición `(x, y)` |
 | ```turtle.clear()``` | Borra el lienzo |
+| ```turtle.color("color")``` | Cambia el color de la pluma |
+
+---
+
+# Turtle de Colores
+
+- La librería ```turtle``` permite cambiar el color de la pluma y el fondo del lienzo.
+
+```python
+import turtle
+
+turtle.color("red") # Cambia el color de la pluma
+turtle.bgcolor("blue") # Cambia el color del fondo
+```
+
+- Los colores se pueden especificar por su nombre o por su código hexadecimal.
+
+```python
+turtle.color("#FF0000") # Cambia el color de la pluma a rojo
+turtle.bgcolor("blue") # Cambia el color del fondo a azul
+```
+
+- La lista de colores por nombre se puede consultar en <https://trinket.io/docs/colors>
+
+---
+
+<!-- _class: inverted -->
+
+# Turtle en Google Colab
+
+- Para utilizar el módulo ```turtle``` en Google Colab, se debe utilizar el módulo ```ColabTurtle```.
+
+```python
+!pip install ColabTurtle
+```
+
+```python
+import ColabTurtle.Turtle as turtle
+initializeTurtle() # Inicializa el lienzo
+```
+
+- Es posible especificar la velocidad y tamaño del lienzo al inicializar.
+
+```python
+initializeTurtle(7, (800, 600))
+```
+
+---
+<!-- _class: inverted -->
+
+::: coding
+:::
 
 ---
 
