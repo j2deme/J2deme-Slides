@@ -926,6 +926,13 @@ print("Tu edad es: {}".format(edad))
 print("Tu peso es: {:.2f}".format(peso))
 ```
 
+- También se pueden formatear números enteros con una cierta estructura, separadores de miles, etc.
+
+```python
+print("El folio es: {:0000d}".format(123)) # 0123
+print("El saldo es: ${:,.2f}".format(1234567.89)) # $1,234,567.89
+```
+
 ---
 
 # Estructuras de control
