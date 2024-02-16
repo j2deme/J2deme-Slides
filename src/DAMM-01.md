@@ -875,6 +875,52 @@ var nombre = stdin.readLineSync();
 print('Hola $nombre');
 ```
 
+::: warning
+⚠ Para utilizar la función `stdin.readLineSync()`, se debe importar la librería `dart:io`, sin embargo, DartPad no permite la entrada de datos.
+:::
+
+---
+
+# Dart
+
+## Salida formateada
+
+- Para mostrar un mensaje en la consola con formato, se utiliza la función `print()` con el operador `$` o el operador `${}`.
+
+```dart
+var nombre = 'Jaime';
+var apellido = 'Delgado';
+print('Hola $nombre $apellido');
+// Hola Jaime Delgado
+print('Hola ${nombre.toUpperCase()} ${apellido.toLowerCase()}');
+// Hola JAIME delgado
+```
+
+- Para formatear números decimales se utiliza el método `toStringAsFixed()`.
+
+```dart
+var pi = 3.1416;
+print(pi.toStringAsFixed(2)); // 3.14
+```
+
+---
+
+## Salida formateada
+
+- Algunas funciones adicionales de formato son:
+  - `toUpperCase()`: convertir a mayúsculas
+  - `toLowerCase()`: convertir a minúsculas
+  - `trim()`: eliminar espacios en blanco al inicio y al final
+  - `trimLeft()`: eliminar espacios en blanco al inicio
+  - `trimRight()`: eliminar espacios en blanco al final
+  - `padLeft()`: agregar caracteres en blanco al inicio (espacios por defecto)
+  - `padRight()`: agregar caracteres en blanco al final
+
+```dart
+var numero = 123;
+print(numero.toString().padLeft(5, '0').padRight(7, '0')); // 0012300
+```
+
 ---
 
 # Dart
