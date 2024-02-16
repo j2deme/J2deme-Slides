@@ -1059,6 +1059,51 @@ do {
 
 # Dart
 
+## Funciones
+
+- Las funciones se declaran utilizando la palabra reservada `void` o el tipo de dato que retorna la función, seguido del nombre de la función y los parámetros entre paréntesis.
+
+```dart
+void saludar() {
+  print('Hola mundo');
+}
+
+String saludar(String nombre) {
+  return 'Hola $nombre';
+}
+
+int sumar(int a, int b) {
+  return a + b;
+}
+```
+
+---
+
+## Funciones
+
+- Las funciones pueden tener parámetros opcionales, que se declaran utilizando el manejo de datos nulos o especificando un valor por defecto.
+
+```dart
+void saludar1([String? nombre, String? apellido]) {
+  print('Hola $nombre $apellido'); // Hola null null
+}
+
+void saludar2({String nombre = 'Jaime', String apellido = 'Delgado'}) {
+  print('Hola $nombre $apellido'); // Hola Jaime Delgado
+}
+```
+
+- Adicionalmente, al usar `[]` los parámetros son posicionales y con `{}` los parámetros son nombrados.
+
+```dart
+saludar1('Jaime', 'Delgado');
+saludar2(nombre: 'Jaime', apellido: 'Delgado');
+```
+
+---
+
+# Dart
+
 ## Estructura básica de una aplicación
 
 ```dart
