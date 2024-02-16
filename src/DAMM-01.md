@@ -589,12 +589,13 @@ var i = a > c ? a : b; // 20
 
 ## Arreglos
 
-- Los arreglos se declaran utilizando la palabra reservada `var` o el tipo de dato, seguido de `[]` o `List<>`.
-- Se recomienda utilizar `List<>` para especificar el tipo de dato de los elementos del arreglo.
+- Los arreglos se declaran utilizando la palabra reservada `var` o `List<>`, seguido de `[]`, se recomienda utilizar `List<>` para especificar el tipo de dato de los elementos del arreglo.
 
 ```dart
 var numeros = [1, 2, 3, 4, 5];
 List<String> nombres = ['Jaime', 'Jesús', 'Delgado', 'Meraz'];
+List<String> colores = []; // Arreglo vacío
+List<dynamic> elementos = [1, 'Jaime', 3.1416, true]; // No recomendado
 ```
 
 - Para acceder a un elemento del arreglo, se utiliza el operador `[]`.
