@@ -907,6 +907,12 @@ plt.show()
 - Para más información, se puede consultar la [documentación](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html) de la librería.
 
 ---
+<!-- _class: inverted -->
+
+::: coding
+:::
+
+---
 
 # Funciones del usuario
 
