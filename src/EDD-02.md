@@ -416,13 +416,11 @@ def fibbonacci(n):
 # Problemas recursivos
 
 - Además de los problemas de estructuras de datos, también se pueden resolver problemas de otro tipo, como:
-  - Factorial.
-  - Fibonacci.
-  - Torres de Hanoi.
-  - Buscar un elemento en una matriz.
-  - Buscar un elemento en una cadena.
-  - Buscar un elemento en un árbol binario.
-  - Buscar un elemento en un grafo.
+  - Cálculo de potencias.
+  - Cálculo del factorial de un número.
+  - Cálculo de la sucesión de Fibonacci.
+  - Resolución de problemas como las torres de Hanoi.
+  - Búsqueda de un elemento en una cadena, matriz, árbol o grafo.
   - Ordenamiento de datos.
 
 ---
@@ -509,7 +507,7 @@ Sheram estaba tan agradecido con Sissa por haberle enseñado el ajedrez que le d
 
 Sissa pensó un momento y luego dijo:
 
-> _"Su Majestad, le pido un grano de trigo por la primera casilla del tablero de ajedrez, dos granos por la segunda, cuatro granos por la tercera, y así sucesivamente, duplicando la cantidad de granos en cada casilla."_
+> _"Su Majestad, le pido un grano de trigo por la primera casilla del tablero, dos granos por la segunda, cuatro granos por la tercera, y así sucesivamente, multiplicando la cantidad de granos en cada casilla por la cantidad en la casilla anterior."_
 
 El rey Sheram se rió.
 
@@ -624,9 +622,9 @@ Los monjes se alegraron de saber lo que tenían que hacer y pensaron que si mov�
 
 ## Las torres de Hanoi
 
-Cuando estaban a punto de comenzar a mover los discos, apareció el dios Shiva y les dijo: "cuando terminen de mover los 64 discos, en ese momento el mundo habrá terminado".
+Cuando estaban a punto de comenzar a mover los discos, apareció el dios Shiva y les dijo: _"en cuanto terminen de mover los 64 discos, el mundo llegará a su fin"_.
 
-Los monjes se llenaron de miedo, pues si no movían los discos, sus dioses se enfadarían con ellos y los castigarían, pero si terminaban de mover todos los discos, entonces el mundo llegaría a su fin.
+Los monjes se llenaron de miedo, pues si no movían los discos, los dioses se enfadarían con ellos y los castigarían, pero si terminaban de mover todos los discos, entonces el mundo llegaría a su fin.
 
 Los monjes tuvieron que pensar en una solución para mover los discos, pero sin terminar de moverlos todos.
 
@@ -679,7 +677,7 @@ $$
 $$
 
 - Donde $n$ es el número de discos.
-- Para el caso de las torres de Hanoi, se requieren $2^{64} - 1$ movimientos, lo que equivale a 18,446,744,073,709,551,615 movimientos.
+- Para el caso de las torres de Hanoi, se requieren $2^{64} - 1$ movimientos, lo que equivale a 18,446,744,073,709,551,615 movimientos, si se hiciera un movimiento por segundo, se necesitarían cerca de 585 mil millones de años para terminar de mover los discos.
 
 :::
 ::::
