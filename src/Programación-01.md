@@ -949,6 +949,23 @@ print("El saldo es: ${:,.2f}".format(1234567.89)) # $1,234,567.89
 
 ---
 
+# Estructuras de control
+
+## Ejemplo
+
+Supongamos que se desea calcular el área de un círculo, pero sólo si el radio es mayor que cero.
+
+```python
+radio = float(input("Radio: "))
+if radio > 0:
+    area = 3.14159 * (radio * radio)
+    print("Area: ", area)
+else:
+    print("El radio debe ser mayor que cero")
+```
+
+---
+
 # Estructuras de repetición
 
 > Las estructuras de repetición son instrucciones que permiten repetir un bloque de instrucciones un número determinado de veces.
@@ -960,6 +977,21 @@ print("El saldo es: ${:,.2f}".format(1234567.89)) # $1,234,567.89
 ::: warning
 :warning: Las estructuras de repetición se revisarán con más detalle en la siguiente unidad temática.
 :::
+
+---
+
+# Estructuras de repetición
+
+## Ejemplo
+
+Supongamos que se desea calcular la suma de los primeros 10 números naturales.
+
+```python
+suma = 0
+for i in range(1, 11):
+    suma += i
+print("El total es:", suma)
+```
 
 ---
 
