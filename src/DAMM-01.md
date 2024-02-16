@@ -650,6 +650,216 @@ print(numeros); // []
 
 # Dart
 
+## Mapas
+
+- Además de los arreglos, Dart también soporta los mapas, que se declaran utilizando la palabra reservada `var` o `Map<>`, seguido de `{}`.
+- Los mapas se componen de pares de llave-valor, donde la llave es única y el valor puede ser cualquier tipo de dato sin ningún problema, a diferencia de los arreglos.
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+var persona = {
+  'nombre': 'Jaime',
+  'apellido': 'Delgado',
+  'edad': 36,
+  'estatura': 1.75
+};
+```
+
+:::
+::: col 1/2 px-2
+
+```dart
+Map<String, dynamic> persona = {
+  'nombre': 'Jaime',
+  'apellido': 'Delgado',
+  'edad': 36,
+  'estatura': 1.75
+};
+```
+
+:::
+::::
+
+---
+
+# Dart
+
+## Mapas
+
+- Al igual que con los arreglos, se puede utilizar el operador `[]` para acceder a un valor en el mapa.
+
+```dart
+print(persona['nombre']); // Jaime
+```
+
+- Algunas operaciones con mapas son:
+  - `length`: longitud del mapa
+  - `keys`: llaves del mapa
+  - `values`: valores del mapa
+  - `containsKey()`: verificar si el mapa contiene una llave
+  - `containsValue()`: verificar si el mapa contiene un valor
+  - `remove()`: eliminar un par llave-valor
+
+---
+
+# Dart
+
+## Mapas
+
+```dart
+var persona = {
+  'nombre': 'Jaime',
+  'apellido': 'Delgado',
+  'edad': 36,
+  'estatura': 1.75
+};
+
+print(persona.length); // 4
+print(persona.keys); // (nombre, apellido, edad, estatura)
+print(persona.values); // (Jaime, Delgado, 36, 1.75)
+print(persona.containsKey('nombre')); // true
+print(persona.containsValue('Jaime')); // true
+persona.remove('nombre');
+persona.addAll({'color': 'Azul'});
+print(persona); // {apellido: Delgado, edad: 36, estatura: 1.75, color: Azul}
+persona.clear();
+print(persona); // {}
+```
+
+---
+
+# Dart
+
+## Conjuntos
+
+- Además de los arreglos y los mapas, Dart también soporta los conjuntos, que se declaran utilizando la palabra reservada `var` o `Set<>`, seguido de `{}` o `Set<>` para declarar un conjunto vacío.
+- Los conjuntos son colecciones de elementos únicos, por lo que no pueden contener elementos duplicados y no tienen un orden específico.
+
+```dart
+var numeros = {1, 2, 3, 4, 5};
+Set<int> numeros = {1, 2, 3, 4, 5};
+Set<int> edades = {18, 18, 19, 20, 22, 19, 18, 21};
+print(edades); // {18, 19, 20, 22, 21}
+```
+
+---
+
+# Dart
+
+## Conjuntos
+
+- A diferencia de los arreglos y mapas, para acceder a un elemento del conjunto, se utiliza el método `elementAt()`.
+
+```dart
+print(numeros.elementAt(0)); // 1
+```
+
+- Los conjuntos soportan operaciones similares a las de los arreglos y mapas:
+  - `length`: longitud del conjunto
+  - `add()`: agregar un elemento al conjunto
+  - `addAll()`: agregar elementos de otro conjunto o de una lista al conjunto
+  - `remove()`: eliminar un elemento del conjunto
+  - `clear()`: eliminar todos los elementos del conjunto
+
+---
+
+# Dart
+
+## Conjuntos
+
+```dart
+var numeros = {1, 2, 3, 4, 5};
+print(numeros.length); // 5
+numeros.add(6);
+print(numeros); // {1, 2, 3, 4, 5, 6}
+numeros.addAll({7, 8, 9});
+print(numeros); // {1, 2, 3, 4, 5, 6, 7, 8, 9}
+numeros.remove(9);
+print(numeros); // {1, 2, 3, 4, 5, 6, 7, 8}
+numeros.clear();
+print(numeros); // {}
+```
+
+---
+
+# Dart
+
+## Conjuntos
+
+- Adicionalmente, los conjuntos soportan operaciones de conjuntos:
+  - `contains()`: verificar si el conjunto contiene un elemento
+  - `difference()`: obtener la diferencia entre dos conjuntos
+  - `intersection()`: obtener la intersección entre dos conjuntos
+  - `union()`: obtener la unión entre dos conjuntos
+
+```dart
+var numeros = {1, 2, 3, 4, 5};
+var pares = {2, 4, 6, 8, 10};
+
+print(numeros.contains(3)); // true
+print(numeros.difference(pares)); // {1, 3, 5}
+print(numeros.intersection(pares)); // {2, 4}
+print(numeros.union(pares)); // {1, 2, 3, 4, 5, 6, 8, 10}
+```
+
+---
+
+<!-- _class: inverted -->
+
+# Listas, mapas y conjuntos
+
+- En general, se utilizan arreglos para almacenar una colección de elementos, mapas para almacenar pares llave-valor y conjuntos para almacenar elementos únicos.
+- Los arreglos se recomiendan para almacenar una colección de elementos que se puedan ordenar y acceder mediante un índice.
+- En el caso de los mapas, se recomienda utilizarlos para almacenar información que se pueda representar como pares llave-valor, de manera similar a las bases de datos o a los objetos JSON.
+- Los conjuntos por otro lado, se recomiendan para almacenar elementos únicos, ya que no permiten elementos duplicados, además de que soportan operaciones de conjuntos.
+
+---
+
+# Dart
+
+## Datos nulos
+
+- Dart soporta datos nulos, que se declaran utilizando el tipo de dato seguido de `?`.
+- Para verificar si un dato es nulo, se utiliza el operador `?` o el operador `??` para asignar un valor por defecto.
+
+```dart
+String? nombre; // String o null
+print(nombre); // null
+print(nombre ?? 'Jaime'); // Imprime Jaime si nombre es nulo
+```
+
+- Esta característica es muy útil para evitar errores en tiempo de ejecución, ya que se puede verificar si un dato es nulo antes de utilizarlo y asignarle un valor por defecto.
+- Se utiliza principalmente para declarar variables que se inicializarán posteriormente.
+
+---
+
+# Dart
+
+## Datos nulos
+
+- El manejo de datos nulos también es útil al combinarlo con el acceso seguro a los elementos de un arreglo, mapa o conjunto, que se realiza utilizando el operador `??`.
+
+```dart
+var numeros = [1, 2, 3, 4, 5];
+print(numeros[0]); // 1
+print(numeros[5]); // Error
+print(numeros[5] ?? 0); // 0
+```
+
+- Igualmente se puede utilizar para acceder propiedades en cascada de un objeto, que se realiza utilizando el operador `?` y el operador `..`.
+
+```dart
+var estudiantes = fetchAPI();
+estudiantes?..sort((a, b) => a.nombre.compareTo(b.nombre))
+          ..forEach((estudiante) => print(estudiante.nombre));
+```
+
+---
+
+# Dart
+
 ## Entrada y salida
 
 - Para mostrar un mensaje en la consola, se utiliza la función `print()`.
