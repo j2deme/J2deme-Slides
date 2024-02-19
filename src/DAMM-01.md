@@ -1132,6 +1132,231 @@ void main() => print('Hola mundo');
 
 # Frameworks multiplataforma
 
+- Los frameworks multiplataforma son conjuntos de herramientas y librerías que permiten crear aplicaciones que se ejecutan en múltiples plataformas.
+- Particularmente, en el desarrollo móvil multiplataforma, se utilizan frameworks que permiten crear aplicaciones que se ejecutan en Android e iOS, y en algunos casos, también en Windows, Linux, macOS y web.
+- Los frameworks más utilizados para el desarrollo móvil multiplataforma son Flutter, Xamarin, React Native y Kotlin Multiplatform.
+
+---
+
+# Frameworks multiplataforma
+
+## Flutter
+
+- La estructura básica de una aplicación con Flutter se compone de un archivo `main.dart` que contiene la función `main()` y un archivo `pubspec.yaml` que contiene la configuración de la aplicación.
+- La función `main()` es el punto de entrada de la aplicación, que se encarga de inicializar la aplicación y de mostrar el widget principal.
+- Los widgets son los componentes básicos de una aplicación con Flutter, que se utilizan para construir la interfaz de usuario.
+- El archivo `pubspec.yaml` contiene la configuración de la aplicación, como el nombre, la versión, la descripción, las dependencias, etc.
+
+---
+
+# Frameworks multiplataforma
+
+## Flutter
+
+- La estructura básica de un proyecto móvil con Flutter tiene la siguiente estructura:
+
+```txt
+├──📂 android
+├──📂 build
+├──📂 ios
+├──📂 lib
+│   └── main.dart # Código principal
+├──📂 test
+└── pubspec.yaml
+```
+
+---
+
+# Frameworks multiplataforma
+
+## Flutter
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Hola mundo'),
+        ),
+        body: Center(
+          child: Text('Hola mundo'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+# Frameworks multiplataforma
+
+## Xamarin
+
+- La estructura básica de una aplicación con Xamarin se compone de un archivo `App.xaml.cs` que contiene la función `Main()` y un archivo `App.xaml` que contiene la configuración de la aplicación.
+- En Xamarin se utilizan páginas para construir la interfaz de usuario, que se componen de controles y vistas.
+- Los controles son los componentes básicos de una aplicación con Xamarin, que se utilizan para construir la interfaz de usuario, p.e. botones, campos de texto, listas, etc.
+
+---
+
+# Frameworks multiplataforma
+
+## Xamarin
+
+- La estructura básica de un proyecto con Xamarin tiene la siguiente estructura:
+
+```bash
+├──📂 Android
+├──📂 iOS
+├──📂 Shared
+│   └── App.xaml.cs # Código principal
+└── App.xaml # Configuración
+```
+
+- Las carpetas específicas permiten agregar código específico para cada plataforma, como archivos de recursos, configuraciones, etc.
+
+---
+
+# Frameworks multiplataforma
+
+## Xamarin
+
+```csharp
+using Xamarin.Forms;
+
+namespace MyApp {
+  public class App : Application {
+    public App() {
+      MainPage = new ContentPage {
+        Content = new StackLayout {
+          Children =
+          {
+            new Label { Text = "Hola mundo" },
+            new Button { Text = "Presionar" }
+          }
+        }
+      };
+    }
+  }
+}
+```
+
+---
+
+# Frameworks multiplataforma
+
+## React Native
+
+- La estructura básica de una aplicación desarrollada con React Native se integra de la siguiente manera:
+
+```bash
+├──📂 android
+├──📂 ios
+├──📂 node_modules
+├──📂 src
+│   ├── App.js
+│   └── index.js
+└── package.json
+```
+
+- El archivo `App.js` contiene el componente principal de la aplicación, que se encarga de inicializar la aplicación y de mostrar la interfaz de usuario, que a su vez se llama desde el archivo `index.js`.
+
+---
+
+# Frameworks multiplataforma
+
+## React Native
+
+- En React Native, la interfaz de usuario se construye utilizando componentes, que se componen de controles y vistas.
+
+```javascript
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+
+const App = () => {
+  return (
+    <View>
+      <Text>Hola mundo</Text>
+      <Button title="Presionar" onPress={() => alert('Hola mundo')} />
+    </View>
+  );
+};
+
+export default App;
+```
+
+---
+
+# Frameworks multiplataforma
+
+## Kotlin Multiplatform
+
+- La estructura básica de un proyecto con Kotlin tiene la siguiente estructura:
+
+```bash
+├──📂 android
+├──📂 ios
+├──📂 src
+│   ├──📂 commonMain
+│   │   └──📂 kotlin
+│   │       └── Main.kt # Código común
+│   ├──📂 androidMain
+│   │   └──📂 kotlin
+│   │       └── Main.kt # Código específico de Android
+│   └──📂 iosMain
+│       └──📂 kotlin
+│           └── Main.kt # Código específico de iOS
+└── build.gradle.kts
+```
+
+---
+
+# Frameworks multiplataforma
+
+## Kotlin Multiplatform
+
+- En Kotlin Multiplatform, el código común se coloca en la carpeta `commonMain`, el código específico de Android se coloca en la carpeta `androidMain` y el código específico de iOS se coloca en la carpeta `iosMain`.
+- Aunque usar diferentes archivos `Main.kt` para cada plataforma es opcional, es una buena práctica para mantener el código organizado y separado, su uso depende de la complejidad del proyecto, ya que en algunos casos, el código común puede ser suficiente.
+
+---
+
+# Frameworks multiplataforma
+
+## Kotlin Multiplatform
+
+```kotlin
+import androidx... // Imports para Android
+
+@Composable
+fun MyApp() {
+  Column {
+    Text("Hola mundo")
+    Button(onClick = { /* Acción */ }) {
+      Text("Presionar")
+    }
+  }
+}
+```
+
+---
+
+# Frameworks multiplataforma
+
+## ¿Qué framework es mejor?
+
+- En general, todos son frameworks sólidos y bien documentados, por lo que la elección de uno u otro dependerá más de preferencias o competencias personales previas que de las características técnicas.
+- Actualmente Flutter es el framework más popular para el desarrollo móvil multiplataforma y cuenta con una gran comunidad de desarrolladores, por lo que es una excelente opción para comenzar.
+- Xamarin es un framework idóneo para desarrolladores que ya tienen experiencia en C# y .NET y que np quieren aprender un nuevo lenguaje de programación o desean reutilizar código existente.
+- Por su parte, frameworks como React Native y Kotlin Multiplatform son ideales para desarrolladores que ya tienen experiencia con React y Kotlin, respectivamente.
+
 ---
 
 <!-- _class: inverted -->
