@@ -1354,7 +1354,7 @@ fun MyApp() {
 
 - En general, todos son frameworks sólidos y bien documentados, por lo que la elección de uno u otro dependerá más de preferencias o competencias personales previas que de las características técnicas.
 - Actualmente Flutter es el framework más popular para el desarrollo móvil multiplataforma y cuenta con una gran comunidad de desarrolladores, por lo que es una excelente opción para comenzar.
-- Xamarin es un framework idóneo para desarrolladores que ya tienen experiencia en C# y .NET y que np quieren aprender un nuevo lenguaje de programación o desean reutilizar código existente.
+- Xamarin es un framework idóneo para desarrolladores que ya tienen experiencia en C# y .NET y que no quieren aprender un nuevo lenguaje de programación o desean reutilizar código existente.
 - Por su parte, frameworks como React Native y Kotlin Multiplatform son ideales para desarrolladores que ya tienen experiencia con React y Kotlin, respectivamente.
 
 ---
