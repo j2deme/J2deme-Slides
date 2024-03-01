@@ -175,7 +175,6 @@ section ul>li ol {
 
 section ul>li ul li::before {
   content: "\2023";
-  /*25E6*/
   font-weight: bold;
   color: var(--primary);
   width: 1em;
