@@ -80,8 +80,14 @@ h6 {
   color: var(--secondary);
 }
 
-a {
+a[href^="mailto:"] {
   color: var(--primary);
+  text-decoration: none;
+}
+
+section :not(footer) a {
+  color: var(--blue-600);
+  text-decoration: underline;
 }
 
 p {
