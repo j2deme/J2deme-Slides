@@ -123,7 +123,8 @@ def theme_selector(answer=True):
 
         return themes[answers['theme']]
     else:
-        input("Presiona enter para regresar al menú principal...")
+        questionary.press_any_key_to_continue(
+            message="Presiona cualquier tecla para continuar...").ask()
         main()
 
 
@@ -143,7 +144,6 @@ def new_class_slide():
     ).ask()
 
     theme = theme_selector()
-    print(theme)
 
     # Toma como base el archivo CLASS_TEMPLATE, reemplaza las variables y crea un nuevo archivo
     with open(CLASS_TEMPLATE, 'r') as file:
@@ -165,7 +165,7 @@ def new_class_slide():
         filedata = file.read()
         filedata = filedata.replace(
             '___TITLE___', title).replace(
-            '___HEADER___', answers['subject']).replace(
+            '___HEADER___', f"{answers['subject']} - U{answers['unit']}").replace(
             '___SUBJECT___', answers['subject']).replace(
             '___UNIT___', answers['unit']).replace(
             '___UNIT_NAME___', answers['unit_name']).replace(
@@ -178,6 +178,43 @@ def new_class_slide():
             new_file.write(filedata)
             print(
                 f"[bold green]Presentación para {answers['subject']} - U{answers['unit']} creada con éxito ✅")
+
+
+def new_speech_slide():
+    """
+    Crea una nueva presentación de ponencia.
+
+    Returns:
+        None
+    """
+    answers = questionary.form(
+        title=questionary.text("Título"),
+        subtitle=questionary.text("Subtítulo", default=""),
+        # author=questionary.text("Autor"),
+        # date=questionary.text("Fecha"),
+        # event=questionary.text("Evento"),
+    ).ask()
+
+    theme = theme_selector()
+
+    # Toma como base el archivo CONFERENCE_TEMPLATE, reemplaza las variables y crea un nuevo archivo
+    with open(CONFERENCE_TEMPLATE, 'r') as file:
+        filedata = file.read()
+        filedata = filedata.replace(
+            '___TITLE___', answers['title']).replace(
+            '___SUBTITLE___', answers['subtitle']).replace(
+            '___PRIMARY_COLOR___', theme['primary']).replace(
+            '___SECONDARY_COLOR___', theme['secondary']).replace(
+            '___HEADER___', answers['title'])
+        # .replace('___DATE___', answers['date'])
+        # .replace('___EVENT___', answers['event'])
+
+        filename = answers['title'].replace(' ', '-')
+
+        with open(f"{SOURCE_DIR}/{filename}.md", 'w') as new_file:
+            new_file.write(filedata)
+            print(
+                f"[bold green]Presentación para {answers['title']} creada con éxito ✅")
 
 
 def new_slide():
@@ -202,7 +239,7 @@ def new_slide():
     if answers['type'] == 'Clase':
         new_class_slide()
     elif answers['type'] == 'Ponencia':
-        print("[bold yellow] ⚠ WIP")
+        new_speech_slide()
 
     sleep(2)
     main()
