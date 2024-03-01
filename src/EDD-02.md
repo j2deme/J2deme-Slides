@@ -1,12 +1,17 @@
 ---
 marp: true
-title: EDD - U2 - Recursividad
+title: EDD - 02 - Recursividad
 author: Jaime Jesús Delgado Meraz
 header: Estructuras de Datos - U2
 footer: '[&oast;](#contenidos) **MSC. JJDM**'
-theme: j2deme
 paginate: true
+theme: j2deme
 math: mathjax
+style: |
+  :root {
+    --primary: #2563eb;
+    --secondary: #ebad25;
+  }
 ---
 
 # Unidad 2 <br> Recursividad

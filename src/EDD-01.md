@@ -1,12 +1,17 @@
 ---
 marp: true
-title: EDD - U1 - Introducción a las Estructuras de Datos
+title: EDD - 01 - Introducción a las Estructuras de Datos
 author: Jaime Jesús Delgado Meraz
 header: Estructuras de Datos - U1
 footer: '[&oast;](#contenidos) **MSC. JJDM**'
-theme: j2deme
 paginate: true
+theme: j2deme
 math: mathjax
+style: |
+  :root {
+    --primary: #2563eb;
+    --secondary: #ebad25;
+  }
 ---
 
 # Unidad 1 <br> Introducción a las Estructuras de Datos
