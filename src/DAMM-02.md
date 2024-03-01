@@ -7,6 +7,11 @@ footer: '[&oast;](#contenidos) **MSC. JJDM**'
 paginate: true
 theme: j2deme
 math: mathjax
+style: |
+  :root {
+    --primary: #3b82f6;
+    --secondary: #d97706;
+  }
 ---
 
 # Unidad 2 <br> Desarrollo Multiplataforma
