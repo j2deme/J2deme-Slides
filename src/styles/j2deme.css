@@ -5,6 +5,7 @@
 */
 /*@import "https://unpkg.com/tailwindcss@^2/dist/utilities.min.css";*/
 @import "../src/styles/utilities.css";
+@import "../src/styles/colors.css";
 /*@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");*/
 
 @import "default";
@@ -127,11 +128,11 @@ td false {
 }
 
 true {
-  color: var(--pine);
+  color: var(--emerald-400);
 }
 
 false {
-  color: var(--love);
+  color: var(--red-500);
 }
 
 section table {
@@ -402,19 +403,23 @@ div.primary {
 }
 
 div.ok {
-  border-left: 0.25em solid var(--pine);
+  border-left: 0.25em solid var(--green-500);
+  background-color: var(--green-200);
 }
 
 div.warning {
-  border-left: 0.25em solid var(--gold);
+  border-left: 0.25em solid var(--amber-500);
+  background-color: var(--amber-200);
 }
 
 div.error {
-  border-left: 0.25em solid var(--rose);
+  border-left: 0.25em solid var(--red-500);
+  background-color: var(--red-200);
 }
 
 div.info {
-  border-left: 0.25em solid var(--foam);
+  border-left: 0.25em solid var(--blue-500);
+  background-color: var(--blue-200);
 }
 
 div.primary {
