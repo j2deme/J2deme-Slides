@@ -13,6 +13,7 @@ style: |
     --secondary: ___SECONDARY_COLOR___;
   }
 ---
+<!-- _paginate: false -->
 
 # Unidad ___UNIT___ <br> ___UNIT_NAME___
 
@@ -29,6 +30,7 @@ Nombre
 
 Correo
 : <jesus.delgado@tecvalles.mx>
+: <jaime.dm@cdvalles.tecnm.mx>
 
 ---
 
