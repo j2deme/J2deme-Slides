@@ -42,7 +42,7 @@ def get_slides():
 
 def theme_selector(answer=True):
     """
-    Función que muestra una tabla con los temas disponibles y permite al usuario seleccionar uno.
+    Muestra una tabla con los temas disponibles y permite al usuario seleccionar uno.
 
     Args:
         answer (bool, optional): Indica si se espera una respuesta del usuario. 
@@ -247,7 +247,7 @@ def new_slide():
 
 def manage_slides():
     """
-    Función que gestiona las presentaciones.
+    Gestiona las presentaciones.
 
     Muestra una lista de presentaciones disponibles y permite al usuario realizar diferentes acciones, como previsualizar, exportar a HTML o PDF, o regresar.
 
