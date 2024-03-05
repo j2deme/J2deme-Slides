@@ -552,18 +552,18 @@ print(f"Seleccionaste las opciones {opciones}!")
 - En algunos casos se puede requerir que el usuario seleccione un archivo o un directorio.
 
 ```python
-archivo = questionary.file("¿Cuál es tu archivo?").ask()
+archivo = questionary.path("¿Cuál es tu archivo?").ask()
 
 print(f"Seleccionaste el archivo {archivo}!")
 ```
 
+- Si solo se requiere seleccionar un directorio, se puede incluir el argumento `only_directories=True`.
+
 ```python
-directorio = questionary.path("¿Cuál es tu directorio?").ask()
+directorio = questionary.path("¿Cuál es tu directorio?", only_directories=True).ask()
 
 print(f"Seleccionaste el directorio {directorio}!")
 ```
-
-- En ambos casos se abre un diálogo para seleccionar el archivo o el directorio.
 
 ---
 
@@ -574,7 +574,7 @@ print(f"Seleccionaste el directorio {directorio}!")
 ```python
 import questionary
 
-respuestas = questionary.prompt(
+respuestas = questionary.form(
   nombre = questionary.text("¿Cuál es tu nombre?"),
   opcion = questionary.select("¿Cuál es tu opción?",
     choices=["Opción 1", "Opción 2", "Opción 3"]),
