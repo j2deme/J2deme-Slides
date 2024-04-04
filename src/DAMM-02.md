@@ -445,7 +445,7 @@ Scaffold(
 
 ### Ejemplo 1: Un cara del cubo Rubik
 
-- Se inicia creando una estructura básica de una aplicación, utilizando el widget `Scaffold`.
+- Se inicia con una estructura básica utilizando el widget `Scaffold`.
 
 ```dart
 class MyApp extends StatelessWidget {
@@ -471,9 +471,10 @@ class MyApp extends StatelessWidget {
 
 ### Ejemplo 1: Un cara del cubo Rubik
 
-- Para poder crear una cara del cubo, se deben combinar los widgets `Column` y `Row`, para poder organizar los widgets en una columna vertical y 3 filas horizontales, que a su vez contienen 3 contenedores cada una.
-- Los colores de los contenedores se pueden definir utilizando la clase `Colors` de Flutter.
-- Es importante mencionar que la columna sobre la que se trabajará, se encuentra dentro del widget `Center`.
+![bg right:40% fit](../src/assets/DAMM/Rubiks_cube.svg)
+
+- Para poder crear una cara del cubo, se combinarán los widgets `Column` y `Row`, para poder organizar la estructura en una columna vertical y 3 filas horizontales, que a su vez contengan 3 contenedores cada una.
+- Igualmente se pueden combinar otros widgets como `Container` y `Center` para agregar tamaño, color y alineación a los elementos.
 
 ---
 
@@ -486,9 +487,9 @@ Column(
   children: [
     Row(
       children: [
-        Container(color: Colors.red, height: 100, width: 100),
         Container(color: Colors.green, height: 100, width: 100),
         Container(color: Colors.blue, height: 100, width: 100),
+        Container(color: Colors.white, height: 100, width: 100),
       ],
     ),
     // ... (2 filas más)
@@ -509,19 +510,42 @@ Column(
     // ... (fila 2)
     Row(
       children: [
+        Container(color: Colors.blue, height: 100, width: 100),
         Container(color: Colors.orange, height: 100, width: 100),
-        Container(color: Colors.yellow, height: 100, width: 100),
-        Container(color: Colors.white, height: 100, width: 100),
+        Container(color: Colors.red, height: 100, width: 100),
       ],
     ),
     Row(
       children: [
-        Container(color: Colors.red, height: 100, width: 100),
-        Container(color: Colors.green, height: 100, width: 100),
+        Container(color: Colors.yellow, height: 100, width: 100),
+        Container(color: Colors.white, height: 100, width: 100),
         Container(color: Colors.blue, height: 100, width: 100),
       ],
     ),
   ],
+)
+```
+
+---
+
+## Widgets de diseño
+
+### Ejemplo 1: Un cara del cubo Rubik
+
+- Adicionalmente, se puede entre otras opciones, agregar un estilo a los contenedores, como bordes redondeados, sombras, etc.
+
+```dart
+Container(
+  decoration: BoxDecoration(
+    color: Colors.green,
+    borderRadius: BorderRadius.circular(10),
+    border: Border.all(
+      color: Colors.black.opacity(0.8),
+      width: 2,
+    ),
+  ),
+  height: 100,
+  width: 100,
 )
 ```
 
@@ -557,14 +581,21 @@ class MyApp extends StatelessWidget {
 
 ### Ejemplo 2: Una calculadora
 
-- Para poder crear una calculadora, se deben combinar los widgets `Column` y `Row`, para poder organizar los widgets.
+- Para este ejemplo también se combinarán los widgets `Column` y `Row`.
 
 ```dart
 Column(
   children: [
     Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // ... 
+        Text(
+          '1234567890',
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ],
     ),
     // ... 
@@ -572,40 +603,7 @@ Column(
 )
 ```
 
----
-
-# Widgets de diseño
-
-## Ejemplo 2: Una calculadora
-
-```dart
-// Teclado de la calculadora
-Column(
-  children: [
-    Row(
-      children: [
-        ElevatedButton(onPressed: () {}, child: Text('7')),
-        ElevatedButton(onPressed: () {}, child: Text('8')),
-        ElevatedButton(onPressed: () {}, child: Text('9')),
-      ],
-    ),
-    Row(
-      children: [
-        ElevatedButton(onPressed: () {}, child: Text('4')),
-        ElevatedButton(onPressed: () {}, child: Text('5')),
-        ElevatedButton(onPressed: () {}, child: Text('6')),
-      ],
-    ),
-    Row(
-      children: [
-        ElevatedButton(onPressed: () {}, child: Text('1')),
-        ElevatedButton(onPressed: () {}, child: Text('2')),
-        ElevatedButton(onPressed: () {}, child: Text('3')),
-      ],
-    ),
-  ],
-)
-```
+![bg right:40% fit](../src/assets/DAMM/Calculadora.jpg)
 
 ---
 
@@ -613,42 +611,13 @@ Column(
 
 ### Ejemplo 2: Una calculadora
 
-- En este caso, se utilizó el widget `ElevatedButton` para crear los botones de la calculadora.
-- Además de los botones numéricos, se pueden agregar botones para las operaciones aritméticas básicas.
-- Igualmente, se pueden agregar botones para el punto decimal y el signo de igual.
-
----
-
+- En este caso, se utilizará el widget `ElevatedButton` para crear los botones de la calculadora.
+  
 ```dart
-Column(
-  children: [
-    Row( // Fila 1
-      children: [
-        // ...
-        ElevatedButton(onPressed: () {}, child: Text('/')),
-      ],
-    ),
-    Row( // Fila 2
-      children: [
-        // ...
-        ElevatedButton(onPressed: () {}, child: Text('*')),
-      ],
-    ),
-    Row( // Fila 3
-      children: [
-        // ...
-        ElevatedButton(onPressed: () {}, child: Text('-')),
-      ],
-    ),
-    Row( // Fila 4
-      children: [
-        // ...
-        ElevatedButton(onPressed: () {}, child: Text('+')),
-      ],
-    ),
-  ],
-)
+ElevatedButton(child: Text('7'), onPressed: () { /* ... */ }),
 ```
+
+- El atributo `onPressed` es un _callback_ que se ejecuta cuando el botón es presionado, por el momento no se implementará ninguna acción, sin embargo, es necesario agregarlo para que el botón funcione.
 
 ---
 
@@ -656,23 +625,75 @@ Column(
 
 ### Ejemplo 2: Una calculadora
 
+:::: flex
+::: col 1/2 px-2
+
 ```dart
+// Teclado numérico
 Column(
   children: [
-    Row( // Fila 5
+    // Fila del display
+    Row(
       children: [
-        ElevatedButton(onPressed: () {}, child: Text('0')),
-        ElevatedButton(onPressed: () {}, child: Text('.')),
-        ElevatedButton(onPressed: () {}, child: Text('=')),
+        //.. ElevatedButton 7, 8, 9, /
+      ],
+    ),
+    Row(
+      children: [
+        //.. ElevatedButton 4, 5, 6, x
+      ],
+    ),
+    Row(
+      children: [
+        //.. ElevatedButton 1, 2, 3, -
       ],
     ),
   ],
-)
+),
 ```
+
+:::
+::: col 1/2 px-2
+
+- Se utiliza el atributo `mainAxisAlignment.center` para alinear los botones en el centro de la fila.
+- Igualmente, se añade una fila para los símbolos: `.`, `0`, `=` y `+`.
+
+:::
+::::
+
+---
+
+## Widgets de diseño
+
+### Ejemplo 2: Una calculadora
+
+- Para diferenciar los botones de las operaciones, se puede utilizar el atributo `style` para cambiar los colores de los botones.
+
+```dart
+ElevatedButton(
+  child: Text('/'),
+  style: ElevatedButton.styleFrom(
+    foregroundColor: Theme.of(context).colorScheme.onPrimary,
+    backgroundColor: Theme.of(context).colorScheme.primary,
+  ),
+  onPressed: () { /* ... */ },
+),
+```
+
+- La propiedad `styleFrom` toma como referencia el tema de la aplicación, por lo que se puede utilizar para cambiar los colores de los botones de acuerdo al tema.
 
 ---
 
 # Componentes de la interfaz de usuario
+
+## Widgets de diseño
+
+- Los widgets de diseño también se utilizan para aplicar estilos a los componentes visuales de la aplicación, como colores, tipografías, bordes, sombras, etc.
+- _P.e._
+  - TextStyle, FontWeight, FontStyle
+  - BoxDecoration, Color, Gradient, BoxShadow
+  - Border, BorderRadius, BorderSide
+- Igualmente incluyen widgets como `ListView`, `GridView`, `SingleChildScrollView`, `Expanded`, `Spacer`, etc.
 
 ---
 
