@@ -83,8 +83,8 @@ def theme_selector(answer=True):
             "secondary": "#3b82f6"
         },
         "Red": {
-            "primary": "#f43f5e",
-            "secondary": "#16a34a"
+            "primary": "#E11D48",
+            "secondary": "#0EA5E9"
         },
         "Orange": {
             "primary": "#f97316",
@@ -332,7 +332,7 @@ def main():
     choices = [
         "Nueva presentación",
         "Gestor de presentaciones",
-        "Temas",
+        "Ver temas",
         "Salir"
     ]
 
@@ -345,7 +345,7 @@ def main():
         new_slide()
     elif answers['action'] == 'Gestor de presentaciones':
         manage_slides()
-    elif answers['action'] == 'Temas':
+    elif answers['action'] == 'Ver temas':
         theme_selector(False)
     elif answers['action'] == 'Salir':
         print("[bold cyan]¡Hasta luego! 👋")

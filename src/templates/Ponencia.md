@@ -33,7 +33,7 @@ Adscripción
 
 # Ponente
 
-![bg right:40%](../src/assets/banner.png)
+![bg right:45%](../src/assets/banner.png)
 
 Nombre
 : MSC. Jaime Jesús Delgado Meraz
