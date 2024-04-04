@@ -713,6 +713,577 @@ ElevatedButton(
   - Slider
   - DatePicker
   - TimePicker
+- Snackbar
+- Dialog
+- BottomSheet
+:::
+::::
+
+---
+
+## Widgets funcionales
+
+:::: flex
+::: col 1/2 px-2
+
+### Text
+
+- Se utiliza para mostrar texto en la pantalla.
+
+```dart
+Text('Hola Mundo!')
+
+// Puede aplicarse estilo
+Text(
+  'Hola Mundo!',
+  style: TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+  ),
+)
+```
+
+:::
+::: col 1/2 px-2
+
+### Icon
+
+- Se utiliza para mostrar iconos en la pantalla.
+
+```dart
+Icon(Icons.star)
+
+// Puede aplicarse estilo
+Icon(
+  Icons.star,
+  color: Colors.yellow,
+  size: 50,
+)
+```
+
+- Los iconos default son de [Material Design](https://fonts.google.com/icons), pero se pueden utilizar otros conjuntos de iconos.
+:::
+::::
+
+---
+
+## Widgets funcionales
+
+:::: flex
+::: col 1/2 px-2
+
+### Image
+
+- Se utiliza para mostrar imágenes locales y remotas en la pantalla.
+
+```dart
+Image.asset('assets/logo.png')
+
+Image.network('https://example.com/logo.png')
+```
+
+- Las imágenes pueden ser de cualquier formato soportado por Flutter, como `PNG`, `JPEG`, `GIF`, etc.
+
+:::
+::: col 1/2 px-2
+
+- Las imágenes locales deben estar dentro de la carpeta `assets` y deben declararse en el archivo `pubspec.yaml`.
+
+```bash
+Proyecto
+├──📂 android
+├──📂 ios
+├──📂 lib
+├──📂 assets # Se debe crear
+│   └── logo.png
+└── pubspec.yaml
+```
+
+```yaml
+flutter:
+  assets:
+    - assets/logo.png
+```
+
+:::
+::::
+
+---
+
+## Widgets funcionales
+
+### Button
+
+- Flutter proporciona varios tipos de botones, como `ElevatedButton`, `TextButton`, `OutlinedButton`, `IconButton`, etc., cada uno con su propio estilo y comportamiento.
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+ElevatedButton(
+  child: Text('Aceptar'),
+  onPressed: () { /* ... */ },
+)
+```
+
+```dart
+TextButton(
+  child: Text('Cancelar'),
+  onPressed: () { /* ... */ },
+)
+```
+
+:::
+::: col 1/2 px-2
+
+```dart
+OutlinedButton(
+  child: Text('Cancelar'),
+  onPressed: () { /* ... */ },
+)
+```
+
+```dart
+IconButton(
+  icon: Icon(Icons.star),
+  onPressed: () { /* ... */ },
+)
+```
+
+:::
+::::
+
+---
+
+## Widgets funcionales
+
+### Button
+
+- Los botones también pueden aplicar estilos, como colores, bordes, sombras, etc.
+
+```dart
+ElevatedButton(
+  child: Text('Aceptar'),
+  style: ElevatedButton.styleFrom(
+    foregroundColor: Colors.blue,
+    backgroundColor: Colors.white,
+  ),
+  onPressed: () { /* ... */ },
+)
+```
+
+- Flutter también incluye otros widgets de botones como `FloatingActionButton`, `PopupMenuButton`, `DropdownButton`, etc.
+
+---
+
+## Widgets funcionales
+
+:::: flex
+::: col 1/2 px-2
+
+### TextField
+
+- Se utiliza para obtener texto del usuario.
+
+```dart
+TextField(
+  decoration: InputDecoration(
+    labelText: 'Nombre',
+    hintText: 'Escribe tu nombre',
+  ),
+)
+
+TextField(
+  decoration: InputDecoration(
+    labelText: 'Contraseña',
+    hintText: 'Escribe tu contraseña',
+  ),
+  obscureText: true,
+)
+```
+
+:::
+::: col 1/2 px-2
+
+- También es común utilizar `TextFormField` para obtener texto del usuario y validar la entrada.
+
+```dart
+TextFormField(
+  decoration: InputDecoration(
+    labelText: 'Correo',
+    hintText: 'Escribe tu correo',
+  ),
+  validator: (value) {
+    if (value.isEmpty) {
+      return 'El correo es requerido';
+    }
+    return null;
+  },
+)
+```
+
+:::
+::::
+
+---
+
+## Widgets funcionales
+
+:::: flex
+::: col 1/2 px-2
+
+### Checkbox
+
+- Se utiliza para activar o desactivar una opción.
+
+```dart
+Checkbox(
+  value: true,
+  checkColor: Colors.white,
+  onChanged: (value) { /* ... */ },
+)
+```
+
+- Si se requiere una etiqueta, se puede utilizar `CheckboxListTile`.
+
+```dart
+CheckboxListTile(
+  title: Text('Acepto los términos y condiciones'),
+  value: true,
+  onChanged: (value) { /* ... */ },
+)
+```
+
+:::
+::: col 1/2 px-2
+
+- Para grupos de opciones, se puede utilizar una lista de `CheckboxListTile`.
+
+```dart
+List<CheckboxListTile> opciones = [
+  CheckboxListTile(
+    title: Text('Opción 1'),
+    value: true,
+    onChanged: (value) { /* ... */ },
+  ),
+  CheckboxListTile(
+    title: Text('Opción 2'),
+    value: false,
+    onChanged: (value) { /* ... */ },
+  ),
+];
+```
+
+:::
+::::
+
+---
+
+## Widgets funcionales
+
+:::: flex
+::: col 1/2 px-2
+
+### Radio
+
+- Se utiliza para seleccionar una opción de un grupo.
+
+```dart
+enum tamanio { chico, mediano, grande }
+
+Radio(
+  title: 'Chico',
+  value: tamanio.chico,
+  groupValue: tamanio,
+  onChanged: (value) { /* ... */ },
+)
+```
+
+- Si se requiere una etiqueta, se puede utilizar `RadioListTile`.
+
+:::
+::: col 1/2 px-2
+
+- Si se requiere una etiqueta, se puede utilizar `RadioListTile`.
+
+```dart
+RadioListTile(
+  title: Text('Chico'),
+  subtitle: Text('10 oz'),
+  value: tamanio.chico,
+  groupValue: tamanio,
+  onChanged: (value) { /* ... */ },
+)
+```
+
+:::
+::::
+
+---
+
+## Widgets funcionales
+
+:::: flex
+::: col 1/2 px-2
+
+### Switch
+
+- Se utiliza para activar o desactivar una opción.
+
+```dart
+Switch(
+  value: true,
+  onChanged: (value) { /* ... */ },
+)
+```
+
+- Si se requiere una etiqueta, se puede utilizar `SwitchListTile`.
+
+```dart
+SwitchListTile(
+  title: Text('Activar notificaciones'),
+  value: true,
+  onChanged: (value) { /* ... */ },
+)
+```
+
+:::
+::: col 1/2 px-2
+
+### Slider
+
+- Se utiliza para seleccionar un valor de un rango.
+
+```dart
+Slider(
+  value: 50,
+  min: 0,
+  max: 100,
+  divisions: 10,
+  onChanged: (value) { /* ... */ },
+)
+```
+
+:::
+::::
+
+---
+<!-- _class: inverted -->
+
+# WidgetListTile
+
+- Los widgets `CheckboxListTile`, `RadioListTile` y `SwitchListTile` son ejemplos de `ListTile`.
+- `ListTile` es un widget que se utiliza para mostrar información en una lista, como un título, un subtítulo, un icono, etc.
+- Además de proporcionar una estructura visual coherente, incrementa el área de interacción del usuario con el respectivo widget.
+- Se sugiere utilizar la versión `ListTile` de los widgets `Checkbox`, `Radio` y `Switch` para proporcionar una mejor experiencia de usuario.
+
+---
+
+## Widgets funcionales
+
+### DatePicker
+
+- Se inicia con un _callback_ que se ejecuta desde un TextField o un botón.
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+TextFormField(
+  decoration: InputDecoration(
+    labelText: 'Fecha de nacimiento',
+    hintText: 'Selecciona tu fecha de nacimiento',
+  ),
+  onTap: () {
+    // Se ejecuta el callback
+  },
+)
+```
+
+:::
+::: col 1/2 px-2
+
+```dart
+showDatePicker(
+  context: context,
+  initialDate: DateTime.now(),
+  firstDate: DateTime(DateTime.now().year - 1),
+  lastDate: DateTime(DateTime.now().year + 1),
+  builder: (BuildContext context, Widget child) {
+    return Theme(
+      data: ThemeData.light(),
+      child: child,
+    );
+  },
+);
+```
+
+:::
+::::
+
+---
+
+## Widgets funcionales
+
+### TimePicker
+
+- Se utiliza de manera similar al `DatePicker`, para seleccionar una hora.
+
+```dart
+showTimePicker(
+  context: context,
+  initialTime: TimeOfDay.now(),
+  builder: (BuildContext context, Widget child) {
+    return Theme(
+      data: ThemeData.light(),
+      child: child,
+    );
+  },
+);
+```
+
+- Ambos _pickers_ son diálogos que se muestran en la pantalla, por lo que se deben utilizar en conjunto con el método `showDatePicker` y `showTimePicker`.
+
+---
+
+## Widgets funcionales
+
+### Snackbar
+
+- Se utiliza para mostrar mensajes temporales en la pantalla, se muestra en la parte inferior de la pantalla y desaparece después de un tiempo.
+
+```dart
+ScaffoldMessenger.of(context).showSnackBar(
+  SnackBar(
+    content: Text('Mensaje temporal'),
+  ),
+);
+```
+
+- El método `showSnackBar` se utiliza para mostrar el _snackbar_ en la pantalla, se debe utilizar en conjunto con el widget `Scaffold`.
+
+---
+
+## Widgets funcionales
+
+### Snackbar
+
+```dart
+Scaffold(
+  appBar: AppBar(
+    title: Text('Snackbar'),
+  ),
+  body: Center(
+    child: ElevatedButton(
+      child: Text('Mostrar Snackbar'),
+      onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Mensaje temporal'),
+          ),
+        );
+      },
+    ),
+  ),
+)
+```
+
+---
+
+## Widgets funcionales
+
+### Dialog
+
+- Se utiliza para mostrar un diálogo centrado en la pantalla.
+
+```dart
+showDialog(
+  context: context,
+  builder: (BuildContext context) {
+    return AlertDialog(
+      title: Text('Título del diálogo'),
+      content: Text('Contenido del diálogo'),
+      actions: [
+        TextButton(
+          child: Text('Aceptar'),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+  },
+);
+```
+
+---
+
+## Widgets funcionales
+
+### Dialog
+
+- Los diálogos se utilizan para mostrar mensajes importantes al usuario, como confirmaciones, alertas, etc.
+- El método `showDialog` se utiliza para mostrar el diálogo en la pantalla, se debe utilizar en conjunto con el widget `Scaffold`.
+- El diálogo puede contener cualquier widget, como texto, botones, campos de texto, listas, etc.
+- Los diálogos tienen la característica de ser modales, es decir, bloquean la interacción con el resto de la aplicación hasta que se cierran.
+
+---
+
+## Widgets funcionales
+
+### BottomSheet
+
+- Se utiliza para mostrar un diálogo que se desliza desde la parte inferior de la pantalla.
+
+```dart
+showModalBottomSheet(
+  context: context,
+  builder: (BuildContext context) {
+    return Container(
+      child: Text('Contenido del bottom sheet'),
+    );
+  },
+);
+```
+
+- El método `showModalBottomSheet` se utiliza para mostrar el _bottom sheet_ en la pantalla, se debe utilizar en conjunto con el widget `Scaffold`.
+
+---
+
+## Widgets funcionales
+
+### BottomSheet
+
+```dart
+Scaffold(
+  appBar: AppBar(
+    title: Text('BottomSheet'),
+  ),
+  body: Center(
+    child: ElevatedButton(
+      child: Text('Mostrar BottomSheet'),
+      onPressed: () {
+        showModalBottomSheet(
+          context: context,
+          builder: (BuildContext context) {
+            return Container(
+              child: Text('Contenido del bottom sheet'),
+            );
+          },
+        );
+      },
+    ),
+  ),
+)
+```
+
+---
+
+# Componentes de la interfaz de usuario
+
+- Los widgets funcionales también se utilizan para manejar eventos, como toques, deslizamientos, cambios, etc.
+- Además de los widgets revisados, Flutter proporciona una gran cantidad de widgets funcionales, como `PopupMenuButton`, `DropdownButton`, `Tooltip`, `Stepper`, `ExpansionPanel`, `Chip`, `TabBar`, `Drawer`, `AppBar`, etc., cada uno con su propio estilo y comportamiento.
+- Los widgets funcionales también se utilizan para manejar la navegación, como botones de navegación, barras de navegación, pestañas, cajones de navegación, etc.
 
 ---
 <!-- _class: lead -->
