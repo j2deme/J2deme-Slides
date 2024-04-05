@@ -152,9 +152,14 @@ def new_class_slide():
             answers['unit']) < 10 else f"{answers['unit']}"
 
         if len(answers['subject'].split()) > 1:
+            # Elimina conectivas del nombre de la materia
+            prepositions = ['la', 'el', 'los', 'las', 'y', 'en', 'a']
+            subject_clean = ' '.join(
+                [word for word in answers['subject'].split() if word.lower() not in prepositions])
+
             # Genera una abreviatura para el nombre de la materia
             subject_abbr = ''.join(word[0].upper()
-                                   for word in answers['subject'].split())
+                                   for word in subject_clean.split())
 
             title = f"{subject_abbr} - {unit} - {answers['unit_name']}"
             filename = f"{subject_abbr}-{unit}"
