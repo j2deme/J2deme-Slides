@@ -768,6 +768,14 @@ fecha1 = datetime.now()
 fecha2 = datetime(2024, 01, 03)
 ```
 
+- Se pueden hacer operaciones con fechas y horas, como sumar, restar, comparar, etc.
+
+```python
+diferencia = fecha2 - fecha1
+
+print(f"La diferencia es de {diferencia.days} días")
+```
+
 :::
 ::: col 1/2 px-2
 
