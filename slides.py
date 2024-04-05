@@ -15,6 +15,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
+from rich.progress import Progress
 
 error_console = Console(stderr=True, style="bold red")
 
@@ -344,6 +345,51 @@ def manage_slides():
     main()
 
 
+def batch_slides():
+    """
+    Permite exportar todas las presentaciones a PDF.
+
+    Returns:
+        None
+    """
+
+    # Mostrar un mensaje de advertencia por el tiempo que puede tomar el proceso
+    answers = questionary.form(
+        action=questionary.confirm(
+            "Este proceso puede tardar un poco, ¿quieres continuar?")
+    ).ask()
+
+    if answers['action'] == False:
+        main()
+    else:
+        slides = get_slides()
+
+        if slides == False:
+            print("[bold orange]No hay presentaciones disponibles 📭")
+            sleep(2)
+            main()
+        else:
+            # Crea una barra de progreso y la actualiza conforme se exportan las presentaciones
+            with Progress() as progress:
+                task = progress.add_task(
+                    "[bold green]Exportando presentaciones...", total=len(slides))
+                for slide in slides:
+                    slide = slide.replace('.md', '')
+                    error = os.system(
+                        f"marp {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes > NUL 2>&1")
+                    if error != 0:
+                        error_console.print(
+                            f"[bold red]{slide} ❌")
+                    progress.update(
+                        task, description=f"[bold green]{slide} ✅", advance=1)
+
+            print(
+                f"[bold green]Todas las presentaciones han sido exportadas a PDF con éxito ✅")
+
+    sleep(2)
+    main()
+
+
 def main():
     """
     Función principal que muestra un menú de opciones y ejecuta la acción seleccionada por el usuario.
@@ -356,6 +402,7 @@ def main():
 
     choices = [
         "Nueva presentación",
+        "Batch de presentaciones",
         "Gestor de presentaciones",
         "Ver temas",
         "Salir"
@@ -368,6 +415,8 @@ def main():
 
     if answers['action'] == 'Nueva presentación':
         new_slide()
+    elif answers['action'] == 'Batch de presentaciones':
+        batch_slides()
     elif answers['action'] == 'Gestor de presentaciones':
         manage_slides()
     elif answers['action'] == 'Ver temas':
