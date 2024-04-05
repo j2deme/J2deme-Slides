@@ -287,8 +287,10 @@ def manage_slides():
 
         choices = [
             "Previsualizar",
-            "Exportar a HTML",
             "Exportar a PDF",
+            "Exportar a HTML",
+            "Exportar a imágenes",
+            "Exportar portada",
             "Regresar"
         ]
 
@@ -318,6 +320,24 @@ def manage_slides():
             else:
                 print(
                     f"[bold green]{slide} exportada a PDF con éxito ✅")
+        elif answers['action'] == 'Exportar portada':
+            error = os.system(
+                f"marp {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}-cover.png --allow-local-files --image=png --image-scale=2")
+            if error != 0:
+                error_console.print(
+                    f"[bold red]Error al exportar portada de {slide} ❌")
+            else:
+                print(
+                    f"[bold green]Portada de {slide} exportada con éxito ✅")
+        elif answers['action'] == 'Exportar a imágenes':
+            error = os.system(
+                f"marp {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}/{slide}.png --allow-local-files --images=png --image-scale=2")
+            if error != 0:
+                error_console.print(
+                    f"[bold red]Error al exportar imágenes de {slide} ❌")
+            else:
+                print(
+                    f"[bold green]Imágenes de {slide} exportadas con éxito ✅")
         elif answers['action'] == 'Regresar':
             pass
     sleep(2)
