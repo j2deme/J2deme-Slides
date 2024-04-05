@@ -702,17 +702,24 @@ ElevatedButton(
 ## Widgets funcionales
 
 - Los widgets funcionales se utilizan para construir los componentes visuales de la aplicación, como botones, campos de texto, listas, tarjetas, etc.
-  - Text
-  - Image
-  - Icon
-  - Button
-  - TextField
-  - Checkbox
-  - Radio
-  - Switch
-  - Slider
-  - DatePicker
-  - TimePicker
+
+:::: flex
+::: col 1/2 px-2
+
+- Text
+- Icon
+- Image
+- Button
+- TextField
+- Checkbox
+- Radio
+:::
+::: col 1/2 px-2
+
+- Switch
+- Slider
+- DatePicker
+- TimePicker
 - Snackbar
 - Dialog
 - BottomSheet
