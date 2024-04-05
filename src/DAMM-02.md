@@ -1300,8 +1300,580 @@ Scaffold(
 
 # Interacción con el usuario (UX)
 
-- Eventos
-- Respuesta a usuarios
+> La interacción con el usuario (UX) se define como el proceso de diseño de la interacción entre el usuario y la aplicación.
+
+- La interacción con el usuario es un aspecto crítico del desarrollo de aplicaciones móviles, ya que puede afectar la usabilidad y la experiencia del usuario.
+- Se centra en proporcionar una experiencia de usuario óptima, que sea intuitiva, fácil de usar y atractiva.
+- Una buena interacción con el usuario parte de un diseño de la interfaz de usuario bien estructurado y coherente, que sea fácil de entender y utilizar.
+
+---
+
+# Interacción con el usuario (UX)
+
+- Los widgets funcionales se utilizan para manejar la interacción con el usuario, como toques, deslizamientos, cambios, etc.
+- Adicionalmente a la parte visual, la interacción también se da a través de retroalimentación y procesamiento de eventos y datos.
+- Para esto, Flutter integra un modelo de gestión de eventos y datos, que permite manejar la interacción con el usuario de manera eficiente a través del manejo de estados.
+
+---
+
+# Interacción con el usuario (UX)
+
+## State Management
+
+- Flutter da soporte a dos tipos principales de widgets: `StatelessWidget` y `StatefulWidget`.
+- Los `StatelessWidget` son widgets que no tienen estado, es decir, no cambian con el tiempo, se utilizan para construir la estructura visual de la aplicación y no manejan la interacción con el usuario, suelen combinarse con el patrón `BLoc`.
+- Los `StatefulWidget` son widgets que tienen estado, es decir, cambian con el tiempo, se utilizan para manejar la interacción con el usuario y la retroalimentación, estos widgets pueden cambiar su estado y redibujarse en la pantalla.
+  - `StatefulWidget` se compone de dos clases: una clase que extiende de `StatefulWidget` y una clase que extiende de `State`.
+
+---
+
+## State Management
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+```
+
+- Mientras que `MyApp` es un `StatelessWidget`, `MyHomePage` es un `StatefulWidget`, la diferencia radica en que `MyHomePage` maneja la interacción con el usuario y la retroalimentación.
+
+:::
+
+::: col 1/2 px-2
+
+```dart
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePage extends State<MyHomePage> {
+  int _counter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Contador'),
+      ),
+      body: Center(
+        child: Text('$_counter'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _counter++;
+          });
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+```
+
+:::
+::::
+
+---
+
+## State Management
+
+- Uno de los conceptos más importantes en Flutter es el manejo de estados, que se refiere a la forma en que se maneja el estado de un `StatefulWidget` y se redibuja en la pantalla.
+- El método `setState` se utiliza para cambiar el estado de un `StatefulWidget` y redibujarlo en la pantalla.
+- Con "redibujarlo en la pantalla" se refiere a que se vuelve notifica al `StatefulWidget` para actualizar la interfaz de usuario y mostrar los cambios.
+- Sino se utiliza `setState`, los cambios en el estado no se realizan y la interfaz de usuario no se actualiza.
+
+---
+
+## State Management
+
+- En Flutter, el manejo de estados se puede realizar:
+  - De manera local, utilizando el método `setState` para cambiar el estado de un `StatefulWidget` y redibujarlo en la pantalla.
+  - De manera global, utilizando un _manejador de estados_ como `Provider`, `BLoc`, `GetX`, `Riverpod`, etc., para manejar el estado de la aplicación de manera centralizada y compartirlo entre los distintos componentes de la aplicación.
+
+---
+
+## State Management
+
+### Local
+
+:::: flex
+::: col 1/2 px-2
+
+- La forma más basica de manejar el estado en Flutter es utilizando el método `setState` para cambiar el estado de un `StatefulWidget` y redibujarlo en la pantalla.
+- Su uso es sencillo, pero puede resultar complicado de mantener en aplicaciones grandes y complejas.
+
+:::
+::: col 1/2 px-2
+
+```dart
+class _MyHomePage extends State<MyHomePage> {
+  int _counter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Contador'),
+      ),
+      body: Center(
+        child: Text('$_counter'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _counter++;
+          });
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+```
+
+:::
+::::
+
+---
+
+## State Management
+
+### Global
+
+- Una forma más avanzada de manejar el estado en Flutter es utilizando un _manejador de estados_ como `BLoc`.
+- `BLoc` es un patrón de diseño que se utiliza para manejar el estado de la aplicación de manera centralizada y compartirlo entre los distintos componentes de la aplicación.
+- Podríamos pensar en `BLoc` como un _tablero_ que contiene el estado de la aplicación y se encarga de notificar a los distintos componentes cuando el estado cambia.
+
+---
+
+## State Management
+
+### Global
+
+- `BLoc` se compone de tres partes principales:
+  - `Event`: Representa una acción que se realiza en la aplicación, como un toque, un deslizamiento, un cambio, etc.
+  - `State`: Representa el estado de la aplicación en un momento dado, como un contador, un texto, una lista, etc.
+  - `Bloc`: Es el _tablero_ que contiene el estado de la aplicación y se encarga de notificar a los distintos componentes cuando el estado cambia.
+
+::: info
+👨🏻‍🏫 No se revisará a detalle el patrón BLoc, pero se puede revisar más al respecto en <https://bloclibrary.dev/>
+:::
+
+---
+
+# Interacción con el usuario (UX)
+
+## Gestos
+
+- Flutter proporciona una gran cantidad de widgets para manejar gestos, como toques, deslizamientos, arrastres, etc.
+  - GestureDetector
+  - InkWell
+  - DragTarget
+  - LongPressDraggable
+  - Dismissible
+- Cada uno de estos widgets se utiliza para manejar un conjunto específico de gestos y proporciona una retroalimentación visual al usuario en la mayoría de los casos.
+
+---
+
+## Gestos
+
+### GestureDetector
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para detectar gestos como toques, deslizamientos, arrastres, etc.
+- Es un widget que envuelve a otro widget y proporciona una interfaz para detectar gestos en el widget envuelto.
+- Es muy útil para manejar gestos en widgets que no tienen soporte nativo para gestos, como `Container`, `Column`, `Row`, etc.
+
+:::
+::: col 1/2 px-2
+
+```dart
+GestureDetector(
+  onTap: () {
+  },
+  onDoubleTap: () {
+  },
+  onLongPress: () {
+  },
+  onPanUpdate: (details) {
+  },
+  child: Container(
+    color: Colors.blue,
+    height: 100,
+    width: 100,
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+## Gestos
+
+### InkWell
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para proporcionar una retroalimentación visual al usuario cuando se toca un widget.
+- Soporta gestos como toques, deslizamientos, arrastres, etc.
+
+:::
+::: col 1/2 px-2
+  
+```dart
+InkWell(
+  onTap: () {
+  },
+  child: Container(
+    color: Colors.blue,
+    height: 100,
+    width: 100,
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+## Gestos
+
+### Dismissible
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para deslizar un widget fuera de la pantalla, como en una lista de elementos.
+- Soporta gestos como:
+  - `DismissDirection.endToStart`
+  - `DismissDirection.startToEnd`
+  - `DismissDirection.topToBottom`
+  - `DismissDirection.bottomToTop`
+
+:::
+::: col 1/2 px-2
+
+```dart
+Dismissible(
+  key: Key('1'),
+  child: ListTile(
+    title: Text('Elemento 1'),
+  ),
+  onDismissed: (direction) {
+    if (direction == DismissDirection.endToStart) {
+      // Se elimina el elemento
+    }
+  },
+)
+```
+
+- El atributo `key` se utiliza para identificar el widget, comúnmente se utiliza un identificador único como un `String` o un `int`.
+
+:::
+::::
+
+---
+
+# Interacción con el usuario (UX)
+
+## Animaciones
+
+- Además de los gestos, Flutter también proporciona una gran cantidad de widgets para manejar animaciones, como transiciones, rotaciones, escalados, etc.
+  - AnimatedContainer
+  - AnimatedOpacity
+  - AnimatedPositioned
+  - AnimatedCrossFade
+  - AnimatedSwitcher
+  - Hero
+  - TweenAnimationBuilder
+- Estos widgets se utilizan para crear animaciones en la interfaz de usuario y proporcionar una experiencia de usuario más atractiva.
+
+---
+
+## Animaciones
+
+### AnimatedContainer
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para animar la propiedad de un contenedor, como tamaño, color, borde, etc.
+- Se puede combinar con otros widgets como `GestureDetector` para crear animaciones interactivas.
+- Se usa como un contenedor normal, pero con la capacidad de animar sus propiedades.
+
+:::
+::: col 1/2 px-2
+
+```dart
+AnimatedContainer(
+  duration: Duration(seconds: 1),
+  curve: Curves.fastOutSlowIn,
+  height: _pressed ? 200 : 100,
+  width: _pressed ? 200 : 100,
+  color: _pressed ? Colors.blue : Colors.red,
+  child: GestureDetector(
+    onTap: () {
+      setState(() {
+        _pressed = !_pressed;
+      });
+    },
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+## Animaciones
+
+### AnimatedOpacity
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para animar la opacidad de un widget, es decir, hacerlo más transparente o más visible.
+- También puede combinarse con el widget `GestureDetector` para crear animaciones interactivas.
+
+:::
+::: col 1/2 px-2
+
+```dart
+AnimatedOpacity(
+  duration: Duration(seconds: 1),
+  opacity: _pressed ? 0.5 : 1.0,
+  child: GestureDetector(
+    onTap: () {
+      setState(() {
+        _pressed = !_pressed;
+      });
+    },
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+## Animaciones
+
+### AnimatedPositioned
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para animar la posición de un widget, es decir, moverlo de un lugar a otro.
+- Dependiendo de la posición inicial y final, el widget se moverá de un lugar a otro de manera animada.
+
+:::
+::: col 1/2 px-2
+
+```dart
+AnimatedPositioned(
+  duration: Duration(seconds: 1),
+  left: _pressed ? 100 : 0,
+  top: _pressed ? 100 : 0,
+  child: GestureDetector(
+    onTap: () {
+      setState(() {
+        _pressed = !_pressed;
+      });
+    },
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+## Animaciones
+
+### AnimatedCrossFade
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para animar la transición entre dos widgets, es decir, mostrar un widget mientras se oculta otro.
+- A diferencia de otros widgets, `AnimatedCrossFade` tiene dos hijos, uno que se muestra y otro que se oculta.
+- Los widgets hijos se intercambian de manera animada, sin importar que sean de diferente tipo.
+
+:::
+::: col 1/2 px-2
+
+```dart
+AnimatedCrossFade(
+  duration: Duration(seconds: 1),
+  firstChild: Text('Persona'),
+  secondChild: Icon(Icons.person),
+  crossFadeState: _pressed
+      ? CrossFadeState.showFirst
+      : CrossFadeState.showSecond,
+  child: GestureDetector(
+    onTap: () {
+      setState(() {
+        _pressed = !_pressed;
+      });
+    },
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+## Animaciones
+
+### AnimatedSwitcher
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para animar la transición entre dos widgets.
+- A diferencia de `AnimatedCrossFade`, `AnimatedSwitcher` tiene un solo hijo, pero puede cambiar de manera animada entre diferentes widgets.
+- La transición se controla mediante la propiedad `transitionBuilder`.
+
+:::
+::: col 1/2 px-2
+
+```dart
+AnimatedSwitcher(
+  duration: Duration(seconds: 1),
+  transitionBuilder: (child, animation) {
+    return ScaleTransition(
+      scale: animation,
+      child: child,
+    );
+  },
+  child: _pressed ? Text('Hola') : Icon(Icons.star),
+  child: GestureDetector(
+    onTap: () {
+      setState(() {
+        _pressed = !_pressed;
+      });
+    },
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+## Animaciones
+
+### Hero
+
+:::: flex
+::: col 1/2 px-2
+
+- Se utiliza para animar la transición entre dos widgets en diferentes rutas o pantallas.
+- `Hero` se utiliza para crear una animación de transición entre dos widgets que tienen el mismo `tag`.
+- El `tag` se utiliza para identificar los widgets que se animarán.
+
+:::
+::: col 1/2 px-2
+
+```dart
+Hero(
+  tag: 'avatar',
+  child: Image.asset('assets/avatar.png'),
+)
+```
+
+- Para que la animación funcione, los dos widgets deben tener el mismo `tag`, de lo contrario, no se animarán.
+- `Hero` se utiliza comúnmente para animar la transición entre una miniatura y una imagen de tamaño completo.
+
+:::
+::::
+
+---
+
+## Animaciones
+
+### Hero
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+// Pantalla 1
+Scaffold(
+  appBar: AppBar(
+    title: Text('Pantalla 1'),
+  ),
+  body: GestureDetector(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Pantalla2(),
+        ),
+      );
+    },
+    child: Hero(
+      tag: 'avatar',
+      child: Image.asset('assets/avatar.png',
+      height: 100,
+      width: 100,
+      ),
+    ),
+  ),
+)
+```
+
+:::
+::: col 1/2 px-2
+
+```dart
+// Pantalla 2
+Scaffold(
+  appBar: AppBar(
+    title: Text('Pantalla 2'),
+  ),
+  body: Hero(
+    tag: 'avatar',
+    child: Image.asset('assets/avatar.png',
+    height: 200,
+    width: 200,
+    ),
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+# Interacción con el usuario (UX)
+
+- En resumen, la interacción con el usuario (UX) es un aspecto crítico del desarrollo de aplicaciones móviles, ya que puede afectar la usabilidad y la experiencia del usuario.
+- Combina la parte visual con la parte funcional de la aplicación, para proporcionar una experiencia de usuario óptima, que sea intuitiva, fácil de usar y atractiva.
+- Hace uso del manejo de estados, gestos y animaciones para manejar la interacción con el usuario y proporcionar una retroalimentación visual al usuario.
 
 ---
 <!-- _class: lead -->
