@@ -1481,6 +1481,97 @@ plt.show()
 
 ---
 
+# Pandas 🐼 y dataframes
+
+- Pandas es una librería de Python que permite trabajar con datos de manera eficiente, ya que permite leer, escribir, manipular y analizar datos de manera sencilla.
+- Una de las estructuras de datos más utilizadas en Pandas son los dataframes, los cuales son muy similares a las tablas de una base de datos, ya que permiten almacenar datos en filas y columnas.
+- Para utilizarla, es necesario importarla con la instrucción ```import pandas as pd```.
+- Para más información, se puede consultar la [documentación](https://pandas.pydata.org/pandas-docs/stable/reference/index.html) de la librería.
+
+---
+
+# Uso de Pandas
+
+```python
+import pandas as pd
+
+# Crear un dataframe
+df = pd.DataFrame({
+    "Nombre": ["Jaime", "Ana", "Pedro", "María"],
+    "Edad": [37, 30, 28, 22],
+    "Sexo": ["M", "F", "M", "F"]
+})
+
+# Mostrar el dataframe
+print(df)
+```
+
+---
+
+# Operaciones con dataframes
+
+- Los dataframes permiten realizar diferentes operaciones, como:
+  - Acceder a un elemento ```df["columna"][fila]```
+  - Modificar un elemento ```df["columna"][fila] = valor```
+  - Agregar una columna ```df["nueva_columna"] = valor```
+  - Eliminar una columna ```df.drop("columna", axis=1)```
+  - Recorrer un dataframe ```for index, row in df.iterrows():```
+  - Ordenar un dataframe ```df.sort_values("columna")```
+  - Buscar un elemento ```df.loc[df["columna"] == valor]```
+- Su uso es muy similar a los arreglos n-dimensionales de NumPy, pero con la ventaja de poder almacenar diferentes tipos de datos en cada columna.
+
+---
+
+```python
+# Acceder a un elemento
+print(df["Nombre"][0]) # Jaime
+
+# Modificar un elemento
+df["Nombre"][1] = "Sandra"
+
+# Agregar una columna
+df["Ciudad"] = ["CDMX", "GDL", "MTY", "SLP"]
+
+# Eliminar una columna 
+df = df.drop("Sexo", axis=1)
+
+# Recorrer un dataframe
+for index, row in df.iterrows():
+    print(row["Nombre"], row["Edad"], row["Ciudad"])
+
+# Ordenar un dataframe
+df = df.sort_values("Edad")
+
+# Buscar un elemento
+print(df.loc[df["Nombre"] == "Jaime"])
+```
+
+---
+
+# Filtrado de Pandas
+
+- Una de las operaciones más comunes con los dataframes de Pandas es el filtrado, ya que permite seleccionar un subconjunto de datos que cumplan con una condición específica.
+
+```python
+# Filtrar por edad
+print(df.loc[df["Edad"] > 30])
+
+# Filtrar por ciudad
+print(df.loc[df["Ciudad"] == "CDMX"])
+
+# Hombres mayores de 30 años
+print(df.loc[(df["Sexo"] == "M") & (df["Edad"] > 30)]) # Jaime
+```
+
+---
+
+<!-- _class: inverted -->
+
+::: coding
+:::
+
+---
+
 <!-- _class: inverted -->
 ![bg right w:35%](../src/assets/avatar.png)
 
