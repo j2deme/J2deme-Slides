@@ -1883,8 +1883,662 @@ Scaffold(
 
 # Navegación
 
-- Métodos de navegación
-- Compartir información entre vistas
+> La navegación se refiere al proceso de moverse entre las distintas pantallas o rutas de una aplicación.
+
+- Es un aspecto fundamental del desarrollo de aplicaciones móviles, ya que permite a los usuarios acceder a diferentes partes de la aplicación y realizar diferentes acciones.
+- Es lógico suponer que una aplicación medianamente compleja tendrá más de una pantalla, por lo que la navegación es un aspecto crítico del desarrollo de aplicaciones móviles.
+
+---
+
+# Navegación
+
+## Pila de rutas
+
+- La navegación en Flutter se basa en el concepto de _pila de rutas_, que es una pila de rutas que se utilizan para navegar entre las distintas pantallas de la aplicación.
+- La pila de rutas se utiliza para mantener un historial de las rutas que se han visitado y para navegar entre ellas.
+
+![bg right fit](../src/assets/DAMM/Route-stack.png)
+
+---
+
+# Navegación
+
+## Pila de rutas
+
+- La pila de rutas se maneja mediante el widget `Navigator`, que se utiliza para navegar entre las distintas pantallas de la aplicación.
+- El `Navigator` se encarga de manejar la pila de rutas y de mostrar las pantallas en la pantalla.
+- El `Navigator` se utiliza en conjunto con el widget `MaterialApp`, que proporciona un contenedor para la aplicación y maneja la navegación entre las distintas pantallas.
+
+---
+
+# Navegación
+
+## Pila de rutas
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+// MaterialApp
+MaterialApp(
+  home: Pantalla1(),
+)
+
+// Pantalla 1
+Scaffold(
+  appBar: AppBar(
+    title: Text('Pantalla 1'),
+  ),
+  body: Center(
+    child: ElevatedButton(
+      child: Text('Ir a Pantalla 2'),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Pantalla2(),
+          ),
+        );
+      },
+    ),
+  ),
+)
+```
+
+:::
+::: col 1/2 px-2
+  
+```dart
+// Pantalla 2
+Scaffold(
+  appBar: AppBar(
+    title: Text('Pantalla 2'),
+  ),
+  body: Center(
+    child: ElevatedButton(
+      child: Text('Ir a Pantalla 1'),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    ),
+  ),
+)
+```
+
+- Al presionar el botón de retroceso se hace un `Navigator.pop(context)` implícito.
+
+:::
+::::
+
+---
+
+# Navegación
+
+## Pila de rutas
+
+- Una alternativa al método `push` es  `pushNamed`, que permite navegar entre las distintas rutas de la aplicación de manera más eficiente, utilizando un identificador único para cada ruta.
+- Este método se utiliza en conjunto con el atributo `routes` del widget `MaterialApp`, que se utiliza para definir las rutas de la aplicación.
+- Su principal ventaja es que permite navegar entre las distintas rutas de la aplicación de manera más eficiente y proporciona una forma más estructurada de manejar la navegación.
+
+---
+
+# Navegación
+
+## Pila de rutas
+
+```dart
+// MaterialApp
+MaterialApp(
+  initialRoute: '/',
+  routes: {
+    '/': (context) => Pantalla1(),
+    '/pantalla2': (context) => Pantalla2(),
+  },
+)
+
+// Pantalla 1
+Scaffold(
+  appBar: AppBar(
+    title: Text('Pantalla 1'),
+  ),
+  body: Center(
+    child: ElevatedButton(
+      child: Text('Ir a Pantalla 2'),
+      onPressed: () {
+        Navigator.pushNamed(context, '/pantalla2');
+      },
+    ),
+  ),
+)
+```
+
+---
+
+# Navegación
+
+## Widgets de navegación
+
+- Flutter widgets diversos para manejar la navegación entre las distintas pantallas de la aplicación.
+- Desde los más básicos como botones o gestos, hasta los más avanzados como `BottomNavigationBar`, `TabBar`, `Drawer`, etc.
+- La elección de los widgets de navegación depende de la estructura de la aplicación y de las necesidades del usuario.
+
+---
+
+## Widgets de navegación
+
+### BottomNavigationBar
+
+- Se utiliza para mostrar una barra de navegación en la parte inferior de la pantalla.
+- Cada elemento de la barra de navegación se representa como un `BottomNavigationBarItem`.
+- Se utiliza para navegar entre las distintas pantallas de la aplicación.
+- Se puede personalizar con colores, iconos, etiquetas, etc.
+
+---
+
+### BottomNavigationBar
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+int _selectedIndex = 0;
+
+pages = <Widget>[
+  PrincipalPage(),
+  PerfilPage(),
+  AjustesPage(),
+];
+
+tabs = <BottomNavigationBarItem>[
+  BottomNavigationBarItem(
+    icon: Icon(Icons.home),
+    label: 'Principal',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.person),
+    label: 'Perfil',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.settings),
+    label: 'Ajustes',
+  ),
+];
+
+
+```
+
+:::
+::: col 1/2 px-2
+
+```dart
+MaterialApp(
+  title: 'Navegación',
+  home: Scaffold(
+    body: pages[_selectedIndex],
+    bottomNavigationBar: BottomNavigationBar(
+      items: tabs,
+      currentIndex: _selectedIndex,
+      onTap: (index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
+    ),
+  ),
+  routes: {
+    '/principal': (context) => PrincipalPage(),
+    '/perfil': (context) => PerfilPage(),
+    '/ajustes': (context) => AjustesPage(),
+  },
+)
+```
+
+:::
+::::
+
+---
+
+## Widgets de navegación
+
+### TabBar
+
+- Se utiliza para mostrar una barra de pestañas en la parte superior de la pantalla.
+- Cada pestaña de la barra de pestañas se representa como un `Tab`.
+- Viene acompañado de un `TabBarView` para mostrar el contenido de cada pestaña.
+- Se diferencia de `BottomNavigationBar` en que se muestra en la parte superior de la pantalla.
+
+---
+
+### TabBar
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+pages = <Widget>[
+  PrincipalPage(),
+  PerfilPage(),
+  AjustesPage(),
+];
+
+tabs = <Tab>[
+  Tab(text: 'Principal'),
+  Tab(text: 'Perfil'),
+  Tab(text: 'Ajustes'),
+];
+```
+
+:::
+
+::: col 1/2 px-2
+
+```dart
+MaterialApp(
+  title: 'Navegación',
+  home: DefaultTabController(
+    length: tabs.length,
+    child: Scaffold(
+      appBar: AppBar(
+        title: Text('Navegación'),
+        bottom: TabBar(
+          tabs: tabs,
+        ),
+      ),
+      body: TabBarView(
+        children: pages,
+      ),
+    ),
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+## Widgets de navegación
+
+### Drawer
+
+- Este widget muestra un cajón de navegación en la parte izquierda de la pantalla.
+- Se utiliza para mostrar opciones de navegación, como menús, ajustes, etc.
+- Se puede personalizar con elementos como `ListTile`, `Divider`, `UserAccountsDrawerHeader`, etc.
+
+---
+
+### Drawer
+
+:::: flex
+::: col 1/2 px-2
+
+```dart
+List<Widget> tiles = [
+  ListTile(
+    title: Text('Inicio'),
+    onTap: () {
+      Navigator.pushNamed(context, '/principal');
+    },
+  ),
+  ListTile(
+    title: Text('Perfil'),
+    onTap: () {
+      Navigator.pushNamed(context, '/perfil');
+    },
+  ),
+  Divider(),
+  ListTile(
+    title: Text('Ajustes'),
+    onTap: () {
+      Navigator.pushNamed(context, '/ajustes');
+    },
+  ),
+];
+```
+
+:::
+::: col 1/2 px-2
+
+```dart
+MaterialApp(
+  title: 'Navegación',
+  home: Scaffold(
+    appBar: AppBar(
+      title: Text('Navegación'),
+    ),
+    drawer: Drawer(
+      child: ListView(
+        children: [
+          UserAccountsDrawerHeader(
+            accountName: Text('J2deme'),
+            accountEmail:
+            Text('jesus.delgado@tecvalles.mx'),
+            currentAccountPicture: CircleAvatar(
+              backgroundImage:
+              AssetImage('assets/avatar.png'),
+            ),
+          ),
+          tiles,
+        ],
+      ),
+    ),
+  ),
+)
+```
+
+:::
+::::
+
+---
+
+# Navegación
+
+## Widgets de navegación
+
+- Hasta el momento se han revisado los widgets de navegación más comunes en Flutter, como `BottomNavigationBar`, `TabBar`, `Drawer`, etc.
+- Adicionalmente a estos widgets, también se utilizaron las _rutas nombradas_ para navegar de manera más eficiente entre las distintas pantallas de la aplicación.
+- Un elemento intrínseco de la navegación es el paso de información entre las distintas pantallas de la aplicación, con lo que se puede mejorar la experiencia del usuario.
+
+---
+
+# Navegación
+
+## Paso de información
+
+- En general, podemos pasar información entre las distintas pantallas de la aplicación de dos maneras:
+  1. Unidireccional: Se pasa información de una pantalla a otra, pero no se recibe información de vuelta. _P.e._ para mostrar los detalles de un elemento.
+  2. Bidireccional: Se pasa información de una pantalla a otra y se recibe información de vuelta. _P.e._ cuando se requiere modificar un elemento mediante un formulario.
+- Que método utilizar depende de la estructura de la aplicación y de las necesidades del usuario.
+
+---
+
+## Paso de información
+
+### Unidireccional
+
+- Para pasar información de una pantalla a otra, se puede utilizar el constructor de la pantalla a la que se quiere navegar.
+- Para esto, se debe definir un constructor en la pantalla a la que se quiere navegar y pasar la información como argumento al constructor.
+- Otra opción es utilizar el método `push` y pasar la información como argumento al constructor de la pantalla a la que se quiere navegar.
+
+---
+
+## Paso de información
+
+### Unidireccional - Constructor
+
+```dart
+// Pantalla 1
+ElevatedButton(
+  child: Text('Ir a Pantalla 2'),
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Pantalla2(
+          nombre: 'Jaime Delgado',
+          email: 'jesus.delgado@tecvalles.mx',
+        ),
+      ),
+    );
+  },
+)
+```
+
+---
+
+```dart
+// Pantalla 2
+class Pantalla2 extends StatelessWidget {
+  final String nombre;
+  final String email;
+
+  Pantalla2({required this.nombre, required this.email});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pantalla 2'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Nombre: $nombre'),
+            Text('Email: $email'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Paso de información
+
+### Unidireccional - Argumentos
+
+```dart
+// Pantalla 1
+ElevatedButton(
+  child: Text('Ir a Pantalla 2'),
+  onPressed: () {
+    Navigator.pushNamed(
+      context,
+      '/pantalla2',
+      arguments: {
+        'nombre': 'Jaime Delgado',
+        'email': 'jesus.delgado@tecvalles.mx',
+      },
+    );
+  },
+)
+```
+
+---
+
+```dart
+// Pantalla 2
+class Pantalla2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Map<String, String> args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pantalla 2'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Nombre: ${args['nombre']}'),
+            Text('Email: ${args['email']}'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Paso de información
+
+### Unidireccional - Argumentos
+
+- En el código anterior, se observa que el `Map` es de tipo `String`, aunque se puede utilizar cualquier tipo de dato.
+
+```dart
+final Map<String, dynamic> args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+```
+
+- Se debe tener cuidado al momento de acceder a los elementos, ya que se debe hacer una conversión explícita al tipo de dato correspondiente.
+- También es posible pasar objetos como argumentos:
+
+```dart
+final Persona persona = ModalRoute.of(context)!.settings.arguments as Persona;
+```
+
+---
+
+## Paso de información
+
+### Bidireccional - Constructor
+
+- Para pasar información de una pantalla a otra y recibir información de vuelta, se puede utilizar el método `push` y el método `pop`.
+- Para esto, se debe definir un constructor en la pantalla a la que se quiere navegar y pasar la información como argumento al constructor.
+- Al momento de regresar a la pantalla anterior, se puede pasar información como argumento al método `pop`.
+- Para este tipo de navegación se hace uso de `async` y `await` para no bloquear la aplicación.
+
+---
+
+## Paso de información
+
+### Bidireccional - Constructor
+
+```dart
+// Pantalla 1
+ElevatedButton(
+  child: Text('Ir a Pantalla 2'),
+  onPressed: () async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Pantalla2(
+          'options': ['Fresa', 'Manzana', 'Pera'],
+        ),
+      ),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Opción seleccionada: $result'),
+      ),
+    );
+  },
+)
+```
+
+---
+
+```dart
+class Pantalla2 extends StatelessWidget {
+  final List<String> options;
+
+  Pantalla2({required this.options});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pantalla 2'),
+      ),
+      body: Center(
+        child: ListView.builder(
+          itemCount: options.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(options[index]),
+              onTap: () => Navigator.pop(context, options[index]);
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Paso de información
+
+### Bidireccional - Constructor
+
+- En el código anterior, se observa que al momento de seleccionar una opción, se pasa la opción seleccionada como argumento al método `pop`.
+- Al regresar a la pantalla anterior, se recibe la opción seleccionada como resultado del método `push`.
+- Se puede utilizar el resultado para realizar alguna acción, como mostrar un mensaje, actualizar un estado, etc.
+- Adicionalmente, el tipo de dato del resultado puede ser cualquier tipo de dato, como `String`, `int`, `double`, `bool`, `List`, `Map`, etc.
+
+---
+
+## Paso de información
+
+### Bidireccional - Argumentos
+
+- Otra forma de pasar información de una pantalla a otra y recibir información de vuelta es utilizando el método `pushNamed` y el método `pop`.
+- La diferencia radica en que se utiliza un identificador único para cada ruta y se pasa la información como argumento al método `pushNamed`.
+- Al regresar a la pantalla anterior, se recibe la información como resultado del método `pop`.
+
+---
+
+### Bidireccional - Argumentos
+
+```dart
+// Pantalla 1
+ElevatedButton(
+  child: Text('Ir a Pantalla 2'),
+  onPressed: () async {
+    final result = await Navigator.pushNamed(
+      context,
+      '/pantalla2',
+      arguments: {
+        'options': ['Fresa', 'Manzana', 'Pera'],
+      },
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Opción seleccionada: $result'),
+      ),
+    );
+  },
+)
+```
+
+---
+
+```dart
+// Pantalla 2
+class Pantalla2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Map<String, dynamic> args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pantalla 2'),
+      ),
+      body: Center(
+        child: ListView.builder(
+          itemCount: args['options'].length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(args['options'][index]),
+              onTap: () => Navigator.pop(context, args['options'][index]);
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+# Navegación
+
+## Paso de información
+
+- El paso de información entre las distintas pantallas de la aplicación es un aspecto crítico del desarrollo de aplicaciones móviles, ya que permite a los usuarios acceder a diferentes partes de la aplicación y realizar diferentes acciones.
+- Al comunicar información entre las distintas pantallas de la aplicación, se puede mejorar la experiencia del usuario al ofrecer una utilidad adicional, como mostrar detalles, realizar acciones, etc.
+- El manejo de la información es fundamental para el desarrollo de aplicaciones móviles, por lo integrar mayores fuentes de información, será un aspecto a revisar posteriormente.
 
 ---
 
