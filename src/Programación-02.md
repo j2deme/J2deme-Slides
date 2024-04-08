@@ -586,7 +586,7 @@ while True:
 
 - Una función puede recibir cero o más parámetros, dependiendo de lo que se requiera, por lo que es importante conocer los parámetros que requiere cada función, para obtener el resultado esperado.
 - Comúnmente, el resultado de las funciones se debe almacenar en una variable, pero también puede ser usado en una condición o impreso a pantalla.
-- Las funciones pueden dividirse en dos tipos:
+- Las funciones pueden dividirse en tres tipos:
   - Funciones estándar
   - Funciones avanzadas
   - Funciones del usuario (personalizadas)
