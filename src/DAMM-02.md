@@ -1493,22 +1493,19 @@ class _MyHomePage extends State<MyHomePage> {
 ::: col 1/2 px-2
 
 - Se utiliza para detectar gestos como toques, deslizamientos, arrastres, etc.
-- Es un widget que envuelve a otro widget y proporciona una interfaz para detectar gestos en el widget envuelto.
-- Es muy útil para manejar gestos en widgets que no tienen soporte nativo para gestos, como `Container`, `Column`, `Row`, etc.
+- Es un _wrapper_ que proporciona una interfaz para detectar gestos en el widget envuelto.
+- Es muy útil para manejar gestos en widgets que no tienen soporte nativo para gestos.
 
 :::
 ::: col 1/2 px-2
 
 ```dart
 GestureDetector(
-  onTap: () {
-  },
-  onDoubleTap: () {
-  },
-  onLongPress: () {
-  },
-  onPanUpdate: (details) {
-  },
+  onTap: () {},
+  onDoubleTap: () {},
+  onLongPress: () {},
+  onPanUpdate: (details) {},
+  // ...
   child: Container(
     color: Colors.blue,
     height: 100,
@@ -1520,6 +1517,10 @@ GestureDetector(
 :::
 ::::
 
+::: ok
+Hasta la versión 3.19 de Flutter, `GestureDetector` soporta un total de 57 gestos.
+:::
+
 ---
 
 ## Gestos
@@ -1530,7 +1531,7 @@ GestureDetector(
 ::: col 1/2 px-2
 
 - Se utiliza para proporcionar una retroalimentación visual al usuario cuando se toca un widget.
-- Soporta gestos como toques, deslizamientos, arrastres, etc.
+- Soporta principalmente el gesto de toque, al igual que `GestureDetector`, pero con la diferencia de que `InkWell` proporciona una animación de onda alrededor del widget cuando se toca.
 
 :::
 ::: col 1/2 px-2
