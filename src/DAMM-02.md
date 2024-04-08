@@ -1201,7 +1201,16 @@ Scaffold(
 
 ### Dialog
 
-- Se utiliza para mostrar un diálogo centrado en la pantalla.
+- Los diálogos se utilizan para mostrar mensajes importantes al usuario, como confirmaciones, alertas, etc.
+- El método `showDialog` se utiliza para mostrar el diálogo en la pantalla, se debe utilizar en conjunto con el widget `Scaffold`.
+- El diálogo puede contener cualquier widget, como texto, botones, campos de texto, listas, etc.
+- Los diálogos tienen la característica de ser modales, es decir, bloquean la interacción con el resto de la aplicación hasta que se cierran.
+
+---
+
+## Widgets funcionales
+
+### Dialog
 
 ```dart
 showDialog(
@@ -1222,17 +1231,6 @@ showDialog(
   },
 );
 ```
-
----
-
-## Widgets funcionales
-
-### Dialog
-
-- Los diálogos se utilizan para mostrar mensajes importantes al usuario, como confirmaciones, alertas, etc.
-- El método `showDialog` se utiliza para mostrar el diálogo en la pantalla, se debe utilizar en conjunto con el widget `Scaffold`.
-- El diálogo puede contener cualquier widget, como texto, botones, campos de texto, listas, etc.
-- Los diálogos tienen la característica de ser modales, es decir, bloquean la interacción con el resto de la aplicación hasta que se cierran.
 
 ---
 
