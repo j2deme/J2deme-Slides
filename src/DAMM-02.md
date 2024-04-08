@@ -988,39 +988,41 @@ List<CheckboxListTile> opciones = [
 
 ## Widgets funcionales
 
-:::: flex
-::: col 1/2 px-2
-
 ### Radio
 
 - Se utiliza para seleccionar una opción de un grupo.
+- Al igual que con `Checkbox`, `Radio` también se puede utilizar como `RadioListTile` para mostrar una etiqueta.
+
+:::: flex
+::: col 1/2 px-2
 
 ```dart
-enum tamanio { chico, mediano, grande }
+List<Map<String, dynamic> _tamanios = [
+  {'nombre': 'Chico', 'oz': 10},
+  {'nombre': 'Mediano', 'oz': 20},
+  {'nombre': 'Grande', 'oz': 30},
+];
 
-Radio(
-  title: 'Chico',
-  value: tamanio.chico,
-  groupValue: tamanio,
-  onChanged: (value) { /* ... */ },
-)
+String _seleccionado = "";
 ```
-
-- Si se requiere una etiqueta, se puede utilizar `RadioListTile`.
 
 :::
 ::: col 1/2 px-2
 
-- Si se requiere una etiqueta, se puede utilizar `RadioListTile`.
-
 ```dart
-RadioListTile(
-  title: Text('Chico'),
-  subtitle: Text('10 oz'),
-  value: tamanio.chico,
-  groupValue: tamanio,
-  onChanged: (value) { /* ... */ },
-)
+for (var tamanio in _tamanios)
+  RadioListTile(
+    value: tamanio["value"],
+    groupValue: _seleccionado,
+    title: Text(tamanio["value"]),
+    subtitle:
+      Text("${tamanio["oz"]} oz"),
+    onChanged: (value) {
+      setState(() {
+        _seleccionado = value as String;
+      });
+    },
+  )
 ```
 
 :::
