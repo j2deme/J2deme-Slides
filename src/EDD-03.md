@@ -115,7 +115,7 @@ nodo1.siguiente = nodo2
 - Puede contener cualquier tipo de dato, como enteros, flotantes, cadenas, objetos, etc.
 
 ::: info
-👨🏻‍🏫 Aunque la mayoría de los lenguajes modernos no requieren la creación de la estructura `nodo`, se desarrollará para tomar como base de las estructuras de datos lineales
+👨🏻‍🏫 Aunque la mayoría de los lenguajes modernos no requieren la creación de la estructura `Nodo`, se desarrollará para tomar como base de las estructuras de datos lineales
 :::
 
 ---
@@ -265,12 +265,10 @@ class ListaSimple:
 ## Listas simplemente enlazadas
 
 ```python
-lista = ListaSimple()
-lista.agregar(10)
-lista.agregar(20)
-lista.agregar(30)
-
-# 10 -> 20 -> 30 -> None
+lista = ListaSimple() # None
+lista.agregar(10) # 10 -> None
+lista.agregar(20) # 10 -> 20 -> None
+lista.agregar(30) # 10 -> 20 -> 30 -> None
 ```
 
 ---
@@ -282,6 +280,7 @@ lista.agregar(30)
 ```python
 class ListaSimple:
     # ...
+    # Elimina el primer nodo con el valor especificado
     def eliminar(self, valor):
         actual = self.cabeza
         anterior = None
@@ -306,16 +305,12 @@ class ListaSimple:
 ## Listas simplemente enlazadas
 
 ```python
-lista = ListaSimple()
-lista.agregar(10)
-lista.agregar(20)
-lista.agregar(30)
+lista = ListaSimple() # None
+lista.agregar(10) # 10 -> None
+lista.agregar(20) # 10 -> 20 -> None
+lista.agregar(30) # 10 -> 20 -> 30 -> None
 
-# 10 -> 20 -> 30 -> None
-
-lista.eliminar(20)
-
-# 10 -> 30 -> None
+lista.eliminar(20) # 10 -> 30 -> None
 ```
 
 - La eliminación de un nodo en una lista simplemente enlazada requiere recorrer la lista para encontrar el nodo a eliminar y actualizar las referencias.
@@ -324,7 +319,7 @@ lista.eliminar(20)
 
 # Listas
 
-## Listas simplemente enlazadas: Recorrido y búsqueda simple
+## Listas simplemente enlazadas: Recorrido y búsqueda secuencial
 
 ```python
 class ListaSimple:
@@ -332,7 +327,8 @@ class ListaSimple:
     def recorrer(self):
         actual = self.cabeza
         while actual:
-            print(actual.valor)
+            print(actual.valor,
+                end=" -> " if actual.siguiente else "\n")
             actual = actual.siguiente
 
     def buscar(self, valor):
@@ -362,9 +358,7 @@ lista.agregar(30)
 # 10 -> 20 -> 30 -> None
 
 lista.recorrer()
-# 10
-# 20
-# 30
+# 10 -> 20 -> 30
 
 print(lista.buscar(20)) # True
 print(lista.buscar(40)) # False
