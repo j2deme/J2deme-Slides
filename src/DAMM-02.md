@@ -998,9 +998,9 @@ List<CheckboxListTile> opciones = [
 
 ```dart
 List<Map<String, dynamic> _tamanios = [
-  {'nombre': 'Chico', 'oz': 10},
-  {'nombre': 'Mediano', 'oz': 20},
-  {'nombre': 'Grande', 'oz': 30},
+  {'value': 'Chico', 'oz': 10},
+  {'value': 'Mediano', 'oz': 20},
+  {'value': 'Grande', 'oz': 30},
 ];
 
 String _seleccionado = "";
