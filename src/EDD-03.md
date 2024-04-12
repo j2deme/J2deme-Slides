@@ -401,7 +401,7 @@ while actual:
 
 > Son listas en las que cada nodo contiene un valor, una referencia al siguiente nodo y una referencia al nodo anterior.
 
-- A diferencia de las listas simplemente enlazadas,las listas doblemente enlazadas permiten recorrer la lista en ambas direcciones, lo que facilita la implementación de algunas operaciones.
+- A diferencia de las listas simplemente enlazadas, las listas doblemente enlazadas permiten recorrer la lista en ambas direcciones, lo que facilita la implementación de algunas operaciones.
 - La implementación de listas doblemente enlazadas es más compleja que la de listas simplemente enlazadas, ya que se deben actualizar las referencias en ambos sentidos.
 
 ---
