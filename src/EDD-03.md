@@ -302,6 +302,55 @@ class ListaSimple:
 
 # Listas
 
+## Listas simplemente enlazadas: Eliminar inicio
+
+```python
+class ListaSimple:
+    # ...
+    def eliminar_inicio(self):
+        if self.cabeza is None:
+            return False
+        if self.cabeza.siguiente is None:
+            self.cabeza = None
+            self.cola = None
+        else:
+            self.cabeza = self.cabeza.siguiente
+        self.tamanio -= 1
+        return True
+```
+
+---
+
+# Listas
+
+## Listas simplemente enlazadas: Eliminar final
+
+```python
+class ListaSimple:
+    # ...
+    def eliminar_final(self):
+        if self.cola is None:
+            return False
+
+        actual = self.cabeza
+        anterior = None
+        while actual.siguiente:
+            anterior = actual
+            actual = actual.siguiente
+        if anterior:
+            anterior.siguiente = None
+            self.cola = anterior
+        else:
+            self.cabeza = None
+            self.cola = None
+        self.tamanio -= 1
+        return True
+```
+
+---
+
+# Listas
+
 ## Listas simplemente enlazadas
 
 ```python
