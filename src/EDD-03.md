@@ -420,6 +420,8 @@ class NodoDoble:
         self.anterior = None
 ```
 
+![bg right:40% w:95%](../src/assets/EDD/nodo-doble.png)
+
 ---
 
 # Listas
@@ -447,23 +449,6 @@ class ListaDoble:
         self.cola = None
         self.tamanio = 0
 
-    def agregar_inicio(self, valor):
-        nuevo = NodoDoble(valor)
-        if self.cabeza is None:
-            self.cabeza = nuevo
-            self.cola = nuevo
-        else:
-            nuevo.siguiente = self.cabeza
-            self.cabeza.anterior = nuevo
-            self.cabeza = nuevo
-        self.tamanio += 1
-```
-
-:::
-
-::: col 1/2 px-2
-
-```python
     def agregar_final(self, valor):
         nuevo = NodoDoble(valor)
         if self.cola is None:
@@ -473,6 +458,23 @@ class ListaDoble:
             nuevo.anterior = self.cola
             self.cola.siguiente = nuevo
             self.cola = nuevo
+        self.tamanio += 1    
+```
+
+:::
+
+::: col 1/2 px-2
+
+```python
+    def agregar_inicio(self, valor):
+        nuevo = NodoDoble(valor)
+        if self.cabeza is None:
+            self.cabeza = nuevo
+            self.cola = nuevo
+        else:
+            nuevo.siguiente = self.cabeza
+            self.cabeza.anterior = nuevo
+            self.cabeza = nuevo
         self.tamanio += 1
 
     def agregar(self, valor):
@@ -503,6 +505,373 @@ lista.agregar_inicio(5)
 lista.agregar_final(40)
 
 # 5 -> 10 -> 20 -> 30 -> 40 -> None
+```
+
+---
+
+# Listas
+
+## Listas doblemente enlazadas: Eliminación
+
+```python
+class ListaDoble:
+    # ...
+    def eliminar_inicio(self):
+        if self.cabeza is None:
+            return False
+        if self.cabeza.siguiente is None:
+            self.cabeza = None
+            self.cola = None
+        else:
+            self.cabeza = self.cabeza.siguiente
+            self.cabeza.anterior = None
+        self.tamanio -= 1
+        return True
+```
+
+---
+
+# Listas
+
+## Listas doblemente enlazadas: Eliminación
+
+```python
+class ListaDoble:
+    # ...
+    def eliminar_final(self):
+        if self.cola is None:
+            return False
+        if self.cola.anterior is None:
+            self.cabeza = None
+            self.cola = None
+        else:
+            self.cola = self.cola.anterior
+            self.cola.siguiente = None
+        self.tamanio -= 1
+        return True
+```
+
+---
+
+# Listas
+
+## Listas doblemente enlazadas: Eliminación
+
+```python
+class ListaDoble:
+    # ...
+    def eliminar(self, valor):
+        actual = self.cabeza
+        while actual:
+            if actual.valor == valor:
+                if actual.anterior:
+                    actual.anterior.siguiente = actual.siguiente
+                else:
+                    self.cabeza = actual.siguiente
+                if actual.siguiente:
+                    actual.siguiente.anterior = actual.anterior
+                else:
+                    self.cola = actual.anterior
+                self.tamanio -= 1
+                return True
+            actual = actual.siguiente
+        return False
+```
+
+---
+
+# Listas
+
+## Listas doblemente enlazadas
+
+```python
+lista = ListaDoble()
+lista.agregar(10)
+lista.agregar(20)
+lista.agregar(30)
+lista.agregar_inicio(5)
+# 5 -> 10 -> 20 -> 30 -> None
+
+lista.eliminar(20)
+# 5 -> 10 -> 30 -> None
+
+lista.eliminar_inicio()
+# 10 -> 30 -> None
+
+lista.eliminar_final()
+# 10 -> None
+```
+
+---
+
+# Listas
+
+## Listas doblemente enlazadas: Recorrido
+
+```python
+class ListaDoble:
+    # ...
+    def recorrer_inicio(self):
+        actual = self.cabeza
+        while actual:
+            print(actual.valor,
+                end=" -> " if actual.siguiente else "\n")
+            actual = actual.siguiente
+
+    def recorrer_fin(self):
+        actual = self.cola
+        while actual:
+            print(actual.valor, 
+                end=" <- " if actual.anterior else "\n")
+            actual = actual.anterior
+```
+
+---
+
+# Listas
+
+## Listas doblemente enlazadas
+
+```python
+lista = ListaDoble()
+lista.agregar(10)
+lista.agregar(20)
+lista.agregar(30)
+lista.agregar_inicio(5)
+# 5 -> 10 -> 20 -> 30 -> None
+
+lista.recorrer_inicio()
+# 5
+# 10
+# 20
+# 30
+
+lista.recorrer_fin()
+# 30
+# 20
+# 10
+# 5
+```
+
+---
+
+# Listas
+
+## Listas circulares
+
+> Son listas en las que el último nodo apunta al primer nodo, formando un ciclo.
+
+- Las listas circulares son una variante de las listas simplemente enlazadas, propiamente, más cercanas a las listas doblemente enlazadas.
+- La principal ventaja de las listas circulares es que permiten recorrer la lista de manera continua, ya que el último nodo apunta al primer nodo.
+
+![bg right:40% fit](../src/assets/EDD/lista-circular.png)
+
+---
+
+# Listas
+
+## Listas circulares
+
+- La implementación de listas circulares es similar a la de listas simplemente enlazadas, pero el último nodo siempre apunta al primer nodo.
+- Por lo tanto, las operaciones de inserción, eliminación, recorrido y consulta son similares a las de las listas doblemente enlazadas.
+- En la práctica, las listas circulares se utilizan en aplicaciones donde se requiere recorrer la lista de manera continua.
+
+---
+
+# Listas
+
+## Listas circulares
+
+- Al trabajar con listas circulares, se pueden agregar operaciones como:
+  - Recorrido en ambas direcciones
+  - Recorrido continuo
+  - Inserción y eliminación al inicio y al final
+  - Inserción y eliminación en una posición específica
+- Estas operaciones toman como base las operaciones de las listas doblemente enlazadas, por lo que se puede aplicar POO para implementarlas.
+
+---
+
+# Listas
+
+## Listas circulares: Constructor y Recorrido
+
+```python
+from listaDoble import ListaDoble
+
+class ListaCircular(ListaDoble):
+    def __init__(self):
+        super().__init__()
+
+    def recorrer_adelante(self):
+        actual = self.cabeza
+        while actual:
+            print(actual.valor, end=" -> " if actual.siguiente else "\n")
+            actual = actual.siguiente
+            if actual == self.cabeza:
+                break
+
+    def recorrer_atras(self):
+        actual = self.cola
+        while actual:
+            print(actual.valor, end=" -> " if actual.anterior else "\n")
+            actual = actual.anterior
+            if actual == self.cola:
+                break
+```
+
+---
+
+# Listas
+
+## Listas circulares: Recorrido continuo
+
+```python
+class ListaCircular(ListaDoble):
+    # ...
+    def recorrer(self, pasos=1):
+        actual = self.cabeza
+        for _ in range(pasos):
+            print(actual.valor, end=" -> ")
+            actual = actual.siguiente
+```
+
+---
+
+# Listas
+
+## Listas circulares: Inserción
+
+```python
+class ListaCircular(ListaDoble):
+    # ...
+    def agregar_final(self, valor):
+        super().agregar_final(valor)
+        self.cola.siguiente = self.cabeza
+        self.cabeza.anterior = self.cola
+
+    def agregar_inicio(self, valor):
+        super().agregar_inicio(valor)
+        self.cabeza.anterior = self.cola
+        self.cola.siguiente = self.cabeza
+```
+
+---
+
+# Listas
+
+## Listas circulares: Eliminación al inicio
+
+```python
+class ListaCircular(ListaDoble):
+    # ...
+    def eliminar_inicio(self):
+        if self.cabeza is None:
+            return False
+        if self.cabeza.siguiente is None:
+            self.cabeza = None
+            self.cola = None
+        else:
+            self.cabeza = self.cabeza.siguiente
+            self.cabeza.anterior = self.cola
+            self.cola.siguiente = self.cabeza
+        self.tamanio -= 1
+        return True
+```
+
+---
+
+# Listas
+
+## Listas circulares: Eliminación al final
+
+```python
+class ListaCircular(ListaDoble):
+    # ...
+    def eliminar_final(self):
+        if self.cola is None:
+            return False
+        if self.cola.anterior is None:
+            self.cabeza = None
+            self.cola = None
+        else:
+            self.cola = self.cola.anterior
+            self.cola.siguiente = self.cabeza
+            self.cabeza.anterior = self.cola
+        self.tamanio -= 1
+        return True
+```
+
+---
+
+# Listas
+
+## Listas circulares: Inserción y eliminación  específicas
+
+:::: flex
+::: col 1/2 px-2
+
+```python
+def agregar(self, valor, posicion):
+    if posicion < 0 or posicion > self.tamanio:
+        return False
+    if posicion == 0:
+        self.agregar_inicio(valor)
+    elif posicion == self.tamanio:
+        self.agregar_final(valor)
+    else:
+        nuevo = NodoDoble(valor)
+        actual = self.cabeza
+        for _ in range(posicion):
+            actual = actual.siguiente
+        nuevo.anterior = actual.anterior
+        nuevo.siguiente = actual
+        actual.anterior.siguiente = nuevo
+        actual.anterior = nuevo
+        self.tamanio += 1
+        return True
+```
+
+:::
+::: col 1/2 px-2
+
+```python
+def eliminar(self, posicion):
+    if posicion < 0 or posicion >= self.tamanio:
+        return False
+    if posicion == 0:
+        return self.eliminar_inicio()
+    if posicion == self.tamanio - 1:
+        return self.eliminar_final()
+    actual = self.cabeza
+    for _ in range(posicion):
+        actual = actual.siguiente
+    actual.anterior.siguiente = actual.siguiente
+    actual.siguiente.anterior = actual.anterior
+    self.tamanio -= 1
+    return True
+```
+
+:::
+::::
+
+---
+
+# Listas
+
+## Listas circulares
+
+```python
+lista = ListaCircular()
+lista.agregar(10) # 10
+lista.agregar(20) # 10 <-> 20
+lista.agregar(30) # 10 <-> 20 <-> 30
+lista.agregar_inicio(5) # 5 <-> 10 <-> 20 <-> 30
+lista.agregar_final(40) # 5 <-> 10 <-> 20 <-> 30 <-> 40
+lista.recorrer_adelante() # 5 -> 10 -> 20 -> 30 -> 40
+
+lista.eliminar(1) # 5 <-> 20 <-> 30 <-> 40
+lista.eliminar_inicio() # 20 <-> 30 <-> 40
+lista.eliminar_final() # 20 <-> 30
 ```
 
 ---
