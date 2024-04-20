@@ -1752,7 +1752,7 @@ AnimatedCrossFade(
 :::: flex
 ::: col 1/2 px-2
 
-- Se utiliza para animar la transición entre dos widgets.
+- Se utiliza para animar la transición entre dos widgets identificados por un `key`.
 - A diferencia de `AnimatedCrossFade`, `AnimatedSwitcher` tiene un solo hijo, pero puede cambiar de manera animada entre diferentes widgets.
 - La transición se controla mediante la propiedad `transitionBuilder`.
 
@@ -1760,27 +1760,45 @@ AnimatedCrossFade(
 ::: col 1/2 px-2
 
 ```dart
-AnimatedSwitcher(
-  duration: Duration(seconds: 1),
-  transitionBuilder: (child, animation) {
-    return ScaleTransition(
-      scale: animation,
-      child: child,
-    );
+GestureDetector(
+  onTap: () {
+    setState(() => presionado = !presionado);
   },
-  child: _pressed ? Text('Hola') : Icon(Icons.star),
-  child: GestureDetector(
-    onTap: () {
-      setState(() {
-        _pressed = !_pressed;
-      });
+  child: AnimatedSwitcher(
+    duration: Duration(seconds: 1),
+    transitionBuilder: (child, animation) {
+      return ScaleTransition(
+        scale: animation,
+        child: child,
+      );
     },
+    child: presionado
+      ? Text('Hola',
+          key: ValueKey('saludo'),
+        )
+      : Icon(Icons.star,
+          key: ValueKey('icono')
+        ),
   ),
 )
 ```
 
 :::
 ::::
+
+---
+
+## Animaciones
+
+### AnimatedSwitcher
+
+- `AnimatedSwitcher` utiliza la propiedad `transitionBuilder` para su animación, sino se especifica, la transición por defecto es una animación de desvanecimiento.
+- Se pueden utilizar otro tipo de transiciones como
+  - `ScaleTransition`
+  - `SlideTransition`
+  - `RotationTransition`
+  - `SizeTransition`
+  - `FadeTransition`
 
 ---
 
