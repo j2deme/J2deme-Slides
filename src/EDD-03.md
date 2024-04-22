@@ -816,7 +816,7 @@ class ListaCircular(ListaDoble):
     def eliminar_inicio(self):
         if self.cabeza is None:
             return False
-        if self.cabeza.siguiente is None:
+        if self.cabeza.siguiente == self.cabeza:
             self.cabeza = None
             self.cola = None
         else:
@@ -839,7 +839,7 @@ class ListaCircular(ListaDoble):
     def eliminar_final(self):
         if self.cola is None:
             return False
-        if self.cola.anterior is None:
+        if self.cola.anterior is self.cola:
             self.cabeza = None
             self.cola = None
         else:
@@ -860,7 +860,7 @@ class ListaCircular(ListaDoble):
 ::: col 1/2 px-2
 
 ```python
-def agregar(self, valor, posicion):
+def agregar(self, valor, posicion=self.tamanio):
     if posicion < 0 or posicion > self.tamanio:
         return False
     if posicion == 0:
@@ -889,14 +889,15 @@ def eliminar(self, posicion):
         return False
     if posicion == 0:
         return self.eliminar_inicio()
-    if posicion == self.tamanio - 1:
+    elif posicion == self.tamanio - 1:
         return self.eliminar_final()
-    actual = self.cabeza
-    for _ in range(posicion):
-        actual = actual.siguiente
-    actual.anterior.siguiente = actual.siguiente
-    actual.siguiente.anterior = actual.anterior
-    self.tamanio -= 1
+    else:
+        actual = self.cabeza
+        for _ in range(posicion):
+            actual = actual.siguiente
+        actual.anterior.siguiente = actual.siguiente
+        actual.siguiente.anterior = actual.anterior
+        self.tamanio -= 1
     return True
 ```
 
@@ -922,6 +923,18 @@ lista.eliminar(1) # 5 <-> 20 <-> 30 <-> 40
 lista.eliminar_inicio() # 20 <-> 30 <-> 40
 lista.eliminar_final() # 20 <-> 30
 ```
+
+---
+
+# Aplicaciones de las listas
+
+- Las listas son una de las estructuras de datos más utilizadas en programación, ya que permiten almacenar y acceder a los datos de manera secuencial.
+- Se pueden utilizar para implementar estructuras de datos más complejas, como pilas, colas, árboles y grafos.
+- Algunas aplicaciones de las listas son:
+  - Almacenar y acceder a datos de manera secuencial
+  - Implementar pilas y colas
+  - Implementar algoritmos de búsqueda y ordenamiento
+  - Implementar estructuras de datos más complejas
 
 ---
 <!-- _class: lead -->
