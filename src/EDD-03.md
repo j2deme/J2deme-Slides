@@ -944,6 +944,86 @@ lista.eliminar_final() # 20 <-> 30
 
 # Pilas
 
+> Una pila es una estructura de datos que permite almacenar y recuperar datos siguiendo el principio de LIFO (Last In, First Out).
+
+- _LIFO_ significa que el último elemento que se inserta en la pila es el primero en ser eliminado.
+- Las pilas son una de las estructuras de datos más utilizadas en programación, ya que permiten realizar operaciones como la reversión de cadenas, la evaluación de expresiones aritméticas y la implementación de algoritmos de búsqueda y ordenamiento.
+
+---
+
+# Pilas
+
+- La implementación de una pila se puede realizar utilizando un arreglo o una lista, pero en la práctica, se utiliza una lista simplemente enlazada.
+- Las pilas se pueden implementar utilizando las operaciones de inserción y eliminación de las listas simplemente enlazadas.
+- Por lo general, las pilas solo permiten la inserción y eliminación de elementos en un extremo, conocido como la **cima** de la pila.
+- Para implementar una pila, se pueden utilizar las operaciones `apilar` y `desapilar`.
+
+---
+
+# Pilas
+
+## Operaciones
+
+- Las pilas permiten realizar operaciones como:
+  - Apilar (insertar un elemento en la cima de la pila)
+  - Desapilar (eliminar el elemento en la cima de la pila)
+  - Consultar (obtener el elemento en la cima de la pila sin eliminarlo)
+  - Verificar si la pila está vacía
+  - Obtener el tamaño de la pila
+
+![bg right:40% h:95%](../src/assets/EDD/pila.png)
+
+---
+
+# Pilas
+
+## Implementación
+
+```python
+from listaSimple import ListaSimple
+
+class Pila(ListaSimple):
+    def __init__(self):
+        super().__init__()
+
+    def apilar(self, valor): # Push
+        self.agregar(valor)
+
+    def desapilar(self): # Pop
+        return self.eliminar_final()
+
+    def consultar(self): # Peek
+        return self.cola.valor
+
+    def esta_vacia(self):
+        return self.cabeza is None
+
+    def tamanio(self):
+        return self.tamanio
+```
+
+---
+
+# Pilas
+
+## Implementación
+
+```python
+pila = Pila()
+pila.apilar(10)
+pila.apilar(20)
+pila.apilar(30)
+
+# 10 -> 20 -> 30 -> None
+
+print(pila.consultar(), pila.tamanio()) # 30 3
+print(pila.desapilar(), pila.tamanio()) # 30 2
+print(pila.desapilar(), pila.tamanio()) # 20 1
+print(pila.consultar(), pila.tamanio()) # 10 1
+```
+
+- Las pilas se utilizan en aplicaciones donde se requiere almacenar y recuperar datos siguiendo el principio de _LIFO_.
+
 ---
 <!-- _class: lead -->
 # Colas
