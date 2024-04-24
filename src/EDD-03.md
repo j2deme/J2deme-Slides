@@ -860,7 +860,7 @@ class ListaCircular(ListaDoble):
 ::: col 1/2 px-2
 
 ```python
-def agregar(self, valor, posicion=self.tamanio):
+def agregar(self, valor, posicion):
     if posicion < 0 or posicion > self.tamanio:
         return False
     if posicion == 0:
@@ -912,9 +912,9 @@ def eliminar(self, posicion):
 
 ```python
 lista = ListaCircular()
-lista.agregar(10) # 10
-lista.agregar(20) # 10 <-> 20
-lista.agregar(30) # 10 <-> 20 <-> 30
+lista.agregar_final(10) # 10
+lista.agregar_final(20) # 10 <-> 20
+lista.agregar_final(30) # 10 <-> 20 <-> 30
 lista.agregar_inicio(5) # 5 <-> 10 <-> 20 <-> 30
 lista.agregar_final(40) # 5 <-> 10 <-> 20 <-> 30 <-> 40
 lista.recorrer_adelante() # 5 -> 10 -> 20 -> 30 -> 40
