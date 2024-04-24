@@ -1057,6 +1057,116 @@ print(pila.consultar(), pila.tamanio()) # 10 1
 
 # Colas
 
+> Una cola (o _queue_) es una estructura de datos que funciona bajo el principio FIFO (First In, First Out).
+
+- _FIFO_ significa que los elemementos de la estructura se eliminan en el mismo orden en que se insertaron, _primero en llegar, primero en salir_.
+- Son muy utilizadas para la programación de tareas, transferencias de paquetes, simulación de líneas de espera y procesamiento en _batch_.
+
+![bg right:40% fit](../src/assets/EDD/cola.png)
+
+---
+
+# Colas
+
+- La implementación de una cola puede realizarse mediante un arreglo o lista, pero en la práctica se utiliza principalmente una lista doble enlazada.
+- Las colas integran principalmente las operaciones de inserción al final y eliminación al inicio de las listas dobles.
+- Con las operaciones anteriores se implementan las operaciones de `insertar` y `borrar` de las colas.
+- La implementación básica de la suele denominarse como _cola lineal_ o _cola simple_ y puede ser de tamaño fijo o dinámico.
+
+---
+
+# Colas
+
+Además de la cola simple, por sus características se pueden identificar otros tipos de colas:
+
+- **Cola de entrada restringido**, recibe elementos únicamente al final, pero puede eliminarlos por ambos lados, por lo que pese a ser una cola, no cumple el principio _FIFO_.
+- **Cola de salida restringida**, recibe elementos por ambos lados, pero únicamente los elimina por el frente.
+- **Cola circular**, también conocida como `Ring Buffer`, funciona de manera similar a las listas circulares, pero administrando sus elementos como una cola, muy útil para implementar sistemas de tráfico.
+
+---
+
+# Colas
+
+- **Cola doble**, (`Deque`) recibe y elimina elementos por ambos lados, por lo que si se requiere puede usarse como una pila, puede recorrerse en ambas direcciones.
+- **Cola de prioridad**, es un tipo especial de cola en la que los elementos reciben una prioridad y se "atienden" según corresponda, por lo que a su vez, puede ser de dos tipos:
+  - **Cola de prioridad ascendente**, los elementos se insertan en cualquier orden, pero se eliminan de menor a mayor.
+  - **Cola de prioridad descendente**, los elementos se insertan en cualquier orden, pero se eliminan de mayor a menor.
+
+---
+
+# Colas
+
+## Operaciones
+
+- En general, las listas deben soportar la siguientes operaciones:
+  - Encolar (insertar un elemento al final de la cola)
+  - Desencolar (eliminar el elemento al inicio de la cola)
+  - Consultar (revisar el elemento al inicio de la cola sin eliminarlo)
+  - Obtener el tamaño de la cola
+  - Verificar si la cola esta vacía
+  - Verificar si la cola esta llena (para las colas de tamaño fijo)
+- Si se requiere un tipo especial de cola, sus funciones deberán ajustarse de manera interna según corresponda.
+
+---
+
+# Colas
+
+## Implementación
+
+:::: flex
+::: col 1/2 px-2
+
+```python
+from listaDoble import ListaDoble
+
+class Cola(ListaDoble):
+    def __init__(self):
+        super().__init__()
+
+    def encolar(self, valor): # Queue
+        super().agregar_final(self, valor)
+    
+    def desencolar(self): # Dequeue
+        super().eliminar_inicio(self)
+
+    def consultar(self): # Peek
+        return self.cabeza.valor
+```
+
+:::
+::: col 1/2 px-2
+
+```python
+    def esta_vacia(self):
+        return self.cabeza is None
+
+    def size(self):
+        return self.tamanio
+```
+
+- Al igual que con las pilas, para las colas de tamaño fijo, se debe realizar la verificación de capacidad al insertar un nuevo elemento.
+
+:::
+::::
+
+---
+
+<!-- _class: inverted -->
+
+# FIFO vs LIFO
+
+- Al trabajar con las estructuras de datos lineales, son muy comúnes los conceptos de _FIFO_ y _LIFO_, los cuales determinan la forma en la que las respectivas estructuras almacenan y procesan sus datos.
+- Estos conceptos son importantes no sólo al momento de implementar las estructuras lineales y no lineales clásicas, sino también para la implementación de estructuras aún más complejas que las utilicen.
+- Así también, su entendimiento permitirá la comprensión de ámbitos diversos más allá de la programación, como las bases de datos, arquitectura de computadoras, cómputo paralelo, comunicación en redes de computadoras, entre otros.
+
+---
+
+# Conclusión
+
+- Las estructuras de datos lineales son estrategias de programación ampliamente útiles, que sientan las bases del almacenamiento y procesamiento de información en el ámbito computacional.
+- La adecuada implementación de las estructuras de de datos lineales básicas abre la puerta a la resolución de problemas nuevos, así como el desarrollo de estructuras más complejas.
+- Combinando el paradigma de Programación Orientada a Objetos con el modelado de estructuras de datos, se puede dar solución a diversos ámbitos de acción, mientras se aprovechan las bondades de la reutilización de código y las buenas prácticas.
+
 ---
 
 <!-- _class: inverted -->
