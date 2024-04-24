@@ -944,19 +944,30 @@ lista.eliminar_final() # 20 <-> 30
 
 # Pilas
 
-> Una pila es una estructura de datos que permite almacenar y recuperar datos siguiendo el principio de LIFO (Last In, First Out).
+> Una pila (o _stack_) es una estructura de datos que permite almacenar y recuperar datos siguiendo el principio de LIFO (Last In, First Out).
 
 - _LIFO_ significa que el último elemento que se inserta en la pila es el primero en ser eliminado.
-- Las pilas son una de las estructuras de datos más utilizadas en programación, ya que permiten realizar operaciones como la reversión de cadenas, la evaluación de expresiones aritméticas y la implementación de algoritmos de búsqueda y ordenamiento.
+- Son muy útiles para realizar operaciones como la reversión de cadenas, la evaluación de expresiones aritméticas y la implementación de algoritmos de búsqueda y ordenamiento.
+
+![bg right:40% fit](../src/assets/EDD/pila.png)
 
 ---
 
 # Pilas
 
-- La implementación de una pila se puede realizar utilizando un arreglo o una lista, pero en la práctica, se utiliza una lista simplemente enlazada.
-- Las pilas se pueden implementar utilizando las operaciones de inserción y eliminación de las listas simplemente enlazadas.
-- Por lo general, las pilas solo permiten la inserción y eliminación de elementos en un extremo, conocido como la **cima** de la pila.
-- Para implementar una pila, se pueden utilizar las operaciones `apilar` y `desapilar`.
+- La implementación de una pila se puede realizar utilizando un arreglo o una lista (dependiendo del lenguajes), pero en la práctica, se utiliza una lista simplemente enlazada.
+- Las pilas se pueden implementar utilizando las operaciones de inserción (`apilar`) y eliminación (`desapilar`) de las listas simplemente enlazadas.
+- Las pilas solo permiten la inserción y eliminación de elementos en un extremo, conocido como la **cima** de la pila.
+- A diferencia de las listas, las pilas únicamente permiten consultar el elemento en la cima de la pila.
+
+---
+
+# Pilas
+
+- Es posible distinguir dos tipos distintos de pilas (_stacks_):
+    1. **Pilas fijas**, para las que se define un tamaño máximo durante su instanciación y no pueden almacenar más elementos de los establecidos como límite.
+    2. **Pilas dinámicas**, que ajustan su tamaño a la cantidad de elementos que almacenan y este valor puede variar durante el tiempo de ejecución.
+- En esencia, ambos tipos de pilas funcionan de la misma manera, con la excepción de que las pilas fijas verifican su capacidad antes de insertar un nuevo elemento, si se excede esta capacidad se genera el conocido _stack overflow_.
 
 ---
 
@@ -967,17 +978,19 @@ lista.eliminar_final() # 20 <-> 30
 - Las pilas permiten realizar operaciones como:
   - Apilar (insertar un elemento en la cima de la pila)
   - Desapilar (eliminar el elemento en la cima de la pila)
-  - Consultar (obtener el elemento en la cima de la pila sin eliminarlo)
-  - Verificar si la pila está vacía
+  - Consultar (revisar el elemento en la cima de la pila sin eliminarlo)
   - Obtener el tamaño de la pila
-
-![bg right:40% h:95%](../src/assets/EDD/pila.png)
+  - Verificar si la pila está vacía
+  - Verificar si la pila está llena (para las pilas fijas)
 
 ---
 
 # Pilas
 
 ## Implementación
+
+:::: flex
+::: col 1/2 px-2
 
 ```python
 from listaSimple import ListaSimple
@@ -993,14 +1006,26 @@ class Pila(ListaSimple):
         return self.eliminar_final()
 
     def consultar(self): # Peek
-        return self.cola.valor
+        if self.cola is not None:
+          return self.cola.valor
+        return None
+```
 
+:::
+::: col 1/2 px-2
+
+```python
     def esta_vacia(self):
         return self.cabeza is None
 
-    def tamanio(self):
+    def size(self):
         return self.tamanio
 ```
+
+- Si la pila es de tamaño fijo, deberá verificar su capacidad antes de apilar un nuevo elemento.
+
+:::
+::::
 
 ---
 
