@@ -25,7 +25,7 @@ Ponente
 Adscripción
 : TecNM Campus Ciudad Valles
 
-25 de abril de 2024
+24 de abril de 2024
 
 ![bg right cover](../src/assets/Assorted/Machine-Learning-cover.jpg)
 
@@ -45,7 +45,7 @@ Correo
 
 # Objetivo
 
-- El objetivo principal de esta presentación es compartir la relevancia de la ingeniería básica en el proceso de aprendizaje de tópicos avanzados como el Machine Learning.
+- El objetivo principal de esta presentación es compartir la relevancia de la ingeniería en el proceso de aprendizaje de tópicos avanzados como el Machine Learning.
 
 ---
 <!-- _class: toc -->
@@ -74,7 +74,7 @@ Correo
 
 # Introducción
 
-- Sin embargo, el Machine Learning no es una ciencia exacta, sino que es un campo interdisciplinario que combina conocimientos de matemáticas, estadística, ciencias de la computación y otras disciplinas.
+- Sin embargo, el Machine Learning no es una ciencia aislada, sino que es un campo interdisciplinario que combina conocimientos de matemáticas, estadística, ciencias de la computación y otras disciplinas.
 - Por lo tanto, es importante que los ingenieros reconozcan la importancia de una sólida formación en ingeniería para poder entender y aplicar los conceptos del Machine Learning de manera efectiva.
 
 ---
@@ -198,9 +198,12 @@ Un sistema de Machine Learning consta de los siguientes elementos:
 
 # La ingeniería en el Machine Learning
 
+> La ingeniería es la disciplina que se encarga de aplicar los conocimientos científicos y tecnológicos para diseñar, construir y mantener sistemas y procesos que satisfagan las necesidades de la sociedad.
+
 - La ingeniería participa en todas las etapas del proceso de Machine Learning, desde la adquisición de datos hasta la implementación del modelo en producción.
-- En la etapa de adquisición de datos, la ingeniería se encarga de recopilar, limpiar y preprocesar los datos para que puedan ser utilizados por el modelo.
-- En la etapa de entrenamiento, la ingeniería se encarga de seleccionar el modelo adecuado, ajustar los hiperparámetros y optimizar el rendimiento del modelo.
+- _Por ejemplo:_
+  - En la adquisición de datos, la ingeniería se refleja en la recopilación, limpieza y preprocesamiento de los datos para que puedan ser utilizados por el modelo.
+  - En el entrenamiento, la ingeniería se aplica en la selección de un modelo adecuado, el ajuste de los hiperparámetros y la optimización del rendimiento del modelo.
 
 ---
 
@@ -219,13 +222,13 @@ Un sistema de Machine Learning consta de los siguientes elementos:
 ### Datos
 
 | Marca | Modelo | Memoria | Cámara | Pantalla | Precio ($) |
-|-------|--------|---------|--------|----------|--------|
+|-------|--------|:-------:|:------:|:--------:|:------:|
 | Apple | iPhone | 64 GB   | 24 MP  | 6.1"     | 1,000   |
 | Apple | iPhone | 128 GB  | 24 MP  | 6.5"     | 2,500   |
 | Samsung | Galaxy | 128 GB | 48 MP | 6.5"    | 800    |
 | Xiaomi | Redmi | 32 GB    | 16 MP | 6.2"     | 400    |
 | Huawei | P40 | 256 GB    | 64 MP | 6.3"     | 1,200   |
-| Motorola | Moto | 64 GB   | 12 MP | 6.0"     | 600    |
+| Motorola | Moto G | 64 GB   | 12 MP | 6.0"     | 600    |
 
 ---
 
@@ -234,8 +237,8 @@ Un sistema de Machine Learning consta de los siguientes elementos:
 ### Modelo
 
 - Para construir el modelo de aprendizaje, se debe seleccionar un algoritmo de Machine Learning que sea adecuado para el problema en cuestión.
-- En este caso se desea predecir el precio de un smartphone en función de sus características, por lo que se puede utilizar un algoritmo de regresión lineal.
-- El modelo de regresión lineal es un modelo simple pero efectivo para predecir valores numéricos, se basa en la idea de que existe una relación lineal entre las variables de entrada y la variable de salida.
+- Se podría buscar predecir el precio del smartphone en función de sus características, lo que sugiere que se trata de un problema de regresión.
+- El modelo de regresión lineal es un modelo simple pero efectivo para predecir valores numéricos, se basa en la idea de que existe una relación lineal entre las variables de entrada y la variable de salida, es muy utilizado en problemas de predicción de precios, ventas, etc.
 - En este caso, se puede utilizar el precio como variable de salida y las características del smartphone como variables de entrada.
 
 ---
@@ -244,7 +247,8 @@ Un sistema de Machine Learning consta de los siguientes elementos:
 
 ### Modelo
 
-- Tomando la siguiente ecuación de regresión lineal:
+- Considerando que se tiene un conjunto de datos con las características de los smartphones y sus precios, se puede construir un modelo de regresión lineal para predecir el precio de un smartphone en función de sus características.
+- El modelo de regresión lineal se define de la siguiente manera:
 
 $$
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n
