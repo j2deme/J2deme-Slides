@@ -1124,10 +1124,10 @@ class Cola(ListaDoble):
         super().__init__()
 
     def encolar(self, valor): # Queue
-        super().agregar_final(self, valor)
+        super().agregar_final(valor)
     
     def desencolar(self): # Dequeue
-        super().eliminar_inicio(self)
+        super().eliminar_inicio()
 
     def consultar(self): # Peek
         return self.cabeza.valor
