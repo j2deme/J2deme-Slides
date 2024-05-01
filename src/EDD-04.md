@@ -110,7 +110,7 @@ SATCA
 - A su vez, los nodos hijos pueden tener sus propios hijos, formando una estructura en forma de árbol.
 
 ::: warning
-⚠ Un árbol no puede tener ciclos, es decir, un nodo hijo no puede tener una referencia a un nodo padre.
+⚠ Un árbol no puede tener ciclos, es decir, un nodo hijo no puede tener una referencia a un nodo padre como su hijo.
 :::
 
 ---
