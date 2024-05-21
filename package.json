@@ -11,6 +11,7 @@
     "themeSet": "src/styles/j2deme.css",
     "html": true,
     "emoji": {
+      "unicode": false,
       "shortcode": true
     },
     "author": "Jaime Jesús Delgado Meraz",
