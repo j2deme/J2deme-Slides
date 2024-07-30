@@ -37,11 +37,12 @@
   --primary: #2563eb;
   --secondary: #ebad25;
 
-  --font-sans: "Pier Sans", sans-serif;
+  --font-sans: Poppins, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: "Monaspace Krypton Var", "Fira Code", monospace;
 
 
-  font-family: Pier Sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+  /*font-family: "Noto Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";*/
+  font-family: var(--font-sans);
   font-weight: initial;
 
   background-color: var(--base);
@@ -660,7 +661,7 @@ pre ol li {
 
 pre ol li span[data-marp-line-number]::before {
   display: block;
-  color: var(--highlight-muted);
+  color: var(--gray-500);
   content: counter(line-number) " ";
   counter-increment: line-number;
   text-align: right;
