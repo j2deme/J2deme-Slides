@@ -155,6 +155,9 @@ def new_class_slide():
         if len(answers['subject'].split()) > 1:
             # Elimina conectivas del nombre de la materia
             prepositions = ['la', 'el', 'los', 'las', 'y', 'en', 'a']
+            if len(answers['subject'].split()) > 2:
+                prepositions.append('de')
+
             subject_clean = ' '.join(
                 [word for word in answers['subject'].split() if word.lower() not in prepositions])
 
