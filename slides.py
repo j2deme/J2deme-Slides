@@ -183,6 +183,13 @@ def new_class_slide():
             '___PRIMARY_COLOR___', theme['primary']).replace(
             '___SECONDARY_COLOR___', theme['secondary'])
 
+        # Revisa si el archivo ya existe y agrega un número al final
+        if os.path.exists(f"{SOURCE_DIR}/{filename}.md"):
+            i = 1
+            while os.path.exists(f"{SOURCE_DIR}/{filename}-{i}.md"):
+                i += 1
+            filename = f"{filename}-{i}"
+
         with open(f"{SOURCE_DIR}/{filename}.md", 'w') as new_file:
             new_file.write(filedata)
             print(
