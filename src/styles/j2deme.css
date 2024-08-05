@@ -407,25 +407,32 @@ div.primary {
   padding: 0.3rem 0.3rem 0 0.5rem;
   margin-bottom: 0.3rem;
   border-radius: 0 0.3rem 0.3rem 0;
+  justify-self: flex-end;
+  border-left-width: 0.25em;
+  border-left-style: solid;
+}
+
+div.primary {
+  border-left-color: var(--primary);
 }
 
 div.ok {
-  border-left: 0.25em solid var(--green-500);
+  border-left-color: var(--green-500);
   background-color: var(--green-200);
 }
 
 div.warning {
-  border-left: 0.25em solid var(--amber-500);
+  border-left-color: var(--amber-500);
   background-color: var(--amber-200);
 }
 
 div.error {
-  border-left: 0.25em solid var(--red-500);
+  border-left-color: var(--red-500);
   background-color: var(--red-200);
 }
 
 div.info {
-  border-left: 0.25em solid var(--blue-500);
+  border-left-color: var(--blue-500);
   background-color: var(--blue-200);
 }
 
