@@ -13,9 +13,12 @@ style: |
     --secondary: ___SECONDARY_COLOR___;
   }
 ---
+<!-- _class: centered -->
 <!-- _paginate: false -->
 
-# Unidad ___UNIT___ <br> ___UNIT_NAME___
+# Unidad ___UNIT___
+
+# <!-- fit --> ___UNIT_NAME___
 
 ## ___SUBJECT___
 
