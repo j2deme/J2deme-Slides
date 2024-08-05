@@ -190,7 +190,7 @@ def new_class_slide():
                 i += 1
             filename = f"{filename}-{i}"
 
-        with open(f"{SOURCE_DIR}/{filename}.md", 'w') as new_file:
+        with open(f"{SOURCE_DIR}/{filename}.md", 'w', encoding="utf-8") as new_file:
             new_file.write(filedata)
             print(
                 f"[bold green]Presentación para {answers['subject']} - U{answers['unit']} creada con éxito ✅")
