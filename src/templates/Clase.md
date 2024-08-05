@@ -29,7 +29,7 @@ style: |
 ![bg right:40%](../src/assets/banner.png)
 
 Nombre
-: MSC. Jaime Jesús Delgado Meraz
+: Dr. Jaime Jesús Delgado Meraz
 
 Correo
 : <jesus.delgado@tecvalles.mx>
