@@ -71,15 +71,10 @@ SATCA
 
 ---
 
----
+<!-- paginate: skip -->
 
-# Tema 2
+# Referencias
 
----
-
-<!-- _class: inverted -->
-![bg right w:35%](../src/assets/avatar.png)
-
-<div class="text-center text-middle font-bold font-coding text-8xl mt-10">
-  &lt;/Fin&gt;
-</div>
+-
+-
+-
