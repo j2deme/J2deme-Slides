@@ -673,7 +673,7 @@ pre ol li {
 
 pre ol li span[data-marp-line-number]::before {
   display: block;
-  color: var(--gray-500);
+  color: var(--gray-600);
   content: counter(line-number) " ";
   counter-increment: line-number;
   text-align: right;
