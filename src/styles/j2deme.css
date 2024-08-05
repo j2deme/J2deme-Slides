@@ -631,6 +631,11 @@ section.toc ol li a::before {
   font-style: italic;
 }
 
+/* JAVA CODE BLOCK CUSTOMIZATION */
+section code.language-java .hljs-operator {
+  color: var(--blue-400);
+}
+
 /* JS CODE BLOCK CUSTOMIZATION */
 section code.language-js .hljs-variable.language_ {
   color: var(--sunset);
