@@ -496,7 +496,9 @@ section.toc ol li a::before {
 
 /* CODE BLOCK */
 .hljs-comment {
+  font-family: var(--font-comment);
   color: var(--subtle);
+  font-style: italic;
 }
 
 .hljs-regexp {
