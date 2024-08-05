@@ -45,7 +45,7 @@ Nombre
 : ___SUBJECT___
 
 Carrera
-: Ingeniería en Sistemas Computacionales
+___CAREERS___
 :::
 ::: col 1/2
 Clave
