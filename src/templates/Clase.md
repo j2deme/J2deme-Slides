@@ -61,16 +61,15 @@ SATCA
 2. Tema 2
 
 ---
-<!-- _class: lead -->
-# Tema 1
+
+<!-- _class: inverted centered -->
+![bg right w:35%](../src/assets/avatar.png)
+
+<div class="text-center text-middle font-bold font-coding text-8xl mt-10">
+  &lt;/Fin&gt;
+</div>
 
 ---
-
-# Tema 1
-
----
-<!-- _class: lead -->
-# Tema 2
 
 ---
 
