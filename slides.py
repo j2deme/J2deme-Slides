@@ -31,6 +31,8 @@ MARP_COMMAND = "marp"
 if os.system("marp --v") != 0:
     MARP_COMMAND = "npx marp"
 
+# MARK: SLIDE LIST
+
 
 def get_slides():
     """
@@ -46,6 +48,8 @@ def get_slides():
         return False
     else:
         return slides
+
+# MARK: THEME SELECTOR
 
 
 def theme_selector(answer=True):
@@ -196,6 +200,9 @@ def slide_from_json():
         sleep(2)
         main()
 
+# MARK: NEW CLASS
+
+
 def new_class_slide():
     """
     Crea una nueva presentación de clase.
@@ -340,6 +347,8 @@ def new_class_slide():
             print(
                 f"[bold green]Presentación para {answers['subject']} - U{answers['unit']} creada con éxito ✅")
 
+# MARK: NEW SPEECH
+
 
 def new_speech_slide():
     """
@@ -377,6 +386,8 @@ def new_speech_slide():
             print(
                 f"[bold green]Presentación para {answers['title']} creada con éxito ✅")
 
+# MARK: TYPE SELECTOR
+
 
 def new_slide():
     """
@@ -404,6 +415,8 @@ def new_slide():
 
     sleep(2)
     main()
+
+# MARK: SLIDES MANAGER
 
 
 def manage_slides():
@@ -500,6 +513,9 @@ def manage_slides():
     main()
 
 
+# MARK: BATCH SLIDES
+
+
 def batch_slides():
     """
     Permite exportar todas las presentaciones a PDF.
@@ -543,6 +559,9 @@ def batch_slides():
 
     sleep(2)
     main()
+
+
+# MARK: MAIN
 
 
 def main():
