@@ -160,27 +160,70 @@ td false {
   background-color: transparent;
 }
 
-true {
-  color: var(--emerald-400);
+/* DEFINITION LIST */
+dt {
+  font-style: normal !important;
+  font-weight: 800 !important;
 }
 
-false {
-  color: var(--red-500);
+dd {
+  margin-bottom: 0.3rem;
+  color: var(--text);
+  font-style: normal !important;
+  font-weight: 500 !important;
+  padding-left: 0.7rem !important;
 }
 
-section table {
-  margin: 0 auto;
-  align-self: center;
+dd>ul {
+  color: var(--subtle);
+  list-style: none;
 }
 
-section table thead th {
-  background: var(--primary);
-  color: var(--base);
+/* HEADER AND FOOTER */
+header,
+footer {
+  font-family: var(--font-mono);
+  font-size: 0.5em;
+  color: inherit;
 }
 
-section table tbody>tr:nth-child(even) td,
-section table tbody>tr:nth-child(even) th {
-  background: var(--current-line);
+footer a {
+  color: var(--secondary);
+}
+
+footer a:hover {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+/* BLOCKQUOTE */
+blockquote {
+  border-left: 0.25em solid var(--primary);
+}
+
+blockquote p {
+  font-size: inherit;
+  color: var(--highlight-muted);
+}
+
+blockquote:has(cite) p {
+  font-size: 1.5rem;
+}
+
+blockquote:has(cite) cite {
+  border: none;
+  font-size: 1.0rem;
+  font-family: "Victor Mono", Noto Sans, cursive;
+  font-style: italic;
+}
+
+blockquote cite:before {
+  content: "\2014 \00A0";
+}
+
+blockquote cite::after {
+  content: "\00A0 \2014";
 }
 
 /* SECTION */
