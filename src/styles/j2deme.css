@@ -550,64 +550,6 @@ div.info {
   background-color: var(--blue-200);
 }
 
-div.primary {
-  border-left: 0.25em solid var(--primary);
-}
-
-/* DEFINITION LIST */
-dt {
-  font-style: normal !important;
-  font-weight: 800 !important;
-}
-
-dd {
-  margin-bottom: 0.3rem;
-  color: var(--text);
-  font-style: normal !important;
-  font-weight: 500 !important;
-  padding-left: 0.7rem !important;
-}
-
-dd>ul {
-  color: var(--subtle);
-  list-style: none;
-}
-
-/* TOC */
-section.toc h1 {
-  margin-bottom: -0.3rem;
-}
-
-section.toc ol {
-  counter-reset: items;
-}
-
-section.toc ol li {
-  list-style: none;
-  counter-increment: items;
-  padding-bottom: -0.2rem;
-}
-
-section.toc ol li a {
-  text-decoration: none;
-  color: var(--text);
-}
-
-section.toc ol li:nth-child(n) a:before {
-  content: "0" counter(items) " ";
-}
-
-section.toc ol li:nth-child(n + 10) a:before {
-  content: counter(items) " ";
-}
-
-section.toc ol li a::before {
-  color: var(--primary);
-  font-weight: 800;
-  font-size: 1.2rem;
-  font-family: var(--font-mono);
-}
-
 /* CODE BLOCK */
 .hljs-comment {
   font-family: var(--font-comment);
