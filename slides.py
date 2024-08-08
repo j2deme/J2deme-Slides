@@ -7,6 +7,7 @@ Author Jaime Jesús Delgado Meraz <j2deme>
 
 import os
 import sys
+import json
 from time import sleep
 import questionary
 
@@ -134,6 +135,66 @@ def theme_selector(answer=True):
             message="Presiona cualquier tecla para continuar...").ask()
         main()
 
+
+# MARK: SLIDE FROM JSON
+
+
+def slide_from_json():
+    """
+    Crea una presentación a partir de los datos de un archivo JSON.
+
+    Returns:
+        dict: Un diccionario que contiene los datos de la presentación.
+    """
+    # Establece el directorio actual como ruta de trabajo
+    path = os.getcwd()
+    subjects_path = f"{path}/src/subjects.json"
+
+    # Revisa si existe subjects.json y si existe, lee el archivo
+    if os.path.exists(subjects_path):
+        with open(subjects_path, 'r', encoding="utf-8") as file:
+            data = json.load(file)
+
+        # Revisa si hay materias en el archivo y las muestra para seleccionar una
+        if len(data) > 0:
+            subjects = [questionary.Choice(
+                title=subject["name"], value=subject) for subject in data]
+
+            subject = questionary.select(
+                "¿De qué materia quieres crear la presentación?", choices=subjects, pointer="👉").ask()
+
+            # Revisa si la materia tiene unidades y si no está vacía
+            if "units" not in subject or len(subject["units"]) == 0:
+                print("[bold red]No hay unidades disponibles para esta materia ❌")
+                sleep(2)
+                main()
+
+            units = [questionary.Choice(title=f"{unit["unit"]}. {
+                                        unit["name"]}", value=unit) for unit in subject["units"]]
+
+            unit = questionary.select(
+                "¿De qué unidad quieres crear la presentación?", choices=units, pointer="👉").ask()
+
+            return {
+                'subject': subject["name"],
+                'unit': unit["unit"],
+                'unit_name': unit["name"],
+                'topics': unit["topics"],
+                'skill': unit["skill"],
+                'code': subject["code"],
+                'satca': subject["satca"],
+                'careers': subject["careers"],
+                'primary': subject["theme"]["primary"],
+                'secondary': subject["theme"]["secondary"],
+            }
+        else:
+            print("[bold red]No hay datos de materias disponibles ❌")
+            sleep(2)
+            main
+    else:
+        print("[bold red]El archivo de materias no existe ❌")
+        sleep(2)
+        main()
 
 def new_class_slide():
     """
