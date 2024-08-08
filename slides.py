@@ -379,10 +379,10 @@ def manage_slides():
 
         if answers['action'] == 'Previsualizar':
             os.system(
-                f"marp {SOURCE_DIR}/{slide}.md --preview --allow-local-files --output {DIST_DIR}/{slide}.html")
+                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --preview --allow-local-files --output {DIST_DIR}/{slide}.html")
         elif answers['action'] == 'Exportar a HTML':
             error = os.system(
-                f"marp {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.html --allow-local-files")
+                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.html --allow-local-files")
             if error != 0:
                 error_console.print(
                     f"[bold red]Error al exportar {slide} a HTML ❌")
@@ -391,7 +391,7 @@ def manage_slides():
                     f"[bold green]{slide} exportada a HTML con éxito ✅")
         elif answers['action'] == 'Exportar a PDF':
             error = os.system(
-                f"marp {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes")
+                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes")
             if error != 0:
                 error_console.print(
                     f"[bold red]Error al exportar {slide} a PDF ❌")
@@ -400,7 +400,7 @@ def manage_slides():
                     f"[bold green]{slide} exportada a PDF con éxito ✅")
         elif answers['action'] == 'Exportar portada':
             error = os.system(
-                f"marp {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}-cover.png --allow-local-files --image=png --image-scale=2")
+                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}-cover.png --allow-local-files --image=png --image-scale=2")
             if error != 0:
                 error_console.print(
                     f"[bold red]Error al exportar portada de {slide} ❌")
@@ -409,7 +409,7 @@ def manage_slides():
                     f"[bold green]Portada de {slide} exportada con éxito ✅")
         elif answers['action'] == 'Exportar a imágenes':
             error = os.system(
-                f"marp {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}/{slide}.png --allow-local-files --images=png --image-scale=2")
+                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}/{slide}.png --allow-local-files --images=png --image-scale=2")
             if error != 0:
                 error_console.print(
                     f"[bold red]Error al exportar imágenes de {slide} ❌")
@@ -453,7 +453,7 @@ def batch_slides():
                 for slide in slides:
                     slide = slide.replace('.md', '')
                     error = os.system(
-                        f"marp {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes > NUL 2>&1")
+                        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes > NUL 2>&1")
                     if error != 0:
                         error_console.print(
                             f"[bold red]{slide} ❌")
