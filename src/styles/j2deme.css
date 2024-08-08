@@ -86,9 +86,25 @@ a[href^="mailto:"] {
   text-decoration: none;
 }
 
-section :not(footer) a {
-  color: var(--blue-600);
-  text-decoration: underline;
+a[href^="https://"],
+a[href^="http://"] {
+  color: var(--primary);
+}
+
+li {
+  color: var(--overlay);
+  font-family: inherit;
+  counter-increment: li;
+}
+
+strong {
+  color: var(--text);
+  font-weight: inherit;
+  font-weight: 800;
+}
+
+img {
+  background-color: transparent;
 }
 
 p {
@@ -103,30 +119,40 @@ code {
   letter-spacing: 0;
 }
 
-text {
-  color: var(--surface);
-}
-
-blockquote p {
-  color: var(--highlight-muted);
-}
-
-blockquote.cite {
-  border: none;
-}
-
-section {
-  padding: 1.8rem 2rem;
-}
-
 code,
 pre {
   font-family: var(--font-mono);
   text-align: left;
+  font-variant-ligatures: none;
 }
 
-.font-coding {
-  font-family: var(--font-mono);
+text {
+  color: var(--surface);
+}
+
+mjx-container {
+  color: var(--text);
+}
+
+marp-pre {
+  background-color: var(--surface);
+  border-color: var(--highlight-high);
+}
+
+svg[data-marp-fitting="svg"] {
+  max-height: 580px;
+}
+
+pre code svg[data-marp-fitting="svg"] {
+  max-height: calc(580px - 1em);
+}
+
+kbd {
+  background-color: var(--text-inverted);
+  color: var(--text);
+  border-radius: 0.2em;
+  padding: 0.4rem 0.3rem;
+  font-size: inherit;
 }
 
 td true,
