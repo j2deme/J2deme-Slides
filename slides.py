@@ -23,6 +23,12 @@ SOURCE_DIR = "src"
 DIST_DIR = "dist"
 CLASS_TEMPLATE = "src/templates/Clase.md"
 CONFERENCE_TEMPLATE = "src/templates/Ponencia.md"
+MARP_COMMAND = "marp"
+
+# Revisa si marp.exe esta disponible en el sistema
+# Si no está disponible, usa npx marp
+if os.system("marp --v") != 0:
+    MARP_COMMAND = "npx marp"
 
 
 def get_slides():
