@@ -397,16 +397,23 @@ section.secondary {
   color: var(--text);
 }
 
-section.secondary.dark h1 {
-  color: var(--text);
+section.primary.centered,
+section.secondary.centered {
+  justify-content: center;
+  text-align: center;
 }
 
-section.secondary.light {
-  background-color: var(--secondary);
-  color: var(--text-inverted);
+section.primary h1,
+section.secondary h1 {
+  color: inherit;
 }
 
-section.secondary.light h1 {
+/* DARK & LIGHT HEADER */
+section.dark h1 {
+  color: var(--zinc-900);
+}
+
+section.light h1 {
   color: var(--text-inverted);
 }
 
@@ -416,29 +423,26 @@ section.inverted {
   color: var(--text-inverted);
 }
 
-section.inverted h2 {
+section.inverted h2,
+section.inverted p,
+section.inverted li,
+section.inverted mjx-container {
   color: var(--text-inverted);
 }
 
-section.inverted p {
-  color: var(--text-inverted);
-}
-
-section.inverted li {
-  color: var(--text-inverted);
-}
-
-section.inverted strong {
+section.inverted strong,
+section.inverted a:hover {
   color: var(--secondary);
+  text-decoration: none;
 }
 
 section.inverted a {
   color: var(--primary);
 }
 
-section.inverted a:hover {
-  color: var(--secondary);
-  text-decoration: none;
+section.inverted marp-pre {
+  background-color: var(--text);
+  border-color: var(--secondary);
 }
 
 section.inverted table th {
