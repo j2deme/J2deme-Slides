@@ -52,11 +52,11 @@ h1 {
   color: var(--primary);
   padding-bottom: -0.2rem;
   margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 h2 {
-  color: var(--surface);
+  color: var(--neutral-800);
   margin-top: -0.7rem;
   margin-bottom: -0.4em;
   padding-bottom: 0.5em;
@@ -369,7 +369,7 @@ section.lead h1 {
 /* PRIMARY SECTION */
 section.primary {
   background-color: var(--primary);
-  color: var(--base);
+  color: var(--text-inverted);
 }
 
 section.primary :not(footer) a {
@@ -394,7 +394,7 @@ section.primary blockquote p {
 /* SECONDARY SECTION */
 section.secondary {
   background-color: var(--secondary);
-  color: var(--text);
+  color: var(--zinc-900);
 }
 
 section.primary.centered,
