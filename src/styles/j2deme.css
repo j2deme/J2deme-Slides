@@ -227,6 +227,26 @@ blockquote cite::after {
 }
 
 /* SECTION */
+section {
+  justify-content: flex-start;
+  font-size: 28px;
+}
+
+section.centered {
+  justify-content: center;
+}
+
+section :not(footer) a {
+  color: var(--blue-600);
+  text-decoration: underline;
+}
+
+section::after {
+  content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+}
+
 section>ul,
 section>.flex ul {
   color: var(--subtle);
@@ -283,10 +303,18 @@ section:not(.toc)>ol>li::before {
   margin-left: -1em;
 }
 
-li {
-  color: var(--overlay);
-  font-family: inherit;
-  counter-increment: li;
+section:has(h1+h2) h1 {
+  margin-bottom: 0.1em;
+}
+
+section:has(h1+h2+h3) h2 {
+  margin-bottom: 0.3em;
+  padding-bottom: 5px;
+}
+
+section:has(h1+h2+h3) h3 {
+  text-align: right;
+  margin-top: -1.75em;
 }
 
 strong {
