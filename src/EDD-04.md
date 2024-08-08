@@ -15,7 +15,9 @@ style: |
 ---
 <!-- _paginate: false -->
 
-# Unidad 4 <br> Estructuras No Lineales
+# Unidad 4
+
+# <!-- fit --> Estructuras No Lineales
 
 ## Estructuras de Datos
 
@@ -682,6 +684,7 @@ def __anchura(self, nodo):
 ---
 <!-- _class: lead -->
 # Grafos
+<!-- TODO: Add missing section -->
 
 ---
 
@@ -721,7 +724,7 @@ def __anchura(self, nodo):
 
 ---
 
-<!-- _class: inverted -->
+<!-- _class: inverted centered -->
 ![bg right w:35%](../src/assets/avatar.png)
 
 <div class="text-center text-middle font-bold font-coding text-8xl mt-10">
