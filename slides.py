@@ -203,41 +203,98 @@ def new_class_slide():
     Returns:
         None
     """
-    answers = questionary.form(
-        subject=questionary.text("Materia"),
-        unit=questionary.text("Unidad"),
-        unit_name=questionary.text("Nombre de la unidad"),
-        code=questionary.text("Clave", default="ABC - 999"),
-        satca=questionary.text("SATCA", default="9 - 9 - 9"),
-    ).ask()
 
-    theme = theme_selector()
+    # Pregunta al usuario si desea seleccionar una materia de un archivo JSON o ingresar los datos manualmente
+    action = questionary.select(
+        "¿Cómo quieres crear la presentación?", choices=['Manual', 'Desde JSON'], pointer="👉").ask()
+
+    if action == 'Desde JSON':
+        manual = False
+        answers = slide_from_json()
+    else:
+        manual = True
+        answers = questionary.form(
+            subject=questionary.text("Materia"),
+            unit=questionary.text("Unidad"),
+            unit_name=questionary.text("Nombre de la unidad"),
+            code=questionary.text("Clave", default="ABC - 999"),
+            satca=questionary.text("SATCA", default="9 - 9 - 9"),
+        ).ask()
+
+        theme = theme_selector()
+        answers['primary'] = theme['primary']
+        answers['secondary'] = theme['secondary']
+
+    # Si la unidad es menor a 10, se agrega un cero al inicio
+    unit = f"0{answers['unit']}" if int(
+        answers['unit']) < 10 else f"{answers['unit']}"
+
+    subject_name = answers['subject']
+
+    # Genera una abreviatura para el nombre de la materia
+    if len(answers['subject'].split()) > 1:
+        # Elimina conectivas del nombre de la materia
+        prepositions = ['la', 'el', 'los', 'las', 'y', 'en', 'a']
+        if len(answers['subject'].split()) > 2:
+            prepositions.append('de')
+
+        subject_clean = ' '.join(
+            [word for word in answers['subject'].split() if word.lower() not in prepositions])
+
+        # Toma la primera letra de cada palabra y las convierte a mayúsculas
+        subject_name = ''.join(word[0].upper()
+                               for word in subject_clean.split())
+
+    # Título de la presentación y nombre del archivo
+    title = f"{subject_name} - {unit} - {answers['unit_name']}"
+    filename = f"{subject_name}-{unit}"
+
+    if manual == True:
+        answers['careers'] = ": Ingeniería en Sistemas Computacionales"
+        # TOC de la presentación
+        answers['toc'] = "1. [Tema 1](#tema-1)\n2. [Tema 2](#tema-2)\n\n"
+        # Placeholder para la competencia específica de la unidad
+        answers['contents'] += "---\n\n# Competencia específica de la unidad\n\n"
+        answers['contents'] += f"> Competencia específica de la unidad {
+            unit}\n\n"
+        # Temas de la presentación
+        answers['contents'] += "---\n\n<!-- _class: lead -->\n# Tema 1\n\n---\n\n# Tema 1\n\n"
+        answers['contents'] += "---\n\n<!-- _class: lead -->\n# Tema 2\n\n---\n\n# Tema 2\n\n"
+
+    else:
+        careers = ""
+        for career in answers['careers']:
+            careers += f": {career}\n"
+
+        answers['contents'] = ""
+        answers['toc'] = ""
+
+        for idx, topic in enumerate(answers['topics']):
+            # Algunos temas pueden tener subtemas
+            if isinstance(topic, dict):
+                subtopics = topic['topics']
+                topic = topic['name']
+
+            hyphenated = topic.replace(' ', '-').lower()
+            answers['contents'] += f"{idx + 1}. [{topic}](#{hyphenated})\n"
+
+        answers['contents'] += "\n---\n\n"
+        answers['contents'] += "# Competencia específica de la unidad\n\n"
+        answers['contents'] += f"> {answers['skill']}\n\n"
+
+        for topic in answers['topics']:
+            answers['contents'] += f"---\n\n<!-- _class: lead -->\n# {
+                topic}\n\n"
+            answers['contents'] += f"---\n\n# {topic}\n\n"
+
+            # Si el tema tiene subtemas, se agregan a la presentación
+            if 'subtopics' in locals():
+                for subtopic in subtopics:
+                    answers['contents'] += f"---\n\n# {topic}\n\n"
+                    answers['contents'] += f"# {subtopic}\n\n"
 
     # Toma como base el archivo CLASS_TEMPLATE, reemplaza las variables y crea un nuevo archivo
-    with open(CLASS_TEMPLATE, 'r') as file:
-        # Si la unidad es menor a 10, se agrega un cero al inicio
-        unit = f"0{answers['unit']}" if int(
-            answers['unit']) < 10 else f"{answers['unit']}"
-
-        if len(answers['subject'].split()) > 1:
-            # Elimina conectivas del nombre de la materia
-            prepositions = ['la', 'el', 'los', 'las', 'y', 'en', 'a']
-            if len(answers['subject'].split()) > 2:
-                prepositions.append('de')
-
-            subject_clean = ' '.join(
-                [word for word in answers['subject'].split() if word.lower() not in prepositions])
-
-            # Genera una abreviatura para el nombre de la materia
-            subject_abbr = ''.join(word[0].upper()
-                                   for word in subject_clean.split())
-
-            title = f"{subject_abbr} - {unit} - {answers['unit_name']}"
-            filename = f"{subject_abbr}-{unit}"
-        else:
-            title = f"{answers['subject']} - {unit} - {answers['unit_name']}"
-            filename = f"{answers['subject']}-{unit}"
-
+    with open(CLASS_TEMPLATE, 'r', encoding="utf-8") as file:
         filedata = file.read()
         filedata = filedata.replace(
             '___TITLE___', title).replace(
@@ -247,8 +304,10 @@ def new_class_slide():
             '___UNIT_NAME___', answers['unit_name']).replace(
             '___CODE___', answers['code']).replace(
             '___SATCA___', answers['satca']).replace(
-            '___PRIMARY_COLOR___', theme['primary']).replace(
-            '___SECONDARY_COLOR___', theme['secondary'])
+            '___PRIMARY_COLOR___', answers['primary']).replace(
+            '___SECONDARY_COLOR___', answers['secondary']).replace(
+            '___CONTENTS___', answers['contents']).replace(
+            '___CAREERS___', careers)
 
         # Revisa si el archivo ya existe y agrega un número al final
         if os.path.exists(f"{SOURCE_DIR}/{filename}.md"):
