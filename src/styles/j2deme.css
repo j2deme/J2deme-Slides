@@ -380,10 +380,16 @@ section.primary :not(footer) a {
   border-radius: 10px;
 }
 
-section.primary footer a {
+section.primary footer a,
+section.primary::after {
   color: var(--text-inverted);
 }
 
+section.primary blockquote,
+section.primary blockquote p {
+  border: none;
+  color: var(--text-inverted);
+}
 
 /* SECONDARY SECTION */
 section.secondary {
