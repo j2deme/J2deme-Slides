@@ -317,39 +317,39 @@ section:has(h1+h2+h3) h3 {
   margin-top: -1.75em;
 }
 
-strong {
+/* TOC SECTION */
+section.toc h1 {
+  margin-bottom: -0.3rem;
+}
+
+section.toc ol {
+  counter-reset: items;
+}
+
+section.toc ol li {
+  list-style: none;
+  counter-increment: items;
+  padding-bottom: -0.2rem;
+}
+
+section.toc ol li a {
+  text-decoration: none;
   color: var(--text);
-  font-weight: inherit;
+}
+
+section.toc ol li:nth-child(n) a:before {
+  content: "0" counter(items) " ";
+}
+
+section.toc ol li:nth-child(n + 10) a:before {
+  content: counter(items) " ";
+}
+
+section.toc ol li a::before {
+  color: var(--primary);
   font-weight: 800;
-}
-
-img {
-  background-color: transparent;
-}
-
-mjx-container {
-  color: var(--text);
-}
-
-marp-pre {
-  background-color: var(--surface);
-  border-color: var(--highlight-high);
-}
-
-svg[data-marp-fitting="svg"] {
-  max-height: 580px;
-}
-
-pre code svg[data-marp-fitting="svg"] {
-  max-height: calc(580px - 1em);
-}
-
-kbd {
-  background-color: var(--text-inverted);
-  color: var(--text);
-  border-radius: 0.2em;
-  padding: 0.4rem 0.3rem;
-  font-size: inherit;
+  font-size: 1.2rem;
+  font-family: var(--font-mono);
 }
 
 /* LEAD SECTION */
