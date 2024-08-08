@@ -48,6 +48,7 @@
   background-color: var(--base);
 }
 
+/* HEADERS */
 h1 {
   color: var(--primary);
   padding-bottom: -0.2rem;
@@ -81,6 +82,7 @@ h6 {
   color: var(--secondary);
 }
 
+/* BASIC TAGS */
 a[href^="mailto:"] {
   color: var(--primary);
   text-decoration: none;
