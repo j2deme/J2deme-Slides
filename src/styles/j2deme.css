@@ -445,9 +445,45 @@ section.inverted marp-pre {
   border-color: var(--secondary);
 }
 
+/* TABLE */
+section table {
+  margin: 0 auto;
+  align-self: center;
+  padding-bottom: 0.5rem;
+  font-size: 26px;
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+  border-spacing: 0;
+}
+
+section table th,
+section table td,
+section table tr {
+  border: none;
+}
+
+section table th {
+  text-align: center !important;
+}
+
+section table thead th {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+section table tr:nth-child(even) td {
+  background-color: var(--zinc-100);
+}
+
+section table tr:last-child,
+section.inverted table tr:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* INVERTED TABLE */
 section.inverted table th {
   color: var(--secondary);
-  background-color: none !important;
+  border-bottom: 2px solid var(--secondary);
 }
 
 section.inverted table tr {
@@ -455,23 +491,8 @@ section.inverted table tr {
   background-color: var(--surface) !important;
 }
 
-section.inverted table thead th {
-  background: var(--secondary);
-  color: var(--text);
-}
-
-section.inverted table tbody>tr:nth-child(even) td,
-section.inverted table tbody>tr:nth-child(even) th {
-  background: var(--current-line-inverted);
-}
-
-section.inverted mjx-container {
-  color: var(--text-inverted);
-}
-
-section.inverted marp-pre {
-  background-color: var(--text);
-  border-color: var(--secondary);
+section.inverted table tr:nth-child(even) td {
+  background: var(--zinc-900);
 }
 
 /* HEADER AND FOOTER */
