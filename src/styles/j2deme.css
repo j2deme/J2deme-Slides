@@ -495,28 +495,21 @@ section.inverted table tr:nth-child(even) td {
   background: var(--zinc-900);
 }
 
-/* HEADER AND FOOTER */
-header,
-footer {
+/* CUSTOM TAGS & CLASSES */
+.font-coding {
   font-family: var(--font-mono);
-  font-size: 0.5em;
-  color: inherit;
 }
 
-footer a {
-  color: var(--secondary);
+true {
+  color: var(--emerald-600);
 }
 
-footer a:hover {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: bolder;
+false {
+  color: var(--red-500);
 }
 
-section::after {
-  content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
-  font-family: var(--font-mono);
-  font-size: 0.6em;
+note {
+  color: var(--amber-700);
 }
 
 /* CUSTOM COLORED BLOCKS */
