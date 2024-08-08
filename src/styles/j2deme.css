@@ -20,8 +20,8 @@
   --overlay: #393552;
   --muted: #6e6a86;
   --subtle: #908caa;
-  --text: #27272a;
-  --text-inverted: #e0def4;
+  --text: var(--zinc-900);
+  --text-inverted: var(--zinc-50);
   --love: var(--red-400);
   --sunset: var(--orange-400);
   --gold: var(--amber-400);
