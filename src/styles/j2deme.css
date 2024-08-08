@@ -6,9 +6,10 @@
 /*@import "https://unpkg.com/tailwindcss@^2/dist/utilities.min.css";*/
 @import "../src/styles/utilities.css";
 @import "../src/styles/colors.css";
-/*@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");*/
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import "default";
+
 /*@import "schema";
 @import "structure";*/
 
@@ -40,8 +41,6 @@
   --font-sans: Poppins, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: "Monaspace Krypton Var", "Fira Code", monospace;
 
-
-  /*font-family: "Noto Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";*/
   font-family: var(--font-sans);
   font-weight: initial;
 
