@@ -309,12 +309,31 @@ def new_class_slide():
             '___CONTENTS___', answers['contents']).replace(
             '___CAREERS___', careers)
 
-        # Revisa si el archivo ya existe y agrega un número al final
+        # Revisa si el archivo ya existe
         if os.path.exists(f"{SOURCE_DIR}/{filename}.md"):
-            i = 1
-            while os.path.exists(f"{SOURCE_DIR}/{filename}-{i}.md"):
-                i += 1
-            filename = f"{filename}-{i}"
+            # Pregunta al usuario si desea sobreescribir el archivo
+            overwrite = questionary.confirm(
+                f"¿Deseas sobreescribir {filename}.md?").ask()
+
+            if overwrite == False:
+                # Ofrecer al usuario la opción de agregar un texto adicional al nombre del archivo en lugar de un número
+                add_text = questionary.confirm(
+                    "¿Quieres agregar un texto adicional al nombre del archivo?").ask()
+
+                if add_text == True:
+                    additional = questionary.text('Texto adicional').ask()
+                    if additional != "":
+                        # Elimina espacios adicionales y reemplaza los espacios por guiones
+                        suffix = additional.strip().replace(' ', '-')
+                    else:
+                        suffix = "99"
+
+                    filename = f"{filename}-{suffix}"
+                else:
+                    i = 1
+                    while os.path.exists(f"{SOURCE_DIR}/{filename}-{i}.md"):
+                        i += 1
+                    filename = f"{filename}-{i}"
 
         with open(f"{SOURCE_DIR}/{filename}.md", 'w', encoding="utf-8") as new_file:
             new_file.write(filedata)
