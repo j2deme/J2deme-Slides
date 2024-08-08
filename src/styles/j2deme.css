@@ -39,7 +39,8 @@
   --secondary: #ebad25;
 
   --font-sans: Poppins, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "Monaspace Krypton Var", "Fira Code", monospace;
+  --font-mono: "Monaspace Krypton Var", "Victor Mono", "Fira Code", monospace;
+  --font-comment: "Monaspace Radon Var", "Victor Mono", "Fira Code", monospace;
 
   font-family: var(--font-sans);
   font-weight: initial;
