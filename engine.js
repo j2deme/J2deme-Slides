@@ -24,6 +24,8 @@ module.exports = ({ marp }) =>
     .use(container, "info")
     .use(container, "ok")
     .use(container, "primary")
+    .use(container, "secondary")
+    .use(container, "quote")
     .use(container, "flex")
     .use(container, "col", {
       render(tokens, idx) {
