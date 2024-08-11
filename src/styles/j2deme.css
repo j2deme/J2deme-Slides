@@ -399,6 +399,7 @@ section.secondary {
   color: var(--zinc-900);
 }
 
+/* PRIMARY & SECONDARY SECTION */
 section.primary.centered,
 section.secondary.centered {
   justify-content: center;
@@ -408,6 +409,11 @@ section.secondary.centered {
 section.primary h1,
 section.secondary h1 {
   color: inherit;
+}
+
+section.primary footer strong,
+section.secondary footer strong {
+  text-shadow: var(--text-inverted) 0 0 5px;
 }
 
 /* DARK & LIGHT HEADER */
