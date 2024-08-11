@@ -60,8 +60,11 @@ SATCA
 <!-- _class: toc -->
 # Contenidos
 
-1. Tema 1
-2. Tema 2
+___TOC___
+
+---
+
+___CONTENTS___
 
 ---
 
