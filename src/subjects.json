@@ -1,0 +1,175 @@
+[
+  {
+    "name": "Fundamentos de Programación",
+    "acronym": "FP",
+    "code": "AED - 1285",
+    "satca": "2 - 3 - 5",
+    "theme": {
+      "primary": "#1274c5",
+      "secondary": "#c22344"
+    },
+    "careers": [
+      "Ingeniería en Sistemas Computacionales",
+      "Ingeniería en Desarrollo de Aplicaciones"
+    ],
+    "units": [
+      {
+        "unit": "1",
+        "name": "Diseño Algorítmico",
+        "skill": "Comprende y aplica los conceptos básicos, nomenclatura y herramientas para el diseño de algoritmos orientado a la resolución de problemas.",
+        "topics": [
+          "Conceptos básicos",
+          "Representación de algoritmos",
+          "Diseño de algoritmos",
+          "Diseño de funciones"
+        ]
+      },
+      {
+        "unit": "2",
+        "name": "Introducción a la Programación",
+        "skill": "Conoce y aplica un lenguaje de programación para la resolución de problemas.",
+        "topics": [
+          "Conceptos básicos",
+          "Características de los lenguajes de programación",
+          "Estructura básica de un programa",
+          "Elementos del lenguaje",
+          "Traducción de un programa"
+        ]
+      },
+      {
+        "unit": "3",
+        "name": "Control de Flujo",
+        "skill": "Conoce y aplica las estructuras condicionales y repetitivas de un lenguaje de programación para resolver problemas reales.",
+        "topics": [
+          "Estructuras secuenciales",
+          "Estructuras selectivas",
+          "Estructuras iterativas"
+        ]
+      },
+      {
+        "unit": "4",
+        "name": "Organización de Datos",
+        "skill": "Conoce y aplica estructuras de datos en un lenguaje de programación  que permitan la organización de datos en la resolución de problemas reales.",
+        "topics": [
+          "Arreglos",
+          "Unidimensionales",
+          "Multidimensionales",
+          "Estructuras y Registros"
+        ]
+      },
+      {
+        "unit": "5",
+        "name": "Modularidad",
+        "skill": "Conoce y aplica la modularidad en el desarrollo de programas para la optimización de los mismos y reutilización de código.",
+        "topics": [
+          "Declaración y uso de módulos",
+          "Paso de parámetros o argumentos",
+          "Implementación"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Estructura de Datos",
+    "acronym": "EDD",
+    "code": "AED - 1026",
+    "satca": "2 - 3 - 5",
+    "theme": {
+      "primary": "#2563eb",
+      "secondary": "#ebad25"
+    },
+    "careers": [
+      "Ingeniería en Sistemas Computacionales",
+      "Ingeniería Informática"
+    ]
+  },
+  {
+    "name": "Programación Web",
+    "acronym": "PW",
+    "code": "AEB - 1055",
+    "satca": "1 - 4 - 5",
+    "theme": {
+      "primary": "#1274c5",
+      "secondary": "#c22344"
+    },
+    "careers": [
+      "Ingeniería en Sistemas Computacionales",
+      "Ingeniería en Tecnologías de la Información y Comunicaciones"
+    ],
+    "units": [
+      {
+        "unit": "1",
+        "name": "Introducción a las Aplicaciones Web",
+        "skill": "Conoce la evolución, arquitectura, tecnologías y planificación de las aplicaciones web para la preparación de un ambiente de desarrollo",
+        "topics": [
+          "Evolución de las aplicaciones web",
+          "Arquitectura de las aplicaciones web",
+          "Tecnologías para el desarrollo de aplicaciones web",
+          "Planificación de aplicaciones web"
+        ]
+      },
+      {
+        "unit": "2",
+        "name": "HTML, XML y CSS",
+        "skill": "Conoce y aplica las herramientas para construir páginas web, considerando la interfaz gráfica de usuario, un lenguaje de marcado y de presentación",
+        "topics": [
+          "Introducción",
+          "Estructura global de un documento web",
+          {
+            "name": "Elementos básicos",
+            "topics": [
+              "Texto",
+              "Vínculos",
+              "Listas",
+              "Tablas",
+              "Objetos",
+              "Imágenes",
+              "Aplicaciones"
+            ]
+          },
+          "Formularios",
+          "Lenguajes de presentación en documentos web",
+          "Selectores",
+          "Modelo de caja"
+        ]
+      },
+      {
+        "unit": "3",
+        "name": "Programación del Lado del Cliente",
+        "skill": "Conoce y aplica un lenguaje de programación del lado del cliente, para la construcción de aplicaciones web dinámicas, considerando frameworks ya existentes",
+        "topics": [
+          "Introducción al lenguaje",
+          "Manejo de frameworks",
+          "Estructuras de control",
+          "Manipulación de objetos"
+        ]
+      },
+      {
+        "unit": "4",
+        "name": "Programación del Lado del Servidor",
+        "skill": "Conoce y aplica un lenguaje de programación del lado del servidor, para la construcción de aplicaciones web dinámicas, considerando su conectividad a orígenes de datos",
+        "topics": [
+          "Introducción al lenguaje",
+          "Estructuras de control",
+          "Tratamiento de formularios",
+          "Manejo de objetos del servidor",
+          "Creación de clases",
+          "Acceso a datos"
+        ]
+      },
+      {
+        "unit": "5",
+        "name": "Cómputo en la Nube y Servicios",
+        "skill": "Conoce y aplica los tipos de servicios, para lograr interconectividad entre aplicaciones, considerando cómputo en la nube",
+        "topics": [
+          "Conceptos generales",
+          "Tipos de servicios en la nube",
+          "Patrones de diseño",
+          "Estándares en servicios",
+          "Plataformas tecnológicas",
+          "Seguridad e interoperabilidad"
+        ]
+      }
+    ]
+  }
+]
