@@ -44,7 +44,6 @@
 
   font-family: var(--font-sans);
   font-weight: initial;
-
   background-color: var(--base);
 }
 
@@ -187,6 +186,18 @@ footer {
   font-family: var(--font-mono);
   font-size: 0.5em;
   color: inherit;
+  display: flex;
+}
+
+section img.logo {
+  position: absolute;
+  width: 250px;
+  top: 0;
+  right: 0;
+  padding-top: 10px;
+  padding-right: 10px;
+  color: #18396a;
+  font-weight: bold;
 }
 
 footer a {

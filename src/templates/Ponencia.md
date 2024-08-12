@@ -28,6 +28,8 @@ Ponente
 Adscripción
 : TecNM Campus Ciudad Valles
 
+<img class="logo" alt="TecNM" src="../src/assets/Logo-TECNM.svg" />
+
 ![bg right:45% cover](../src/assets/banner.png)
 
 ---

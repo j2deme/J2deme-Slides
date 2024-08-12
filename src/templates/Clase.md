@@ -22,6 +22,8 @@ style: |
 
 ## ___SUBJECT___
 
+<img class="logo" alt="TecNM" src="../src/assets/Logo-TECNM.svg" />
+
 ---
 
 # Docente
