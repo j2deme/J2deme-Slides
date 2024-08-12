@@ -3,7 +3,7 @@ marp: true
 title: ___TITLE___
 author: Jaime Jesús Delgado Meraz
 header: ___HEADER___
-footer: '[&oast;](#contenidos) __MSC. JJDM__'
+footer: '[&oast;](#contenidos) **DR. JJDM**'
 paginate: true
 theme: j2deme
 math: mathjax
@@ -14,15 +14,16 @@ style: |
   }
 ---
 <!-- _header: '' -->
+<!-- _class: centered -->
 <!-- _transition: fade -->
 <!-- _paginate: false -->
 
-# ___TITLE___
+# <!-- fit --> ___TITLE___
 
 ## ___SUBTITLE___
 
 Ponente
-: MSC. Jaime Jesús Delgado Meraz
+: Dr. Jaime Jesús Delgado Meraz
 
 Adscripción
 : TecNM Campus Ciudad Valles
@@ -33,13 +34,14 @@ Adscripción
 
 # Ponente
 
-![bg right:45%](../src/assets/banner.png)
+![bg right:40%](../src/assets/banner.png)
 
 Nombre
-: MSC. Jaime Jesús Delgado Meraz
+: Dr. Jaime Jesús Delgado Meraz
 
 Correo
 : <jesus.delgado@tecvalles.mx>
+: <jaime.dm@cdvalles.tecnm.mx>
 
 ---
 
@@ -119,11 +121,7 @@ php artisan serve
 
 ---
 
-# Referencias
-
----
-
-<!-- _class: inverted -->
+<!-- _class: inverted centered -->
 ![bg right w:35%](../src/assets/avatar.png)
 
 <div class="text-center text-middle font-bold font-coding text-8xl mt-10">
@@ -133,3 +131,14 @@ php artisan serve
 <div class="text-center text-middle text-4xl mt-10">
   Gracias por su atención
 </div>
+
+---
+
+<!-- paginate: skip -->
+
+# Referencias
+
+-
+-
+-
+
