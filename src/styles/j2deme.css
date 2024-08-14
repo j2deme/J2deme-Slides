@@ -168,6 +168,10 @@ dt {
   font-weight: 800 !important;
 }
 
+dt strong {
+  color: var(--secondary)
+}
+
 dd {
   margin-bottom: 0.3rem;
   color: var(--text);
