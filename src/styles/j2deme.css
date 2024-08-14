@@ -125,6 +125,7 @@ pre {
   font-family: var(--font-mono);
   text-align: left;
   font-variant-ligatures: none;
+  font-size: 0.75em;
 }
 
 text {
