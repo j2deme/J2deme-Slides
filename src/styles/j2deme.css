@@ -321,18 +321,34 @@ section:not(.toc)>ol>li::before {
   margin-left: -1em;
 }
 
+section:first-of-type h1 {
+  position: relative;
+  top: -10px;
+  padding-bottom: 10px;
+}
+
 section:has(h1+h2) h1 {
-  margin-bottom: 0.1em;
+  margin-bottom: 5px;
+}
+
+section:has(h1+h2) h2 {
+  position: relative;
+  top: -30px;
+  padding-bottom: 0;
 }
 
 section:has(h1+h2+h3) h2 {
-  margin-bottom: 0.3em;
-  padding-bottom: 5px;
+  position: relative;
+  top: -30px;
+  padding-bottom: 0;
 }
 
 section:has(h1+h2+h3) h3 {
+  position: relative;
+  top: -60px;
   text-align: right;
-  margin-top: -1.75em;
+  padding-bottom: 5px;
+  margin-bottom: -35px;
 }
 
 /* TOC SECTION */
