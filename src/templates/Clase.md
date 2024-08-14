@@ -28,7 +28,7 @@ style: |
 
 # Docente
 
-![bg right:40%](../src/assets/banner.png)
+![bg right:40%](../src/assets/banner.svg)
 
 Nombre
 : Dr. Jaime Jesús Delgado Meraz

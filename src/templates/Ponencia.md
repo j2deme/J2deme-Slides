@@ -30,13 +30,13 @@ Adscripción
 
 <img class="logo" alt="TecNM" src="../src/assets/Logo-TECNM.svg" />
 
-![bg right:45% cover](../src/assets/banner.png)
+![bg right:40%](../src/assets/banner.svg)
 
 ---
 
 # Ponente
 
-![bg right:40%](../src/assets/banner.png)
+![bg right:40%](../src/assets/banner.svg)
 
 Nombre
 : Dr. Jaime Jesús Delgado Meraz
