@@ -485,6 +485,12 @@ section.inverted marp-pre {
   border-color: var(--secondary);
 }
 
+section.inverted:last-of-type {
+  background-image: url("../src/assets/j2deme-wallpaper.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* TABLE */
 section table {
   margin: 0 auto;
