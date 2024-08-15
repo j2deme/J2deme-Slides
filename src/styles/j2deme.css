@@ -556,6 +556,7 @@ false {
 
 note {
   color: var(--amber-700);
+  font-weight: bold;
 }
 
 /* CUSTOM COLORED BLOCKS */
