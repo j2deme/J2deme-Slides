@@ -803,6 +803,27 @@ code.language-php .hljs-built_in {
   color: var(--plum);
 }
 
+/* MARKDOWN CODE BLOCK CUSTOMIZATION */
+code.language-md .hljs-strong {
+  color: var(--love);
+}
+
+code.language-md .hljs-emphasis {
+  color: var(--sunset);
+}
+
+code.language-md .hljs-code {
+  color: var(--plum);
+}
+
+code.language-md .hljs-link {
+  color: var(--lime);
+}
+
+code.language-md .hljs-quote {
+  color: var(--rose);
+}
+
 /* CODE BLOCK LINE NUMBERING */
 pre ol {
   all: unset;
