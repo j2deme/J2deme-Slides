@@ -98,6 +98,11 @@ li {
   counter-increment: li;
 }
 
+s {
+  text-decoration: line-through;
+  text-decoration-color: var(--secondary);
+}
+
 strong {
   color: var(--text);
   font-weight: inherit;
