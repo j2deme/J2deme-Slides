@@ -29,7 +29,7 @@
   --pine: var(--emerald-400);
   --lime: var(--lime-400);
   --foam: var(--blue-400);
-  --iris: var(--purple-400);
+  --plum: var(--purple-400);
   --highlight-low: #2a283e;
   --highlight-muted: #44415a;
   --highlight-high: #56526e;
@@ -692,7 +692,7 @@ div.quote cite::after {
 }
 
 .hljs-params {
-  color: var(--iris);
+  color: var(--plum);
 }
 
 .hljs-symbol {
@@ -752,7 +752,7 @@ div.quote cite::after {
 .hljs-selector-class,
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-  color: var(--iris);
+  color: var(--plum);
 }
 
 .hljs-link {
@@ -800,7 +800,7 @@ code.language-php .hljs-subst {
 }
 
 code.language-php .hljs-built_in {
-  color: var(--iris);
+  color: var(--plum);
 }
 
 /* CODE BLOCK LINE NUMBERING */
