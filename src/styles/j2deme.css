@@ -93,7 +93,7 @@ a[href^="http://"] {
 }
 
 li {
-  color: var(--overlay);
+  color: var(--text);
   font-family: inherit;
   counter-increment: li;
 }
