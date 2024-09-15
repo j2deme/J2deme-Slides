@@ -3,7 +3,7 @@ marp: true
 title: ___TITLE___
 author: Jaime Jesús Delgado Meraz
 header: ___HEADER___
-footer: '[&oast;](#contenidos) **DR. JJDM**'
+footer: "[&oast;](#contenidos) **DR. JJDM**"
 paginate: true
 theme: j2deme
 math: mathjax
@@ -13,6 +13,7 @@ style: |
     --secondary: ___SECONDARY_COLOR___;
   }
 ---
+
 <!-- _class: centered -->
 <!-- _paginate: false -->
 
@@ -59,7 +60,9 @@ SATCA
 ::::
 
 ---
+
 <!-- _class: toc -->
+
 # Contenidos
 
 ___TOC___
@@ -70,7 +73,8 @@ ___CONTENTS___
 
 ---
 
-<!-- _class: inverted centered -->
+<!-- _class: inverted centered pattern -->
+
 ![bg right w:35%](../src/assets/avatar.png)
 
 <div class="text-center text-middle font-bold font-coding text-8xl mt-10">
