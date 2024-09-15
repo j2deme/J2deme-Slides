@@ -594,6 +594,12 @@ false {
 note {
   color: var(--amber-700);
   font-weight: bold;
+  ;
+}
+
+p:has(note+em) em {
+  font-size: medium;
+  text-align: right;
 }
 
 /* CUSTOM COLORED BLOCKS */
