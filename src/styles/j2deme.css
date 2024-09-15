@@ -15,7 +15,7 @@
 
 :root {
   --base: #fcfcfc;
-  --base-inverted: #262626;
+  --base-inverted: var(--neutral-800);
   --surface: #090d13;
   --overlay: #393552;
   --muted: #6e6a86;
@@ -25,7 +25,7 @@
   --love: var(--red-400);
   --sunset: var(--orange-400);
   --gold: var(--amber-400);
-  --rose: var(--rose-400);
+  --rose: var(--pink-400);
   --pine: var(--emerald-400);
   --lime: var(--lime-400);
   --foam: var(--blue-400);
