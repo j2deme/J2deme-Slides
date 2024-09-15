@@ -460,7 +460,6 @@ section.secondary {
 /* PRIMARY & SECONDARY SECTION */
 section.primary.centered,
 section.secondary.centered {
-  justify-content: center;
   text-align: center;
 }
 
@@ -570,6 +569,18 @@ section.inverted table tr:nth-child(even) td {
 /* CUSTOM TAGS & CLASSES */
 .font-coding {
   font-family: var(--font-mono);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-inverted {
+  background-color: var(--surface);
 }
 
 true {
