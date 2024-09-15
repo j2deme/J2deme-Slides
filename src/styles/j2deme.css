@@ -179,7 +179,6 @@ td false {
 /* DEFINITION LIST */
 dt {
   font-style: normal !important;
-  font-weight: 800 !important;
 }
 
 dt strong {
@@ -231,23 +230,31 @@ footer a:hover {
 
 /* BLOCKQUOTE */
 blockquote {
+  padding: 0.3rem 0.3rem 0 0.5rem;
+}
+
+blockquote:not(:has(cite)) {
   border-left: 0.25em solid var(--primary);
 }
 
 blockquote p {
-  font-size: inherit;
+  font-size: x-large;
   color: var(--highlight-muted);
-}
-
-blockquote:has(cite) p {
-  font-size: 1.5rem;
 }
 
 blockquote:has(cite) cite {
   border: none;
-  font-size: 1.0rem;
+  font-size: 0.8rem;
   font-family: "Victor Mono", Noto Sans, cursive;
   font-style: italic;
+}
+
+section.primary blockquote:has(cite) p {
+  font-size: 1.5rem;
+}
+
+section.primary blockquote:has(cite) cite {
+  font-size: 1.0rem;
 }
 
 blockquote cite:before {
@@ -625,6 +632,7 @@ div.quote {
 div.quote p {
   font-size: inherit;
   color: var(--highlight-muted);
+  padding-left: 10px;
 }
 
 div.quote blockquote {
@@ -633,7 +641,7 @@ div.quote blockquote {
 
 div.quote:has(cite) cite {
   border: none;
-  font-size: 1.0rem;
+  font-size: 0.8rem;
   font-family: "Victor Mono", Noto Sans, cursive;
   font-style: italic;
 }
