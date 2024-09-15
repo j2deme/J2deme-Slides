@@ -447,6 +447,10 @@ section.primary blockquote p {
   color: var(--text-inverted);
 }
 
+section.primary table td {
+  color: var(--text);
+}
+
 /* SECONDARY SECTION */
 section.secondary {
   background-color: var(--secondary);
@@ -517,11 +521,11 @@ section.inverted:last-of-type {
 section table {
   margin: 0 auto;
   align-self: center;
-  padding-bottom: 0.5rem;
   font-size: 26px;
   border-collapse: collapse;
   border-radius: 0.5rem;
   border-spacing: 0;
+  margin-bottom: 0.5rem;
 }
 
 section table th,
@@ -532,11 +536,10 @@ section table tr {
 
 section table th {
   text-align: center !important;
-}
-
-section table thead th {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 section table tr:nth-child(even) td {
@@ -549,7 +552,8 @@ section.inverted table tr:last-child {
 }
 
 /* INVERTED TABLE */
-section.inverted table th {
+section.inverted table th,
+section.secondary table th {
   color: var(--secondary);
   border-bottom: 2px solid var(--secondary);
 }
