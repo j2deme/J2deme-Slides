@@ -156,11 +156,19 @@ pre code svg[data-marp-fitting="svg"] {
 }
 
 kbd {
-  background-color: var(--text-inverted);
+  background-color: var(--slate-100);
   color: var(--text);
+  font-family: var(--font-mono);
+  border-color: var(--slate-500);
   border-radius: 0.2em;
-  padding: 0.4rem 0.3rem;
-  font-size: inherit;
+  padding: 0.5rem 0.4rem;
+  font-size: 80%;
+  font-weight: bold;
+  box-shadow: 0 0 0 0.1em var(--text-inverted);
+}
+
+mark {
+  background-color: var(--yellow-200);
 }
 
 td true,
