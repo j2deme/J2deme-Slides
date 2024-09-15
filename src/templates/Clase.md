@@ -81,6 +81,8 @@ ___CONTENTS___
   &lt;/Fin&gt;
 </div>
 
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
 ---
 
 <!-- paginate: skip -->
