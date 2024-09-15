@@ -610,12 +610,19 @@ div.error,
 div.primary,
 div.secondary,
 div.quote {
-  padding: 0.3rem 0.3rem 0 0.5rem;
-  margin-bottom: 0.3rem;
-  border-radius: 0 0.3rem 0.3rem 0;
-  justify-self: flex-end;
-  border-left-width: 0.25em;
+  background-blend-mode: soft-light;
+  background-clip: padding-box;
+  background-position: 102% -15px;
+  background-repeat: no-repeat;
+  background-size: 2.9rem;
   border-left-style: solid;
+  border-left-width: 0.25em;
+  border-radius: 0 0.3rem 0.3rem 0;
+  box-shadow: 0 0 0 0.1em var(--text-inverted);
+  font-size: smaller;
+  justify-self: flex-end;
+  margin-bottom: 0.3rem;
+  padding: 0.5rem 0.5rem 0.5em 0.5rem;
 }
 
 div.primary {
@@ -628,27 +635,37 @@ div.secondary {
 
 div.ok {
   border-left-color: var(--green-500);
-  background-color: var(--green-200);
+  background-color: var(--green-100);
+  background-image: url("../src/assets/Icons/check-circle.svg");
 }
 
 div.warning {
   border-left-color: var(--amber-500);
-  background-color: var(--amber-200);
+  background-color: var(--amber-100);
+  background-image: url("../src/assets/Icons/warning.svg");
 }
 
 div.error {
   border-left-color: var(--red-500);
-  background-color: var(--red-200);
+  background-color: var(--red-100);
+  background-image: url("../src/assets/Icons/warning-circle.svg");
 }
 
 div.info {
   border-left-color: var(--blue-500);
-  background-color: var(--blue-200);
+  background-color: var(--blue-100);
+  background-image: url("../src/assets/Icons/info.svg");
 }
 
 div.quote {
   border-left-color: var(--gray-600);
-  background-color: var(--gray-200);
+  background-color: var(--gray-100);
+  padding: auto;
+  font-size: x-large;
+  padding: 0.3rem 0.3rem 0 0.5rem;
+  background-image: url("../src/assets/Icons/quotes.svg");
+  background-position-x: 100%;
+  background-position-y: -10px;
 }
 
 div.quote p {
