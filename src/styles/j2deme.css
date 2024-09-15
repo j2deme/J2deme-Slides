@@ -415,6 +415,8 @@ section.lead {
 
 section.lead h1 {
   background-color: var(--primary);
+  background-image: url("../src/assets/pattern.svg");
+  background-blend-mode: overlay;
   color: var(--base);
   padding: 0.5em 1.5em;
   text-transform: uppercase;
@@ -510,10 +512,20 @@ section.inverted marp-pre {
   border-color: var(--secondary);
 }
 
-section.inverted:last-of-type {
-  background-image: url("../src/assets/j2deme-wallpaper.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
+/* PATTERN */
+.pattern,
+section.pattern {
+  background-image: url("../src/assets/pattern.svg");
+  background-size: 205px;
+  background-repeat: repeat;
+  background-blend-mode: screen;
+}
+
+.bg-primary.pattern,
+.bg-secondary.pattern,
+section.primary.pattern,
+section.secondary.pattern {
+  background-blend-mode: color-burn;
 }
 
 /* TABLE */
