@@ -1,27 +1,27 @@
 ---
 marp: true
-title: ___TITLE___
+title: ===TITLE===
 author: Jaime Jesús Delgado Meraz
-header: ___HEADER___
+header: ===HEADER===
 footer: "[&oast;](#contenidos) **DR. JJDM**"
 paginate: true
 theme: j2deme
 math: mathjax
 style: |
   :root {
-    --primary: ___PRIMARY_COLOR___;
-    --secondary: ___SECONDARY_COLOR___;
+    --primary: ===PRIMARY_COLOR===;
+    --secondary: ===SECONDARY_COLOR===;
   }
 ---
 
 <!-- _class: centered -->
 <!-- _paginate: false -->
 
-# Unidad ___UNIT___
+# Unidad ===UNIT===
 
-# <!-- fit --> ___UNIT_NAME___
+# <!-- fit --> ===UNIT_NAME===
 
-## ___SUBJECT___
+## ===SUBJECT===
 
 <img class="logo" alt="TecNM" src="../src/assets/Logo-TECNM.svg" />
 
@@ -45,17 +45,17 @@ Correo
 :::: flex
 ::: col 1/2 px-2
 Nombre
-: ___SUBJECT___
+: ===SUBJECT===
 
 Carrera
-___CAREERS___
+===CAREERS===
 :::
-::: col 1/2
+::: col 1/2 px-2
 Clave
-: ___CODE___
+: ===CODE===
 
 SATCA
-: ___SATCA___
+: ===SATCA===
 :::
 ::::
 
@@ -65,11 +65,11 @@ SATCA
 
 # Contenidos
 
-___TOC___
+===TOC===
 
 ---
 
-___CONTENTS___
+===CONTENTS===
 
 ---
 

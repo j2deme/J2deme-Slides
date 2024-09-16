@@ -1,16 +1,16 @@
 ---
 marp: true
-title: ___TITLE___
+title: ===TITLE===
 author: Jaime Jesús Delgado Meraz
-header: ___HEADER___
-footer: '[&oast;](#contenidos) **DR. JJDM**'
+header: ===HEADER===
+footer: "[&oast;](#contenidos) **DR. JJDM**"
 paginate: true
 theme: j2deme
 math: mathjax
 style: |
   :root {
-    --primary: ___PRIMARY_COLOR___;
-    --secondary: ___SECONDARY_COLOR___;
+    --primary: ===PRIMARY_COLOR===;
+    --secondary: ===SECONDARY_COLOR===;
   }
 ---
 <!-- _header: '' -->
@@ -18,9 +18,9 @@ style: |
 <!-- _transition: fade -->
 <!-- _paginate: false -->
 
-# <!-- fit --> ___TITLE___
+# <!-- fit --> ===TITLE===
 
-## ___SUBTITLE___
+## ===SUBTITLE===
 
 Ponente
 : Dr. Jaime Jesús Delgado Meraz
@@ -123,7 +123,8 @@ php artisan serve
 
 ---
 
-<!-- _class: inverted centered -->
+<!-- _class: inverted centered pattern -->
+
 ![bg right w:35%](../src/assets/avatar.png)
 
 <div class="text-center text-middle font-bold font-coding text-8xl mt-10">
@@ -134,6 +135,8 @@ php artisan serve
   Gracias por su atención
 </div>
 
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
 ---
 
 <!-- paginate: skip -->
@@ -143,4 +146,3 @@ php artisan serve
 -
 -
 -
-

@@ -275,46 +275,56 @@ def new_class_slide():
 
         answers['contents'] = ""
         answers['toc'] = ""
+        topics = []
+        subtopics = []
 
         for idx, topic in enumerate(answers['topics']):
             # Algunos temas pueden tener subtemas
             if isinstance(topic, dict):
-                subtopics = topic['topics']
+                subtopics.append(topic['topics'])
                 topic = topic['name']
+                topics.append(topic)
+            else:
+                topics.append(topic)
+                subtopics.append(None)
 
             hyphenated = topic.replace(' ', '-').lower()
-            answers['contents'] += f"{idx + 1}. [{topic}](#{hyphenated})\n"
+            answers['toc'] += f"{idx + 1}. [{topic}](#{hyphenated})"
 
-        answers['contents'] += "\n---\n\n"
+            if idx + 1 < len(answers['topics']):
+                answers['toc'] += "\n"
+
+        # answers['contents'] += "\n---\n\n"
         answers['contents'] += "# Competencia específica de la unidad\n\n"
         answers['contents'] += f"> {answers['skill']}\n\n"
 
-        for topic in answers['topics']:
+        for idx, topic in enumerate(topics):
             answers['contents'] += f"---\n\n<!-- _class: lead -->\n# {
                 topic}\n\n"
             answers['contents'] += f"---\n\n# {topic}\n\n"
 
             # Si el tema tiene subtemas, se agregan a la presentación
-            if 'subtopics' in locals():
-                for subtopic in subtopics:
+            if subtopics[idx] is not None:
+                for subtopic in subtopics[idx]:
                     answers['contents'] += f"---\n\n# {topic}\n\n"
-                    answers['contents'] += f"# {subtopic}\n\n"
+                    answers['contents'] += f"## {subtopic}\n\n"
+
+        # Elimina 2 saltos de línea al final de answers[contents]
+        answers['contents'] = answers['contents'][:-2]
 
     # Toma como base el archivo CLASS_TEMPLATE, reemplaza las variables y crea un nuevo archivo
     with open(CLASS_TEMPLATE, 'r', encoding="utf-8") as file:
         filedata = file.read()
         filedata = filedata.replace(
-            '___TITLE___', title).replace(
-            '___HEADER___', f"{answers['subject']} - U{answers['unit']}").replace(
-            '___SUBJECT___', answers['subject']).replace(
-            '___UNIT___', answers['unit']).replace(
-            '___UNIT_NAME___', answers['unit_name']).replace(
-            '___CODE___', answers['code']).replace(
-            '___SATCA___', answers['satca']).replace(
-            '___PRIMARY_COLOR___', answers['primary']).replace(
-            '___SECONDARY_COLOR___', answers['secondary']).replace(
-            '___CONTENTS___', answers['contents']).replace(
-            '___CAREERS___', careers)
+            '===TITLE===', title).replace(
+            '===HEADER===', f"{answers['subject']} - U{answers['unit']}").replace(
+            '===SUBJECT===', answers['subject']).replace(
+            '===UNIT===', answers['unit']).replace(
+            '===UNIT_NAME===', answers['unit_name']).replace(
+            '===CODE===', answers['code']).replace(
+            '===SATCA===', answers['satca']).replace(
+            '===PRIMARY_COLOR===', answers['primary']).replace(
+            '===SECONDARY_COLOR===', answers['secondary']).replace('===CONTENTS===', answers['contents']).replace('===CAREERS===', careers).replace('===TOC===', answers['toc'])
 
         # Revisa si el archivo ya existe
         if os.path.exists(f"{SOURCE_DIR}/{filename}.md"):
@@ -371,13 +381,13 @@ def new_speech_slide():
     with open(CONFERENCE_TEMPLATE, 'r') as file:
         filedata = file.read()
         filedata = filedata.replace(
-            '___TITLE___', answers['title']).replace(
-            '___SUBTITLE___', answers['subtitle']).replace(
-            '___PRIMARY_COLOR___', theme['primary']).replace(
-            '___SECONDARY_COLOR___', theme['secondary']).replace(
-            '___HEADER___', answers['title'])
-        # .replace('___DATE___', answers['date'])
-        # .replace('___EVENT___', answers['event'])
+            '===TITLE===', answers['title']).replace(
+            '===SUBTITLE===', answers['subtitle']).replace(
+            '===PRIMARY_COLOR===', theme['primary']).replace(
+            '===SECONDARY_COLOR===', theme['secondary']).replace(
+            '===HEADER===', answers['title'])
+        # .replace('===DATE===', answers['date'])
+        # .replace('===EVENT===', answers['event'])
 
         filename = answers['title'].replace(' ', '-')
 
