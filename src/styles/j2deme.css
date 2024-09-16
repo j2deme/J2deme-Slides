@@ -634,7 +634,7 @@ div.note {
   font-size: smaller;
   justify-self: flex-end;
   margin-bottom: 0.3rem;
-  padding: 0.5rem 0.5rem 0.5em 0.5rem;
+  padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 }
 
 div.primary {
@@ -690,6 +690,13 @@ div.info {
   border-left-color: var(--blue-500);
   background-color: var(--blue-100);
   background-image: url("../src/assets/Icons/info.svg");
+}
+
+div.ok p,
+div.warning p,
+div.error p,
+div.info p {
+  max-width: 95%;
 }
 
 div.quote {
