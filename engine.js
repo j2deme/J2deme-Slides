@@ -25,6 +25,7 @@ module.exports = ({ marp }) =>
     .use(container, "ok")
     .use(container, "primary")
     .use(container, "secondary")
+    .use(container, "note")
     .use(container, "quote")
     .use(container, "flex")
     .use(container, "col", {

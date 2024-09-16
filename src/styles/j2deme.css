@@ -604,9 +604,8 @@ false {
 }
 
 note {
-  color: var(--amber-700);
+  color: var(--rose-800);
   font-weight: bold;
-  ;
 }
 
 p:has(note+em) em {
@@ -621,7 +620,8 @@ div.warning,
 div.error,
 div.primary,
 div.secondary,
-div.quote {
+div.quote,
+div.note {
   background-blend-mode: soft-light;
   background-clip: padding-box;
   background-position: 102% -15px;
@@ -643,6 +643,29 @@ div.primary {
 
 div.secondary {
   border-left-color: var(--secondary);
+}
+
+div.note {
+  border-left-color: var(--rose-800) !important;
+  background-color: var(--rose-50);
+  background-image: url("../src/assets/Icons/asterisk.svg");
+  background-blend-mode: darken;
+  background-size: 1.5rem;
+  background-position-x: 99%;
+  background-position-y: 3%;
+  min-width: 50%;
+  width: 80%;
+  position: fixed;
+  left: 10%;
+  top: 87%;
+  margin-bottom: 0 !important;
+  padding: 0.15rem 0.5rem 0.15em 0.5rem;
+}
+
+div.note p {
+  max-width: 95%;
+  margin-bottom: 0;
+  font-size: 0.8rem;
 }
 
 div.ok {

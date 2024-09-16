@@ -90,8 +90,8 @@ No es necesario utilizar etiquetas o marcados especiales para el texto en prosa.
 
 ## Estilos de texto
 
-:::: flex
-::: col 1/2 px-2
+::::: flex
+:::: col 1/2 px-2
 
 - **Negritas**
 - _Itálicas_
@@ -102,8 +102,8 @@ No es necesario utilizar etiquetas o marcados especiales para el texto en prosa.
 - <mark>Resaltado</mark>
 - Texto con nota <note>*</note>
 
-:::
-::: col 1/2 px-2
+::::
+:::: col 1/2 px-2
 
 ```md
 - **Negritas**
@@ -118,10 +118,12 @@ No es necesario utilizar etiquetas o marcados especiales para el texto en prosa.
 
 Los estilos de texto se pueden combinar con los párrafos.
 
-<note>*</note> Se sugiere que la nota sea breve.
-
+::: note
+Se sugiere que la nota sea breve.
 :::
+
 ::::
+:::::
 
 ---
 
@@ -811,6 +813,7 @@ Los bloques disponibles para mensajes son:
 - Información `info`
 - Advertencia `warning`
 - Error `error`
+- Nota `note`
 
 :::
 ::: col 1/2 px-2
@@ -884,6 +887,20 @@ _La simplicidad es la máxima sofisticación_
 
 ::: quote
 _Si nadie conoce la cita, seguramente no tendrá autor_
+:::
+
+---
+
+# Bloques
+
+## Notas
+
+Este tipo de bloque se usan en conjunto con `<note>*</note>` para especificar el contenido de la nota<note>*</note>.
+
+- A diferencia del resto de bloques, este se posiciona en la parte inferior central de la diapositiva.
+
+::: note
+Aunque se sugiere que la nota sea breve, si se requiere, el diseño del bloque permite notas de hasta 2 líneas.
 :::
 
 ---
