@@ -453,10 +453,18 @@ section.primary table td {
   color: var(--text);
 }
 
+section.primary ul li {
+  color: var(--text-inverted);
+}
+
 /* SECONDARY SECTION */
 section.secondary {
   background-color: var(--secondary);
   color: var(--zinc-900);
+}
+
+section.secondary ul li::before {
+  color: var(--text-inverted);
 }
 
 /* PRIMARY & SECONDARY SECTION */
