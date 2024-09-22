@@ -482,44 +482,15 @@ def manage_slides():
         ).ask()
 
         if answers['action'] == 'Previsualizar':
-            os.system(
-                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --preview --allow-local-files --output {DIST_DIR}/{slide}.html")
+            __preview(slide)
         elif answers['action'] == 'Exportar a HTML':
-            error = os.system(
-                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.html --allow-local-files")
-            if error != 0:
-                error_console.print(
-                    f"[bold red]Error al exportar {slide} a HTML ❌")
-            else:
-                print(
-                    f"[bold green]{slide} exportada a HTML con éxito ✅")
+            __export_html(slide)
         elif answers['action'] == 'Exportar a PDF':
-            error = os.system(
-                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes")
-            if error != 0:
-                error_console.print(
-                    f"[bold red]Error al exportar {slide} a PDF ❌")
-            else:
-                print(
-                    f"[bold green]{slide} exportada a PDF con éxito ✅")
+            __export_pdf(slide)
         elif answers['action'] == 'Exportar portada':
-            error = os.system(
-                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}-cover.png --allow-local-files --image=png --image-scale=2")
-            if error != 0:
-                error_console.print(
-                    f"[bold red]Error al exportar portada de {slide} ❌")
-            else:
-                print(
-                    f"[bold green]Portada de {slide} exportada con éxito ✅")
+            __export_cover(slide)
         elif answers['action'] == 'Exportar a imágenes':
-            error = os.system(
-                f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}/{slide}.png --allow-local-files --images=png --image-scale=2")
-            if error != 0:
-                error_console.print(
-                    f"[bold red]Error al exportar imágenes de {slide} ❌")
-            else:
-                print(
-                    f"[bold green]Imágenes de {slide} exportadas con éxito ✅")
+            __export_images(slide)
         elif answers['action'] == 'Regresar':
             pass
     sleep(2)
@@ -612,6 +583,54 @@ def main():
         print("[bold cyan]¡Hasta luego! 👋")
         Console().clear()
         sys.exit()
+
+def __preview(slide):
+    os.system(
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --preview --allow-local-files --output {DIST_DIR}/{slide}.html")
+
+
+def __export_pdf(slide):
+    error = os.system(
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes")
+    if error != 0:
+        error_console.print(
+            f"[bold red]Error al exportar {slide} a PDF ❌")
+    else:
+        print(
+            f"[bold green]{slide} exportada a PDF con éxito ✅")
+
+
+def __export_html(slide):
+    error = os.system(
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.html --allow-local-files")
+    if error != 0:
+        error_console.print(
+            f"[bold red]Error al exportar {slide} a HTML ❌")
+    else:
+        print(
+            f"[bold green]{slide} exportada a HTML con éxito ✅")
+
+
+def __export_cover(slide):
+    error = os.system(
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}-cover.png --allow-local-files --image=png --image-scale=2")
+    if error != 0:
+        error_console.print(
+            f"[bold red]Error al exportar portada de {slide} ❌")
+    else:
+        print(
+            f"[bold green]Portada de {slide} exportada con éxito ✅")
+
+
+def __export_images(slide):
+    error = os.system(
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}/{slide}.png --allow-local-files --images=png --image-scale=2")
+    if error != 0:
+        error_console.print(
+            f"[bold red]Error al exportar imágenes de {slide} ❌")
+    else:
+        print(
+            f"[bold green]Imágenes de {slide} exportadas con éxito ✅")
 
 
 if __name__ == '__main__':
