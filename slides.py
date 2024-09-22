@@ -60,9 +60,9 @@ def theme_selector(answer=True):
     Muestra una tabla con los temas disponibles y permite al usuario seleccionar uno.
 
     Args:
-        answer (bool, optional): Indica si se espera una respuesta del usuario. 
-                                Si es True, se muestra un formulario para seleccionar el tema. 
-                                Si es False, se espera que el usuario presione enter para regresar al menú principal. 
+        answer (bool, optional): Indica si se espera una respuesta del usuario.
+                                Si es True, se muestra un formulario para seleccionar el tema.
+                                Si es False, se espera que el usuario presione enter para regresar al menú principal.
                                 Por defecto es True.
 
     Returns:
