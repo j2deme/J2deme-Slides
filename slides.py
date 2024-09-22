@@ -10,6 +10,7 @@ import sys
 import json
 from time import sleep
 import questionary
+import click
 
 from rich import print  # Overrides print() function
 from rich.console import Console
@@ -584,6 +585,23 @@ def main():
         Console().clear()
         sys.exit()
 
+
+@click.command()
+@click.option('--pdf', is_flag=True, help='Exportar la presentación indicada a PDF')
+@click.option('--preview', is_flag=True, help='Previsualizar la presentación indicada')
+@click.argument('slide', required=False)
+def cli(pdf, preview, slide):
+
+    if slide:
+        slide = slide.replace('.md', '')
+        if pdf:
+            __export_pdf(slide)
+        elif preview:
+            __preview(slide)
+    else:
+        main()
+
+
 def __preview(slide):
     os.system(
         f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --preview --allow-local-files --output {DIST_DIR}/{slide}.html")
@@ -634,4 +652,4 @@ def __export_images(slide):
 
 
 if __name__ == '__main__':
-    main()
+    cli()
