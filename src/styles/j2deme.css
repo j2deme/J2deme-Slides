@@ -92,10 +92,13 @@ a[href^="http://"] {
   color: var(--primary);
 }
 
+ul {
+  padding-left: 1.5rem;
+}
+
 li {
   color: var(--text);
   font-family: inherit;
-  counter-increment: li;
 }
 
 s {
@@ -286,36 +289,52 @@ section::after {
   font-size: 0.6em;
 }
 
-section>ul,
-section>.flex ul {
+/* UNORDERED LISTS */
+section ul,
+section .flex ul {
   color: var(--subtle);
   list-style: none;
 }
 
-/*section>.flex ul>li p::before,*/
+section ul>li,
+section .flex ul>li {
+  color: var(--text);
+  padding-left: 0.7rem;
+}
+
 section ul>li::before,
-section .flex>ul>li::before {
-  color: var(--secondary);
+section .flex ul>li::before,
+section ul>li>ul>li::before,
+section .flex ul>li>ul>li::before {
   content: "\2023";
   display: inline-block;
   font-weight: bolder;
-  margin-left: -0.7em;
-  width: 1em;
+  font-size: larger;
+  width: 0.5em;
+  margin-left: -1em;
+  margin-right: 0.3em;
 }
 
-section ul>li ul,
-section ul>li ol {
-  list-style: none;
-  counter-reset: li;
+section ul>li::before,
+section .flex ul>li::before,
+section ul>li>ul>li>ul>li::before,
+section .flex ul>li>ul>li>ul>li::before {
+  color: var(--secondary);
 }
 
-section ul>li ul li::before {
-  content: "\2023";
-  font-weight: bold;
+section ul>li>ul>li::before,
+section .flex ul>li>ul>li::before {
   color: var(--primary);
-  width: 1em;
-  margin-left: -0.7em;
+  margin-left: -2em;
+  margin-right: 0.3em;
 }
+
+section ul>li>ul>li>ul>li::before,
+section .flex ul>li>ul>li>ul>li::before {
+  margin-left: -2.7em;
+  margin-right: 0.3em;
+}
+
 
 section ul>li ol li::before {
   content: counter(li, ordinal) ".";
