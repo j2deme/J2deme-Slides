@@ -184,16 +184,109 @@ Cada una de las anteriores con su propio estilo y estructura.
 
 1. Las listas numeradas son útiles para enumerar elementos con un orden específico.
 2. Y aunque se pueden anidar, es preferible no hacerlo.
+    1. Porque puede resultar confuso.
 
 ```md
 1. Las listas numeradas son útiles para enumerar elementos con un orden específico.
 2. Y aunque se pueden anidar, es preferible no hacerlo.
 ```
 
-1. Porque puede resultar confuso.
+1. Este debería ser el 3er elememento...
 
 ::: warning
-Al "romper" la lista numerada, se reinicia el contador, y no hay forma de continuar la numeración o cambiar el número de inicio.
+Al "romper" la lista numerada, se reinicia el contador, y no hay forma de continuar la numeración o cambiar el número de inicio, a menos que se utilice directamente HTML.
+:::
+
+---
+
+# Contenidos
+
+## Listas
+
+### Listas numeradas
+
+:::: flex
+::: col 1/2 px-2
+
+Se pueden tener listas numeradas anidadas.
+
+- A partir del 2o nivel, se requiere indentar con doble tabulacion.
+- Por default el 1er nivel se estiliza con arábigos, el 2o con romanos en minúsculas y el 3o con letras minúsculas.
+
+:::
+::: col 1/2 px-2
+
+```md
+1. Elemento 1
+    1. Sub elemento 1
+        1. Sub sub elemento 1
+    2. Sub elemento 2
+2. Elemento 3
+```
+
+1. Elemento 1
+    1. Sub elemento 1
+        1. Sub sub elemento 1
+    2. Sub elemento 2
+2. Elemento 3
+
+:::
+::::
+
+---
+
+# Contenidos
+
+## Listas
+
+### Listas numeradas
+
+Si se requiere, se puede cambiar el tipo de numeración y el número de inicio de las listas numeradas utilizando HTML.
+
+:::: flex
+::: col 1/2 px-2
+
+```html
+<ol type="A">
+  <li>Elemento 1</li>
+  <li>Elemento 2</li>
+</ol>
+```
+
+:::
+::: col 1/2 px-2
+
+<ol type="A">
+  <li>Elemento 1</li>
+  <li>Elemento 2</li>
+</ol>
+
+:::
+::::
+
+:::: flex
+::: col 1/2 px-2
+
+```html
+<ol start="3">
+  <li>Elemento 3</li>
+  <li>Elemento 4</li>
+</ol>
+```
+
+:::
+::: col 1/2 px-2
+
+<ol start="3">
+  <li>Elemento 3</li>
+  <li>Elemento 4</li>
+</ol>
+
+:::
+::::
+
+::: warning
+Se sugiere limitar su uso a casos específicos.
 :::
 
 ---
