@@ -335,30 +335,23 @@ section .flex ul>li>ul>li>ul>li::before {
   margin-right: 0.3em;
 }
 
-
-section ul>li ol li::before {
-  content: counter(li, ordinal) ".";
+/* ORDERED LISTS */
+ol li::marker,
+ol li>ol li::marker,
+ol li>ol li>ol li::marker {
   font-weight: bold;
-  color: var(--primary);
-  width: 1em;
-  margin-left: -0.7em;
-  padding-right: 0.5rem;
-}
-
-section>.flex>div>ol,
-section:not(.toc)>ol {
-  list-style: none;
-  counter-reset: li;
-}
-
-section>.flex>div>ol>li::before,
-section:not(.toc)>ol>li::before {
-  content: counter(li) ".";
-  color: var(--secondary);
-  display: inline-block;
-  font-weight: 500;
-  width: 1em;
+  width: 0.7em;
   margin-left: -1em;
+  padding-right: 0.2rem;
+}
+
+ol li::marker,
+ol li>ol li>ol li::marker {
+  color: var(--secondary);
+}
+
+ol li>ol li::marker {
+  color: var(--primary);
 }
 
 /* SECTION HEADERS */
