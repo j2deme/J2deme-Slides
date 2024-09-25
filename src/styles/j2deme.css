@@ -361,6 +361,8 @@ section:not(.toc)>ol>li::before {
   margin-left: -1em;
 }
 
+/* SECTION HEADERS */
+
 section:first-of-type h1 {
   position: relative;
   top: -10px;
