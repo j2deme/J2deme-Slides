@@ -289,6 +289,10 @@ section::after {
   font-size: 0.6em;
 }
 
+section li+li {
+  margin-top: 0.17rem;
+}
+
 /* UNORDERED LISTS */
 section ul,
 section .flex ul {
