@@ -18,6 +18,9 @@
     "engine": "./engine.js"
   },
   "dependencies": {
+    "gulp": "^5.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-sass": "^5.1.0",
     "inquirer": "^9.2.12",
     "markdown-it-container": "^4.0.0",
     "markdown-it-deflist": "^3.0.0"
