@@ -3,7 +3,7 @@ marp: true
 title: ===TITLE===
 author: Jaime Jesús Delgado Meraz
 header: ===HEADER===
-footer: "[&oast;](#contenidos) **DR. JJDM**"
+footer: "[&bull;](#contenidos) **DR. JJDM**"
 paginate: true
 theme: j2deme
 math: mathjax

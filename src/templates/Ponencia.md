@@ -3,7 +3,7 @@ marp: true
 title: ===TITLE===
 author: Jaime Jesús Delgado Meraz
 header: ===HEADER===
-footer: "[&oast;](#contenidos) **DR. JJDM**"
+footer: "[&bull;](#contenidos) **DR. JJDM**"
 paginate: true
 theme: j2deme
 math: mathjax
@@ -13,6 +13,7 @@ style: |
     --secondary: ===SECONDARY_COLOR===;
   }
 ---
+
 <!-- _header: '' -->
 <!-- _class: centered -->
 <!-- _transition: fade -->
@@ -50,7 +51,9 @@ Correo
 # Objetivo
 
 ---
+
 <!-- _class: toc -->
+
 # Contenidos
 
 1. [Introducción](#introducción)
@@ -60,6 +63,7 @@ Correo
 5. [Conclusión](#conclusión)
 
 ---
+
 <!-- _class: lead -->
 
 # Introducción
@@ -79,6 +83,7 @@ Correo
 # Tema 1
 
 ---
+
 <!-- _class: lead -->
 
 # Tema 2
