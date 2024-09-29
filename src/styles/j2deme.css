@@ -541,6 +541,14 @@ section.pattern {
   background-blend-mode: screen;
 }
 
+section.pattern h1,
+section.pattern ul,
+section.pattern p {
+  background-color: transparent;
+  backdrop-filter: blur(3.5px);
+  border-radius: 0.5rem;
+}
+
 .bg-primary.pattern,
 .bg-secondary.pattern,
 section.primary.pattern,
