@@ -393,29 +393,29 @@ section.toc ol {
   counter-reset: items;
 }
 
-section.toc ol li {
+section.toc ol>li {
   list-style: none;
   counter-increment: items;
-  padding-bottom: -0.2rem;
+  margin: -0.8rem 0.3rem;
 }
 
-section.toc ol li a {
+section.toc ol>li>a {
   text-decoration: none;
   color: var(--text);
 }
 
-section.toc ol li:nth-child(n) a:before {
+section.toc ol>li:nth-child(n)>a:before {
   content: "0" counter(items) " ";
 }
 
-section.toc ol li:nth-child(n + 10) a:before {
+section.toc ol>li:nth-child(n + 10)>a:before {
   content: counter(items) " ";
 }
 
-section.toc ol li a::before {
+section.toc ol>li>a::before {
   color: var(--primary);
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: var(--font-mono);
 }
 
