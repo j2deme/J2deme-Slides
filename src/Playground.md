@@ -793,7 +793,7 @@ Es importante notar que el código en línea no resalta ninguna sintaxis, por lo
 
 ## Bloques de código
 
-Para incluir bloques de código se utilizan tres tildes invertidas (\`\`\`) para delimitar el bloque de código.
+Para incluir bloques de código se utilizan tres tildes invertidas (` ``` `), para delimitar el bloque de código.
 
 ````python
 ```python
@@ -802,7 +802,9 @@ def hello_world():
 ```
 ````
 
-Cada bloque de código debe incluir la etiqueta del lenguaje de programación para que se resalte la sintaxis.
+Cada bloque de código debe incluir la etiqueta del lenguaje de programación para que se resalte la sintaxis correctamente.
+
+- El resaltado de sintaxis lo provee el plugin [Shiki](https://shiki.matsu.io/), y soporta una amplia variedad de lenguajes de programación.
 
 ---
 
@@ -828,7 +830,7 @@ Es importante que los comentarios y las líneas en general no sean demasiado lar
 
 ---
 
-```python
+```python {4,11,15}
 # Se sugiere no exceder los 80 caracteres por línea, y no exceder las 25
 # líneas por bloque para mantener un buen tamaño de fuente
 for i in range(1, 11):

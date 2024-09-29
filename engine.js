@@ -1,23 +1,12 @@
 const container = require("markdown-it-container");
 const deflist = require("markdown-it-deflist");
+const { default: markdownItShiki } = require("markdown-it-shiki");
 
 module.exports = ({ marp }) =>
   marp
-    .use(({ marpit }) => {
-      const { highlighter } = marpit;
-
-      // Override Marp Core's highlighter to wrap each lines by ordered list items
-      marpit.highlighter = function (...args) {
-        const original = highlighter.apply(this, args);
-        const listItems = original
-          .split(/\n(?!$)/) // Don't split at the trailing newline
-          .map(
-            (line) =>
-              `<li><span data-marp-line-number></span><span>${line}</span></li>`
-          );
-
-        return `<ol>${listItems.join("")}</ol>`;
-      };
+    .use(markdownItShiki, {
+      theme: "material-theme-darker",
+      highlightLines: true,
     })
     .use(container, "error")
     .use(container, "warning")

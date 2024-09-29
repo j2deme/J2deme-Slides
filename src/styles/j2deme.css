@@ -147,7 +147,9 @@ mjx-container {
 
 marp-pre {
   background-color: var(--surface);
-  border-color: var(--highlight-high);
+  border-color: var(--zinc-600);
+  border-width: 0.1em;
+  border-style: outset;
 }
 
 svg[data-marp-fitting="svg"] {
@@ -959,4 +961,50 @@ pre ol li span[data-marp-line-number]::before {
   content: counter(line-number) " ";
   counter-increment: line-number;
   text-align: right;
+}
+
+/* SHIKI */
+.shiki.material-theme-darker {
+  background-color: var(--neutral-800) !important;
+}
+
+.shiki>code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+.shiki>code .line {
+  padding: 0.1rem 0.2rem;
+  counter-increment: step;
+}
+
+.shiki>code .line::before {
+  content: counter(step);
+  width: 1rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+  text-align: right;
+  color: var(--neutral-400)
+}
+
+.shiki>code .line:last-child {
+  display: none;
+  counter-increment: none;
+}
+
+.shiki>code[v-pre] {
+  display: flex;
+  flex-direction: column;
+}
+
+.shiki .line.highlighted {
+  background: var(--neutral-700);
+  display: inline-block;
+  width: 100%;
+  border-radius: 0.1rem;
+  font-weight: bold;
+}
+
+.shiki>code .line.highlighted::before {
+  color: var(--neutral-100);
 }
