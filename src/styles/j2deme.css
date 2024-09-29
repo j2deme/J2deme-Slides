@@ -294,49 +294,32 @@ section li+li {
 }
 
 /* UNORDERED LISTS */
-section ul,
-section .flex ul {
+ul:not([type]) {
   color: var(--subtle);
   list-style: none;
 }
 
-section ul>li,
-section .flex ul>li {
+ul:not([type])>li {
   color: var(--text);
-  padding-left: 0.7rem;
+  padding-left: 0.3em;
 }
 
-section ul>li::before,
-section .flex ul>li::before,
-section ul>li>ul>li::before,
-section .flex ul>li>ul>li::before {
+ul:not([type])>li::marker,
+ul:not([type])>li>ul:not([type])>li::marker {
   content: "\2023";
   display: inline-block;
   font-weight: bolder;
   font-size: larger;
-  width: 0.5em;
-  margin-left: -1em;
-  margin-right: 0.3em;
+  width: 0.7em;
 }
 
-section ul>li::before,
-section .flex ul>li::before,
-section ul>li>ul>li>ul>li::before,
-section .flex ul>li>ul>li>ul>li::before {
+ul:not([type])>li::marker,
+ul:not([type])>li>ul:not([type])>li>ul:not([type])>li::marker {
   color: var(--secondary);
 }
 
-section ul>li>ul>li::before,
-section .flex ul>li>ul>li::before {
+ul:not([type])>li>ul:not([type])>li::marker {
   color: var(--primary);
-  margin-left: -2em;
-  margin-right: 0.3em;
-}
-
-section ul>li>ul>li>ul>li::before,
-section .flex ul>li>ul>li>ul>li::before {
-  margin-left: -2.7em;
-  margin-right: 0.3em;
 }
 
 /* ORDERED LISTS */
@@ -471,7 +454,7 @@ section.primary table td {
   color: var(--text);
 }
 
-section.primary ul li {
+section.primary ul>li {
   color: var(--text-inverted);
 }
 
@@ -481,7 +464,7 @@ section.secondary {
   color: var(--zinc-900);
 }
 
-section.secondary ul li::before {
+section.secondary ul>li::before {
   color: var(--text-inverted);
 }
 
@@ -518,7 +501,8 @@ section.inverted {
 
 section.inverted h2,
 section.inverted p,
-section.inverted li,
+section.inverted ul>li,
+section.inverted ol>li,
 section.inverted mjx-container {
   color: var(--text-inverted);
 }
