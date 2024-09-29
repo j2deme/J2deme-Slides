@@ -1,14 +1,16 @@
 /*!
 * @theme j2deme
 * @author j2deme
-* @auto-scaling fittingHeader, math, code
+* @auto-scaling fittingHeader, math
 */
-/*@import "https://unpkg.com/tailwindcss@^2/dist/utilities.min.css";*/
 @import "../src/styles/utilities.css";
 @import "../src/styles/colors.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import "default";
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka/iosevka.min.css);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Color+Emoji);
 
 /*@import "schema";
 @import "structure";*/
@@ -38,8 +40,8 @@
   --primary: #2563eb;
   --secondary: #ebad25;
 
-  --font-sans: Poppins, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "Monaspace Krypton Var", "Victor Mono", "Fira Code", monospace;
+  --font-sans: Poppins, "Fira Sans", sans-serif, "Noto Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-mono: Iosevka, "Iosevka Web", "Monaspace Krypton Var", "Victor Mono", "Fira Code", monospace;
   --font-comment: "Monaspace Radon Var", "Victor Mono", "Fira Code", monospace;
 
   font-family: var(--font-sans);
@@ -125,8 +127,7 @@ code {
   color: var(--text-inverted);
   background-color: var(--highlight-low);
   font-size: 0.8em;
-  letter-spacing: 0;
-  padding: 0.3em 0.4em;
+  padding: 0.1em 0.4em;
 }
 
 code,
@@ -135,6 +136,7 @@ pre {
   text-align: left;
   font-variant-ligatures: none;
   font-size: 0.75em;
+  padding: 0.2em 0.4em;
 }
 
 text {
@@ -352,7 +354,6 @@ section ul>li>ol>li::marker {
 }
 
 /* SECTION HEADERS */
-
 section:first-of-type h1 {
   position: relative;
   top: -10px;
@@ -973,7 +974,7 @@ pre ol li span[data-marp-line-number]::before {
 
 /* SHIKI */
 .shiki.material-theme-darker {
-  background-color: var(--neutral-800) !important;
+  background-color: var(--neutral-900) !important;
 }
 
 .shiki>code {
@@ -982,7 +983,11 @@ pre ol li span[data-marp-line-number]::before {
 }
 
 .shiki>code .line {
-  padding: 0.1rem 0.2rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  padding: 0.1rem -1rem;
   counter-increment: step;
 }
 
@@ -1006,11 +1011,12 @@ pre ol li span[data-marp-line-number]::before {
 }
 
 .shiki .line.highlighted {
-  background: var(--neutral-700);
+  background: var(--gray-700);
   display: inline-block;
   width: 100%;
   border-radius: 0.1rem;
-  font-weight: bold;
+  padding-left: -0.2rem;
+  padding-right: 0.1rem;
 }
 
 .shiki>code .line.highlighted::before {

@@ -825,14 +825,16 @@ def hello_world():
 Es importante que los comentarios y las líneas en general no sean demasiado largas, para evitar que el tamaño de la fuente sea muy pequeño.
 
 ```python
-# Este es un ejemplo de una línea de código que excede los 80 caracteres de longitud, forzando a que la fuente sea más pequeña
+# Este es un ejemplo de una línea de código que excede los 100 caracteres de longitud, forzando a que la línea se "desborde" hacia la siguiente línea.
+hello_world()
+# Cuando una línea se "desborda", su contenido avanza hacia la siguiente línea, sin incrementar la númeración.
 ```
 
 ---
 
 ```python {4,11,15}
-# Se sugiere no exceder los 80 caracteres por línea, y no exceder las 25
-# líneas por bloque para mantener un buen tamaño de fuente
+# Se sugiere no exceder los 80 ~ 85 caracteres por línea, y no exceder las 25 líneas
+# por bloque para mantener el contenido dentro de la diapositiva.
 for i in range(1, 11):
   print(f"Line {i}")
 
