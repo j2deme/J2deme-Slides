@@ -341,6 +341,14 @@ ol li>ol li::marker {
   color: var(--primary);
 }
 
+section ul>li>ol {
+  list-style: number;
+}
+
+section ul>li>ol>li::marker {
+  color: var(--primary);
+}
+
 /* SECTION HEADERS */
 
 section:first-of-type h1 {
