@@ -579,9 +579,7 @@ section table {
   margin-bottom: 0.5rem;
 }
 
-section table th,
-section table td,
-section table tr {
+section table :is(th, td, tr) {
   border: none;
 }
 
