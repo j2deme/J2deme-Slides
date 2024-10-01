@@ -141,6 +141,11 @@ p {
   color: var(--text);
 }
 
+p:has(note+em) em {
+  font-size: medium;
+  text-align: right;
+}
+
 code {
   color: var(--text-inverted);
   background-color: var(--highlight-low);
@@ -650,6 +655,7 @@ section.inverted table tr:nth-child(even) td {
   background-color: var(--surface);
 }
 
+/* CUSTOM TAGS */
 true {
   color: var(--emerald-600);
 }
