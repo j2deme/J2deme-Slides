@@ -54,6 +54,13 @@
 }
 
 /* HEADERS */
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-header);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0.5rem 0rem;
+}
+
 h1 {
   color: var(--primary);
   padding-bottom: -0.2rem;
