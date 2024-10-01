@@ -6,11 +6,12 @@
 @import "../src/styles/utilities.css";
 @import "../src/styles/colors.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import "default";
-
 @import url(https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka/iosevka.min.css);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Color+Emoji);
+@import 'https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+@import "default";
 
 /*@import "schema";
 @import "structure";*/
@@ -40,12 +41,15 @@
   --primary: #2563eb;
   --secondary: #ebad25;
 
-  --font-sans: Poppins, "Fira Sans", sans-serif, "Noto Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-mono: Iosevka, "Iosevka Web", "Monaspace Krypton Var", "Victor Mono", "Fira Code", monospace;
-  --font-comment: "Monaspace Radon Var", "Victor Mono", "Fira Code", monospace;
+  --font-header: Poppins, "Fira Sans", sans-serif, "Noto Color Emoji";
+  --font-body: "Figtree", "Poppins", "Fira Sans", sans-serif, "Noto Color Emoji";
+  --font-code: Iosevka, "Iosevka Web", "Monaspace Krypton Var", "Fira Code", monospace;
+  --font-footer: Iosevka, "Iosevka Web", FontAwesome, monospace;
+  --font-caligraphic: "Victor Mono", Iosevka, "Iosevka Web", serif, cursive;
 
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-weight: initial;
+  font-size: 25px;
   background-color: var(--base);
 }
 
@@ -54,7 +58,6 @@ h1 {
   color: var(--primary);
   padding-bottom: -0.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 800;
 }
 
 h2 {
@@ -155,7 +158,7 @@ code {
 
 code,
 pre {
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   text-align: left;
   font-variant-ligatures: none;
   font-size: 0.75em;
@@ -188,7 +191,7 @@ pre code svg[data-marp-fitting="svg"] {
 kbd {
   background-color: var(--slate-100);
   color: var(--text);
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   border-color: var(--slate-500);
   border-radius: 0.2em;
   padding: 0.5rem 0.4rem;
@@ -231,7 +234,7 @@ dd>ul {
 /* HEADER AND FOOTER */
 header,
 footer {
-  font-family: var(--font-mono);
+  font-family: var(--font-footer);
   font-size: 0.5em;
   color: inherit;
   display: flex;
@@ -275,7 +278,7 @@ blockquote p {
 blockquote:has(cite) cite {
   border: none;
   font-size: 0.8rem;
-  font-family: "Victor Mono", Noto Sans, cursive;
+  font-family: var(--font-caligraphic);
   font-style: italic;
 }
 
@@ -444,7 +447,7 @@ section.toc ol>li::marker {
   color: var(--primary);
   font-weight: 800;
   font-size: 1.5rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
 }
 
 section.toc ol>li>a {
@@ -476,7 +479,7 @@ section.primary {
 }
 
 section.primary :not(footer) a {
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 1.3em;
   background-color: var(--base);
   padding: 10px 10px;
@@ -640,7 +643,7 @@ section.inverted table tr:nth-child(even) td {
 
 /* CUSTOM TAGS & CLASSES */
 .font-coding {
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
 }
 
 .bg-primary {
@@ -784,7 +787,7 @@ div.quote blockquote {
 div.quote:has(cite) cite {
   border: none;
   font-size: 0.8rem;
-  font-family: "Victor Mono", Noto Sans, cursive;
+  font-family: var(--font-caligraphic);
   font-style: italic;
 }
 
@@ -798,7 +801,7 @@ div.quote cite::after {
 
 /* CODE BLOCK */
 .hljs-comment {
-  font-family: var(--font-comment);
+  font-family: var(--font-caligraphic);
   color: var(--subtle);
   font-style: italic;
 }
