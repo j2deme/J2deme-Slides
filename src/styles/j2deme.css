@@ -387,34 +387,26 @@ section ul>li>ol>li::marker {
 }
 
 /* SECTION HEADERS */
-section:first-of-type h1 {
-  position: relative;
-  top: -10px;
-  padding-bottom: 10px;
-}
-
 section:has(h1+h2) h1 {
   margin-bottom: 5px;
 }
 
-section:has(h1+h2) h2 {
-  position: relative;
-  top: -25px;
-  padding-bottom: 0;
-}
-
+section:has(h1+h2) h2,
 section:has(h1+h2+h3) h2 {
   position: relative;
   top: -25px;
   padding-bottom: 0;
+  margin-bottom: -10px;
+  padding-left: 10px;
 }
 
 section:has(h1+h2+h3) h3 {
-  position: relative;
-  top: -55px;
-  text-align: right;
-  padding-bottom: 5px;
-  margin-bottom: -35px;
+  position: absolute;
+  margin: 0;
+  max-width: fit-content;
+  top: 5.35rem;
+  right: 3.15rem;
+  padding: 0rem 0.2rem;
 }
 
 /* TOC SECTION */
