@@ -217,15 +217,16 @@ td false {
 }
 
 /* DEFINITION LIST */
-dt {
+dl>dt {
+  font-weight: 800;
   font-style: normal !important;
 }
 
-dt strong {
+dl>dt>strong {
   color: var(--secondary)
 }
 
-dd {
+dl>dd {
   margin-bottom: 0.3rem;
   color: var(--text);
   font-style: normal !important;
@@ -233,7 +234,7 @@ dd {
   padding-left: 0.7rem !important;
 }
 
-dd>ul {
+dl>dd>ul {
   color: var(--subtle);
   list-style: none;
 }
