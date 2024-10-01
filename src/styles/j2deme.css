@@ -118,6 +118,22 @@ strong {
 
 img {
   background-color: transparent;
+  max-width: 95%;
+  border-radius: 8px;
+  margin: 0.5rem;
+}
+
+img[alt*='#l'] {
+  float: left;
+}
+
+img[alt*='#r'] {
+  float: right;
+}
+
+img[alt*='#c'] {
+  display: block;
+  margin: auto;
 }
 
 p {
