@@ -1009,6 +1009,8 @@ Aunque se sugiere que la nota sea breve, si se requiere, el diseño del bloque p
   &lt;/Fin&gt;
 </div>
 
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
 ---
 
 <!-- paginate: skip -->
