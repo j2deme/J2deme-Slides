@@ -410,11 +410,6 @@ section:has(h1+h2+h3) h3 {
 }
 
 /* TOC SECTION */
-section.toc h1 {
-  margin-bottom: 0rem;
-  padding-bottom: 0rem;
-}
-
 section.toc ol {
   counter-reset: items;
   padding-left: 3.5em;
