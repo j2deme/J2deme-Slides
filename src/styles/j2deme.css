@@ -703,6 +703,16 @@ div.secondary {
   border-left-color: var(--secondary);
 }
 
+section:is(.cols-2, .cols-3, .rows-2, .rows-3, .rows) div:is(.ok, .info, .warning, .error),
+div.note {
+  min-width: 50%;
+  width: 80%;
+  position: fixed;
+  left: 10%;
+  bottom: 10px;
+  margin-bottom: 0 !important;
+}
+
 div.note {
   border-left-color: var(--rose-800) !important;
   background-color: var(--rose-50);
@@ -711,12 +721,6 @@ div.note {
   background-size: 1.5rem;
   background-position-x: 99%;
   background-position-y: 3%;
-  min-width: 50%;
-  width: 80%;
-  position: fixed;
-  left: 10%;
-  top: 87%;
-  margin-bottom: 0 !important;
   padding: 0.15rem 0.5rem 0.15em 0.5rem;
 }
 
