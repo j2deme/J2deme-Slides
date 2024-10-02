@@ -577,7 +577,9 @@ Pueden ser útiles para resaltar puntos específicos, aunque se sugiere no abusa
 
 ### Flex
 
-Para poder utilizar columnas se requiere una sintaxis específica que permite dividir la diapositiva en dos o más columnas.
+Es posible utilizar una cantidad arbitraria de columnas mediante una sintaxis específica que permite dividir la diapositiva en dos o más columnas.
+
+Para ello, se utiliza un contenedor personalizado de tipo `flex`.
 
 ```md
 :::: flex
@@ -610,7 +612,7 @@ Contenido de la columna 2
 ::::
 ```
 
-Donde la proporción puede variar entre `1/2`, `1/3`, `2/3`, e incluso `1/4`, `3/4`, aunque se sugiere no utilizar más de tres columnas.
+Donde la proporción puede variar entre `1/2`, `1/3`, `2/3`, e incluso `1/4`, `3/4`, aunque se sugiere **no** utilizar más de tres columnas.
 
 ---
 
