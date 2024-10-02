@@ -120,8 +120,7 @@ Cada tipografia con su propio estilo:
 
 ## Estilos de texto
 
-::::: flex
-:::: col 1/2 px-2
+::: left
 
 - **Negritas**
 - _Itálicas_
@@ -132,8 +131,8 @@ Cada tipografia con su propio estilo:
 - <mark>Resaltado</mark>
 - Texto con nota <note>*</note>
 
-::::
-:::: col 1/2 px-2
+:::
+::: right
 
 ```md
 - **Negritas**
@@ -148,12 +147,10 @@ Cada tipografia con su propio estilo:
 
 Los estilos de texto se pueden combinar con los párrafos.
 
+:::
 ::: note
 Se sugiere que la nota sea breve.
 :::
-
-::::
-:::::
 
 ---
 
@@ -228,15 +225,14 @@ Al "romper" la lista numerada, se reinicia el contador, y no hay forma de contin
 :::
 
 ---
-
+<!-- _class: cols-2 -->
 # Contenidos
 
 ## Listas
 
 ### Listas numeradas
 
-:::: flex
-::: col 1/2 px-2
+::: left
 
 Se pueden tener listas numeradas anidadas.
 
@@ -244,7 +240,7 @@ Se pueden tener listas numeradas anidadas.
 - Por default el 1er nivel se estiliza con arábigos, el 2o con romanos en minúsculas y el 3o con letras minúsculas.
 
 :::
-::: col 1/2 px-2
+::: right
 
 ```md
 1. Elemento 1
@@ -261,41 +257,24 @@ Se pueden tener listas numeradas anidadas.
 2. Elemento 3
 
 :::
-::::
 
 ---
-
+<!-- _class: cols-2 -->
 # Contenidos
 
 ## Listas
 
 ### Listas numeradas
 
+::: left
 Si se requiere, se puede cambiar el tipo de numeración y el número de inicio de las listas numeradas utilizando HTML.
 
-:::: flex
-::: col 1/2 px-2
-
 ```html
 <ol type="A">
   <li>Elemento 1</li>
   <li>Elemento 2</li>
 </ol>
 ```
-
-:::
-::: col 1/2 px-2
-
-<ol type="A">
-  <li>Elemento 1</li>
-  <li>Elemento 2</li>
-</ol>
-
-:::
-::::
-
-:::: flex
-::: col 1/2 px-2
 
 ```html
 <ol start="3">
@@ -305,64 +284,68 @@ Si se requiere, se puede cambiar el tipo de numeración y el número de inicio d
 ```
 
 :::
-::: col 1/2 px-2
+::: right
 
+Ejemplo con `type="A"`:
+<ol type="A">
+  <li>Elemento 1</li>
+  <li>Elemento 2</li>
+</ol>
+
+Ejemplo con `start="3"`:
 <ol start="3">
   <li>Elemento 3</li>
   <li>Elemento 4</li>
 </ol>
 
 :::
-::::
 
 ::: warning
 Se sugiere limitar su uso a casos específicos.
 :::
 
 ---
-
+<!-- _class: cols-2 -->
 # Contenidos
 
 ## Listas
 
 ### Listas de definición
 
+::: left
+
 Estas listas son útiles para definir términos o conceptos.
-
-::::: flex
-:::: col 1/2 px-2
-
-Término 1
-: Definición
-
-**Término 2**
-: Es posible resaltar un término.
-: Además de una definición con múltiples párrafos.
-
-Término 3
-: Definición
-
-::::
-:::: col 1/2 px-2
 
 ```md
 Término 1
 : Definición
 
 **Término 2**
-: Es posible utilizar resaltar un término.
+: Es posible utilizar negritas para resaltar un término.
 : Además de una definición con múltiples párrafos.
 
 Término 3
 : Definición
 ```
 
+:::
+::: right
+
+Término 1
+: Definición
+
+**Término 2**
+: Es posible utilizar negritas para resaltar un término.
+: Además de una definición con múltiples párrafos.
+
+Término 3
+: Definición
+
+:::
+
 ::: warning
 Debido a su estructura y estilo, no es recomendable anidar listas de definición.
 :::
-
-::::
-:::::
 
 ---
 
