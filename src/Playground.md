@@ -86,6 +86,36 @@ No es necesario utilizar etiquetas o marcados especiales para el texto en prosa.
 
 ---
 
+<!-- _class: cols-2 -->
+# Contenidos
+
+## Tipografías
+
+::: left
+
+La plantilla incluye un set de 4 tipografías:
+
+1. Encabezados en tipografía **Poppins**.
+2. Cuerpo de las diapositivas en tipografía **Figtree**.
+3. Código en línea y código en bloque en tipografía **Iosevka**.
+4. Autor de citas en tipografía **Victor Mono** en cursiva.
+
+:::
+
+::: right
+
+Cada tipografia con su propio estilo:
+
+1. <span style="font-family: var(--font-header)">Poppins</span>
+2. <span style="font-family: var(--font-body)">Figtree</span>
+3. <span style="font-family: var(--font-code)">Iosevka</span>
+4. <span style="font-family: var(--font-caligraphic); font-style: italic;">Victor Mono Cursiva</span>
+
+:::
+
+---
+
+<!-- _class: cols-2 -->
 # Contenidos
 
 ## Estilos de texto
