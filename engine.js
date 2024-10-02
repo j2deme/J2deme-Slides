@@ -47,4 +47,12 @@ module.exports = ({ marp }) =>
         }
       },
     })
+    .use(container, "left")
+    .use(container, "center")
+    .use(container, "right")
+    .use(container, "top")
+    .use(container, "middle")
+    .use(container, "bottom")
+    .use(container, "column")
+    .use(container, "row")
     .use(deflist);
