@@ -1121,6 +1121,8 @@ Este es un mensaje de advertencia
 Este es un mensaje de error
 :::
 
+Si el bloque se utiliza en alguna diapositiva con diseño `cols-2`, `cols-3`, `rows-2`, `rows-3` o `rows`, el bloque se posicionará en la parte inferior central de la diapositiva.
+
 ---
 
 # Bloques
@@ -1167,7 +1169,7 @@ Este tipo de bloque se usan en conjunto con `<note>*</note>` para especificar el
 - A diferencia del resto de bloques, este se posiciona en la parte inferior central de la diapositiva.
 
 ::: note
-Aunque se sugiere que la nota sea breve, si se requiere, el diseño del bloque permite notas de hasta 2 líneas.
+Aunque se sugiere que la nota sea breve, si se requiere, el diseño del bloque permite notas de hasta 2 líneas. Sin embargo, se debe ser cuidadoso para evitar que la nota salga de la diapositiva.
 :::
 
 ---
