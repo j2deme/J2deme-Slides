@@ -633,6 +633,161 @@ Se sugiere evitar anidar bloques, ya que puede resultar en una estructura confus
 
 # Layouts
 
+Un estilo alternativo para aplicar _layouts_ personalizados a las diapositivas es mediante el uso de clases de _scope_ local, mediante la directiva `<!-- _class: layout -->`, donde `layout` puede ser:
+
+- `cols-2` para un diseño a 2 columnas, se combina con los contenedores `left` y `right`.
+- `cols-3` para un diseño a 3 columnas, se combina con los contenedores `left`, `center` y `right`.
+- `rows-2` para un diseño a 2 filas, se combina con los contenedores `top` y `bottom`.
+<!-- - `row` para un diseño de una sola fila, se combina con los contenedores `left`, `center` y `right`. -->
+
+---
+<!-- _class: cols-2 display-->
+# Layouts
+
+## Diseño a 2 columnas
+
+::: left
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+::: right
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+---
+<!-- _class: cols-2 display-->
+# Layouts
+
+## Diseño a 2 columnas
+
+### Imagen a la izquierda
+
+::: left
+![placeholder](https://unsplash.it/400/400)
+:::
+
+::: right
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+---
+<!-- _class: cols-2 display-->
+# Layouts
+
+## Diseño a 2 columnas
+
+### Imagen a la derecha
+
+::: left
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+::: right
+![placeholder](https://unsplash.it/400/400)
+:::
+
+---
+<!-- _class: cols-3 display-->
+# Layouts
+
+## Diseño a 3 columnas
+
+::: left
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+::: center
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+::: right
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+---
+<!-- _class: cols-3 display-->
+# Layouts
+
+## Diseño a 3 columnas
+
+### Imagen a la izquierda
+
+::: left
+![placeholder](https://unsplash.it/400/400)
+:::
+
+::: center
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+::: right
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+---
+<!-- _class: cols-3 display-->
+# Layouts
+
+## Diseño a 3 columnas
+
+### Imagen al centro
+
+::: left
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+::: center
+![placeholder](https://unsplash.it/400/400)
+:::
+
+::: right
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+---
+<!-- _class: cols-3 display-->
+# Layouts
+
+## Diseño a 3 columnas
+
+### Imagen a la derecha
+
+::: left
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+::: center
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+
+::: right
+![placeholder](https://unsplash.it/400/400)
+:::
+
+---
+<!-- _class: rows-2 display-->
+# Layouts
+
+## Diseño a 2 filas
+
+::: top
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+
+- Si se incluyen imágenes en alguna de las filas, estas se distribuirán de forma automática desde el centro de la fila
+:::
+
+::: bottom
+![placeholder](https://unsplash.it/200)
+![placeholder](https://unsplash.it/200)
+![placeholder](https://unsplash.it/200)
+![placeholder](https://unsplash.it/200)
+![placeholder](https://unsplash.it/200)
+:::
+
+---
+
+# Layouts
+
 ## Temas
 
 El diseño general utiliza un fondo claro con un color de fuente oscuro para generar contraste y facilitar la lectura, pero igualmente se incluyen temas alternativos para adaptarse a diferentes estilos.
