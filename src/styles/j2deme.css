@@ -9,7 +9,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url(https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka/iosevka.min.css);
-@import url(https://fonts.googleapis.com/css2?family=Noto+Color+Emoji);
 @import "default";
 
 /*@import "schema";
@@ -40,8 +39,8 @@
   --primary: #2563eb;
   --secondary: #ebad25;
 
-  --font-header: Poppins, "Fira Sans", sans-serif, "Noto Color Emoji";
-  --font-body: "Figtree", "Poppins", "Fira Sans", sans-serif, "Noto Color Emoji";
+  --font-header: Poppins, "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-body: "Figtree", "Poppins", "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   --font-code: Iosevka, "Iosevka Web", "Monaspace Krypton Var", "Fira Code", monospace;
   --font-footer: Iosevka, "Iosevka Web", monospace;
   --font-caligraphic: "Victor Mono", Iosevka, "Iosevka Web", serif, cursive;
