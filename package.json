@@ -5,15 +5,17 @@
     "@marp-team/marp-cli": "^3.4.0"
   },
   "marp": {
+    "options": {
+      "emoji": {
+        "unicode": false,
+        "shortcode": false
+      }
+    },
+    "html": true,
     "allowLocalFiles": true,
     "math": "mathjax",
     "theme": "j2deme",
     "themeSet": "src/styles/j2deme.css",
-    "html": true,
-    "emoji": {
-      "unicode": false,
-      "shortcode": true
-    },
     "author": "Jaime Jesús Delgado Meraz",
     "engine": "./engine.js"
   },
