@@ -137,20 +137,26 @@ p:has(note+em) em {
   text-align: right;
 }
 
-code {
-  color: var(--text-inverted);
-  background-color: var(--highlight-low);
-  font-size: 0.8em;
-  padding: 0.1em 0.4em;
-}
-
 code,
 pre {
   font-family: var(--font-code);
-  text-align: left;
   font-variant-ligatures: none;
-  font-size: 0.75em;
+  font-size: 0.85em;
+}
+
+code {
+  color: var(--text-inverted);
+  background-color: var(--highlight-low);
+  padding: 0.1rem 0.2rem;
+}
+
+pre {
+  color: var(--text);
   padding: 0.4em 0.4em;
+}
+
+pre:has(code) {
+  background-color: var(--neutral-800);
 }
 
 text {
@@ -948,81 +954,80 @@ div.quote cite::after {
 }
 
 /* CODE BLOCK */
-.hljs-comment {
+section :is(pre, marp-pre) .hljs-comment {
   font-family: var(--font-caligraphic);
-  color: var(--subtle);
+  color: var(--gray-400);
   font-style: italic;
+  font-size: 0.7rem;
 }
 
-.hljs-regexp {
+section :is(pre, marp-pre) .hljs-regexp {
   color: var(--rose);
 }
 
-.hljs-punctuation {
+section :is(pre, marp-pre) .hljs-punctuation {
   color: var(--subtle);
 }
 
-.hljs-string {
-  color: var(--gold);
+section :is(pre, marp-pre) :is(.hljs-string,
+  .hljs-strong,
+  .hljs-emphasis,
+  .hljs-quote) {
+  color: var(--gold) !important;
 }
 
-.hljs-title {
+section :is(pre, marp-pre) .hljs-title {
   color: var(--foam);
 }
 
-.hljs-attr,
-.hljs-attribute {
+section :is(pre, marp-pre) :is(.hljs-attr,
+  .hljs-attribute) {
   color: var(--love);
 }
 
-.hljs-keyword {
+section :is(pre, marp-pre) .hljs-keyword {
   color: var(--pine);
 }
 
-.hljs-variable,
-.hljs-template-variable,
-.hljs-subst {
+section :is(pre, marp-pre) :is(.hljs-variable,
+  .hljs-template-variable,
+  .hljs-subst) {
   color: var(--text-inverted);
 }
 
-.hljs-literal {
+section :is(pre, marp-pre) .hljs-literal {
   color: var(--rose);
 }
 
-.hljs-type {
+section :is(pre, marp-pre) .hljs-type {
   color: var(--love);
 }
 
-.hljs-number {
-  color: var(--foam);
-}
-
-.hljs-built_in {
+section :is(pre, marp-pre) :is(.hljs-built_in,
+  .hljs-selector-tag) {
   color: var(--sunset);
 }
 
-.hljs-params {
+section :is(pre, marp-pre) .hljs-params {
   color: var(--plum);
 }
 
-.hljs-symbol {
+section :is(pre, marp-pre) :is(.hljs-number,
+  .hljs-symbol,
+  .hljs-name) {
   color: var(--foam);
 }
 
-.hljs-meta {
-  color: var(--subtle);
+section :is(pre, marp-pre) .hljs-meta {
+  color: var(--plum);
 }
 
-.hljs-name {
-  color: var(--foam);
-}
-
-.hljs-addition {
+section :is(pre, marp-pre) .hljs-addition {
   color: var(--pine);
   /*background-color: #eaffea;*/
 }
 
-.hljs-deletion {
+section :is(pre, marp-pre) .hljs-deletion {
   color: var(--rose);
   /*background-color: #ffecec;*/
 }
@@ -1032,105 +1037,95 @@ div.quote cite::after {
   background-color: transparent;
 }
 
-.hljs-strong,
-.hljs-emphasis,
-.hljs-quote {
-  color: var(--gold);
-}
-
-.hljs-selector-tag {
-  color: var(--sunset);
-}
-
-.hljs-type {
+section :is(pre, marp-pre) .hljs-type {
   color: var(--love);
 }
 
-.hljs-bullet {
+section :is(pre, marp-pre) .hljs-bullet {
   color: var(--foam);
 }
 
-.hljs-section {
+section :is(pre, marp-pre) .hljs-section {
   color: var(--pine);
 }
 
-.hljs-tag {
+section :is(pre, marp-pre) .hljs-tag {
   color: var(--text-inverted);
 }
 
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
+section :is(pre, marp-pre) :is(.hljs-selector-id,
+  .hljs-selector-class,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo) {
   color: var(--plum);
 }
 
-.hljs-link {
+section :is(pre, marp-pre) .hljs-link {
   text-decoration: underline;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-title,
-.hljs-section,
-.hljs-doctag,
-.hljs-type,
-.hljs-name,
-.hljs-strong {
+section :is(pre, marp-pre) :is(.hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-literal,
+  .hljs-title,
+  .hljs-section,
+  .hljs-doctag,
+  .hljs-type,
+  .hljs-name,
+  .hljs-strong) {
   font-weight: bold;
 }
 
-.hljs-params,
-.hljs-emphasis {
+section :is(pre, marp-pre) :is(.hljs-params,
+  .hljs-emphasis) {
   font-style: italic;
 }
 
 /* JAVA CODE BLOCK CUSTOMIZATION */
-section code.language-java .hljs-operator {
+section :is(pre, marp-pre) .language-java .hljs-operator {
   color: var(--blue-400);
 }
 
 /* JS CODE BLOCK CUSTOMIZATION */
-section code.language-js .hljs-variable.language_ {
+section :is(pre, marp-pre) .language-js .hljs-variable.language_ {
   color: var(--sunset);
 }
 
 /* PHP CODE BLOCK CUSTOMIZATION */
-code.language-php .hljs-meta {
+section :is(pre, marp-pre) .language-php .hljs-meta {
   color: var(--foam);
 }
 
-code.language-php .hljs-variable {
+section :is(pre, marp-pre) .language-php .hljs-variable {
   color: var(--sunset);
 }
 
-code.language-php .hljs-subst {
+section :is(pre, marp-pre) .language-php .hljs-subst {
   color: var(--rose);
 }
 
-code.language-php .hljs-built_in {
+section :is(pre, marp-pre) .language-php .hljs-built_in {
   color: var(--plum);
 }
 
 /* MARKDOWN CODE BLOCK CUSTOMIZATION */
-code.language-md .hljs-strong {
+section :is(pre, marp-pre) .language-md .hljs-strong {
   color: var(--love);
 }
 
-code.language-md .hljs-emphasis {
+section :is(pre, marp-pre) .language-md .hljs-emphasis {
   color: var(--sunset);
 }
 
-code.language-md .hljs-code {
+section :is(pre, marp-pre) .language-md .hljs-code {
   color: var(--plum);
 }
 
-code.language-md .hljs-link {
+section :is(pre, marp-pre) .language-md .hljs-link {
   color: var(--lime);
 }
 
-code.language-md .hljs-quote {
+section :is(pre, marp-pre) .language-md .hljs-quote {
   color: var(--rose);
 }
 
