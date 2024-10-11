@@ -596,7 +596,7 @@ section.secondary.pattern {
 section table {
   margin: 0 auto;
   align-self: center;
-  font-size: 26px;
+  font-size: 0.8rem;
   border-collapse: collapse;
   border-radius: 0.5rem;
   border-spacing: 0;
