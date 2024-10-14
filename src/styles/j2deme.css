@@ -903,7 +903,7 @@ div.note {
   font-size: smaller;
   justify-self: flex-end;
   margin-bottom: 0.3rem;
-  padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+  padding: 0.3rem 0.5rem 0.1rem 0.5rem;
 }
 
 div.primary {
@@ -914,7 +914,7 @@ div.secondary {
   border-left-color: var(--secondary);
 }
 
-section:is(.cols-2, .cols-3, .rows-2, .rows-3, .rows) div:is(.ok, .info, .warning, .error),
+section:is(.cols-2, .cols-3, .rows-2, .rows-3, .rows, .split) div:is(.ok, .info, .warning, .error),
 div.note {
   min-width: 50%;
   width: 80%;
