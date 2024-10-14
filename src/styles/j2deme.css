@@ -861,6 +861,27 @@ section.rows-2 .bottom img {
   grid-area: bottompanel;
 }
 
+/* DEBUG: Display layouts  */
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .top {
+  background-color: var(--blue-300);
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .left {
+  background-color: var(--green-300);
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .right {
+  background-color: var(--amber-300);
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .bottom {
+  background-color: var(--red-300);
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .center {
+  background-color: var(--purple-300);
+}
+
 /* CUSTOM COLORED BLOCKS */
 div.info,
 div.ok,
