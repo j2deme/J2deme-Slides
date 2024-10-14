@@ -332,7 +332,7 @@ section.secondary::after {
 }
 
 section li+li {
-  margin-top: 0.17rem;
+  margin-top: 0.14rem;
 }
 
 /* UNORDERED LISTS */
@@ -402,7 +402,6 @@ section:has(h1+h2+h3) h2 {
   top: -25px;
   padding-bottom: 0;
   margin-bottom: -10px;
-  padding-left: 10px;
 }
 
 section:has(h1+h2+h3) h3 {
