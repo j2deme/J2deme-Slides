@@ -695,24 +695,18 @@ section.cols-3 {
     "leftpanel  middlepanel   rightpanel";
 }
 
-section:is(.cols-2, .cols-3, .rows-2, .row).display>div {
-  background-color: var(--blue-300);
-}
-
-section:is(.cols-2, .cols-3, .rows-2, .row) h1 {
+section:is(.cols-2, .cols-3, .rows-2) h1 {
   grid-area: header;
   margin: 0;
 }
 
-section:is(.cols-2, .cols-3, .rows-2, .row) h2 {
+section:is(.cols-2, .cols-3, .rows-2, .split) h2 {
   position: relative;
-  max-width: fit-content;
   grid-area: subheader;
 }
 
-section:is(.cols-2, .cols-3, .rows-2, .row) h3 {
+section:is(.cols-2, .cols-3, .rows-2, .split) h3 {
   position: fixed;
-  max-width: fit-content;
   grid-area: topic;
 }
 
@@ -736,27 +730,68 @@ section.cols-3 .center {
 section:is(.cols-2, .cols-3) .left img,
 section:is(.cols-2, .cols-3) .right img,
 section.cols-3 .center img {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
   max-width: 95%;
   object-fit: scale-down;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 5%;
 }
 
 section:is(.cols-2, .cols-3) .left img {
-  padding-top: 5%;
   grid-area: leftpanel;
 }
 
 section:is(.cols-2, .cols-3) .right img {
-  padding-top: 5%;
   grid-area: rightpanel;
 }
 
 section.cols-3 .center img {
-  padding-top: 5%;
   grid-area: middlepanel;
+}
+
+section.split {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 52px 42px min-content 1fr min-content;
+  column-gap: 0px;
+  gap: 0.5rem 1rem;
+}
+
+section.split>div {
+  padding: 0.2rem;
+  margin-top: -2%;
+}
+
+section.split>h1 {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+section.split>h2 {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+section.split>h3 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+section.split .top {
+  margin-top: -1.1%;
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+section.split .left {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+section.split .right {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+section.split .bottom {
+  grid-area: 5 / 1 / 6 / 3;
 }
 
 /* ROWS */
