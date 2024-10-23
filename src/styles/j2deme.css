@@ -110,19 +110,21 @@ strong {
 img {
   background-color: transparent;
   max-width: 95%;
-  border-radius: 10px;
   margin: 0.5rem;
 }
 
 img[alt*='#l'] {
+  border-radius: 10px;
   float: left;
 }
 
 img[alt*='#r'] {
+  border-radius: 10px;
   float: right;
 }
 
 img[alt*='#c'] {
+  border-radius: 10px;
   display: block;
   margin: auto;
 }
@@ -637,6 +639,14 @@ section.inverted table tr:nth-child(even) td {
   background: var(--zinc-900);
 }
 
+section.references li {
+  overflow-wrap: break-word;
+}
+
+section.references li a {
+  font-family: var(--font-code);
+}
+
 /* CUSTOM TAGS & CLASSES */
 .font-coding {
   font-family: var(--font-code);
@@ -908,8 +918,16 @@ div.primary {
   border-left-color: var(--primary);
 }
 
+div.primary h1 {
+  color: var(--primary);
+}
+
 div.secondary {
   border-left-color: var(--secondary);
+}
+
+div.secondary h1 {
+  color: var(--secondary);
 }
 
 section:is(.cols-2, .cols-3, .rows-2, .rows-3, .rows, .split) div:is(.ok, .info, .warning, .error),
@@ -933,6 +951,10 @@ div.note {
   padding: 0.15rem 0.5rem 0.15em 0.5rem;
 }
 
+div.note h1 {
+  color: var(--rose-800);
+}
+
 div.note p {
   max-width: 95%;
   margin-bottom: 0;
@@ -945,10 +967,18 @@ div.ok {
   background-image: url("../src/assets/Icons/check-circle.svg");
 }
 
+div.ok h1 {
+  color: var(--green-500);
+}
+
 div.warning {
   border-left-color: var(--amber-500);
   background-color: var(--amber-100);
   background-image: url("../src/assets/Icons/warning.svg");
+}
+
+div.warning h1 {
+  color: var(--amber-500);
 }
 
 div.error {
@@ -957,10 +987,18 @@ div.error {
   background-image: url("../src/assets/Icons/warning-circle.svg");
 }
 
+div.error h1 {
+  color: var(--red-500);
+}
+
 div.info {
   border-left-color: var(--blue-500);
   background-color: var(--blue-100);
   background-image: url("../src/assets/Icons/info.svg");
+}
+
+div.info h1 {
+  color: var(--blue-500);
 }
 
 div.ok p,
@@ -1335,4 +1373,57 @@ label>.label-body {
 
 select[multiple] {
   min-height: min-content;
+}
+
+/* Color examples */
+
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto 5px;
+}
+
+.box {
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  border-radius: 5%;
+  display: inline;
+  margin: auto 5px;
+  min-width: fit-content;
+}
+
+.dots,
+.boxes,
+.swatch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dots div,
+.swatch.dots div {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto 5px;
+}
+
+.boxes div,
+.swatch.boxes div {
+  height: 25px;
+  width: 25px;
+  border-radius: 5%;
+  display: inline-block;
+  margin: auto 5px;
+}
+
+.box.mini,
+.dot.mini {
+  height: 10px;
+  width: 10px;
 }
