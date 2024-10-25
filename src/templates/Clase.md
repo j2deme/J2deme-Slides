@@ -86,6 +86,7 @@ SATCA
 ---
 
 <!-- paginate: skip -->
+<!-- class: references -->
 
 # Referencias
 

@@ -1186,6 +1186,7 @@ Aunque se sugiere que la nota sea breve, si se requiere, el diseño del bloque p
 ---
 
 <!-- paginate: skip -->
+<!-- class: references -->
 
 # Referencias
 

@@ -145,6 +145,7 @@ php artisan serve
 ---
 
 <!-- paginate: skip -->
+<!-- class: references -->
 
 # Referencias
 
