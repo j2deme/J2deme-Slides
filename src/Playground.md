@@ -672,13 +672,51 @@ Se sugiere evitar anidar bloques, ya que puede resultar en una estructura confus
 
 Un estilo alternativo para aplicar _layouts_ personalizados a las diapositivas es mediante el uso de clases de _scope_ local, mediante la directiva `<!-- _class: layout -->`, donde `layout` puede ser:
 
+- `split` para un diseño a 3 filas, la fila superior `top`, la fila intermedia dividida en `left`, `center`, y la fila inferior `bottom`.
+  - Los contenedores `top` y `bottom` se ajustan al contenido, pero sino se requieren, se sugiere usar un diseño de tipo `cols-2`.
 - `cols-2` para un diseño a 2 columnas, se combina con los contenedores `left` y `right`.
 - `cols-3` para un diseño a 3 columnas, se combina con los contenedores `left`, `center` y `right`.
 - `rows-2` para un diseño a 2 filas, se combina con los contenedores `top` y `bottom`.
-<!-- - `row` para un diseño de una sola fila, se combina con los contenedores `left`, `center` y `right`. -->
 
 ---
-<!-- _class: cols-2 display-->
+
+<!-- _class: split debug -->
+
+# Layouts
+
+## Diseño a 3 filas
+
+### Split
+
+::: top
+Fila superior (Se ajusta al contenido)
+:::
+::: left
+Columna izquierda
+
+```js
+var body = document.querySelector("body");
+body.style.backgroundColor = "red";
+body.style.color = "white";
+```
+
+:::
+::: right
+Columna derecha
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
+:::
+::: bottom
+Fila inferior (Se ajusta al contenido)
+
+Útil para algún contenido breve de cierre.
+
+:::
+
+---
+
+<!-- _class: cols-2 debug-->
+
 # Layouts
 
 ## Diseño a 2 columnas
