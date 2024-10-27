@@ -483,9 +483,9 @@ Puede incluirse una imagen junto a la cita para darle un contexto visual, se sug
 Las tablas se pueden crear de forma sencilla utilizando Markdown, y tienen un estilo simple y limpio.
 
 | Encabezado 1 | Encabezado 2 | Encabezado 3 |
-|--------------|:------------:|-------------:|
-| Celda 1      | Celda 2      | Celda 3      |
-| Celda 4      | Celda 5      | Celda 6      |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
 
 Aunque es posible cambiar la alineación de las columnas, los encabezados siempre se alinean al centro.
 
@@ -498,6 +498,9 @@ Dado que las tablas se adaptan al ancho del contenido, es recomendable no utiliz
 ## Imágenes
 
 Para incluir imágenes en línea se utiliza:
+
+:::: flex
+::: col 2/3 px-2
 
 ```md
 ![alt](ruta/a/la/imagen.png)
@@ -914,9 +917,9 @@ Adicionalmente se puede añadir la clase `centered` para centrar el contenido de
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
 
 | Encabezado 1 | Encabezado 2 | Encabezado 3 |
-|--------------|:------------:|-------------:|
-| Celda 1      | Celda 2      | Celda 3      |
-| Celda 4      | Celda 5      | Celda 6      |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
 
 ---
 
@@ -927,9 +930,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
 
 | Encabezado 1 | Encabezado 2 | Encabezado 3 |
-|--------------|:------------:|-------------:|
-| Celda 1      | Celda 2      | Celda 3      |
-| Celda 4      | Celda 5      | Celda 6      |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
 
 El texto se centra verticalmente, pero no horizontalmente.
 
@@ -942,9 +945,9 @@ El texto se centra verticalmente, pero no horizontalmente.
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
 
 | Encabezado 1 | Encabezado 2 | Encabezado 3 |
-|--------------|:------------:|-------------:|
-| Celda 1      | Celda 2      | Celda 3      |
-| Celda 4      | Celda 5      | Celda 6      |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
 
 ---
 
@@ -955,9 +958,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
 
 | Encabezado 1 | Encabezado 2 | Encabezado 3 |
-|--------------|:------------:|-------------:|
-| Celda 1      | Celda 2      | Celda 3      |
-| Celda 4      | Celda 5      | Celda 6      |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
 
 El texto se centra horizontal y verticalmente.
 
@@ -970,9 +973,9 @@ El texto se centra horizontal y verticalmente.
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
 
 | Encabezado 1 | Encabezado 2 | Encabezado 3 |
-|--------------|:------------:|-------------:|
-| Celda 1      | Celda 2      | Celda 3      |
-| Celda 4      | Celda 5      | Celda 6      |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
 
 ---
 
@@ -983,9 +986,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
 
 | Encabezado 1 | Encabezado 2 | Encabezado 3 |
-|--------------|:------------:|-------------:|
-| Celda 1      | Celda 2      | Celda 3      |
-| Celda 4      | Celda 5      | Celda 6      |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
 
 Se centra el texto horizontal y verticalmente.
 
