@@ -3,7 +3,7 @@ marp: true
 title: Playground
 author: Jaime Jesús Delgado Meraz
 header: Playground
-footer: '[&bull;](#contenidos) **DR. JJDM**'
+footer: "[&bull;](#contenidos) **DR. JJDM**"
 paginate: true
 theme: j2deme
 math: mathjax
@@ -13,6 +13,7 @@ style: |
     --secondary: #c22344;
   }
 ---
+
 <!-- _class: centered -->
 <!-- _paginate: false -->
 
@@ -60,7 +61,9 @@ SATCA
 ::::
 
 ---
+
 <!-- _class: toc -->
+
 # Secciones
 
 1. [Contenidos](#contenidos)
@@ -69,7 +72,9 @@ SATCA
 4. [Bloques](#bloques)
 
 ---
+
 <!-- _class: lead -->
+
 # Contenidos
 
 ---
@@ -87,6 +92,7 @@ No es necesario utilizar etiquetas o marcados especiales para el texto en prosa.
 ---
 
 <!-- _class: cols-2 -->
+
 # Contenidos
 
 ## Tipografías
@@ -116,6 +122,7 @@ Cada tipografia con su propio estilo:
 ---
 
 <!-- _class: cols-2 -->
+
 # Contenidos
 
 ## Estilos de texto
@@ -129,7 +136,7 @@ Cada tipografia con su propio estilo:
 - [Enlace](https://www.example.com)
 - <kbd>Ctrl</kbd> + <kbd>C</kbd>
 - <mark>Resaltado</mark>
-- Texto con nota <note>*</note>
+- Texto con nota <note>\*</note>
 
 :::
 ::: right
@@ -142,7 +149,7 @@ Cada tipografia con su propio estilo:
 - [Enlace](http://www.example.com)
 - <kbd>Ctrl</kbd> + <kbd>C</kbd>
 - <mark>Resaltado</mark>
-- Texto con nota <note>*</note>
+- Texto con nota <note>\*</note>
 ```
 
 Los estilos de texto se pueden combinar con los párrafos.
@@ -211,7 +218,7 @@ Cada una de las anteriores con su propio estilo y estructura.
 
 1. Las listas numeradas son útiles para enumerar elementos con un orden específico.
 2. Y aunque se pueden anidar, es preferible no hacerlo.
-    1. Porque puede resultar confuso.
+   1. Porque puede resultar confuso.
 
 ```md
 1. Las listas numeradas son útiles para enumerar elementos con un orden específico.
@@ -225,7 +232,9 @@ Al "romper" la lista numerada, se reinicia el contador, y no hay forma de contin
 :::
 
 ---
+
 <!-- _class: cols-2 -->
+
 # Contenidos
 
 ## Listas
@@ -244,22 +253,24 @@ Se pueden tener listas numeradas anidadas.
 
 ```md
 1. Elemento 1
-    1. Sub elemento 1
-        1. Sub sub elemento 1
-    2. Sub elemento 2
+   1. Sub elemento 1
+      1. Sub sub elemento 1
+   2. Sub elemento 2
 2. Elemento 3
 ```
 
 1. Elemento 1
-    1. Sub elemento 1
-        1. Sub sub elemento 1
-    2. Sub elemento 2
+   1. Sub elemento 1
+      1. Sub sub elemento 1
+   2. Sub elemento 2
 2. Elemento 3
 
 :::
 
 ---
+
 <!-- _class: cols-2 -->
+
 # Contenidos
 
 ## Listas
@@ -287,12 +298,14 @@ Si se requiere, se puede cambiar el tipo de numeración y el número de inicio d
 ::: right
 
 Ejemplo con `type="A"`:
+
 <ol type="A">
   <li>Elemento 1</li>
   <li>Elemento 2</li>
 </ol>
 
 Ejemplo con `start="3"`:
+
 <ol start="3">
   <li>Elemento 3</li>
   <li>Elemento 4</li>
@@ -305,7 +318,9 @@ Se sugiere limitar su uso a casos específicos.
 :::
 
 ---
+
 <!-- _class: cols-2 -->
+
 # Contenidos
 
 ## Listas
@@ -451,6 +466,7 @@ Adicionalmente, deberá incluirse una directiva `_class` con las clases `primary
 Puede incluirse una imagen junto a la cita para darle un contexto visual, se sugiere una proporción de 70/30.
 
 ---
+
 <!-- _class: primary centered -->
 
 > _En igualdad de condiciones, la solución más simple suele ser la más probable_
@@ -499,6 +515,7 @@ Las propiedades `right` y `left` ajustan la posición de la imagen; `fit`, `cove
 
 ---
 <!-- _class: lead -->
+
 # Layouts
 
 ---
@@ -583,7 +600,9 @@ Para ello, se utiliza un contenedor personalizado de tipo `flex`.
 
 ```md
 :::: flex
+
 <!-- Definición de columnas -->
+
 ::::
 ```
 
@@ -670,7 +689,9 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 :::
 
 ---
-<!-- _class: cols-2 display-->
+
+<!-- _class: cols-2 debug-->
+
 # Layouts
 
 ## Diseño a 2 columnas
@@ -686,7 +707,9 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 :::
 
 ---
-<!-- _class: cols-2 display-->
+
+<!-- _class: cols-2 debug-->
+
 # Layouts
 
 ## Diseño a 2 columnas
@@ -702,7 +725,9 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 :::
 
 ---
-<!-- _class: cols-3 display-->
+
+<!-- _class: cols-3 debug-->
+
 # Layouts
 
 ## Diseño a 3 columnas
@@ -720,7 +745,9 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 :::
 
 ---
-<!-- _class: cols-3 display-->
+
+<!-- _class: cols-3 debug-->
+
 # Layouts
 
 ## Diseño a 3 columnas
@@ -740,7 +767,9 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 :::
 
 ---
-<!-- _class: cols-3 display-->
+
+<!-- _class: cols-3 debug-->
+
 # Layouts
 
 ## Diseño a 3 columnas
@@ -760,7 +789,9 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 :::
 
 ---
-<!-- _class: cols-3 display-->
+
+<!-- _class: cols-3 debug-->
+
 # Layouts
 
 ## Diseño a 3 columnas
@@ -780,7 +811,9 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 :::
 
 ---
-<!-- _class: rows-2 display-->
+
+<!-- _class: rows-2 debug-->
+
 # Layouts
 
 ## Diseño a 2 filas
@@ -789,6 +822,7 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatibus rerum sit, praesentium dignissimos ratione molestias laborum vel! Iure mollitia, omnis nulla quam eum hic sunt. Reprehenderit dolorum accusamus quos.
 
 - Si se incluyen imágenes en alguna de las filas, estas se distribuirán de forma automática desde el centro de la fila
+
 :::
 
 ::: bottom
@@ -809,6 +843,7 @@ El diseño general utiliza un fondo claro con un color de fuente oscuro para gen
 
 :::: flex
 ::: col 1/3 px-2
+
 <div class="w-full bg-primary text-center rounded py-8">
 
 `primary`
@@ -835,6 +870,7 @@ Adicionalmente, se puede aplicar un patrón al color de fondo de la diapositiva 
 
 :::: flex
 ::: col 1/3 px-2
+
 <div class="w-full bg-primary text-center rounded py-8 pattern">
 
 `primary`
@@ -865,12 +901,14 @@ Adicionalmente, se puede aplicar un patrón al color de fondo de la diapositiva 
 
 La alineación general de los elementos se mantiene a la izquierda desde la parte superior.
 
-Cada tema se adapta al color de fondo de la diapositiva, y se puede combinar con otros elementos  como tablas, citas, listas y bloques de contenido que se adaptan al tema de la diapositiva.
+Cada tema se adapta al color de fondo de la diapositiva, y se puede combinar con otros elementos como tablas, citas, listas y bloques de contenido que se adaptan al tema de la diapositiva.
 
 Adicionalmente se puede añadir la clase `centered` para centrar el contenido de la diapositiva.
 
 ---
+
 <!-- _class: inverted -->
+
 # Estilo `inverted`
 
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
@@ -881,7 +919,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 | Celda 4      | Celda 5      | Celda 6      |
 
 ---
+
 <!-- _class: inverted centered-->
+
 # Estilo `inverted centered`
 
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
@@ -894,7 +934,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 El texto se centra verticalmente, pero no horizontalmente.
 
 ---
+
 <!-- _class: primary -->
+
 # Estilo `primary`
 
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
@@ -905,7 +947,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 | Celda 4      | Celda 5      | Celda 6      |
 
 ---
+
 <!-- _class: primary centered -->
+
 # Estilo `primary centered`
 
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
@@ -918,7 +962,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 El texto se centra horizontal y verticalmente.
 
 ---
+
 <!-- _class: secondary -->
+
 # Estilo `secondary`
 
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
@@ -929,7 +975,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 | Celda 4      | Celda 5      | Celda 6      |
 
 ---
+
 <!-- _class: secondary centered -->
+
 # Estilo `secondary centered`
 
 lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
@@ -942,7 +990,9 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 Se centra el texto horizontal y verticalmente.
 
 ---
+
 <!-- _class: lead -->
+
 # Código
 
 ---
@@ -1062,7 +1112,9 @@ def hello_world():
 Cuando se usa código en columnas es especialmente importante mantener un espaciado adecuado para lograr un equilibrio visual.
 
 ---
+
 <!-- _class: lead -->
+
 # Bloques
 
 ---
@@ -1164,7 +1216,7 @@ _Si nadie conoce la cita, seguramente no tendrá autor_
 
 ## Notas
 
-Este tipo de bloque se usan en conjunto con `<note>*</note>` para especificar el contenido de la nota<note>*</note>.
+Este tipo de bloque se usan en conjunto con `<note>*</note>` para especificar el contenido de la nota<note>\*</note>.
 
 - A diferencia del resto de bloques, este se posiciona en la parte inferior central de la diapositiva.
 
@@ -1175,6 +1227,7 @@ Aunque se sugiere que la nota sea breve, si se requiere, el diseño del bloque p
 ---
 
 <!-- _class: inverted centered pattern -->
+
 ![bg right w:35%](../src/assets/avatar.png)
 
 <div class="text-center text-middle font-bold font-coding text-8xl mt-10">
