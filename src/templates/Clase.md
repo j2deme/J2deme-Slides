@@ -40,24 +40,28 @@ Correo
 
 ---
 
+<!-- _class: cols-2 -->
+
 # Asignatura
 
-:::: flex
-::: col 1/2 px-2
+::: left
+
 Nombre
 : ===SUBJECT===
 
 Carrera
 ===CAREERS===
+
 :::
-::: col 1/2 px-2
+::: right
+
 Clave
 : ===CODE===
 
 SATCA
 : ===SATCA===
+
 :::
-::::
 
 ---
 
