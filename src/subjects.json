@@ -138,10 +138,60 @@
         "name": "Programación del Lado del Cliente",
         "skill": "Conoce y aplica un lenguaje de programación del lado del cliente, para la construcción de aplicaciones web dinámicas, considerando frameworks ya existentes",
         "topics": [
-          "Introducción al lenguaje",
-          "Manejo de frameworks",
-          "Estructuras de control",
-          "Manipulación de objetos"
+          {
+            "name": "Introducción al lenguaje",
+            "topics": [
+              "Introducción",
+              "Sintaxis básica",
+              "Tipos de datos",
+              "Variables",
+              "Operadores",
+              "Condicionales",
+              "Ciclos",
+              "Funciones",
+              "Arreglos"
+            ]
+          },
+          {
+            "name": "Modelo de objeto del documento (DOM)",
+            "topics": [
+              "Introducción al DOM",
+              "Selección de elementos",
+              "Modificación de elementos",
+              "Creación y eliminación de elementos",
+              "Eventos"
+            ]
+          },
+          {
+            "name": "Manipulación de objetos",
+            "topics": [
+              "Objeto window",
+              "Objeto document",
+              "Objeto location",
+              "Objeto history",
+              "Objeto navigator",
+              "Objeto screen",
+              "Objeto date"
+            ]
+          },
+          {
+            "name": "AJAX",
+            "topics": [
+              "XMLHttpRequest",
+              "GET",
+              "POST",
+              "JSON",
+              "APIs"
+            ]
+          },
+          {
+            "name": "Librerías y frameworks",
+            "topics": [
+              "Vanilla JS",
+              "Librerías",
+              "Frameworks"
+            ]
+          }
         ]
       },
       {
@@ -149,12 +199,66 @@
         "name": "Programación del Lado del Servidor",
         "skill": "Conoce y aplica un lenguaje de programación del lado del servidor, para la construcción de aplicaciones web dinámicas, considerando su conectividad a orígenes de datos",
         "topics": [
-          "Introducción al lenguaje",
-          "Estructuras de control",
-          "Tratamiento de formularios",
-          "Manejo de objetos del servidor",
-          "Creación de clases",
-          "Acceso a datos"
+          {
+            "name": "Introducción al lenguaje",
+            "topics": [
+              "Introducción",
+              "Sintaxis básica",
+              "Tipos de datos",
+              "Variables",
+              "Operadores",
+              "Condicionales",
+              "Ciclos",
+              "Funciones",
+              "Arreglos"
+            ]
+          },
+          {
+            "name": "Manejo de plantillas",
+            "topics": [
+              "Introducción",
+              "Sintaxis",
+              "Inclusión de archivos",
+              "Herencia de plantillas"
+            ]
+          },
+          {
+            "name": "Procesamiento de formularios",
+            "topics": [
+              "GET",
+              "POST",
+              "Validaciones",
+              "Subida de archivos"
+            ]
+          },
+          {
+            "name": "Acceso a datos",
+            "topics": [
+              "Conexión a bases de datos",
+              "Consultas",
+              "Inserciones",
+              "Actualizaciones",
+              "Eliminaciones"
+            ]
+          },
+          {
+            "name": "Creación de clases",
+            "topics": [
+              "Clases",
+              "Objetos",
+              "Métodos",
+              "Propiedades"
+            ]
+          },
+          {
+            "name": "Manejo de objetos del servidor",
+            "topics": [
+              "Request",
+              "Response",
+              "Session",
+              "Cookies"
+            ]
+          }
         ]
       },
       {
