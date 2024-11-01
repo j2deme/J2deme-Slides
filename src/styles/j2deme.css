@@ -1045,80 +1045,80 @@ div.quote cite::after {
 }
 
 /* CODE BLOCK */
-section :is(pre, marp-pre) .hljs-comment {
+section pre>code .hljs-comment {
   font-family: var(--font-caligraphic);
   color: var(--gray-400);
   font-style: italic;
   font-size: 0.7rem;
 }
 
-section :is(pre, marp-pre) .hljs-regexp {
+section pre>code .hljs-regexp {
   color: var(--rose);
 }
 
-section :is(pre, marp-pre) .hljs-punctuation {
+section pre>code .hljs-punctuation {
   color: var(--subtle);
 }
 
-section :is(pre, marp-pre) :is(.hljs-string,
+section pre>code :is(.hljs-string,
   .hljs-strong,
   .hljs-emphasis,
   .hljs-quote) {
   color: var(--gold) !important;
 }
 
-section :is(pre, marp-pre) .hljs-title {
+section pre>code .hljs-title {
   color: var(--foam);
 }
 
-section :is(pre, marp-pre) :is(.hljs-attr,
+section pre>code :is(.hljs-attr,
   .hljs-attribute) {
   color: var(--love);
 }
 
-section :is(pre, marp-pre) .hljs-keyword {
+section pre>code .hljs-keyword {
   color: var(--pine);
 }
 
-section :is(pre, marp-pre) :is(.hljs-variable,
+section pre>code :is(.hljs-variable,
   .hljs-template-variable,
   .hljs-subst) {
   color: var(--text-inverted);
 }
 
-section :is(pre, marp-pre) .hljs-literal {
+section pre>code .hljs-literal {
   color: var(--rose);
 }
 
-section :is(pre, marp-pre) .hljs-type {
+section pre>code .hljs-type {
   color: var(--love);
 }
 
-section :is(pre, marp-pre) :is(.hljs-built_in,
+section pre>code :is(.hljs-built_in,
   .hljs-selector-tag) {
   color: var(--sunset);
 }
 
-section :is(pre, marp-pre) .hljs-params {
+section pre>code .hljs-params {
   color: var(--plum);
 }
 
-section :is(pre, marp-pre) :is(.hljs-number,
+section pre>code :is(.hljs-number,
   .hljs-symbol,
   .hljs-name) {
   color: var(--foam);
 }
 
-section :is(pre, marp-pre) .hljs-meta {
+section pre>code .hljs-meta {
   color: var(--plum);
 }
 
-section :is(pre, marp-pre) .hljs-addition {
+section pre>code .hljs-addition {
   color: var(--pine);
   /*background-color: #eaffea;*/
 }
 
-section :is(pre, marp-pre) .hljs-deletion {
+section pre>code .hljs-deletion {
   color: var(--rose);
   /*background-color: #ffecec;*/
 }
@@ -1128,34 +1128,34 @@ section :is(pre, marp-pre) .hljs-deletion {
   background-color: transparent;
 }
 
-section :is(pre, marp-pre) .hljs-type {
+section pre>code .hljs-type {
   color: var(--love);
 }
 
-section :is(pre, marp-pre) .hljs-bullet {
+section pre>code .hljs-bullet {
   color: var(--foam);
 }
 
-section :is(pre, marp-pre) .hljs-section {
+section pre>code .hljs-section {
   color: var(--pine);
 }
 
-section :is(pre, marp-pre) .hljs-tag {
+section pre>code .hljs-tag {
   color: var(--text-inverted);
 }
 
-section :is(pre, marp-pre) :is(.hljs-selector-id,
+section pre>code :is(.hljs-selector-id,
   .hljs-selector-class,
   .hljs-selector-attr,
   .hljs-selector-pseudo) {
   color: var(--plum);
 }
 
-section :is(pre, marp-pre) .hljs-link {
+section pre>code .hljs-link {
   text-decoration: underline;
 }
 
-section :is(pre, marp-pre) :is(.hljs-keyword,
+section pre>code :is(.hljs-keyword,
   .hljs-selector-tag,
   .hljs-literal,
   .hljs-title,
@@ -1167,56 +1167,56 @@ section :is(pre, marp-pre) :is(.hljs-keyword,
   font-weight: bold;
 }
 
-section :is(pre, marp-pre) :is(.hljs-params,
+section pre>code :is(.hljs-params,
   .hljs-emphasis) {
   font-style: italic;
 }
 
 /* JAVA CODE BLOCK CUSTOMIZATION */
-section :is(pre, marp-pre) .language-java .hljs-operator {
+section pre>code .language-java .hljs-operator {
   color: var(--blue-400);
 }
 
 /* JS CODE BLOCK CUSTOMIZATION */
-section :is(pre, marp-pre) .language-js .hljs-variable.language_ {
+section pre>code .language-js .hljs-variable.language_ {
   color: var(--sunset);
 }
 
 /* PHP CODE BLOCK CUSTOMIZATION */
-section :is(pre, marp-pre) .language-php .hljs-meta {
+section pre>code .language-php .hljs-meta {
   color: var(--foam);
 }
 
-section :is(pre, marp-pre) .language-php .hljs-variable {
+section pre>code .language-php .hljs-variable {
   color: var(--sunset);
 }
 
-section :is(pre, marp-pre) .language-php .hljs-subst {
+section pre>code .language-php .hljs-subst {
   color: var(--rose);
 }
 
-section :is(pre, marp-pre) .language-php .hljs-built_in {
+section pre>code .language-php .hljs-built_in {
   color: var(--plum);
 }
 
 /* MARKDOWN CODE BLOCK CUSTOMIZATION */
-section :is(pre, marp-pre) .language-md .hljs-strong {
+section pre>code .language-md .hljs-strong {
   color: var(--love);
 }
 
-section :is(pre, marp-pre) .language-md .hljs-emphasis {
+section pre>code .language-md .hljs-emphasis {
   color: var(--sunset);
 }
 
-section :is(pre, marp-pre) .language-md .hljs-code {
+section pre>code .language-md .hljs-code {
   color: var(--plum);
 }
 
-section :is(pre, marp-pre) .language-md .hljs-link {
+section pre>code .language-md .hljs-link {
   color: var(--lime);
 }
 
-section :is(pre, marp-pre) .language-md .hljs-quote {
+section pre>code .language-md .hljs-quote {
   color: var(--rose);
 }
 
