@@ -139,7 +139,7 @@
         "skill": "Conoce y aplica un lenguaje de programación del lado del cliente, para la construcción de aplicaciones web dinámicas, considerando frameworks ya existentes",
         "topics": [
           {
-            "name": "Introducción al lenguaje",
+            "name": "Javascript",
             "topics": [
               "Introducción",
               "Sintaxis básica",
