@@ -155,7 +155,7 @@
           {
             "name": "Modelo de objeto del documento (DOM)",
             "topics": [
-              "Introducción al DOM",
+              "Introducción",
               "Selección de elementos",
               "Modificación de elementos",
               "Creación y eliminación de elementos",
