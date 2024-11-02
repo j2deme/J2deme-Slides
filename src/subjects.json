@@ -165,13 +165,14 @@
           {
             "name": "Manipulación de objetos",
             "topics": [
-              "Objeto window",
-              "Objeto document",
-              "Objeto location",
-              "Objeto history",
-              "Objeto navigator",
-              "Objeto screen",
-              "Objeto date"
+              "Window",
+              "Document",
+              "Location",
+              "History",
+              "Navigator",
+              "Date",
+              "Cookies",
+              "LocalStorage"
             ]
           },
           {
