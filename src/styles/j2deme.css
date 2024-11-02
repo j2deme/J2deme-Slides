@@ -577,10 +577,18 @@ section.pattern {
 }
 
 section.pattern h1,
+section.pattern h2,
+section.pattern h3 {
+  max-width: fit-content;
+  padding-right: 1.5rem;
+  background-color: inherit;
+}
+
+section.pattern h2,
+section.pattern h3,
 section.pattern ul,
 section.pattern p {
-  background-color: transparent;
-  backdrop-filter: blur(3.5px);
+  backdrop-filter: blur(50px);
   border-radius: 0.5rem;
 }
 
@@ -589,6 +597,10 @@ section.pattern p {
 section.primary.pattern,
 section.secondary.pattern {
   background-blend-mode: color-burn;
+}
+
+section.inverted.pattern {
+  background-blend-mode: color-dodge;
 }
 
 /* TABLE */
