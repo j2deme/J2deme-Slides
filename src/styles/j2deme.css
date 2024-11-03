@@ -655,7 +655,9 @@ section.references li {
   overflow-wrap: break-word;
 }
 
-section.references li a {
+section.references li a,
+a[href^="https://"],
+a[href^="http://"] {
   font-family: var(--font-code);
 }
 
