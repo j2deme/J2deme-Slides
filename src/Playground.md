@@ -174,7 +174,7 @@ En algunos casos se puede requerir enfatizar un párrafo de entre los demás,
 para esto se antepone el símbolo `>` que cambia el estilo del párrafo.
 
 > Como este párrafo, que se observa distinto al párrafo anterior, agregando ...
-````
+```
 
 ---
 
@@ -386,10 +386,12 @@ La diferencia principal radica en la estructura que se requiere para cada una.
 Se utilizan para resaltar una cita dentro de un párrafo y deben llevar un autor al final.
 
 > _En igualdad de condiciones, la solución más simple suele ser la más probable_
+>
 > <cite>William of Ockham</cite>
 
 ```md
 > _En igualdad de condiciones, la solución más simple suele ser la más probable_
+>
 > <cite>William of Ockham</cite>
 ```
 
@@ -432,7 +434,8 @@ Ambos estilos ofrecen la misma funcionalidad, pero con una presentación ligeram
 ::::: flex
 :::: col 1/2 px-2
 
-> _En igualdad de condiciones, la solución más simple suele ser la más probable_
+> _En igualdad de condiciones, la solución más simple suele ser la más probable_.
+>
 > <cite>William of Ockham</cite>
 
 ::::
@@ -458,6 +461,7 @@ Las citas en foco se utilizan para resaltar una cita en una diapositiva independ
 
 ```md
 > _En igualdad de condiciones, la solución más simple suele ser la más probable_
+>
 > <cite>William of Ockham</cite>
 ```
 
@@ -470,6 +474,7 @@ Puede incluirse una imagen junto a la cita para darle un contexto visual, se sug
 <!-- _class: primary centered -->
 
 > _En igualdad de condiciones, la solución más simple suele ser la más probable_
+>
 > <cite>William of Ockham</cite>
 
 ![bg right:30% w:50%](../src/assets/avatar.png)
