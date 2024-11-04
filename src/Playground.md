@@ -511,7 +511,30 @@ Para incluir imágenes en línea se utiliza:
 ![alt](ruta/a/la/imagen.png)
 ```
 
-Se sugiere utilizarlas a modo de fondo con la directiva `bg` para evitar que el contenido se vea afectado por la imagen.
+Se pueden combinar con algunas directivas para ajustar las dimensiones de la imagen:
+
+- Para el ancho `w`:
+  - _p.e._ `w:50` para pixeles, `w:50%` para porcentaje.
+- Para el alto `h`:
+  - _p.e._ `h:50` para pixeles, `h:50%` para porcentaje.
+
+:::
+::: col 1/3 px-2
+[w:100] ![w:100](../src/assets/avatar.png)
+[w:30 h:35] ![w:30 h:35](../src/assets/avatar.png)
+[h:200] ![h:200](../src/assets/avatar.png)
+:::
+::::
+
+---
+
+# Contenidos
+
+## Imágenes
+
+### Directivas
+
+Se pueden agregar directivas a las imagenes para ajustar su visualización.
 
 ```md
 ![bg](ruta/a/la/imagen.png)
@@ -519,9 +542,38 @@ Se sugiere utilizarlas a modo de fondo con la directiva `bg` para evitar que el 
 
 ![bg right:40% cover](../src/assets/pattern-alt.svg)
 
-Las propiedades `right` y `left` ajustan la posición de la imagen; `fit`, `cover`, `w` y `h` ajustan el tamaño.
+Se pueden usar las directivas:
+
+- `bg` para poner la imagen como fondo
+- `right` y `left` para ajustar la posición
+- `cover` ajusta los bordes superiores e inferiores de la imagen
+- `fit` ajusta la imagen dentro de los bordes
 
 ---
+
+# Contenidos
+
+## Imágenes
+
+### Flotantes
+
+En algunos casos se puede requerir que las imágenes se mezclen con el texto, para lo que se utilizan _flotantes_.
+
+![Imagen izquierda #l](https://unsplash.it/100/100) Flotando a la izquierda con la directiva `[#l]`, por otro lado si se requiere que la imagen quede entre entre las líneas del texto ![Imagen centrada #c](https://unsplash.it/100/100) se utiliza la directiva `[#c]`, y si se requiere que la imagen flote a la derecha se usa la directiva `[#r]`. ![Imagen derecha  #r](https://unsplash.it/100/100)
+El uso de estas directivas para imágenes flotantes resalta el contenido de la diapositiva.
+
+---
+
+# Contenidos
+
+## Imágenes
+
+### Flotantes
+
+![#l](https://unsplash.it/200/100) ![#l](https://unsplash.it/200/200) ![#l](https://unsplash.it/400/200) ![#l](https://unsplash.it/200/200) ![#l](https://unsplash.it/200/100)
+
+---
+
 <!-- _class: lead -->
 
 # Layouts
