@@ -583,6 +583,10 @@ section.inverted a {
   color: var(--primary);
 }
 
+section.inverted code:not(pre>code) {
+  background-color: var(--neutral-700);
+}
+
 section.inverted marp-pre {
   background-color: var(--text);
   border-color: var(--secondary);
