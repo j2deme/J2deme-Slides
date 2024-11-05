@@ -529,12 +529,24 @@ section.secondary footer strong {
   text-shadow: var(--text-inverted) 0 0 5px;
 }
 
-/* DARK & LIGHT HEADER */
+/* DARK & LIGHT TEXT */
 section.dark h1 {
   color: var(--zinc-900);
 }
 
+section.dark p,
+section.dark ul>li,
+section.dark ol>li {
+  color: var(--zinc-900);
+}
+
 section.light h1 {
+  color: var(--text-inverted);
+}
+
+section.light p,
+section.light ul>li,
+section.light ol>li {
   color: var(--text-inverted);
 }
 
