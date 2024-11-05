@@ -564,6 +564,15 @@ section.inverted mjx-container {
   color: var(--text-inverted);
 }
 
+section.inverted .warning p {
+  color: var(--amber-900);
+}
+
+section.inverted .warning strong,
+section.inverted .warning b {
+  color: var(--amber-600);
+}
+
 section.inverted strong,
 section.inverted a:hover {
   color: var(--secondary);
