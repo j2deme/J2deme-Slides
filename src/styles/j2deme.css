@@ -1211,30 +1211,50 @@ section pre>code :is(.hljs-params,
   font-style: italic;
 }
 
+section pre>code .hljs-string {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 /* JAVA CODE BLOCK CUSTOMIZATION */
-section pre>code .language-java .hljs-operator {
+section pre>code.language-java .hljs-operator {
   color: var(--blue-400);
 }
 
+/* HTML CODE BLOCK CUSTOMIZATION */
+section pre>code.language-html .hljs-keyword {
+  color: var(--pine);
+}
+
 /* JS CODE BLOCK CUSTOMIZATION */
-section pre>code .language-js .hljs-variable.language_ {
+section pre>code.language-js .hljs-variable.language_ {
   color: var(--sunset);
+}
+
+section pre>code.language-js .hljs-title.class_ {
+  color: var(--fuchsia-400);
+}
+
+section pre>code.language-js .hljs-title.function_ {
+  color: var(--purple-400);
 }
 
 /* PHP CODE BLOCK CUSTOMIZATION */
-section pre>code .language-php .hljs-meta {
+section pre>code.language-php .hljs-meta {
   color: var(--foam);
 }
 
-section pre>code .language-php .hljs-variable {
+section pre>code.language-php .hljs-variable {
   color: var(--sunset);
 }
 
-section pre>code .language-php .hljs-subst {
+section pre>code.language-php .hljs-subst {
   color: var(--rose);
 }
 
-section pre>code .language-php .hljs-built_in {
+section pre>code.language-php .hljs-built_in {
   color: var(--plum);
 }
 
