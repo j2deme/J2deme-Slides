@@ -52,18 +52,28 @@
 }
 
 /* HEADERS */
-:is(h1, h2, h3, h4, h5, h6) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-header);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.3;
   margin: 0.5rem 0rem;
+  background-color: transparent;
 }
 
-:is(h4, h5, h6) {
+h4,
+h5,
+h6 {
   margin: 0.2rem 0rem;
 }
 
-:is(h1, h3, h5) {
+h1,
+h3,
+h5 {
   color: var(--primary);
 }
 
@@ -71,7 +81,8 @@ h2 {
   color: var(--neutral-800);
 }
 
-:is(h4, h6) {
+h4,
+h6 {
   color: var(--secondary);
 }
 
@@ -468,6 +479,10 @@ section.lead h1 {
   text-transform: uppercase;
   border-radius: 0.2em;
   font-weight: bolder;
+}
+
+section.lead h2 {
+  margin-top: 1.5em;
 }
 
 /* PRIMARY SECTION */
