@@ -49,7 +49,7 @@
       {
         "unit": "4",
         "name": "Organización de Datos",
-        "skill": "Conoce y aplica estructuras de datos en un lenguaje de programación  que permitan la organización de datos en la resolución de problemas reales.",
+        "skill": "Conoce y aplica estructuras de datos en un lenguaje de programación que permitan la organización de datos en la resolución de problemas reales.",
         "topics": [
           "Arreglos",
           "Unidimensionales",
@@ -81,7 +81,8 @@
     "careers": [
       "Ingeniería en Sistemas Computacionales",
       "Ingeniería Informática"
-    ]
+    ],
+    "units": []
   },
   {
     "name": "Programación Web",
