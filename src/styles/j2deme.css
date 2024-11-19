@@ -944,6 +944,28 @@ section:is(.cols-2, .cols-3, .rows-2, .split).debug .center {
   background-color: var(--purple-300);
 }
 
+/**
+ * Grid
+ * Minimal grid system with auto-layout columns
+ * Taken from PicoCSS
+ */
+.grid {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  }
+}
+
+.grid>* {
+  min-width: 0;
+}
+
 /* CUSTOM COLORED BLOCKS */
 div.info,
 div.ok,
