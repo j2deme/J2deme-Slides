@@ -1533,3 +1533,25 @@ select[multiple] {
   height: 10px;
   width: 10px;
 }
+
+/* Custom Sections */
+/* WARNING */
+section.warning {
+  background-color: var(--amber-300);
+  /* color: var(--amber-900); */
+}
+
+section.warning h1 {
+  color: var(--amber-900);
+  align-self: center;
+}
+
+section.warning p:not(:has(img)) {
+  background-color: var(--base);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+section.warning img {
+  filter: invert(1);
+}
