@@ -571,12 +571,25 @@ section.inverted {
   color: var(--text-inverted);
 }
 
+section.inverted h1,
 section.inverted h2,
-section.inverted p,
+section.inverted h3 {
+  max-width: fit-content;
+  background-color: var(--surface);
+}
+
+section.inverted h2 {
+  color: var(--text-inverted);
+}
+
+section.inverted>p,
+section.inverted ul,
+section.inverted ol,
 section.inverted ul>li,
 section.inverted ol>li,
 section.inverted mjx-container {
   color: var(--text-inverted);
+  background-color: var(--surface);
 }
 
 section.inverted .warning p {
@@ -621,14 +634,11 @@ section.pattern h2,
 section.pattern h3 {
   max-width: fit-content;
   padding-right: 1.5rem;
-  background-color: inherit;
 }
 
-section.pattern h2,
-section.pattern h3,
 section.pattern ul,
 section.pattern p {
-  backdrop-filter: blur(50px);
+  /* backdrop-filter: blur(50px); */
   border-radius: 0.5rem;
 }
 
