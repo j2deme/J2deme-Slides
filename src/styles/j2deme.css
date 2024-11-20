@@ -355,6 +355,7 @@ ul:not([type])>li {
 ul:not([type])>li {
   color: var(--text);
   padding-left: 0.3em;
+  line-height: 1.2;
 }
 
 ul:not([type])>li::marker,
