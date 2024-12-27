@@ -5,7 +5,7 @@ const { default: markdownItShiki } = require("markdown-it-shiki");
 module.exports = ({ marp }) =>
   marp
     .use(markdownItShiki, {
-      theme: "github-dark",
+      theme: "material-theme",
       highlightLines: true,
     })
     .use(container, "error")
