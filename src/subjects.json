@@ -70,6 +70,116 @@
     ]
   },
   {
+    "name": "Programación Orientada a Objetos",
+    "acronym": "POO",
+    "code": "IAD - 2424",
+    "satca": "2 - 3 - 5",
+    "careers": [
+      "Ingeniería en Inteligencia Artificial"
+    ],
+    "units": [
+      {
+        "unit": "1",
+        "name": "Introducción al Paradigma de la Programación Orientada a Objetos",
+        "skill": [
+          "Comprende el concepto de la programación orientada a objetos y distingue las principales características de cada uno de sus pilares",
+          "Diseña y desarrolla diagramas de clases completos, incluyendo todas las notaciones necesarias para una representación precisa y comprensible"
+        ],
+        "topics": [
+          {
+            "name": "Definición",
+            "topics": [
+              "Clases",
+              "Objetos"
+            ]
+          },
+          {
+            "name": "Principios",
+            "topics": [
+              "Abstracción",
+              "Encapsulamiento",
+              "Herencia",
+              "Polimorfismo"
+            ]
+          },
+          "Unified Modeling Language (UML)"
+        ]
+      },
+      {
+        "unit": "2",
+        "name": "Clases y Objetos",
+        "skill": "Define, crea e implementa clases y objetos en la programación, aplicando el paradigma orientado a objetos, para resolver diversos problemas de manera efectiva",
+        "topics": [
+          "Definición de clases",
+          {
+            "name": "Declaración de clases",
+            "topics": [
+              "Atributos",
+              "Métodos",
+              "Encapsulamiento",
+              "Constructores",
+              "Sobrecarga de métodos"
+            ]
+          },
+          "Instanciación de objetos",
+          "Referencia al objeto actual",
+          "Manejo de excepciones"
+        ]
+      },
+      {
+        "unit": "3",
+        "name": "Herencia",
+        "skill": "Implementa los conceptos de herencia para diseñar clases base y derivadas, así como para emplear clases abstractas, con el propósito de desarrollar soluciones de software de forma eficiente y modular",
+        "topics": [
+          "Definición",
+          "Clasificación",
+          "Clase base y clase derivada",
+          "Referencia a la clase base",
+          "Atributos y métodos heredados",
+          "Implementación de clases derivadas",
+          "Clases abstractas",
+          "Métodos abstractos"
+        ]
+      },
+      {
+        "unit": "4",
+        "name": "Polimorfismo",
+        "skill": "Aplica el concepto del polimorfismo en la elaboración de programas a través de la utilización de interfaces, lo que posibilita la creación de soluciones con mayor flexibilidad y escalabilidad",
+        "topics": [
+          "Definición",
+          {
+            "name": "Interfaces",
+            "topics": [
+              "Declaración",
+              "Implementación",
+              "Sobreescritura de métodos",
+              "Diferencia con clases abstractas"
+            ]
+          },
+          "Variables polimórficas",
+          "Reutilización de código",
+          "Herencia de interfaces"
+        ]
+      },
+      {
+        "unit": "5",
+        "name": "Flujos y archivos",
+        "skill": "Reconoce los distintos tipos de archivos y aplica el concepto de persistencia de datos en el desarrollo de proyectos",
+        "topics": [
+          "Definición",
+          {
+            "name": "Clasificación",
+            "topics": [
+              "Archivos de texto",
+              "Archivos binarios"
+            ]
+          },
+          "Manejo de archivos"
+        ]
+      }
+    ]
+  },
+  {
     "name": "Estructura de Datos",
     "acronym": "EDD",
     "code": "AED - 1026",
