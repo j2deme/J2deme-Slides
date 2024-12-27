@@ -51,7 +51,6 @@ Nombre
 
 Carrera
 ===CAREERS===
-
 :::
 ::: right
 
