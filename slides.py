@@ -296,7 +296,11 @@ def new_class_slide():
 
         # answers['contents'] += "\n---\n\n"
         answers['contents'] += "# Competencia específica de la unidad\n\n"
-        answers['contents'] += f"> {answers['skill']}\n\n"
+        if isinstance(answers['skill'], list):
+            for skill in answers['skill']:
+                answers['contents'] += f"> {skill}\n\n"
+        else:
+            answers['contents'] += f"> {answers['skill']}\n\n"
 
         for idx, topic in enumerate(topics):
             answers['contents'] += f"---\n\n<!-- _class: lead -->\n# {
