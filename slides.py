@@ -183,6 +183,15 @@ def slide_from_json():
             unit = questionary.select(
                 "¿De qué unidad quieres crear la presentación?", choices=units, pointer="👉").ask()
 
+            # Si la materia no tiene un "theme" definido, establece uno por default
+            if 'theme' in subject:
+                theme = subject["theme"]
+            else:
+                theme = {
+                    "primary": "#1274c5",
+                    "secondary": "#c22344"
+                }
+
             return {
                 'subject': subject["name"],
                 'unit': unit["unit"],
@@ -192,8 +201,8 @@ def slide_from_json():
                 'code': subject["code"],
                 'satca': subject["satca"],
                 'careers': subject["careers"],
-                'primary': subject["theme"]["primary"],
-                'secondary': subject["theme"]["secondary"],
+                'primary': theme["primary"],
+                'secondary': theme["secondary"]
             }
         else:
             print("[bold red]No hay datos de materias disponibles ❌")
