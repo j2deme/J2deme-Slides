@@ -166,7 +166,7 @@ def slide_from_json():
         # Revisa si hay materias en el archivo y las muestra para seleccionar una
         if len(data) > 0:
             subjects = [questionary.Choice(
-                title=subject["name"], value=subject) for subject in data]
+                title=f"{subject["name"]} ({subject['code']})", value=subject) for subject in data]
 
             subject = questionary.select(
                 "¿De qué materia quieres crear la presentación?", choices=subjects, pointer="👉").ask()
@@ -250,24 +250,11 @@ def new_class_slide():
         answers['unit']) < 10 else f"{answers['unit']}"
 
     subject_name = answers['subject']
-
-    # Genera una abreviatura para el nombre de la materia
-    if len(answers['subject'].split()) > 1:
-        # Elimina conectivas del nombre de la materia
-        prepositions = ['la', 'el', 'los', 'las', 'y', 'en', 'a']
-        if len(answers['subject'].split()) > 2:
-            prepositions.append('de')
-
-        subject_clean = ' '.join(
-            [word for word in answers['subject'].split() if word.lower() not in prepositions])
-
-        # Toma la primera letra de cada palabra y las convierte a mayúsculas
-        subject_name = ''.join(word[0].upper()
-                               for word in subject_clean.split())
+    acronym = __generate_acronym(answers)
 
     # Título de la presentación y nombre del archivo
     title = f"{subject_name} - {unit} - {answers['unit_name']}"
-    filename = f"{subject_name}-{unit}"
+    filename = f"{acronym}-{unit}_{answers['code'].replace(' ', '')}"
 
     if manual == True:
         answers['careers'] = ": Ingeniería en Sistemas Computacionales"
@@ -658,6 +645,37 @@ def __export_images(slide):
     else:
         print(
             f"[bold green]Imágenes de {slide} exportadas con éxito ✅")
+
+
+def __generate_acronym(answers):
+    '''
+    Genera una abreviación para el nombre de la materia, útil para el nombrado del archivo Markdown.
+
+    Returns:
+        str: Abreviatura de la materia
+    '''
+
+    # Si las respuestas incluyen "acronym" no es necesario generar una abreviatura
+    if 'acronym' in answers:
+        return answers['acronym']
+    else:
+        # Genera una abreviatura para el nombre de la materia si tiene más de una palabra
+        if len(answers['subject'].split()) > 1:
+            # Elimina conectivas del nombre de la materia
+            prepositions = ['la', 'el', 'los', 'las', 'y', 'en', 'a']
+            if len(answers['subject'].split()) > 2:
+                prepositions.append('de')
+
+            subject_clean = ' '.join(
+                [word for word in answers['subject'].split() if word.lower() not in prepositions])
+
+            # Toma la primera letra de cada palabra y las convierte a mayúsculas
+            acronym = ''.join(word[0].upper()
+                              for word in subject_clean.split())
+            return acronym
+        else:
+            # Si el nombre de la materia tiene una sola palabra, se usa tal cual
+            return answers['subject']
 
 
 if __name__ == '__main__':
