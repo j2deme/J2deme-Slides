@@ -1556,3 +1556,23 @@ section.warning p:not(:has(img)) {
 section.warning img {
   filter: invert(1);
 }
+
+/* INFO */
+section.info {
+  background-color: var(--blue-500);
+}
+
+section.info h1 {
+  color: var(--blue-100);
+  align-self: center;
+}
+
+section.info p:not(:has(img)) {
+  background-color: var(--base);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+section.info img {
+  filter: invert(1);
+}
