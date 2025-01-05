@@ -267,7 +267,6 @@ def new_class_slide():
         # Temas de la presentación
         answers['contents'] += "---\n\n<!-- _class: lead -->\n# Tema 1\n\n---\n\n# Tema 1\n\n"
         answers['contents'] += "---\n\n<!-- _class: lead -->\n# Tema 2\n\n---\n\n# Tema 2\n\n"
-
     else:
         careers = ""
         for career in answers['careers']:
@@ -323,7 +322,7 @@ def new_class_slide():
             '===TITLE===', title).replace(
             '===HEADER===', f"{answers['subject']} - U{answers['unit']}").replace(
             '===SUBJECT===', answers['subject']).replace(
-            '===UNIT===', answers['unit']).replace(
+            '===UNIT===', unit).replace(
             '===UNIT_NAME===', answers['unit_name']).replace(
             '===CODE===', answers['code']).replace(
             '===SATCA===', answers['satca']).replace(
