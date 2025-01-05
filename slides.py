@@ -603,12 +603,12 @@ def cli(pdf, preview, slide):
 
 def __preview(slide):
     os.system(
-        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --preview --allow-local-files --output {DIST_DIR}/{slide}.html")
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.html --preview --html --allow-local-files ")
 
 
 def __export_pdf(slide):
     error = os.system(
-        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes")
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.pdf --html --allow-local-files --pdf-outlines --pdf-outlines.pages=false --pdf-notes")
     if error != 0:
         error_console.print(
             f"[bold red]Error al exportar {slide} a PDF ❌")
@@ -619,7 +619,7 @@ def __export_pdf(slide):
 
 def __export_html(slide):
     error = os.system(
-        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.html --allow-local-files")
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}.html --html --allow-local-files")
     if error != 0:
         error_console.print(
             f"[bold red]Error al exportar {slide} a HTML ❌")
@@ -630,7 +630,7 @@ def __export_html(slide):
 
 def __export_cover(slide):
     error = os.system(
-        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}-cover.png --allow-local-files --image=png --image-scale=2")
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}-cover.png --html --allow-local-files --image=png --image-scale=2")
     if error != 0:
         error_console.print(
             f"[bold red]Error al exportar portada de {slide} ❌")
@@ -641,7 +641,7 @@ def __export_cover(slide):
 
 def __export_images(slide):
     error = os.system(
-        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}/{slide}.png --allow-local-files --images=png --image-scale=2")
+        f"{MARP_COMMAND} {SOURCE_DIR}/{slide}.md --output {DIST_DIR}/{slide}/{slide}.png --html --allow-local-files --images=png --image-scale=2")
     if error != 0:
         error_console.print(
             f"[bold red]Error al exportar imágenes de {slide} ❌")
