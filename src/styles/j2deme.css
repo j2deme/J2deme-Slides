@@ -316,10 +316,21 @@ blockquote p {
 }
 
 blockquote:has(cite) cite {
+  display: inline-block;
+  min-width: 100%;
   border: none;
   font-size: 0.8rem;
   font-family: var(--font-caligraphic);
   font-style: italic;
+  text-align: right;
+}
+
+blockquote cite:before {
+  content: "\2014 \00A0";
+}
+
+blockquote cite::after {
+  content: "\00A0 \2014";
 }
 
 section.primary blockquote:has(cite) p {
@@ -330,13 +341,6 @@ section.primary blockquote:has(cite) cite {
   font-size: 1.0rem;
 }
 
-blockquote cite:before {
-  content: "\2014 \00A0";
-}
-
-blockquote cite::after {
-  content: "\00A0 \2014";
-}
 
 /* SECTION */
 section {
