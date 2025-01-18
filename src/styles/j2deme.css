@@ -244,9 +244,10 @@ mark {
   background-color: var(--yellow-150);
 }
 
-td true,
-td false {
-  background-color: transparent;
+::selection {
+  background-color: rgb(from var(--primary) r g b / .8);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--text-inverted);
 }
 
 /* DEFINITION LIST */
