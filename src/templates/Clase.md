@@ -14,14 +14,18 @@ style: |
   }
 ---
 
-<!-- _class: centered -->
+<!-- _class: cover -->
 <!-- _paginate: false -->
 
-# Unidad ===UNIT===
-
-# <!-- fit --> ===UNIT_NAME===
+# ===UNIT_NAME===
 
 ## ===SUBJECT===
+
+Dr. Jaime Jesús Delgado Meraz
+
+### Unidad ===UNIT===
+
+#### ===CODE===
 
 <img class="logo" alt="TecNM" src="../src/assets/Logo-TECNM.svg" />
 
@@ -83,8 +87,6 @@ SATCA
 <div class="text-center text-middle font-bold font-coding text-8xl mt-10">
   &lt;/Fin&gt;
 </div>
-
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
 
 ---
 
