@@ -357,10 +357,10 @@ section :not(footer) a {
   text-decoration: underline;
 }
 
+/* PAGINATION */
 section::after {
   font-size: 0.5em;
   font-family: var(--font-footer);
-  font-variant-ligatures: additional-ligatures;
   font-feature-settings: "calt" 0, "dlig" 1;
   font-weight: bold;
   min-width: max-content;
@@ -370,14 +370,14 @@ section::after {
   content: attr(data-marpit-pagination) "\00BB" attr(data-marpit-pagination-total);
   letter-spacing: 2px;
   padding: 2px 6px;
-  border-radius: 5px;
-  border: 1px solid var(--gray-500);
-  color: var(--gray-500);
+  border-radius: calc(var(--radius) / 2);
+  border: var(--pagination-border);
+  color: var(--pagination-color);
 }
 
-section.primary::after,
-section.secondary::after {
-  border: 1px solid var(--base);
+section[data-marpit-advanced-background-split]::after {
+  background-color: var(--base);
+}
 }
 
 section li+li {
