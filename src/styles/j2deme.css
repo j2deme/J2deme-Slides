@@ -45,7 +45,17 @@
   --current-line-inverted: var(--slate-800);
 
   --primary: #2563eb;
-  --secondary: #ebad25;
+  --primary-lighter: lch(from var(--primary) calc(l + 20) c h);
+  --primary-darker: lch(from var(--primary) calc(l - 20) c h);
+
+  --secondary-t: color-mix(in hsl longer hue, var(--primary) 61%, var(--primary-darker));
+  --secondary: lch(from var(--secondary-t) calc(l + 7) c h);
+  --secondary-lighter: lch(from var(--secondary) calc(l + 20) c h);
+  --secondary-darker: lch(from var(--secondary) calc(l - 20) c h);
+
+  --accent: color-mix(in oklch, var(--primary) 50%, var(--secondary));
+  --accent-lighter: lch(from var(--accent) calc(l + 20) c h);
+  --accent-darker: lch(from var(--accent) calc(l - 20) c h);
 
   --font-header: Poppins, "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   --font-body: "Figtree", "Poppins", "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
