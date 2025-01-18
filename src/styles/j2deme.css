@@ -141,7 +141,7 @@ li {
 del,
 s {
   text-decoration: line-through;
-  text-decoration-color: var(--secondary);
+  text-decoration-color: var(--red);
 }
 
 strong {
@@ -156,24 +156,28 @@ img {
   margin: 0.5rem;
 }
 
+img[alt*='#l'],
+img[alt*='#r'],
+img[alt*='#c'] {
+  border-radius: var(--radius);
+}
+
 img[alt*='#l'] {
-  border-radius: 10px;
   float: left;
 }
 
 img[alt*='#r'] {
-  border-radius: 10px;
   float: right;
 }
 
 img[alt*='#c'] {
-  border-radius: 10px;
   display: block;
   margin: auto;
 }
 
 p {
   font-weight: 500;
+  margin-bottom: 0.2rem;
   color: var(--text);
 }
 
@@ -192,20 +196,17 @@ pre {
 code {
   color: var(--text-inverted);
   background-color: var(--highlight-low);
-  padding: 0.1rem 0.2rem;
+  padding: 0.05rem 0.25rem;
 }
 
 pre {
   color: var(--text);
-  padding: 0.4em 0.4em;
-}
-
-pre:has(code) {
+  padding: 0.4em;
   background-color: var(--neutral-800);
 }
 
 text {
-  color: var(--surface);
+  color: var(--text);
 }
 
 mjx-container {
@@ -240,7 +241,7 @@ kbd {
 }
 
 mark {
-  background-color: var(--yellow-200);
+  background-color: var(--yellow-150);
 }
 
 td true,
@@ -266,8 +267,8 @@ dl>dd {
   padding-left: 0.7rem !important;
 }
 
-dl>dd>ul {
-  list-style: none;
+dl>dd:has(ul) {
+  margin-bottom: -5px;
 }
 
 /* HEADER AND FOOTER */
@@ -302,7 +303,7 @@ footer a:hover {
 
 /* BLOCKQUOTE */
 blockquote {
-  padding: 0.3rem 0.3rem 0 0.5rem;
+  padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 }
 
 blockquote:not(:has(cite)) {
@@ -401,7 +402,7 @@ ul:not([type])>li>ul:not([type])>li::marker {
 
 ul:not([type])>li::marker,
 ul:not([type])>li>ul:not([type])>li>ul:not([type])>li::marker {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 ul:not([type])>li>ul:not([type])>li::marker {
@@ -692,7 +693,7 @@ section table {
   align-self: center;
   font-size: 0.8rem;
   border-collapse: collapse;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   border-spacing: 0;
   margin-bottom: 0.5rem;
 }
@@ -710,7 +711,7 @@ section table th {
 }
 
 section table tr:nth-child(even) td {
-  background-color: var(--zinc-100);
+  background-color: var(--slate-50);
 }
 
 section table tr:last-child,
@@ -763,7 +764,7 @@ a[href^="http://"] {
 
 /* CUSTOM TAGS */
 true {
-  color: var(--emerald-600);
+  color: var(--jade-500);
 }
 
 false {
@@ -1383,7 +1384,7 @@ pre ol li span[data-marp-line-number]::before {
 
 /* SHIKI */
 .shiki.material-theme-darker {
-  background-color: var(--neutral-900) !important;
+  background-color: var(--highlight-low) !important;
 }
 
 .shiki>code {
@@ -1420,7 +1421,7 @@ pre ol li span[data-marp-line-number]::before {
 }
 
 .shiki .line.highlighted {
-  background: var(--gray-700);
+  background: var(--highlight-muted);
   display: inline-block;
   width: 100%;
   border-radius: 0.1rem;
