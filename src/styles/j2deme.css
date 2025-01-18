@@ -1522,56 +1522,62 @@ select[multiple] {
 }
 
 /* Color examples */
-
-.dot {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: auto 5px;
-}
-
-.box {
-  height: 25px;
-  width: 25px;
-  padding: 5px;
-  border-radius: 5%;
-  display: inline;
-  margin: auto 5px;
-  min-width: fit-content;
-}
-
 .dots,
 .boxes,
 .swatch {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+
+  &.full {
+    justify-content: space-around !important;
+  }
+}
+
+.swatch div {
+  height: 25px;
+  width: 25px;
+  border-radius: 26% 42% 30% 74% / 55% 40% 47% 24%;
+  display: inline-block;
+  margin: auto 5px;
 }
 
 .dots div,
-.swatch.dots div {
+.swatch.dots div,
+.dot {
   height: 25px;
   width: 25px;
-  border-radius: 50%;
+  border-radius: calc(var(--radius) * 5);
   display: inline-block;
   margin: auto 5px;
 }
 
 .boxes div,
-.swatch.boxes div {
-  height: 25px;
-  width: 25px;
-  border-radius: 5%;
+.swatch.boxes div,
+.box {
+  height: 20px;
+  /* max-width: fit-content; */
+  min-width: 20px;
+  padding: 3px;
+  border-radius: calc(var(--radius) / 2);
   display: inline-block;
-  margin: auto 5px;
+  margin: 2px;
 }
 
-.box.mini,
-.dot.mini {
-  height: 10px;
-  width: 10px;
+.dots.mini div,
+.boxes.mini div,
+.dot.mini,
+.box.mini {
+  height: 10px !important;
+  width: 10px !important;
+  min-width: 10px !important;
+}
+
+.boxes.mini div,
+.box.mini {
+  border-radius: calc(var(--radius) / 4);
+}
+
 }
 
 /* Custom Sections */
