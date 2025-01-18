@@ -1578,13 +1578,16 @@ select[multiple] {
   border-radius: calc(var(--radius) / 4);
 }
 
+.text-180 div {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
 }
 
 /* Custom Sections */
 /* WARNING */
 section.warning {
   background-color: var(--amber-300);
-  /* color: var(--amber-900); */
 }
 
 section.warning h1 {
@@ -1620,4 +1623,72 @@ section.info p:not(:has(img)) {
 
 section.info img {
   filter: invert(1);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+  color: oklch(from var(--accent) var(--l) 0 h) !important;
+
+  &.light {
+    background-color: var(--accent-lighter) !important;
+    color: oklch(from var(--accent-lighter) var(--l) 0 h) !important;
+  }
+
+  &.dark {
+    background-color: var(--accent-darker) !important;
+    color: oklch(from var(--accent-darker) var(--l) 0 h) !important;
+  }
+}
+
+/* CUSTOM ICONS & ICONS CLASSES */
+.ti {
+  font-size: 1rem;
+
+  &.xs {
+    font-size: 0.75rem !important;
+  }
+
+  &.sm {
+    font-size: 0.85rem !important;
+  }
+
+  &.md {
+    font-size: 1rem !important;
+  }
+
+  &.lg {
+    font-size: 1.2rem !important;
+  }
+
+  &.xl {
+    font-size: 1.5rem !important;
+  }
+
+  &.xxl {
+    font-size: 2rem !important;
+  }
+
+  &.xxxl {
+    font-size: 3rem !important;
+  }
+}
+
+.yes:before {
+  content: "\f704";
+  color: var(--green-350);
+}
+
+.yep:before {
+  content: "\ea5e";
+  color: var(--green-350);
+}
+
+.no::before {
+  content: "\f739";
+  color: var(--red-350);
+}
+
+.nop::before {
+  content: "\eb55";
+  color: var(--red-350);
 }
