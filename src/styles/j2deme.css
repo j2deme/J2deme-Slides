@@ -19,27 +19,31 @@
 @import "structure";*/
 
 :root {
+  --text: var(--dark);
   --base: #fcfcfc;
-  --base-inverted: var(--neutral-800);
-  --surface: #090d13;
-  --overlay: #393552;
-  --muted: #6e6a86;
-  --subtle: #908caa;
-  --text: var(--zinc-900);
-  --text-inverted: var(--zinc-50);
-  --love: var(--red-400);
-  --sunset: var(--orange-400);
-  --gold: var(--amber-400);
-  --rose: var(--pink-400);
-  --pine: var(--emerald-400);
-  --lime: var(--lime-400);
-  --foam: var(--blue-400);
-  --plum: var(--purple-400);
-  --highlight-low: #2a283e;
-  --highlight-muted: #44415a;
-  --highlight-high: #56526e;
+  --text-inverted: var(--light);
+  --base-inverted: var(--slate-950);
+
+  --surface: var(--slate-950);
+  --overlay: var(--slate-900);
+  --muted: var(--slate-700);
+  --subtle: var(--slate-500);
+
+  --highlight-low: var(--gray-800);
+  --highlight-muted: var(--gray-700);
+  --highlight-high: var(--gray-500);
+
+  --love: var(--red-450);
+  --sunset: var(--orange-450);
+  --gold: var(--amber-450);
+  --rose: var(--pink-450);
+  --pine: var(--jade-450);
+  --lime: var(--lime-450);
+  --foam: var(--blue-450);
+  --plum: var(--purple-450);
   --current-line: var(--slate-200);
   --current-line-inverted: var(--slate-800);
+
   --primary: #2563eb;
   --secondary: #ebad25;
 
