@@ -97,25 +97,25 @@ h6 {
   background-color: transparent;
 }
 
-h4,
-h5,
-h6 {
-  margin: 0.2rem 0rem;
-}
-
 h1,
-h3,
-h5 {
+h4 {
   color: var(--primary);
 }
 
-h2 {
+h3,
+h6 {
+  color: var(--secondary);
+}
+
+h2,
+h5 {
   color: var(--neutral-800);
 }
 
 h4,
+h5,
 h6 {
-  color: var(--secondary);
+  margin: 0.2rem 0rem;
 }
 
 /* BASIC TAGS */
