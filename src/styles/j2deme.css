@@ -67,6 +67,20 @@
   font-weight: initial;
   font-size: 25px;
   background-color: var(--base);
+
+  --radius: 10px;
+  --pagination-color: var(--gray-500);
+  --pagination-background: var(--base);
+  --pagination-border: 1px solid var(--gray-500);
+  --l-threshold: 0.7;
+  --l: clamp(0, (l / var(--l-threshold) - 1) * -infinity, 1);
+
+  --ok: var(--green-350);
+  --info: var(--azure-450);
+  --warning: var(--yellow-250);
+  --error: var(--red-500);
+  --note: var(--pink-600);
+  --tip: var(--blue-450);
 }
 
 /* HEADERS */
