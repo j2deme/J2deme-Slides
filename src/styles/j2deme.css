@@ -801,14 +801,15 @@ section table td .ti {
   justify-self: center;
 }
 
+/* REFERENCES */
 section.references li {
   overflow-wrap: break-word;
 }
 
 section.references li a,
-a[href^="https://"],
-a[href^="http://"] {
-  font-family: var(--font-code);
+section.references li a[href^="https://"],
+section.references li a[href^="http://"] {
+  font-family: var(--font-code) !important;
 }
 
 /* CUSTOM TAGS & CLASSES */
