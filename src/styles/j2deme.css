@@ -767,8 +767,10 @@ section table {
   margin-bottom: 0.5rem;
 }
 
-section table :is(th, td, tr) {
-  border: none;
+section table th,
+section table td,
+section table tr {
+  border: transparent;
 }
 
 section table th {
@@ -783,25 +785,20 @@ section table tr:nth-child(even) td {
   background-color: var(--slate-50);
 }
 
-section table tr:last-child,
-section.inverted table tr:last-child {
+section table tr:last-child {
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
-/* INVERTED TABLE */
-section.inverted table th,
-section.secondary table th {
-  color: var(--secondary);
-  border-bottom: 2px solid var(--secondary);
+section table td true,
+section table td false {
+  background-color: transparent;
 }
 
-section.inverted table tr {
-  color: var(--text-inverted);
-  background-color: var(--surface) !important;
-}
-
-section.inverted table tr:nth-child(even) td {
-  background: var(--zinc-900);
+section table td .ti {
+  display: inline;
+  /* font-size: 0.9rem; */
+  align-self: center;
+  justify-self: center;
 }
 
 section.references li {
