@@ -1,0 +1,71 @@
+/* SECONDARY SECTION */
+section.secondary {
+  background-color: var(--secondary) !important;
+  background-image: linear-gradient(to right bottom, var(--secondary), var(--secondary-darker));
+  color: oklch(from var(--secondary) var(--l) 0 h) !important;
+
+  &.centered {
+    text-align: center;
+  }
+
+  h1 {
+    color: inherit !important;
+  }
+
+  p,
+  ul,
+  ol {
+    color: inherit !important;
+    background-color: rgb(from var(--secondary) r g b /0.5) !important;
+    padding: 10px;
+    border-radius: var(--radius);
+  }
+
+  li {
+    color: inherit !important;
+  }
+
+  ul>li::marker {
+    color: var(--secondary-lighter) !important;
+  }
+
+  table {
+    th {
+      color: var(--secondary) !important;
+      border-bottom: 2px solid var(--secondary) !important;
+    }
+
+    td {
+      color: var(--text) !important;
+    }
+  }
+
+  footer a,
+  footer strong {
+    color: var(--text-inverted) !important;
+  }
+
+  &::after {
+    color: var(--gray-500) !important;
+    background-color: var(--base);
+  }
+
+  &.pattern {
+    background-blend-mode: hue !important;
+  }
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+  color: oklch(from var(--secondary) var(--l) 0 h) !important;
+
+  &.light {
+    background-color: var(--secondary-lighter) !important;
+    color: oklch(from var(--secondary-lighter) var(--l) 0 h) !important;
+  }
+
+  &.dark {
+    background-color: var(--secondary-darker) !important;
+    color: oklch(from var(--secondary-darker) var(--l) 0 h) !important;
+  }
+}
