@@ -1,0 +1,88 @@
+/* INVERTED SECTION */
+section.inverted,
+.bg-inverted {
+  background-color: var(--base-inverted) !important;
+  background-image: linear-gradient(to right bottom, var(--dark), var(--base-inverted));
+  color: oklch(from var(--base-inverted) var(--l) 0 h) !important;
+
+  p,
+  ul,
+  ol {
+    color: var(--text-inverted) !important;
+    padding: 10px;
+  }
+
+  ul>li,
+  ol>li {
+    color: var(--text-inverted) !important;
+  }
+
+  strong {
+    color: var(--secondary) !important;
+  }
+
+  a {
+    color: var(--primary);
+
+    &:hover {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+  }
+
+  code:not(pre > code) {
+    background-color: var(--neutral-700);
+  }
+
+  marp-pre {
+    background-color: var(--text);
+    border-color: var(--secondary);
+  }
+
+  mjx-container {
+    color: var(--text-inverted);
+    background-color: var(--base-inverted);
+  }
+
+  table {
+    border-color: var(--base-inverted) !important;
+    background-color: var(--base-inverted) !important;
+
+    th {
+      color: var(--secondary) !important;
+      border-bottom: 2px solid var(--secondary) !important;
+    }
+
+    tr {
+      color: var(--text-inverted);
+      background-color: var(--base-inverted) !important;
+
+      &:nth-child(even) {
+        td {
+          background: var(--slate-900) !important;
+        }
+      }
+    }
+  }
+
+  &::after {
+    color: var(--pagination-color) !important;
+    background-color: var(--base-inverted);
+  }
+
+  .warning {
+    p {
+      color: var(--amber-900);
+    }
+
+    strong,
+    b {
+      color: var(--amber-600);
+    }
+  }
+}
+
+.bg-inverted {
+  background-color: var(--base-inverted) !important;
+  color: oklch(from var(--base-inverted) var(--l) 0 h) !important;
+}
