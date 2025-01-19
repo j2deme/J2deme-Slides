@@ -1135,24 +1135,24 @@ section.info img {
   &.xxxl {
     font-size: 3rem !important;
   }
-}
 
-.yes:before {
-  content: "\f704";
-  color: var(--green-350);
-}
+  &.ti-yes:before {
+    content: "\f704";
+    color: var(--green-350);
+  }
 
-.yep:before {
-  content: "\ea5e";
-  color: var(--green-350);
-}
+  &.ti-yep:before {
+    content: "\ea5e";
+    color: var(--green-350);
+  }
 
-.no::before {
-  content: "\f739";
-  color: var(--red-350);
-}
+  &.ti-no::before {
+    content: "\f739";
+    color: var(--red-350);
+  }
 
-.nop::before {
-  content: "\eb55";
-  color: var(--red-350);
+  &.ti-nop::before {
+    content: "\eb55";
+    color: var(--red-350);
+  }
 }
