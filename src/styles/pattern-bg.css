@@ -1,0 +1,26 @@
+/* PATTERN */
+section.pattern,
+.pattern {
+  background-image: url("../../src/assets/pattern.svg") !important;
+  background-size: 200px;
+  background-repeat: repeat;
+  background-blend-mode: screen !important;
+
+  h1,
+  h2,
+  h3 {
+    max-width: fit-content;
+    padding-right: 1.5rem;
+  }
+
+  &.inverted {
+    background-blend-mode: color-dodge !important;
+
+    p,
+    ul,
+    ol {
+      background-color: rgb(from var(--base-inverted) r g b /0.8) !important;
+      border-radius: var(--radius);
+    }
+  }
+}
