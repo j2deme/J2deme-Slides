@@ -562,6 +562,7 @@ section table {
   border-radius: var(--radius);
   border-spacing: 0;
   margin-bottom: 0.5rem;
+  overflow: visible;
 }
 
 section table th,
