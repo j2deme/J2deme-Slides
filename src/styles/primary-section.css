@@ -1,0 +1,92 @@
+/* PRIMARY SECTION */
+section.primary {
+  background-color: var(--primary) !important;
+  background-image: linear-gradient(to right bottom, var(--primary), var(--primary-darker));
+  color: oklch(from var(--primary) var(--l) 0 h) !important;
+
+  &.centered {
+    text-align: center;
+  }
+
+  h1 {
+    color: inherit !important;
+  }
+
+  p,
+  ul,
+  ol {
+    color: inherit !important;
+    background-color: rgb(from var(--primary) r g b /0.5) !important;
+    padding: 10px;
+    border-radius: var(--radius);
+  }
+
+  li {
+    color: inherit !important;
+  }
+
+  ul>li::marker {
+    color: var(--primary-lighter) !important;
+  }
+
+  blockquote>p {
+    border: none;
+    color: var(--text-inverted) !important;
+    background-color: unset !important;
+    text-align: left !important;
+  }
+
+  blockquote p>cite {
+    display: inline-block;
+    min-width: 100%;
+    text-align: right !important;
+  }
+
+  footer a,
+  footer strong {
+    color: var(--text-inverted) !important;
+  }
+
+  table {
+    th {
+      color: var(--primary) !important;
+      border-bottom: 2px solid var(--primary) !important;
+    }
+
+    td {
+      color: var(--text) !important;
+    }
+  }
+
+  &::after {
+    color: var(--pagination-color) !important;
+    background-color: var(--base);
+  }
+
+  :not(footer) a {
+    font-family: var(--font-code);
+    font-size: 1.3em;
+    background-color: var(--base) !important;
+    padding: 10px 10px;
+    border-radius: var(--radius);
+  }
+
+  &.pattern {
+    background-blend-mode: color-burn !important;
+  }
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+  color: oklch(from var(--primary) var(--l) 0 h) !important;
+
+  &.light {
+    background-color: var(--primary-lighter) !important;
+    color: oklch(from var(--primary-lighter) var(--l) 0 h) !important;
+  }
+
+  &.dark {
+    background-color: var(--primary-darker) !important;
+    color: oklch(from var(--primary-darker) var(--l) 0 h) !important;
+  }
+}
