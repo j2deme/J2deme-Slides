@@ -1,0 +1,201 @@
+div.info,
+div.ok,
+div.warning,
+div.error,
+div.danger,
+div.primary,
+div.secondary,
+div.quote,
+div.note,
+span.note,
+div.tip {
+  background-blend-mode: soft-light;
+  background-clip: padding-box;
+  background-position: 98% 50%;
+  background-repeat: no-repeat;
+  background-size: 3.5%;
+  border-left-style: solid;
+  border-left-width: 0.25em;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: 0 0 0 0.1rem var(--text-inverted);
+  font-size: 1.2rem !important;
+  padding: 0.5rem 0.5rem 0.1rem 0.5rem !important;
+  margin-bottom: 7px;
+
+  h1 {
+    font-size: 1.2rem !important;
+    padding-bottom: 2px !important;
+    margin: 0.1rem 0 !important;
+  }
+}
+
+div.primary {
+  border-left-color: var(--primary);
+  box-shadow: none;
+
+  h1 {
+    color: var(--primary) !important;
+  }
+}
+
+div.secondary {
+  border-left-color: var(--secondary);
+  box-shadow: none;
+
+  h1 {
+    color: var(--secondary) !important;
+  }
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .rows-3, .rows, .split) div:is(.ok, .info, .warning, .error, .danger, .tip),
+div:is(.ok, .info, .warning, .error, .danger, .tip).sticky,
+div.note,
+span.note {
+  min-width: 50%;
+  width: 80%;
+  position: absolute !important;
+  left: 10% !important;
+  bottom: 10px !important;
+  margin-bottom: 0 !important;
+  display: inline;
+}
+
+span.note,
+div.note {
+  --shade: lch(from var(--note) calc(l + 45) c h);
+
+  border-left-color: var(--note);
+  background-color: color-mix(in hsl, var(--shade), var(--light));
+  color: oklch(from var(--shade) var(--l) 0 h) !important;
+
+  background-image: url("../../src/assets/Icons/asterisk.svg");
+  background-blend-mode: overlay;
+  background-size: 3.5%;
+
+  h1 {
+    color: var(--note) !important;
+  }
+}
+
+
+div.ok {
+  --shade: lch(from var(--ok) calc(l + 70) c h);
+
+  border-left-color: var(--ok);
+  background-color: color-mix(in hsl, var(--shade), var(--light));
+  background-image: url("../../src/assets/Icons/check-circle.svg");
+  color: oklch(from var(--shade) var(--l) 0 h) !important;
+
+  li::marker,
+  h1 {
+    color: var(--ok) !important;
+    display: inline-block;
+  }
+}
+
+div.warning {
+  --shade: lch(from var(--warning) calc(l + 70) c h);
+
+  border-left-color: var(--warning);
+  background-color: color-mix(in hsl, var(--shade), var(--light));
+  background-image: url("../../src/assets/Icons/warning.svg");
+  color: oklch(from var(--shade) var(--l) 0 h) !important;
+
+  li::marker,
+  h1 {
+    color: var(--warning) !important;
+  }
+}
+
+div.danger,
+div.error {
+  --shade: lch(from var(--error) calc(l + 40) c h);
+
+  border-left-color: var(--error);
+  background-color: color-mix(in hsl, var(--shade), var(--light));
+  background-image: url("../../src/assets/Icons/alert-hexagon.svg");
+  color: oklch(from var(--shade) var(--l) 0 h) !important;
+
+  li::marker,
+  h1 {
+    color: var(--error) !important;
+  }
+}
+
+div.info {
+  --shade: lch(from var(--info) calc(l + 20) c h);
+
+  border-left-color: var(--info);
+  background-color: color-mix(in hsl, var(--shade), var(--light));
+  background-image: url("../../src/assets/Icons/info.svg");
+  color: oklch(from var(--shade) var(--l) 0 h) !important;
+
+  li::marker,
+  h1 {
+    color: var(--info) !important;
+  }
+}
+
+div.tip {
+  --shade: lch(from var(--tip) calc(l + 20) c h);
+
+  border-left-color: var(--tip);
+  background-color: color-mix(in hsl, var(--shade), var(--light));
+  background-image: url("../../src/assets/Icons/tip.svg");
+  color: oklch(from var(--shade) var(--l) 0 h) !important;
+  /* background-blend-mode: normal; */
+
+  li::marker,
+  h1 {
+    color: var(--tip) !important;
+  }
+}
+
+div.ok p,
+div.warning p,
+div.error p,
+div.danger p,
+div.info p,
+div.note p,
+span.note p,
+div.primary p,
+div.secondary p,
+div.tip p {
+  max-width: 92%;
+}
+
+/* QUOTE */
+div.quote {
+  border-left-color: var(--gray-600);
+  background-color: var(--gray-50);
+  background-image: url("../../src/assets/Icons/quotes.svg");
+  background-size: 3.5rem;
+  background-position-y: -5px;
+}
+
+div.quote p {
+  font-size: x-large;
+  color: var(--highlight-muted);
+}
+
+div.quote blockquote {
+  border: none;
+}
+
+div.quote:has(cite) cite {
+  display: inline-block;
+  min-width: 100%;
+  border: none;
+  font-size: 1.2rem !important;
+  font-family: var(--font-caligraphic);
+  font-style: italic;
+  text-align: right;
+}
+
+div.quote cite:before {
+  content: "\2014 \00A0";
+}
+
+div.quote cite::after {
+  content: "\00A0 \2014";
+}
