@@ -1,0 +1,228 @@
+/* COLUMNS */
+section.cols-2 {
+  display: grid !important;
+  overflow: visible;
+  gap: 0.5rem 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 52px 42px 80%;
+  grid-template-areas:
+    "header header"
+    "subheader topic"
+    "leftpanel rightpanel";
+}
+
+section.cols-3 {
+  display: grid !important;
+  overflow: visible;
+  gap: 0.5rem 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 52px 42px 80%;
+  grid-template-areas:
+    "header   header  header"
+    "subheader  subheader   topic"
+    "leftpanel  middlepanel   rightpanel";
+}
+
+section:is(.cols-2, .cols-3, .rows-2) h1 {
+  grid-area: header;
+  margin: 0;
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split) h2 {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  grid-area: subheader;
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split)>h3 {
+  position: fixed !important;
+  grid-area: topic;
+}
+
+section:is(.cols-2, .cols-3)>div {
+  margin-top: -2%;
+  padding: 0.2rem;
+}
+
+section:is(.cols-2, .cols-3) .left {
+  grid-area: leftpanel;
+}
+
+section:is(.cols-2, .cols-3) .right {
+  grid-area: rightpanel;
+}
+
+section.cols-3 .center {
+  grid-area: middlepanel;
+}
+
+section.cols-2 .left>p:has(img),
+section.cols-2 .right>p:has(img),
+section.cols-3 .left>p:has(img),
+section.cols-3 .center>p:has(img),
+section.cols-3 .right>p:has(img) {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: auto !important;
+  height: 100%;
+}
+
+section.cols-2 .left img,
+section.cols-3 .left img,
+section.cols-2 .right img,
+section.cols-3 .right img,
+section.cols-3 .center img {
+  max-width: 95%;
+  object-fit: scale-down;
+  border-radius: var(--radius);
+}
+
+section.cols-2 .left img,
+section.cols-3 .left img {
+  grid-area: leftpanel;
+}
+
+section.cols-2 .right img,
+section.cols-3 .right img {
+  grid-area: rightpanel;
+}
+
+section.cols-3 .center img {
+  grid-area: middlepanel;
+}
+
+/* ROWS */
+section.rows-2 {
+  overflow: visible;
+  display: grid !important;
+  gap: 0.5rem 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 52px 42px 41% 41%;
+  grid-template-areas:
+    "header header"
+    "subheader topic"
+    "toppanel toppanel"
+    "bottompanel bottompanel";
+}
+
+section.rows-2>div {
+  padding: 0.2rem;
+  margin-top: -5px;
+}
+
+section.rows-2 h1 {
+  grid-area: header;
+}
+
+section.rows-2 h2 {
+  grid-area: subheader;
+}
+
+section.rows-2 h3 {
+  grid-area: topic;
+}
+
+section.rows-2 .top {
+  grid-area: toppanel;
+}
+
+section.rows-2 .bottom {
+  grid-area: bottompanel;
+}
+
+section.rows-2>div p:has(img) {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  /* margin: 0; */
+  padding: 0;
+}
+
+section.rows-2 .top img,
+section.rows-2 .bottom img {
+  /* display: flex !important; */
+  object-fit: contain !important;
+  object-position: center;
+  margin: auto !important;
+  padding: auto 0.1rem;
+  transform: translateY(7%);
+  border-radius: var(--radius);
+}
+
+section.rows-2 .top img {
+  grid-area: toppanel;
+}
+
+section.rows-2 .bottom img {
+  grid-area: bottompanel;
+}
+
+/* SPLIT */
+section.split {
+  column-gap: 0px;
+  display: grid !important;
+  gap: 0.5rem 1rem;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 52px 42px min-content 1fr min-content;
+  overflow: visible;
+}
+
+section.split>div {
+  padding: 0.2rem;
+  margin-top: -2%;
+}
+
+section.split>h1 {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+section.split>h2 {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+section.split>h3 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+section.split .top {
+  margin-top: -1.1%;
+  grid-area: 3 / 1 / 4 / 3;
+  min-height: auto;
+}
+
+section.split .left {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+section.split .right {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+section.split .bottom {
+  grid-area: 5 / 1 / 6 / 3;
+}
+
+/* DEBUG: Display layouts  */
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .top {
+  background-color: var(--blue-200);
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .left {
+  background-color: var(--green-200);
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .right {
+  background-color: var(--yellow-200);
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .bottom {
+  background-color: var(--red-200);
+}
+
+section:is(.cols-2, .cols-3, .rows-2, .split).debug .center {
+  background-color: var(--violet-200);
+}
