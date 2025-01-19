@@ -10,18 +10,21 @@ math: mathjax
 style: |
   :root {
     --primary: #1274c5;
-    --secondary: #c22344;
   }
 ---
 
-<!-- _class: centered -->
+<!-- _class: cover -->
 <!-- _paginate: false -->
 
-# Unidad 99
-
-# <!-- fit -->Nombre de la unidad
+# Nombre de la unidad
 
 ## Asignatura
+
+Dr. Jaime Jesús Delgado Meraz
+
+### Unidad 99
+
+#### ABC - 1234
 
 <img class="logo" alt="TecNM" src="../src/assets/Logo-TECNM.svg" />
 
@@ -40,10 +43,11 @@ Correo
 
 ---
 
+<!-- _class: cols-2 -->
+
 # Asignatura
 
-:::: flex
-::: col 1/2 px-2
+::: left
 Nombre
 : Nombre de la asignatura
 
@@ -51,14 +55,13 @@ Carrera
 : Carrera 1 a la que aplica
 : Carrera 2 a la que aplica
 :::
-::: col 1/2 px-2
+::: right
 Clave
 : ABC - 1234
 
 SATCA
 : 9 - 9 - 9
 :::
-::::
 
 ---
 
@@ -67,9 +70,10 @@ SATCA
 # Secciones
 
 1. [Contenidos](#contenidos)
-2. [Layouts](#layouts)
-3. [Código](#código)
-4. [Bloques](#bloques)
+2. [Colores](#colores)
+3. [Bloques](#bloques)
+4. [Layouts](#layouts)
+5. [Código](#código)
 
 ---
 
@@ -443,6 +447,7 @@ Ambos estilos ofrecen la misma funcionalidad, pero con una presentación ligeram
 
 ::: quote
 _En igualdad de condiciones, la solución más simple suele ser la más probable_
+
 <cite>William of Ockham</cite>
 :::
 
@@ -574,6 +579,911 @@ El uso de estas directivas para imágenes flotantes resalta el contenido de la d
 
 ---
 
+# Contenidos
+
+## Iconos
+
+Los iconos se pueden incluir en las diapositivas utilizando la directiva `icon`[*:Función incluída en el `engine` de la plantilla].
+
+```md
+:icon:icon-name:{clase1 ...}
+```
+
+Donde:
+
+- `icon-name` es el nombre del icono, de acuerdo a la librería de iconos [Tabler Icons](https://tablericons.com/).
+- `clase1 ...` son las clases adicionales que se pueden aplicar al icono (opcional), para cambiar su tamaño o color. _p.e._ `xl blue-500`.
+
+---
+
+# Contenidos
+
+## Iconos
+
+### Ejemplos
+
+#### Tamaños
+
+|      `xs`       |      `sm`       |     `-`     |      `lg`       |      `xl`       |      `xxl`       |      `xxxl`       |
+| :-------------: | :-------------: | :---------: | :-------------: | :-------------: | :--------------: | :---------------: |
+| :icon:lego:{xs} | :icon:lego:{sm} | :icon:lego: | :icon:lego:{lg} | :icon:lego:{xl} | :icon:lego:{xxl} | :icon:lego:{xxxl} |
+
+#### Colores
+
+| Icono                  | Clase                     |                   Resultado                   |
+| ---------------------- | ------------------------- | :-------------------------------------------: |
+| `brand-twitter-filled` | `azure-300`               |    :icon:brand-twitter-filled:{azure-300}     |
+| `brand-facebook`       | `bg-blue-500`             |      :icon:brand-facebook:{bg-blue-500}       |
+| `brand-youtube`        | `bg-red rounded-full p-1` | :icon:brand-youtube:{bg-red rounded-full p-1} |
+
+---
+
+<!-- _class: lead -->
+
+# Colores
+
+---
+
+# Colores
+
+## Paleta base
+
+A partir del color primario base, se generan los colores de la plantilla:
+
+<div class="grid grid-cols-3 gap-2 py-1 text-center">
+  <div class="bg-primary light rounded py-4">
+    Primary light
+  </div>
+  <div class="bg-primary rounded py-4">
+    Primary
+  </div>
+  <div class="bg-primary dark rounded py-4">
+    Primary dark
+  </div>
+</div>
+
+<div class="grid grid-cols-3 gap-2 py-1 text-center">
+  <div class="bg-secondary light rounded py-4">
+    Secondary light
+  </div>
+  <div class="bg-secondary rounded py-4">
+    Secondary
+  </div>
+  <div class="bg-secondary dark rounded py-4">
+    Secondary dark
+  </div>
+</div>
+
+<div class="grid grid-cols-3 gap-2 py-1 text-center">
+  <div class="bg-accent light rounded py-4">
+    Accent lighter
+  </div>
+  <div class="bg-accent rounded py-4">
+    Accent
+  </div>
+  <div class="bg-accent dark rounded py-4">
+    Accent darker
+  </div>
+</div>
+
+- El color de la tipografía se adapta automáticamente a cada tema y escala de color:
+
+```css
+:root {
+  --primary: #1274c5;
+  --l-threshold: 0.7;
+  --l: clamp(0, (l / var(--l-threshold) - 1) * -infinity, 1);
+  color: oklch(from var(--primary) var(--l) 0 h) !important;
+}
+```
+
+---
+
+# Colores
+
+## Paleta extendida
+
+Adicionalmente se pueden utilizar los colores:
+
+<div class="grid grid-cols-10 gap-1 py-1 text-center">
+  <div class="bg-red py-2 rounded">red</div>
+  <div class="bg-pink py-2 rounded">pink</div>
+  <div class="bg-fuchsia py-2 rounded">fuchsia</div>
+  <div class="bg-purple py-2 rounded">purple</div>
+  <div class="bg-violet py-2 rounded">violet</div>
+  <div class="bg-indigo py-2 rounded">indigo</div>
+  <div class="bg-blue py-2 rounded">blue</div>
+  <div class="bg-azure py-2 rounded">azure</div>
+  <div class="bg-cyan py-2 rounded">cyan</div>
+  <div class="bg-jade py-2 rounded">jade</div>
+</div>
+
+<div class="grid grid-cols-10 gap-1 py-1 text-center">
+  <div class="bg-green py-2 rounded">green</div>
+  <div class="bg-lime py-2 rounded">lime</div>
+  <div class="bg-yellow py-2 rounded">yellow</div>
+  <div class="bg-amber py-2 rounded">amber</div>
+  <div class="bg-pumpkin py-2 rounded">pumpkin</div>
+  <div class="bg-orange py-2 rounded">orange</div>
+  <div class="bg-sand py-2 rounded">sand</div>
+  <div class="bg-gray py-2 rounded">gray</div>
+  <div class="bg-zinc py-2 rounded">zinc</div>
+  <div class="bg-slate py-2 rounded">slate</div>
+</div>
+
+<div class="grid grid-cols-2 gap-1 py-1 text-center">
+  <div class="bg-dark py-2 rounded">dark</div>
+  <div class="bg-light py-2 rounded border border-solid border-black">light</div>
+</div>
+
+Estos colores pueden usarse como:
+
+- Variables CSS: `--color`, `--color-shade`, `--bg-color` o `--bg-color-shade`.
+- Clases: `.color`, `.color-shade`, `.bg-color` o `.bg-color-shade`.
+
+::: note
+Adaptado de la paleta de colores de Pico CSS ✨.
+:::
+
+---
+
+# Colores
+
+## Paleta extendida
+
+### _Shades_
+
+Las escalas de colores van de 50 a 950 (en escalas +50), indicando la luminancia del color.
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-red w-32 rounded">red</div>
+  <div class="bg-red-50 rounded">50</div>
+  <div class="bg-red-100 rounded">100</div>
+  <div class="bg-red-150 rounded">150</div>
+  <div class="bg-red-200 rounded">200</div>
+  <div class="bg-red-250 rounded">250</div>
+  <div class="bg-red-300 rounded">300</div>
+  <div class="bg-red-350 rounded">350</div>
+  <div class="bg-red-400 rounded">400</div>
+  <div class="bg-red-450 rounded">450</div>
+  <div class="bg-red-500 rounded">500</div>
+  <div class="bg-red-550 rounded">550</div>
+  <div class="bg-red-600 rounded">600</div>
+  <div class="bg-red-650 rounded">650</div>
+  <div class="bg-red-700 rounded">700</div>
+  <div class="bg-red-750 rounded">750</div>
+  <div class="bg-red-800 rounded">800</div>
+  <div class="bg-red-850 rounded">850</div>
+  <div class="bg-red-900 rounded">900</div>
+  <div class="bg-red-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-pink w-32 rounded">pink</div>
+  <div class="bg-pink-50 rounded">50</div>
+  <div class="bg-pink-100 rounded">100</div>
+  <div class="bg-pink-150 rounded">150</div>
+  <div class="bg-pink-200 rounded">200</div>
+  <div class="bg-pink-250 rounded">250</div>
+  <div class="bg-pink-300 rounded">300</div>
+  <div class="bg-pink-350 rounded">350</div>
+  <div class="bg-pink-400 rounded">400</div>
+  <div class="bg-pink-450 rounded">450</div>
+  <div class="bg-pink-500 rounded">500</div>
+  <div class="bg-pink-550 rounded">550</div>
+  <div class="bg-pink-600 rounded">600</div>
+  <div class="bg-pink-650 rounded">650</div>
+  <div class="bg-pink-700 rounded">700</div>
+  <div class="bg-pink-750 rounded">750</div>
+  <div class="bg-pink-800 rounded">800</div>
+  <div class="bg-pink-850 rounded">850</div>
+  <div class="bg-pink-900 rounded">900</div>
+  <div class="bg-pink-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-fuchsia w-32 rounded">fuchsia</div>
+  <div class="bg-fuchsia-50 rounded">50</div>
+  <div class="bg-fuchsia-100 rounded">100</div>
+  <div class="bg-fuchsia-150 rounded">150</div>
+  <div class="bg-fuchsia-200 rounded">200</div>
+  <div class="bg-fuchsia-250 rounded">250</div>
+  <div class="bg-fuchsia-300 rounded">300</div>
+  <div class="bg-fuchsia-350 rounded">350</div>
+  <div class="bg-fuchsia-400 rounded">400</div>
+  <div class="bg-fuchsia-450 rounded">450</div>
+  <div class="bg-fuchsia-500 rounded">500</div>
+  <div class="bg-fuchsia-550 rounded">550</div>
+  <div class="bg-fuchsia-600 rounded">600</div>
+  <div class="bg-fuchsia-650 rounded">650</div>
+  <div class="bg-fuchsia-700 rounded">700</div>
+  <div class="bg-fuchsia-750 rounded">750</div>
+  <div class="bg-fuchsia-800 rounded">800</div>
+  <div class="bg-fuchsia-850 rounded">850</div>
+  <div class="bg-fuchsia-900 rounded">900</div>
+  <div class="bg-fuchsia-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-purple w-32 rounded">purple</div>
+  <div class="bg-purple-50 rounded">50</div>
+  <div class="bg-purple-100 rounded">100</div>
+  <div class="bg-purple-150 rounded">150</div>
+  <div class="bg-purple-200 rounded">200</div>
+  <div class="bg-purple-250 rounded">250</div>
+  <div class="bg-purple-300 rounded">300</div>
+  <div class="bg-purple-350 rounded">350</div>
+  <div class="bg-purple-400 rounded">400</div>
+  <div class="bg-purple-450 rounded">450</div>
+  <div class="bg-purple-500 rounded">500</div>
+  <div class="bg-purple-550 rounded">550</div>
+  <div class="bg-purple-600 rounded">600</div>
+  <div class="bg-purple-650 rounded">650</div>
+  <div class="bg-purple-700 rounded">700</div>
+  <div class="bg-purple-750 rounded">750</div>
+  <div class="bg-purple-800 rounded">800</div>
+  <div class="bg-purple-850 rounded">850</div>
+  <div class="bg-purple-900 rounded">900</div>
+  <div class="bg-purple-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-violet w-32 rounded">violet</div>
+  <div class="bg-violet-50 rounded">50</div>
+  <div class="bg-violet-100 rounded">100</div>
+  <div class="bg-violet-150 rounded">150</div>
+  <div class="bg-violet-200 rounded">200</div>
+  <div class="bg-violet-250 rounded">250</div>
+  <div class="bg-violet-300 rounded">300</div>
+  <div class="bg-violet-350 rounded">350</div>
+  <div class="bg-violet-400 rounded">400</div>
+  <div class="bg-violet-450 rounded">450</div>
+  <div class="bg-violet-500 rounded">500</div>
+  <div class="bg-violet-550 rounded">550</div>
+  <div class="bg-violet-600 rounded">600</div>
+  <div class="bg-violet-650 rounded">650</div>
+  <div class="bg-violet-700 rounded">700</div>
+  <div class="bg-violet-750 rounded">750</div>
+  <div class="bg-violet-800 rounded">800</div>
+  <div class="bg-violet-850 rounded">850</div>
+  <div class="bg-violet-900 rounded">900</div>
+  <div class="bg-violet-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-indigo w-32 rounded">indigo</div>
+  <div class="bg-indigo-50 rounded">50</div>
+  <div class="bg-indigo-100 rounded">100</div>
+  <div class="bg-indigo-150 rounded">150</div>
+  <div class="bg-indigo-200 rounded">200</div>
+  <div class="bg-indigo-250 rounded">250</div>
+  <div class="bg-indigo-300 rounded">300</div>
+  <div class="bg-indigo-350 rounded">350</div>
+  <div class="bg-indigo-400 rounded">400</div>
+  <div class="bg-indigo-450 rounded">450</div>
+  <div class="bg-indigo-500 rounded">500</div>
+  <div class="bg-indigo-550 rounded">550</div>
+  <div class="bg-indigo-600 rounded">600</div>
+  <div class="bg-indigo-650 rounded">650</div>
+  <div class="bg-indigo-700 rounded">700</div>
+  <div class="bg-indigo-750 rounded">750</div>
+  <div class="bg-indigo-800 rounded">800</div>
+  <div class="bg-indigo-850 rounded">850</div>
+  <div class="bg-indigo-900 rounded">900</div>
+  <div class="bg-indigo-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-blue w-32 rounded">blue</div>
+  <div class="bg-blue-50 rounded">50</div>
+  <div class="bg-blue-100 rounded">100</div>
+  <div class="bg-blue-150 rounded">150</div>
+  <div class="bg-blue-200 rounded">200</div>
+  <div class="bg-blue-250 rounded">250</div>
+  <div class="bg-blue-300 rounded">300</div>
+  <div class="bg-blue-350 rounded">350</div>
+  <div class="bg-blue-400 rounded">400</div>
+  <div class="bg-blue-450 rounded">450</div>
+  <div class="bg-blue-500 rounded">500</div>
+  <div class="bg-blue-550 rounded">550</div>
+  <div class="bg-blue-600 rounded">600</div>
+  <div class="bg-blue-650 rounded">650</div>
+  <div class="bg-blue-700 rounded">700</div>
+  <div class="bg-blue-750 rounded">750</div>
+  <div class="bg-blue-800 rounded">800</div>
+  <div class="bg-blue-850 rounded">850</div>
+  <div class="bg-blue-900 rounded">900</div>
+  <div class="bg-blue-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-azure w-32 rounded">azure</div>
+  <div class="bg-azure-50 rounded">50</div>
+  <div class="bg-azure-100 rounded">100</div>
+  <div class="bg-azure-150 rounded">150</div>
+  <div class="bg-azure-200 rounded">200</div>
+  <div class="bg-azure-250 rounded">250</div>
+  <div class="bg-azure-300 rounded">300</div>
+  <div class="bg-azure-350 rounded">350</div>
+  <div class="bg-azure-400 rounded">400</div>
+  <div class="bg-azure-450 rounded">450</div>
+  <div class="bg-azure-500 rounded">500</div>
+  <div class="bg-azure-550 rounded">550</div>
+  <div class="bg-azure-600 rounded">600</div>
+  <div class="bg-azure-650 rounded">650</div>
+  <div class="bg-azure-700 rounded">700</div>
+  <div class="bg-azure-750 rounded">750</div>
+  <div class="bg-azure-800 rounded">800</div>
+  <div class="bg-azure-850 rounded">850</div>
+  <div class="bg-azure-900 rounded">900</div>
+  <div class="bg-azure-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-cyan w-32 rounded">cyan</div>
+  <div class="bg-cyan-50 rounded">50</div>
+  <div class="bg-cyan-100 rounded">100</div>
+  <div class="bg-cyan-150 rounded">150</div>
+  <div class="bg-cyan-200 rounded">200</div>
+  <div class="bg-cyan-250 rounded">250</div>
+  <div class="bg-cyan-300 rounded">300</div>
+  <div class="bg-cyan-350 rounded">350</div>
+  <div class="bg-cyan-400 rounded">400</div>
+  <div class="bg-cyan-450 rounded">450</div>
+  <div class="bg-cyan-500 rounded">500</div>
+  <div class="bg-cyan-550 rounded">550</div>
+  <div class="bg-cyan-600 rounded">600</div>
+  <div class="bg-cyan-650 rounded">650</div>
+  <div class="bg-cyan-700 rounded">700</div>
+  <div class="bg-cyan-750 rounded">750</div>
+  <div class="bg-cyan-800 rounded">800</div>
+  <div class="bg-cyan-850 rounded">850</div>
+  <div class="bg-cyan-900 rounded">900</div>
+  <div class="bg-cyan-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-jade w-32 rounded">jade</div>
+  <div class="bg-jade-50 rounded">50</div>
+  <div class="bg-jade-100 rounded">100</div>
+  <div class="bg-jade-150 rounded">150</div>
+  <div class="bg-jade-200 rounded">200</div>
+  <div class="bg-jade-250 rounded">250</div>
+  <div class="bg-jade-300 rounded">300</div>
+  <div class="bg-jade-350 rounded">350</div>
+  <div class="bg-jade-400 rounded">400</div>
+  <div class="bg-jade-450 rounded">450</div>
+  <div class="bg-jade-500 rounded">500</div>
+  <div class="bg-jade-550 rounded">550</div>
+  <div class="bg-jade-600 rounded">600</div>
+  <div class="bg-jade-650 rounded">650</div>
+  <div class="bg-jade-700 rounded">700</div>
+  <div class="bg-jade-750 rounded">750</div>
+  <div class="bg-jade-800 rounded">800</div>
+  <div class="bg-jade-850 rounded">850</div>
+  <div class="bg-jade-900 rounded">900</div>
+  <div class="bg-jade-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-green w-32 rounded">green</div>
+  <div class="bg-green-50 rounded">50</div>
+  <div class="bg-green-100 rounded">100</div>
+  <div class="bg-green-150 rounded">150</div>
+  <div class="bg-green-200 rounded">200</div>
+  <div class="bg-green-250 rounded">250</div>
+  <div class="bg-green-300 rounded">300</div>
+  <div class="bg-green-350 rounded">350</div>
+  <div class="bg-green-400 rounded">400</div>
+  <div class="bg-green-450 rounded">450</div>
+  <div class="bg-green-500 rounded">500</div>
+  <div class="bg-green-550 rounded">550</div>
+  <div class="bg-green-600 rounded">600</div>
+  <div class="bg-green-650 rounded">650</div>
+  <div class="bg-green-700 rounded">700</div>
+  <div class="bg-green-750 rounded">750</div>
+  <div class="bg-green-800 rounded">800</div>
+  <div class="bg-green-850 rounded">850</div>
+  <div class="bg-green-900 rounded">900</div>
+  <div class="bg-green-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-lime w-32 rounded">lime</div>
+  <div class="bg-lime-50 rounded">50</div>
+  <div class="bg-lime-100 rounded">100</div>
+  <div class="bg-lime-150 rounded">150</div>
+  <div class="bg-lime-200 rounded">200</div>
+  <div class="bg-lime-250 rounded">250</div>
+  <div class="bg-lime-300 rounded">300</div>
+  <div class="bg-lime-350 rounded">350</div>
+  <div class="bg-lime-400 rounded">400</div>
+  <div class="bg-lime-450 rounded">450</div>
+  <div class="bg-lime-500 rounded">500</div>
+  <div class="bg-lime-550 rounded">550</div>
+  <div class="bg-lime-600 rounded">600</div>
+  <div class="bg-lime-650 rounded">650</div>
+  <div class="bg-lime-700 rounded">700</div>
+  <div class="bg-lime-750 rounded">750</div>
+  <div class="bg-lime-800 rounded">800</div>
+  <div class="bg-lime-850 rounded">850</div>
+  <div class="bg-lime-900 rounded">900</div>
+  <div class="bg-lime-950 rounded">950</div>
+</div>
+
+---
+
+# Colores
+
+## Paleta extendida
+
+### _Shades_
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-yellow w-32 rounded">yellow</div>
+  <div class="bg-yellow-50 rounded">50</div>
+  <div class="bg-yellow-100 rounded">100</div>
+  <div class="bg-yellow-150 rounded">150</div>
+  <div class="bg-yellow-200 rounded">200</div>
+  <div class="bg-yellow-250 rounded">250</div>
+  <div class="bg-yellow-300 rounded">300</div>
+  <div class="bg-yellow-350 rounded">350</div>
+  <div class="bg-yellow-400 rounded">400</div>
+  <div class="bg-yellow-450 rounded">450</div>
+  <div class="bg-yellow-500 rounded">500</div>
+  <div class="bg-yellow-550 rounded">550</div>
+  <div class="bg-yellow-600 rounded">600</div>
+  <div class="bg-yellow-650 rounded">650</div>
+  <div class="bg-yellow-700 rounded">700</div>
+  <div class="bg-yellow-750 rounded">750</div>
+  <div class="bg-yellow-800 rounded">800</div>
+  <div class="bg-yellow-850 rounded">850</div>
+  <div class="bg-yellow-900 rounded">900</div>
+  <div class="bg-yellow-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-amber w-32 rounded">amber</div>
+  <div class="bg-amber-50 rounded">50</div>
+  <div class="bg-amber-100 rounded">100</div>
+  <div class="bg-amber-150 rounded">150</div>
+  <div class="bg-amber-200 rounded">200</div>
+  <div class="bg-amber-250 rounded">250</div>
+  <div class="bg-amber-300 rounded">300</div>
+  <div class="bg-amber-350 rounded">350</div>
+  <div class="bg-amber-400 rounded">400</div>
+  <div class="bg-amber-450 rounded">450</div>
+  <div class="bg-amber-500 rounded">500</div>
+  <div class="bg-amber-550 rounded">550</div>
+  <div class="bg-amber-600 rounded">600</div>
+  <div class="bg-amber-650 rounded">650</div>
+  <div class="bg-amber-700 rounded">700</div>
+  <div class="bg-amber-750 rounded">750</div>
+  <div class="bg-amber-800 rounded">800</div>
+  <div class="bg-amber-850 rounded">850</div>
+  <div class="bg-amber-900 rounded">900</div>
+  <div class="bg-amber-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-pumpkin w-32 rounded">pumpkin</div>
+  <div class="bg-pumpkin-50 rounded">50</div>
+  <div class="bg-pumpkin-100 rounded">100</div>
+  <div class="bg-pumpkin-150 rounded">150</div>
+  <div class="bg-pumpkin-200 rounded">200</div>
+  <div class="bg-pumpkin-250 rounded">250</div>
+  <div class="bg-pumpkin-300 rounded">300</div>
+  <div class="bg-pumpkin-350 rounded">350</div>
+  <div class="bg-pumpkin-400 rounded">400</div>
+  <div class="bg-pumpkin-450 rounded">450</div>
+  <div class="bg-pumpkin-500 rounded">500</div>
+  <div class="bg-pumpkin-550 rounded">550</div>
+  <div class="bg-pumpkin-600 rounded">600</div>
+  <div class="bg-pumpkin-650 rounded">650</div>
+  <div class="bg-pumpkin-700 rounded">700</div>
+  <div class="bg-pumpkin-750 rounded">750</div>
+  <div class="bg-pumpkin-800 rounded">800</div>
+  <div class="bg-pumpkin-850 rounded">850</div>
+  <div class="bg-pumpkin-900 rounded">900</div>
+  <div class="bg-pumpkin-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-orange w-32 rounded">orange</div>
+  <div class="bg-orange-50 rounded">50</div>
+  <div class="bg-orange-100 rounded">100</div>
+  <div class="bg-orange-150 rounded">150</div>
+  <div class="bg-orange-200 rounded">200</div>
+  <div class="bg-orange-250 rounded">250</div>
+  <div class="bg-orange-300 rounded">300</div>
+  <div class="bg-orange-350 rounded">350</div>
+  <div class="bg-orange-400 rounded">400</div>
+  <div class="bg-orange-450 rounded">450</div>
+  <div class="bg-orange-500 rounded">500</div>
+  <div class="bg-orange-550 rounded">550</div>
+  <div class="bg-orange-600 rounded">600</div>
+  <div class="bg-orange-650 rounded">650</div>
+  <div class="bg-orange-700 rounded">700</div>
+  <div class="bg-orange-750 rounded">750</div>
+  <div class="bg-orange-800 rounded">800</div>
+  <div class="bg-orange-850 rounded">850</div>
+  <div class="bg-orange-900 rounded">900</div>
+  <div class="bg-orange-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-sand w-32 rounded">sand</div>
+  <div class="bg-sand-50 rounded">50</div>
+  <div class="bg-sand-100 rounded">100</div>
+  <div class="bg-sand-150 rounded">150</div>
+  <div class="bg-sand-200 rounded">200</div>
+  <div class="bg-sand-250 rounded">250</div>
+  <div class="bg-sand-300 rounded">300</div>
+  <div class="bg-sand-350 rounded">350</div>
+  <div class="bg-sand-400 rounded">400</div>
+  <div class="bg-sand-450 rounded">450</div>
+  <div class="bg-sand-500 rounded">500</div>
+  <div class="bg-sand-550 rounded">550</div>
+  <div class="bg-sand-600 rounded">600</div>
+  <div class="bg-sand-650 rounded">650</div>
+  <div class="bg-sand-700 rounded">700</div>
+  <div class="bg-sand-750 rounded">750</div>
+  <div class="bg-sand-800 rounded">800</div>
+  <div class="bg-sand-850 rounded">850</div>
+  <div class="bg-sand-900 rounded">900</div>
+  <div class="bg-sand-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-gray w-32 rounded">gray</div>
+  <div class="bg-gray-50 rounded">50</div>
+  <div class="bg-gray-100 rounded">100</div>
+  <div class="bg-gray-150 rounded">150</div>
+  <div class="bg-gray-200 rounded">200</div>
+  <div class="bg-gray-250 rounded">250</div>
+  <div class="bg-gray-300 rounded">300</div>
+  <div class="bg-gray-350 rounded">350</div>
+  <div class="bg-gray-400 rounded">400</div>
+  <div class="bg-gray-450 rounded">450</div>
+  <div class="bg-gray-500 rounded">500</div>
+  <div class="bg-gray-550 rounded">550</div>
+  <div class="bg-gray-600 rounded">600</div>
+  <div class="bg-gray-650 rounded">650</div>
+  <div class="bg-gray-700 rounded">700</div>
+  <div class="bg-gray-750 rounded">750</div>
+  <div class="bg-gray-800 rounded">800</div>
+  <div class="bg-gray-850 rounded">850</div>
+  <div class="bg-gray-900 rounded">900</div>
+  <div class="bg-gray-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-zinc w-32 rounded">zinc</div>
+  <div class="bg-zinc-50 rounded">50</div>
+  <div class="bg-zinc-100 rounded">100</div>
+  <div class="bg-zinc-150 rounded">150</div>
+  <div class="bg-zinc-200 rounded">200</div>
+  <div class="bg-zinc-250 rounded">250</div>
+  <div class="bg-zinc-300 rounded">300</div>
+  <div class="bg-zinc-350 rounded">350</div>
+  <div class="bg-zinc-400 rounded">400</div>
+  <div class="bg-zinc-450 rounded">450</div>
+  <div class="bg-zinc-500 rounded">500</div>
+  <div class="bg-zinc-550 rounded">550</div>
+  <div class="bg-zinc-600 rounded">600</div>
+  <div class="bg-zinc-650 rounded">650</div>
+  <div class="bg-zinc-700 rounded">700</div>
+  <div class="bg-zinc-750 rounded">750</div>
+  <div class="bg-zinc-800 rounded">800</div>
+  <div class="bg-zinc-850 rounded">850</div>
+  <div class="bg-zinc-900 rounded">900</div>
+  <div class="bg-zinc-950 rounded">950</div>
+</div>
+
+<div class="boxes full text-center text-sm">
+  <div class="bg-slate-500 w-32 rounded">500</div>
+  <div class="bg-slate-50 rounded">50</div>
+  <div class="bg-slate-100 rounded">100</div>
+  <div class="bg-slate-150 rounded">150</div>
+  <div class="bg-slate-200 rounded">200</div>
+  <div class="bg-slate-250 rounded">250</div>
+  <div class="bg-slate-300 rounded">300</div>
+  <div class="bg-slate-350 rounded">350</div>
+  <div class="bg-slate-400 rounded">400</div>
+  <div class="bg-slate-450 rounded">450</div>
+  <div class="bg-slate rounded">slate</div>
+  <div class="bg-slate-550 rounded">550</div>
+  <div class="bg-slate-600 rounded">600</div>
+  <div class="bg-slate-650 rounded">650</div>
+  <div class="bg-slate-700 rounded">700</div>
+  <div class="bg-slate-750 rounded">750</div>
+  <div class="bg-slate-800 rounded">800</div>
+  <div class="bg-slate-850 rounded">850</div>
+  <div class="bg-slate-900 rounded">900</div>
+  <div class="bg-slate-950 rounded">950</div>
+</div>
+
+- Estos colores pueden usarse para el texto, fondos e iconos.
+
+---
+
+# Colores
+
+## _Swatches_ 🎨
+
+Es posible que algunos ejemplos requieran mostrar paletas de colores, y para ello se pueden utilizar _swatches_ para mostrar los colores disponibles o seleccionados.
+
+```html
+<div class="swatch">
+  <div class="bg-red"></div>
+  <div class="bg-yellow"></div>
+  <div class="bg-green"></div>
+  <div class="bg-blue"></div>
+  <div class="bg-indigo"></div>
+  <div class="bg-purple"></div>
+  <div class="bg-pink"></div>
+</div>
+```
+
+<div class="swatch">
+  <div class="bg-red"></div>
+  <div class="bg-yellow"></div>
+  <div class="bg-green"></div>
+  <div class="bg-blue"></div>
+  <div class="bg-indigo"></div>
+  <div class="bg-purple"></div>
+  <div class="bg-pink"></div>
+</div>
+
+Por default, se crea una fila de _blobs_ centrados en la fila.
+
+---
+
+# Colores
+
+## _Swatches_ 🎨
+
+### Estilos
+
+Se pueden usar estilos alternativos para los _swatches_.
+
+| Clase         | Resultado                                                                                                        |
+| ------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `.swatch`     | <div class="swatch"><div class="bg-red"></div><div class="bg-yellow"></div><div class="bg-blue"></div></div>     |
+| `.boxes`      | <div class="boxes"><div class="bg-red"></div><div class="bg-yellow"></div><div class="bg-blue"></div></div>      |
+| `.dots`       | <div class="dots"><div class="bg-red"></div><div class="bg-yellow"></div><div class="bg-blue"></div></div>       |
+| `.dots.mini`  | <div class="dots mini"><div class="bg-red"></div><div class="bg-yellow"></div><div class="bg-blue"></div></div>  |
+| `.boxes.mini` | <div class="boxes mini"><div class="bg-red"></div><div class="bg-yellow"></div><div class="bg-blue"></div></div> |
+
+- Si se requiere, es posible que el _swatch_ ocupe todo el ancho disponible, agregando la clase `.full`.
+  - _p.e._ `.swatch.full`.
+
+---
+
+# Colores
+
+## _Swatches_
+
+### Dots & Boxes
+
+Si se requiere mostrar sólo un color dentro del texto al usar Markdown, se tienen disponibles algunas directivas:
+
+|   Directiva    |  Resultado   | Descripción                                                                           |
+| :------------: | :----------: | ------------------------------------------------------------------------------------- |
+|  `[o:--red]`   |  [o:--red]   | Muestra un _dot_ de color `var(--red)` [*:Colores disponibles en la paleta extendida] |
+| `[o:#1274c5]`  | [o:#1274c5]  | Muestra un _dot_ de color `#1274c5`                                                   |
+| `[o2:--blue]`  | [o2:--blue]  | Muestra un _box_ de color `var(--blue)` <note>\*</note>                               |
+| `[o2:#ff0off]` | [o2:#ff00ff] | Muestra un _box_ de color `#ff0off`                                                   |
+
+- También se tienen disponibles las versiones _mini_ de ambos estilos, agregando un `-` al final de la directiva.
+  - _p.e._ `[o-:--amber-200]` [o-:--amber-200] o `[o2-:#45bb45]` [o2-:#45bb45].
+
+---
+
+<!-- _class: lead -->
+
+# Bloques
+
+---
+
+# Bloques
+
+Es posible incluir bloques de contenido en las diapositivas, y se pueden combinar con otros elementos para crear diapositivas más dinámicas.
+
+:::: flex
+::: col 1/2 px-2
+
+Los bloques disponibles para mensajes son:
+
+- OK `ok` [o:--ok]
+- Información `info` [o:--info]
+- Advertencia `warning` [o:--warning]
+- Error `error` o `danger` [o:--error]
+
+:::
+::: col 1/2 px-2
+
+Así también se pueden utilizar bloques de tema:
+
+- Primario `primary` [o:--primary]
+- Secundario `secondary` [o:--secondary]
+
+Y bloques especiales para:
+
+- Cita `quote` [o:--gray-600]
+- Nota `note` [o:--note]
+- Tip `tip` [o:--tip]
+
+:::
+::::
+
+---
+
+# Bloques
+
+## Sintaxis
+
+- Los bloques se crean con la sintaxis:
+
+```md
+::: tipo
+Contenido que puede incluir **Markdown** y HTML.
+:::
+```
+
+- Una sintaxis alternativa para bloques flotantes es:
+
+```md
+[tipo:Contenido que puede incluir **Markdown** y HTML.]
+```
+
+[info:La sintaxis alternativa solo esta disponible para `ok`, `info`, `warning`, `error`, `danger` y `tip`]
+
+---
+
+# Bloques
+
+## Tipos
+
+Los bloques de mensajes pueden contener contenido diverso, pero se sugiere limitar a un párrafo o dos para mantener la atención en el mensaje.
+
+::: ok
+Este es un mensaje afirmativo
+:::
+
+::: info
+Este es un mensaje informativo
+:::
+
+::: warning
+Este es un mensaje de advertencia
+:::
+
+::: error
+Este es un mensaje de error
+:::
+
+Si el bloque se utiliza en alguna diapositiva con diseño `cols-2`, `cols-3`, `rows-2`, `rows-3` o `rows`, el bloque se posicionará en la parte inferior central de la diapositiva.
+
+---
+
+# Bloques
+
+## Mensajes
+
+::: ok
+
+# Mensaje afirmativo
+
+Este es un mensaje afirmativo muy largo, que además incluye un título y una viñeta, y que se utiliza para resaltar un mensaje positivo.
+
+- Viñeta que contiene código `hello world`
+
+:::
+
+::: info
+
+# Mensaje informativo
+
+Este es un mensaje informativo
+:::
+
+::: warning
+
+# Mensaje de advertencia
+
+Este es un mensaje de advertencia
+:::
+
+::: error
+
+# Mensaje de error
+
+Este es un mensaje de error
+:::
+
+---
+
+# Bloques
+
+## Notas
+
+Un bloque de nota se utiliza para especificar contenido adicional o notas al pie de la diapositiva, se sugiere que sea breve.
+
+- Puede incluirse mediante HTML, ya que la plantilla incluye un estilo específico para notas.
+  - La nota siempre se ajusta al pie de la diapositiva y puede contener **Markdown**.
+
+```html
+Este texto tiene una nota <note>*</note>
+
+<div class="note">Texto de la nota</div>
+```
+
+- Adicionalmente, el `engine` de la plantilla incluye una directiva más sencilla para incluir notas[*:Sólo puede haber **1** nota por slide].
+
+```md
+Aquí va una nota simple[*:Sólo puede haber **1** nota por slide]
+```
+
+- Por compatibilidad con plantillas previas, se mantiene la sintaxis de `::: note`.
+
+---
+
+# Bloques
+
+## Tips
+
+Los bloques de tip se utilizan para resaltar un consejo o sugerencia, y pueden incluir contenido diverso.
+
+- Por defecto se ajustan al pie de la diapositiva y pueden contener Markdown.
+
+Su sintaxis es similar a la de los bloques flotantes:
+
+```md
+[tip:Este es un mensaje de tipo `tip`]
+```
+
+[tip:Este es un mensaje de tipo `tip`]
+
+- Pueden ser muy útiles para proporcionar información adicional o sugerencias a los lectores.
+
+---
+
+# Bloques
+
+## Tema
+
+Los bloques de tema adaptan su color de resaltado según el tema de la diapositiva, y pueden contener contenido diverso.
+
+::: primary
+Este es un bloque de tema primario
+:::
+
+::: secondary
+Este es un bloque de tema secundario
+:::
+
+El resaltado de estos bloques consiste en una cinta en la parte izquierda del bloque.
+
+---
+
+# Bloques
+
+## Citas
+
+Los bloques de citas se utilizan para resaltar un mensaje o contenido específico, y pueden incluir un autor al final.
+
+::: quote
+_La simplicidad es la máxima sofisticación_
+<cite>Leonardo da Vinci</cite>
+:::
+
+::: quote
+_Si nadie conoce la cita, seguramente no tendrá autor_
+:::
+
+---
+
 <!-- _class: lead -->
 
 # Layouts
@@ -642,7 +1552,7 @@ Si se requiere, se pueden incluir más encabezados, aunque se sugiere no hacerlo
 
 ###### Encabezado 6
 
-Los encabezados de nivel 4 - 6 alternan entre el color secundario y el primario, reduciendo su tamaño de fuente progresivamente.
+Los encabezados de nivel 4 - 6 alternan entre el color primario, cuerpo y secundario, reduciendo su tamaño de fuente progresivamente.
 
 Pueden ser útiles para resaltar puntos específicos, aunque se sugiere no abusar de ellos.
 
@@ -939,57 +1849,31 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptatib
 
 El diseño general utiliza un fondo claro con un color de fuente oscuro para generar contraste y facilitar la lectura, pero igualmente se incluyen temas alternativos para adaptarse a diferentes estilos.
 
-:::: flex
-::: col 1/3 px-2
-
-<div class="w-full bg-primary text-center rounded py-8">
-
-`primary`
-
+<div class="grid grid-cols-3 gap-2">
+  <div class="bg-primary text-center rounded py-8">
+    <code>primary</code>
+  </div>
+  <div class="bg-secondary text-center rounded py-8">
+    <code>secondary</code>
+  </div>
+  <div class="bg-inverted text-center rounded py-8">
+    <code>inverted</code>
+  </div>
 </div>
-:::
-::: col 1/3 px-2
-<div class="w-full bg-secondary text-center rounded py-8">
-
-`secondary`
-
-</div>
-:::
-::: col 1/3 px-2
-<div class="w-full bg-inverted text-center rounded py-8">
-
-`inverted`
-
-</div>
-:::
-::::
 
 Adicionalmente, se puede aplicar un patrón al color de fondo de la diapositiva para darle un estilo único, con la clase `pattern`.
 
-:::: flex
-::: col 1/3 px-2
-
-<div class="w-full bg-primary text-center rounded py-8 pattern">
-
-`primary`
-
+<div class="grid grid-cols-3 gap-2">
+  <div class="bg-primary pattern text-center rounded py-8">
+    <code>primary pattern</code>
+  </div>
+  <div class="bg-secondary pattern text-center rounded py-8">
+    <code>secondary pattern</code>
+  </div>
+  <div class="bg-inverted pattern text-center rounded py-8">
+    <code>inverted pattern</code>
+  </div>
 </div>
-:::
-::: col 1/3 px-2
-<div class="w-full bg-secondary text-center rounded py-8 pattern">
-
-`secondary`
-
-</div>
-:::
-::: col 1/3 px-2
-<div class="w-full bg-inverted text-center rounded py-8 pattern">
-
-`inverted`
-
-</div>
-:::
-::::
 
 ---
 
@@ -1005,34 +1889,6 @@ Adicionalmente se puede añadir la clase `centered` para centrar el contenido de
 
 ---
 
-<!-- _class: inverted -->
-
-# Estilo `inverted`
-
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
-
-| Encabezado 1 | Encabezado 2 | Encabezado 3 |
-| ------------ | :----------: | -----------: |
-| Celda 1      |   Celda 2    |      Celda 3 |
-| Celda 4      |   Celda 5    |      Celda 6 |
-
----
-
-<!-- _class: inverted centered-->
-
-# Estilo `inverted centered`
-
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
-
-| Encabezado 1 | Encabezado 2 | Encabezado 3 |
-| ------------ | :----------: | -----------: |
-| Celda 1      |   Celda 2    |      Celda 3 |
-| Celda 4      |   Celda 5    |      Celda 6 |
-
-El texto se centra verticalmente, pero no horizontalmente.
-
----
-
 <!-- _class: primary -->
 
 # Estilo `primary`
@@ -1043,6 +1899,27 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 | ------------ | :----------: | -----------: |
 | Celda 1      |   Celda 2    |      Celda 3 |
 | Celda 4      |   Celda 5    |      Celda 6 |
+
+- Un item
+- Otro más
+- Un último item
+
+---
+
+<!-- _class:  primary pattern -->
+
+# Estilo `primary pattern`
+
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+
+| Encabezado 1 | Encabezado 2 | Encabezado 3 |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
+
+- Un item
+- Otro más
+- Un último item
 
 ---
 
@@ -1072,6 +1949,27 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 | Celda 1      |   Celda 2    |      Celda 3 |
 | Celda 4      |   Celda 5    |      Celda 6 |
 
+- Un item
+- Otro más
+- Un último item
+
+---
+
+<!-- _class: secondary pattern -->
+
+# Estilo `secondary pattern`
+
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+
+| Encabezado 1 | Encabezado 2 | Encabezado 3 |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
+
+- Un item
+- Otro más
+- Un último item
+
 ---
 
 <!-- _class: secondary centered -->
@@ -1086,6 +1984,55 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 | Celda 4      |   Celda 5    |      Celda 6 |
 
 Se centra el texto horizontal y verticalmente.
+
+---
+
+<!-- _class: inverted -->
+
+# Estilo `inverted`
+
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+
+| Encabezado 1 | Encabezado 2 | Encabezado 3 |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
+
+- Un item
+- Otro más
+- Un último item
+
+---
+
+<!-- _class: inverted pattern -->
+
+# Estilo `inverted pattern`
+
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+
+| Encabezado 1 | Encabezado 2 | Encabezado 3 |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
+
+- Un item
+- Otro más
+- Un último item
+
+---
+
+<!-- _class: inverted centered-->
+
+# Estilo `inverted centered`
+
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+
+| Encabezado 1 | Encabezado 2 | Encabezado 3 |
+| ------------ | :----------: | -----------: |
+| Celda 1      |   Celda 2    |      Celda 3 |
+| Celda 4      |   Celda 5    |      Celda 6 |
+
+El texto se centra verticalmente, pero **no** horizontalmente.
 
 ---
 
@@ -1211,119 +2158,6 @@ Cuando se usa código en columnas es especialmente importante mantener un espaci
 
 ---
 
-<!-- _class: lead -->
-
-# Bloques
-
----
-
-# Bloques
-
-Es posible incluir bloques de contenido en las diapositivas, y se pueden combinar con otros elementos para crear diapositivas más dinámicas.
-
-:::: flex
-::: col 1/2 px-2
-
-Los bloques disponibles para mensajes son:
-
-- OK `ok`
-- Información `info`
-- Advertencia `warning`
-- Error `error`
-- Nota `note`
-
-:::
-::: col 1/2 px-2
-
-Así también se pueden utilizar bloques de tema:
-
-- Primario `primary`
-- Secundario `secondary`
-
-Y un bloque especial para citas:
-
-- Cita `quote`
-
-:::
-::::
-
----
-
-# Bloques
-
-## Mensajes
-
-Los bloques de mensajes pueden contener contenido diverso, pero se sugiere limitar a un párrafo o dos para mantener la atención en el mensaje.
-
-::: ok
-Este es un mensaje afirmativo
-:::
-
-::: info
-Este es un mensaje informativo
-:::
-
-::: warning
-Este es un mensaje de advertencia
-:::
-
-::: error
-Este es un mensaje de error
-:::
-
-Si el bloque se utiliza en alguna diapositiva con diseño `cols-2`, `cols-3`, `rows-2`, `rows-3` o `rows`, el bloque se posicionará en la parte inferior central de la diapositiva.
-
----
-
-# Bloques
-
-## Tema
-
-Los bloques de tema adaptan su color de resaltado según el tema de la diapositiva, y pueden contener contenido diverso.
-
-::: primary
-Este es un bloque de tema primario
-:::
-
-::: secondary
-Este es un bloque de tema secundario
-:::
-
-El resaltado de estos bloques consiste en una cinta en la parte izquierda del bloque.
-
----
-
-# Bloques
-
-## Citas
-
-Los bloques de citas se utilizan para resaltar un mensaje o contenido específico, y pueden incluir un autor al final.
-
-::: quote
-_La simplicidad es la máxima sofisticación_
-<cite>Leonardo da Vinci</cite>
-:::
-
-::: quote
-_Si nadie conoce la cita, seguramente no tendrá autor_
-:::
-
----
-
-# Bloques
-
-## Notas
-
-Este tipo de bloque se usan en conjunto con `<note>*</note>` para especificar el contenido de la nota<note>\*</note>.
-
-- A diferencia del resto de bloques, este se posiciona en la parte inferior central de la diapositiva.
-
-::: note
-Aunque se sugiere que la nota sea breve, si se requiere, el diseño del bloque permite notas de hasta 2 líneas. Sin embargo, se debe ser cuidadoso para evitar que la nota salga de la diapositiva.
-:::
-
----
-
 <!-- _class: inverted centered pattern -->
 
 ![bg right w:35%](../src/assets/avatar.png)
@@ -1331,8 +2165,6 @@ Aunque se sugiere que la nota sea breve, si se requiere, el diseño del bloque p
 <div class="text-center text-middle font-bold font-coding text-8xl mt-10">
   &lt;/Fin&gt;
 </div>
-
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
 
 ---
 
