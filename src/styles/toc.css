@@ -1,0 +1,39 @@
+/* TOC SECTION */
+section.toc ol {
+  counter-reset: items;
+  padding-left: 3.5em !important;
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+  list-style: none;
+}
+
+section.toc ol>li {
+  counter-increment: items;
+}
+
+section.toc li+li {
+  margin-top: 0;
+}
+
+section.toc ol>li:nth-child(n)::marker {
+  content: "0" counter(items) " ";
+}
+
+section.toc ol>li:nth-child(n + 10)::marker {
+  content: counter(items) " ";
+}
+
+section.toc ol>li::marker {
+  color: var(--primary) !important;
+  font-weight: 800 !important;
+  font-size: 2.5rem !important;
+  font-family: var(--font-code);
+}
+
+section.toc ol>li>a {
+  text-decoration: none !important;
+  color: var(--text) !important;
+}
