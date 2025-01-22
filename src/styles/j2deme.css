@@ -1049,44 +1049,47 @@ select[multiple] {
 }
 
 /* Custom Sections */
-/* WARNING */
+section.info,
 section.warning {
-  background-color: var(--amber-300);
+  justify-content: center;
 }
 
-section.warning h1 {
-  color: var(--amber-900);
-  align-self: center;
-}
-
-section.warning p:not(:has(img)) {
-  background-color: var(--base);
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-}
-
-section.warning img {
-  filter: invert(1);
-}
-
-/* INFO */
 section.info {
-  background-color: var(--blue-500);
+  background-color: var(--info);
 }
 
-section.info h1 {
-  color: var(--blue-100);
+section.warning {
+  background-color: var(--warning);
+}
+
+section.info h1,
+section.warning h1 {
+  color: var(--dark);
   align-self: center;
 }
 
-section.info p:not(:has(img)) {
+section.info p:not(:has(i)),
+section.warning p:not(:has(i)) {
   background-color: var(--base);
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   padding: 0.5rem;
 }
 
-section.info img {
-  filter: invert(1);
+section.info p:has(i),
+section.warning p:has(i) {
+  text-align: center;
+}
+
+section.info p:has(i) i {
+  --shade: lch(from var(--info) calc(l + 20) c h);
+  font-size: 6rem;
+  color: var(--shade);
+}
+
+section.warning p:has(i) i {
+  --shade: lch(from var(--warning) calc(l + 20) c h);
+  font-size: 6rem;
+  color: var(--shade);
 }
 
 .bg-accent {
