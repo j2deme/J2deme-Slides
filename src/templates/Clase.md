@@ -42,6 +42,11 @@ Correo
 : <jesus.delgado@tecvalles.mx>
 : <jaime.dm@cdvalles.tecnm.mx>
 
+Enlaces
+: :icon:brand-github: github.com/j2deme
+: :icon:news: j2deme.github.io
+: :icon:brand-instagram: j2deme
+
 ---
 
 <!-- _class: cols-2 -->
