@@ -261,7 +261,7 @@ def new_class_slide():
         # TOC de la presentación
         answers['toc'] = "1. [Tema 1](#tema-1)\n2. [Tema 2](#tema-2)\n\n"
         # Placeholder para la competencia específica de la unidad
-        answers['contents'] += "---\n\n# Competencia específica de la unidad\n\n"
+        answers['contents'] += "---\n\n# Competencia Específica de la Unidad\n\n"
         answers['contents'] += f"> Competencia específica de la unidad {
             unit}\n\n"
         # Temas de la presentación
@@ -294,7 +294,7 @@ def new_class_slide():
                 answers['toc'] += "\n"
 
         # answers['contents'] += "\n---\n\n"
-        answers['contents'] += "# Competencia específica de la unidad\n\n"
+        answers['contents'] += "# Competencia Específica de la Unidad\n\n"
         if isinstance(answers['skill'], list):
             for skill in answers['skill']:
                 answers['contents'] += f"> {skill}\n\n"
