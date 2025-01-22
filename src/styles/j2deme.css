@@ -63,8 +63,8 @@
   --accent-darker: lch(from var(--accent) calc(l - 20) c h);
 
   --font-header: Poppins, "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-body: "Figtree", "Poppins", "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-code: Iosevka, "Iosevka Web", "Monaspace Krypton Var", "Fira Code", monospace;
+  --font-body: Figtree, Poppins, "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-code: Iosevka, "Iosevka Web", "Fira Code", monospace;
   --font-footer: Iosevka, "Iosevka Web", monospace;
   --font-caligraphic: "Victor Mono", Iosevka, "Iosevka Web", serif, cursive;
 
@@ -273,8 +273,8 @@ dl>dd {
   padding-left: 0.7rem !important;
 }
 
-dl>dd:has(ul) {
-  margin-bottom: -5px;
+dl>dd:has(ul) ul {
+  margin-bottom: 5px;
 }
 
 /* HEADER AND FOOTER */
