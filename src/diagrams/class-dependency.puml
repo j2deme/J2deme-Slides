@@ -1,0 +1,24 @@
+@startuml class_dependency
+!include plantuml.config
+
+class Automovil {
+  +marca: String
+  +modelo: String
+  +motor: Motor
+}
+
+class Motor {
+  +cilindraje: int
+  +potencia: int
+}
+
+Automovil .> Motor : depende
+
+note top of Automovil: Clase Dependiente
+note top of Motor: Clase Principal
+
+title Dependencia entre Clases
+
+caption "El <b>Automóvil</b> depende del <b>Motor</b> para funcionar,\naunque ambos pueden existir de manera aislada"
+
+@enduml

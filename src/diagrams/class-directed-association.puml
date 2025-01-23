@@ -1,0 +1,26 @@
+@startuml class_directed_association
+!include plantuml.config
+
+class Maestro {
+  +nombre: String
+  +direccion: String
+  +telefono: String
+  +materias: List<Materia>
+}
+
+class Curso {
+  +nombre: String
+  +maestro: Maestro
+  +alumnos: List<Alumno>
+}
+
+Maestro -> Curso : imparte
+
+note top of Maestro: Clase Principal
+note top of Curso: Clase Dependiente
+
+title Asociación Dirigida entre Clases
+
+caption "Un <b>Maestro</b> está asociado con un <b>Curso</b> en\nparticular dentro del sistema de gestión escolar"
+
+@enduml

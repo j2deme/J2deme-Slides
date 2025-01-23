@@ -1,0 +1,24 @@
+@startuml class_composition
+!include plantuml.config
+
+class Agenda {
+  +nombre: String
+  +contactos: List<Contacto>
+}
+
+class Contacto {
+  +nombre: String
+  +telefono: String
+  +email: String
+}
+
+Agenda *- Contacto : contiene
+
+note top of Agenda: Clase Compuesta
+note top of Contacto: Clase Componente
+
+title Composición entre Clases
+
+caption "Si la <b>Agenda</b> se borra o se destruye,\nlos <b>Contactos</b> también se eliminarán"
+
+@enduml

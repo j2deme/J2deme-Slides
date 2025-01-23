@@ -1,0 +1,27 @@
+@startuml class_association
+!include plantuml.config
+
+class Biblioteca {
+  +nombre: String
+  +direccion: String
+  +telefono: String
+  +libros: List<Libro>
+}
+
+class Libro {
+  +titulo: String
+  +autor: String
+  +editorial: String
+  +isbn: String
+}
+
+Biblioteca - Libro : tiene
+
+title Asociación entre Clases
+
+caption "Cada <b>Biblioteca</b> contiene múltiples Libros, y\n cada <b>Libro</b> pertenece a una Biblioteca específica"
+
+note top of Biblioteca: Clase Fuente
+note top of Libro: Clase Destino
+
+@enduml

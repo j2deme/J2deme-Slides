@@ -1,0 +1,78 @@
+@startuml plantuml_101
+
+Alice -> Bob: Mensaje
+Bob -> Alice: Respuesta
+
+@enduml
+
+@startuml plantuml_102
+Alice -> Bob: Mensaje
+Bob -> Alice: Respuesta
+
+title Ejemplo de diagrama de secuencia
+note left: Aprender Plantuml 🌱
+note over Bob: Otra nota
+@enduml
+
+@startuml plantuml_103
+skinparam groupInheritance 2
+title Relaciones entre Clases
+
+class A
+class H
+class I
+class J
+class B
+class C
+class D
+class E
+class F
+class G
+
+B -- A : Asociación
+B -> C : Asociación dirigida
+C o-- D : Agregación
+D *- E : Composición
+E ..> F : Dependencia
+G .> F : <<use>>
+A <|-- H
+A <|-- I : Generalización
+J ..|> E : Realización
+@enduml
+
+@startuml plantuml_104
+!include plantuml.config
+class Persona {
+  - nombre: String
+  - edad: int
+  + caminar(): void
+}
+
+class Estudiante {
+  - matricula: String
+  + estudiar(): void
+}
+
+class Profesor {
+  - id: int
+  + enseñar(): void
+}
+
+Persona <|-- Estudiante
+Persona <|-- Profesor
+
+@enduml
+
+@startuml plantuml_105
+!include plantuml.config
+
+object Bob <<Estudiante>> {
+  - nombre = "Bob"
+  - edad = 18
+}
+
+object Alice <<Profesor>>
+
+Alice -- Bob: Enseñar
+
+@enduml

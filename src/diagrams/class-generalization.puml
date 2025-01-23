@@ -1,0 +1,36 @@
+@startuml class_generalization
+!include plantuml.config
+
+class Cuenta {
+    + saldo: float
+    + depositar(monto: float): void
+    + retirar(monto: float): void
+}
+
+class CuentaAhorro {
+    + tasaInteres: float
+    + calcularInteres(): float
+}
+
+class CuentaCheques {
+    + sobregiro: float
+    + cobrarSobregiro(): void
+}
+
+class CuentaCredito {
+    + tasaInteres: float
+    + calcularInteres(): float
+}
+
+Cuenta <|-- CuentaAhorro
+Cuenta <|-- CuentaCheques
+Cuenta <|-- CuentaCredito
+
+note right of Cuenta : Clase general
+note top of CuentaAhorro : Clase especializada
+
+title Generalización de clases
+
+caption "Una cuenta de <b>ahorro</b>, de <b>cheques</b> y de <b>crédito</b> son tipos o especializaciones de cuenta bancaria,\npor lo que se pueden generalizar en una clase base llamada <b>Cuenta</b>"
+
+@enduml

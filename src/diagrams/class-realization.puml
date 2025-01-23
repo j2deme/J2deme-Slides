@@ -1,0 +1,29 @@
+@startuml class_realization
+!include plantuml.config
+skinparam groupInheritance 1
+
+interface Propietario {
+  + nombre: string
+  + comprar(Propiedad propiedad): void
+  + vender(Propiedad propiedad): void
+}
+
+class PersonaFisica {
+  + nombre: string
+  + apellido: string
+  + dni: string
+}
+
+class PersonaMoral {
+  + razonSocial: string
+  + rfc: string
+}
+
+Propietario <|.. PersonaFisica
+Propietario <|.. PersonaMoral
+
+title Realización de la clase Propietario
+
+caption "Tanto la clase <b>Persona Física</b> como <b>Persona Moral</b> deberán\nimplementar los métodos de la interfaz <b>Propietario</b>"
+
+@enduml

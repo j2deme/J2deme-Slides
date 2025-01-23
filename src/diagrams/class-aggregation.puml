@@ -1,0 +1,27 @@
+@startuml class_aggregation
+!include plantuml.config
+
+class Empresa {
+  +nombre: String
+  +direccion: String
+  +telefono: String
+  +empleados: List<Empleado>
+}
+
+class Empleado {
+  +nombre: String
+  +direccion: String
+  +telefono: String
+  +empresa: Empresa
+}
+
+Empresa o- Empleado : tiene
+
+note top of Empresa: Clase Compuesta
+note top of Empleado: Clase Componente
+
+title Agregación entre Clases
+
+caption "Si la <b>Empresa</b> dejará de existir, los\n <b>Empleados</b> aún podrían existir por sí mismos"
+
+@enduml

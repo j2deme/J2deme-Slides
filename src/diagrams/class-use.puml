@@ -1,0 +1,23 @@
+@startuml class_use
+!include plantuml.config
+
+class Documento {
+  +String nombre
+  +String contenido
+}
+
+class Impresora {
+  +String nombre
+  +void imprimir(Documento documento)
+}
+
+Documento .> Impresora : <<use>>
+
+note top of Documento : Clase Dependiente
+note top of Impresora : Clase Principal
+
+title Uso entre Clases
+
+caption "Un <b>Documento</b> usa una <b>Impresora</b> y sus métodos para\nimprimir, ya que no tiene la capacidad de imprimir por sí mismo."
+
+@enduml

@@ -1,0 +1,49 @@
+@startuml object_example
+!include plantuml.config
+
+object bib1 <<Biblioteca>> {
+  +nombre = "Biblioteca Pública Municipal"
+  +direccion = "Av. Pedro Antonio de los Santos #67"
+  +telefono = "481-381-3517"
+  +libros = [lib1, lib2]
+}
+
+object bib2 <<Biblioteca>> {
+  +nombre = "Biblioteca Pública"
+  +direccion = "C. Alicia #1008, El Carmen"
+  +telefono = "481-151-3320"
+  +libros = [lib1]
+}
+
+object bib3 <<Biblioteca>> {
+  +nombre = "Biblioteca Pública Emiliano Zapata"
+  +direccion = "Fidel Velázquez #24, Ignacio\n García Tellez"
+  +telefono = "s/n"
+  +libros = [lib2]
+}
+
+object lib1 <<Libro>> {
+  +titulo = "El Principito"
+  +autor = "Antoine de Saint-Exupéry"
+  +editorial = "Salamandra"
+  +isbn = "978-84-9838-349-9"
+}
+
+object lib2 <<Libro>> {
+  +titulo = "Cien años de soledad"
+  +autor = "Gabriel García Márquez"
+  +editorial = "Diana"
+  +isbn = "978-84-376-0494-7"
+}
+
+lib1 -- bib1
+lib2 -- bib1
+
+bib2 -- lib1
+bib3 -- lib2
+
+title Ejemplo de diagrama de objetos
+
+caption "Este diagrama muestra un ejemplo de diagrama de objetos, en el que se representan tres bibliotecas y dos libros.\nCada biblioteca tiene una lista de los libros que posee, y cada libro está asociado a una o más bibliotecas."
+
+@enduml

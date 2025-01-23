@@ -1,0 +1,41 @@
+@startuml Clases
+skinparam defaultFontName "Consolas"
+skinparam ClassFontStyle bold
+
+' Esto es un comentario
+'note "Comentario largo para prueba" as N1
+
+class SerVivo {
+    +nombre: String
+    +edad: int
+    +vivo: boolean
+    +comer(): void
+    +dormir(): void
+    +morir(): void
+}
+
+class Animal{
+    +patas: int
+    +cola: boolean
+    +pelaje: boolean
+    +hacer_ruido(): void
+}
+
+class Perro {
+    +raza: String
+    +color: String
+    +tamanio: String
+    +hacer_ruido(): void
+}
+
+class Gato {
+    +raza: String
+    +color: String
+    +tamanio: String
+    +hacer_ruido(): void
+}
+
+SerVivo <|-- Animal
+Animal <|-- Perro
+Animal <|-- Gato
+@enduml

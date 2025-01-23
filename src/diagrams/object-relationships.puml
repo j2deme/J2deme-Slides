@@ -1,0 +1,21 @@
+@startuml object_relationships
+!include plantuml.config
+
+object Objeto1
+object Objeto2
+object Objeto3
+object Objeto4
+object Objeto5
+object Objeto6
+object Objeto7
+object Objeto8
+
+Objeto1 <-- Objeto2 : Asociación\ndirigida
+Objeto3 <.. Objeto4 : Dependencia
+Objeto5 o-- Objeto6 : Agregación
+Objeto7 *-- Objeto8 : Composición
+
+title Relaciones entre objetos
+
+caption "Se puede especificar el tipo de relación entre los objetos, así\ncomo la dirección de la relación."
+@enduml
