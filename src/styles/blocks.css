@@ -75,6 +75,10 @@ div.note {
   h1 {
     color: var(--note) !important;
   }
+
+  a {
+    color: var(--note) !important;
+  }
 }
 
 
