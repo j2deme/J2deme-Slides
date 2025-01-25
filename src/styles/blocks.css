@@ -95,6 +95,10 @@ div.ok {
     color: var(--ok) !important;
     display: inline-block;
   }
+
+  a {
+    color: var(--ok) !important;
+  }
 }
 
 div.warning {
@@ -124,6 +128,10 @@ div.error {
   h1 {
     color: var(--error) !important;
   }
+
+  a {
+    color: var(--error) !important;
+  }
 }
 
 div.info {
@@ -138,20 +146,28 @@ div.info {
   h1 {
     color: var(--info) !important;
   }
+
+  a {
+    color: var(--info) !important;
+  }
 }
 
 div.tip {
   --shade: lch(from var(--tip) calc(l + 20) c h);
+  --dark-shade: lch(from var(--tip) calc(l - 20) c h);
 
   border-left-color: var(--tip);
   background-color: color-mix(in hsl, var(--shade), var(--light));
   background-image: url("../../src/assets/Icons/tip.svg");
   color: oklch(from var(--shade) var(--l) 0 h) !important;
-  /* background-blend-mode: normal; */
 
   li::marker,
   h1 {
     color: var(--tip) !important;
+  }
+
+  a {
+    color: var(--dark-shade) !important;
   }
 }
 
