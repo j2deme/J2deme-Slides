@@ -167,7 +167,7 @@ section.split {
   display: grid !important;
   gap: 0.5rem 0.25rem;
   grid-template-columns: repeat(2, 50%);
-  grid-template-rows: 52px 42px min-content 1fr min-content;
+  grid-template-rows: 52px 42px min-content 1fr 1fr;
   overflow: visible;
 }
 
