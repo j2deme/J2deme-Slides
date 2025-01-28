@@ -254,7 +254,7 @@ def new_class_slide():
 
     # Título de la presentación y nombre del archivo
     title = f"{subject_name} - {unit} - {answers['unit_name']}"
-    filename = f"{acronym}-{unit}_{answers['code'].replace(' ', '')}"
+    filename = f"{acronym}-{unit}"  # _{answers['code'].replace(' ', '')}
 
     if manual == True:
         answers['careers'] = ": Ingeniería en Sistemas Computacionales"
