@@ -50,21 +50,24 @@
   --current-line-inverted: var(--slate-800);
 
   --primary: #2563eb;
+  --t1: var(--primary);
   --primary-lighter: lch(from var(--primary) calc(l + 20) c h);
   --primary-darker: lch(from var(--primary) calc(l - 20) c h);
 
   --secondary-t: color-mix(in hsl longer hue, var(--primary) 61%, var(--primary-darker));
   --secondary: lch(from var(--secondary-t) calc(l + 7) c h);
+  --t2: var(--secondary);
   --secondary-lighter: lch(from var(--secondary) calc(l + 20) c h);
   --secondary-darker: lch(from var(--secondary) calc(l - 20) c h);
 
   --accent: color-mix(in oklch, var(--primary) 50%, var(--secondary));
+  --t3: var(--accent);
   --accent-lighter: lch(from var(--accent) calc(l + 20) c h);
   --accent-darker: lch(from var(--accent) calc(l - 20) c h);
 
-  --font-header: Poppins, "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-body: "Figtree", "Poppins", "Fira Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-code: Iosevka, "Iosevka Web", "Monaspace Krypton Var", "Fira Code", monospace;
+  --font-header: "Poppins", "Segoe UI", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-body: "Figtree", "Segoe UI", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-code: Iosevka, "Iosevka Web", "Fira Code", monospace;
   --font-footer: Iosevka, "Iosevka Web", monospace;
   --font-caligraphic: "Victor Mono", Iosevka, "Iosevka Web", serif, cursive;
 
@@ -320,7 +323,7 @@ blockquote:not(:has(cite)) {
 
 blockquote p {
   font-size: x-large;
-  color: var(--highlight-muted);
+  color: var(--highlight-low);
 }
 
 blockquote:has(cite) cite {
@@ -422,23 +425,34 @@ section.cover h3 {
   align-items: end;
   justify-content: center;
   flex-direction: row;
-  padding-bottom: 7rem;
+  padding-bottom: 8rem;
   text-align: center;
   border-top-left-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
 }
 
 section.cover h4 {
-  position: absolute;
+  align-self: flex-end;
+  width: 90px;
   z-index: 1;
   font-size: 0.7rem;
-  bottom: 2.3rem;
-  right: 3.7rem;
-  text-align: end;
+  text-align: center;
   background-color: var(--base);
   padding: 0.1rem 0.35rem;
   border-radius: calc(var(--radius) / 2);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+section.cover h4:first-of-type {
+  position: absolute;
+  bottom: 2.8rem;
+  right: 3.7rem;
+}
+
+section.cover:has(h4+h4) h4:last-of-type {
+  position: absolute;
+  bottom: 1.4rem;
+  right: 3.7rem;
 }
 
 section.cover p {
@@ -1016,6 +1030,11 @@ select[multiple] {
   border-radius: calc(var(--radius) * 5);
   display: inline-block;
   margin: auto 5px;
+}
+
+table .dot {
+  height: 20px;
+  width: 20px;
 }
 
 .boxes div,
