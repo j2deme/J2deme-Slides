@@ -458,12 +458,32 @@ A estos conceptos se les conoce también como los **pilares** 🏛️ de la prog
 
 ## Encapsulamiento
 
-- De manera similar a la vida real, el encapsulamiento, ahorra tiempo y dinero y mejora la confiabilidad.
+- De manera similar a la vida real, el encapsulamiento en la programación orientada a objetos, permite **ocultar** los detalles de implementación de un objeto.
+- Al encapsular un objeto, se pueden **ocultar** los detalles de implementación de los atributos y métodos de un objeto, y **exponer** solo los métodos que se desean que sean accesibles.
 - Si una función o método ha sido probado con previamente, se tiene la confianza de que producirá el resultado correcto.
-- El encapsulamiento esta relacionado con la accesibilidad de los atributos y métodos de un objeto.
-- Es una característica muy importante de la programación orientada a objetos que simplifica entre otras cosas, el manejo de la memoria.
+- Esta relacionado con la accesibilidad de los atributos y métodos de un objeto.
 
 ![bg right:35%](../src/assets/POO/lego-house-instructions.png)
+
+---
+
+# Principios
+
+## Encapsulamiento
+
+### Modificadores de Acceso
+
+- Los modificadores de acceso son útiles para controlar el acceso a los atributos y métodos de una clase, y para garantizar la integridad de los datos.
+- Son representados por símbolos o palabras reservadas que indican la visibilidad de los atributos y métodos de una clase, y se utilizan para controlar el acceso a los mismos.
+
+| Modificador | Símbolo |                     Representación                     | Descripción                                      |
+| :---------- | :-----: | :----------------------------------------------------: | :----------------------------------------------- |
+| Public      |   `+`   |   :icon:circle:{green} / :icon:circle-filled:{green}   | Es visible desde cualquier clase.                |
+| Private     |   `-`   |     :icon:square:{red} / :icon:square-filled:{red}     | Es visible solo desde la misma clase.            |
+| Protected   |   `#`   | :icon:diamonds:{amber} / :icon:diamonds-filled:{amber} | Es visible desde la misma clase y sus subclases. |
+| Package     |   `~`   |  :icon:triangle:{blue} / :icon:triangle-filled:{blue}  | Es visible solo desde el mismo paquete.          |
+
+[info:Dependiendo del software que se utilice, la representación de los modificadores de acceso puede variar, pero los símbolos son los mismos.]
 
 ---
 
@@ -787,27 +807,6 @@ public class Prueba {
 
 ## POO
 
-### Modificadores de Acceso
-
-- En UML, los modificadores de acceso son representados por símbolos que indican la visibilidad de los atributos y métodos de una clase.
-
-| Modificador | Símbolo |                     Representación                     | Descripción                                      |
-| :---------- | :-----: | :----------------------------------------------------: | :----------------------------------------------- |
-| Public      |   `+`   |   :icon:circle:{green} / :icon:circle-filled:{green}   | Es visible desde cualquier clase.                |
-| Private     |   `-`   |     :icon:square:{red} / :icon:square-filled:{red}     | Es visible solo desde la misma clase.            |
-| Protected   |   `#`   | :icon:diamonds:{amber} / :icon:diamonds-filled:{amber} | Es visible desde la misma clase y sus subclases. |
-| Package     |   `~`   |  :icon:triangle:{blue} / :icon:triangle-filled:{blue}  | Es visible solo desde el mismo paquete.          |
-
-- Los modificadores de acceso son útiles para controlar el acceso a los atributos y métodos de una clase, y para garantizar la integridad de los datos.
-
-[info:Dependiendo del software que se utilice, la representación de los modificadores de acceso puede variar, pero los símbolos son los mismos.]
-
----
-
-# Unified Modeling Language (UML)
-
-## POO
-
 ### Estructura
 
 - Para representar la estructura de un sistema o programa de Programación Orientada a Objetos en UML, el diagrama más adecuado es el **diagrama de clases**.
@@ -1083,7 +1082,9 @@ Este tipo de diagramas se utilizan para modelar un sistema en un momento especí
 
 <!-- _class: info -->
 
-:icon:info-circle:{animate-bounce}
+:icon:info-circle:
+
+# PlantUML
 
 Para propósitos de este curso, se utilizará la herramienta **PlantUML** para la creación de diagramas UML, por su facilidad de uso.
 
