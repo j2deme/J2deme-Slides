@@ -1,0 +1,62 @@
+section.warning,
+section.info {
+  align-content: space-around !important;
+
+  p:has(i) {
+    background-color: transparent;
+    text-align: center;
+    padding: 0.7rem 0;
+  }
+
+  p>i {
+    font-size: 10rem !important;
+    color: var(--light-shade) !important;
+    filter: drop-shadow(0 0 0.2rem var(--dark-shade));
+  }
+
+  p:not(:has(i)) {
+    background-color: var(--base);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  &::after {
+    background-color: var(--base);
+  }
+}
+
+/* INFO */
+section.info {
+  --light-shade: color-mix(in hsl, var(--info), var(--light));
+  --dark-shade: lch(from var(--info) calc(l - 10) c h);
+
+  background-image: linear-gradient(to right bottom, var(--dark-shade), var(--info));
+  color: oklch(from var(--info) var(--l) 0 h) !important;
+
+  /* p>i {
+    color: var(--light-shade) !important;
+    filter: drop-shadow(0 0 0.2rem var(--dark-shade));
+  } */
+
+  h1 {
+    color: oklch(from var(--info) var(--l) 0 h) !important;
+  }
+}
+
+/* WARNNING */
+section.warning {
+  --light-shade: color-mix(in hsl, var(--warning), var(--light));
+  --dark-shade: lch(from var(--warning) calc(l - 10) c h);
+
+  background-image: linear-gradient(to right bottom, var(--dark-shade), var(--warning));
+  color: oklch(from var(--warning) var(--l) 0 h) !important;
+
+  /* p>i {
+    color: var(--light-shade) !important;
+    filter: drop-shadow(0 0 0.2rem var(--dark-shade));
+  } */
+
+  h1 {
+    color: oklch(from var(--warning) var(--l) 0 h) !important;
+  }
+}

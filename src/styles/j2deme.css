@@ -23,6 +23,7 @@
 @import "../src/styles/secondary-section.css";
 @import "../src/styles/inverted-section.css";
 @import "../src/styles/pattern-bg.css";
+@import "../src/styles/colored-sections.css";
 
 :root {
   --text: var(--dark);
@@ -1068,50 +1069,6 @@ table .dot {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   white-space: nowrap;
-}
-
-/* Custom Sections */
-section.info,
-section.warning {
-  justify-content: center;
-}
-
-section.info {
-  background-color: var(--info);
-}
-
-section.warning {
-  background-color: var(--warning);
-}
-
-section.info h1,
-section.warning h1 {
-  color: var(--dark);
-  align-self: center;
-}
-
-section.info p:not(:has(i)),
-section.warning p:not(:has(i)) {
-  background-color: var(--base);
-  border-radius: var(--radius);
-  padding: 0.5rem;
-}
-
-section.info p:has(i),
-section.warning p:has(i) {
-  text-align: center;
-}
-
-section.info p:has(i) i {
-  --shade: lch(from var(--info) calc(l + 20) c h);
-  font-size: 6rem;
-  color: var(--shade);
-}
-
-section.warning p:has(i) i {
-  --shade: lch(from var(--warning) calc(l + 20) c h);
-  font-size: 6rem;
-  color: var(--shade);
 }
 
 .bg-accent {
