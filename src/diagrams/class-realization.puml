@@ -9,7 +9,6 @@ interface Propietario {
 }
 
 class PersonaFisica {
-  + nombre: string
   + apellido: string
   + dni: string
 }
