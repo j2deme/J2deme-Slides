@@ -1,0 +1,17 @@
+@startuml class_diagram_cardinalities
+!include plantuml.config
+
+A "1" --- "1" B
+C "1" --- "0..1" D
+E "1" --- "*" F
+G "1" --- "0..n" H
+I "1" --- "1..n" J
+K "1" --- "1..*" L
+M "1" --- "m..n" N
+O "1" --- "n" P
+
+title Cardinalidades entre Entidades
+
+caption "Las cardinalidades pueden representar el grado de relación\nentre clases y objetos"
+
+@enduml

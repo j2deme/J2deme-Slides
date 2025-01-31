@@ -1,0 +1,55 @@
+@startuml one_to_one
+!include plantuml.config
+
+Empleado "1" -- "1" Cubículo
+
+@enduml
+
+@startuml one_to_many
+!include plantuml.config
+
+Profesor "1" -- "*" Curso
+
+@enduml
+
+@startuml many_to_one
+!include plantuml.config
+
+Pedido "*" -- "1" Cliente
+
+@enduml
+
+@startuml many_to_many
+!include plantuml.config
+
+Libro "*" -- "*" Autor
+
+@enduml
+
+@startuml zero_or_one_to_one
+!include plantuml.config
+
+Empleado "0..1" -- "1" Vehículo
+
+@enduml
+
+@startuml zero_or_one_to_many
+!include plantuml.config
+
+Líder "0..1" -- "*" Proyecto
+
+@enduml
+
+@startuml zero_or_many_to_one
+!include plantuml.config
+
+Pedido "0..*" -- "1" Cliente
+
+@enduml
+
+@startuml one_or_many_to_one_or_many
+!include plantuml.config
+
+Estudiante "1..*" -- "1..*" Clase
+
+@enduml

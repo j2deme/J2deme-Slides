@@ -793,28 +793,23 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
-
 - En la programación orientada a objetos, los diagramas UML son una herramienta fundamental para el diseño y modelado de sistemas de software.
-- Permiten visualizar la estructura y el comportamiento de un sistema, de manera gráfica y sencilla.
-- Son particularmente útiles para documentar dos aspectos fundamentales de un sistema:
-  - La **estructura** del sistema, es decir, cómo están organizados los objetos y las clases.
-  - El **comportamiento** del sistema, es decir, cómo interactúan los objetos y las clases.
+- Permiten visualizar elementos como la estructura, la interacción y/o el estado de un sistema, de manera gráfica y sencilla.
+- Son particularmente útiles para documentar aspectos fundamentales de un sistema como lo es la **estructura** del sistema, es decir, cómo están organizados los objetos y las clases, se representan mediante **diagramas de clases**.
+- Por otro lado, para documentar instancias de clases y cómo interactúan entre sí, se utilizan **diagramas de objetos**.
 
 ---
 
 # Unified Modeling Language (UML)
 
-## POO
-
-### Estructura
+## Diagramas de Clases
 
 - Para representar la estructura de un sistema o programa de Programación Orientada a Objetos en UML, el diagrama más adecuado es el **diagrama de clases**.
 - Los diversos componentes en un diagrama de clases pueden representar las clases que se programarán en realidad, los objetos principales o la interacción entre clases y objetos.
 - La figura de clase en sí misma consiste en un rectángulo de tres filas.
   - La fila superior contiene el nombre de la clase,
   - La fila del centro contiene los atributos de la clase, y
-  - La última expresa los métodos o las operaciones que la clase puede utilizar.
+  - La última fila incluye los métodos o las operaciones que la clase puede utilizar.
 
 ![bg right:30% fit](../src/diagrams/out/clase_ser_vivo.svg)
 
@@ -826,12 +821,9 @@ public class Prueba {
 
 # Unified Modeling Language
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-- También es posible representar las relaciones entre clases en un diagrama de clases.
-- Las relaciones más comunes son:
+- Además de representar las clases con sus atributos y métodos, los diagramas de clases también pueden mostrar las relaciones entre las clases.
   - **Asociación**, que indica que una clase está relacionada con otra.
   - **Asociación dirigida**, que indica que una clase está relacionada con otra, pero solo en una dirección.
   - **Agregación**, que indica que una clase es parte de otra.
@@ -845,11 +837,9 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-#### Asociación
+### Asociación
 
 - La **asociación** es una relación entre dos clases que indica que un objeto de una clase está relacionado con un objeto de otra clase.
 - Una asociación representa una relación bidireccional entre dos clases, indica que las instancias de una clase están conectadas a instancias de otra clase.
@@ -866,17 +856,15 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-#### Asociación dirigida
+### Asociación dirigida
 
 - La **asociación dirigida** es una relación entre dos clases que indica que un objeto de una clase está relacionado con un objeto de otra clase, pero solo en una dirección.
 - En este tipo de relación, una clase es la clase **principal** y la otra es la clase **dependiente**.
 - Se representan como una línea sólida con una flecha que indica la dirección de la relación.
 
-> En un escenario donde un `Maestro` esta asociado con un `Curso` en un sistema de gestión escolar, la asociación es dirigida desde `Maestro` a `Curso`, ya que un maestro puede enseñar varios cursos, pero un curso solo puede ser enseñado por un maestro.
+> En un escenario donde un `Maestro` esta asociado con un `Curso` en un sistema de gestión escolar, la asociación es dirigida desde `Maestro` a `Curso`, ya que un maestro puede enseñar varios cursos, pero un curso solo puede ser enseñado por un maestro a la vez.
 
 ---
 
@@ -886,11 +874,9 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-#### Agregación
+### Agregación
 
 - La **agregación** es una relación entre dos clases que indica que una clase **es parte** de otra clase.
 - En este tipo de relación, una clase es la clase **compuesta** (todo) y la otra es la clase **componente** (parte).
@@ -907,11 +893,9 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-#### Composición
+### Composición
 
 - La **composición** es una relación entre dos clases que indica que una clase **es parte** de otra clase, pero **no puede existir** sin ella.
 - Una clase es la clase **compuesta** (todo) y la otra es la clase **componente** (parte).
@@ -929,11 +913,9 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-#### Dependencia
+### Dependencia
 
 - La **dependencia** es una relación entre dos clases que indica que una clase **depende** de otra clase, es decir, que una clase utiliza a la otra, pero no forma parte de ella.
 - En este tipo de relación, una clase es la clase **dependiente** y la otra es la clase **principal**.
@@ -950,17 +932,15 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-#### Uso (dependencia)
+### Uso (dependencia)
 
 - En UML, el **uso** es una forma más general de la dependencia, con un acoplamiento más débil.
 - En este tipo de relación, una clase es la clase **dependiente** y la otra es la clase **principal**, describe la relación entre dos clases que no forman parte de la otra.
-- Se representa como una línea punteada con, etiquetada con la palabra `<<use>>`, con una flecha que indica la dirección de la relación.
+- Se representa como una flecha punteada, en dirección de la relación, etiquetada con la palabra `<<use>>`.
 
-> En el sistema de ficheros del sistema operativo, un `Documento` puede **usar** una `Impresora` para imprimir, pero la impresora no forma parte del documento.
+> En el sistema de archivos del sistema operativo, un `Documento` puede **usar** una `Impresora` para imprimir, pero la impresora no forma parte del documento.
 > La `Impresora` es una clase independiente que puede ser utilizada por el `Documento` para imprimir.
 
 ---
@@ -971,11 +951,9 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-#### Generalización
+### Generalización
 
 - La **generalización** es una relación entre dos clases que indica que una clase es una **especialización** de otra clase.
   - Representa una relación de **herencia** entre las clases.
@@ -993,11 +971,9 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Clases
 
-### Estructura
-
-#### Realización
+### Realización
 
 - La **realización** es una relación entre dos clases que indica que una clase **implementa** una interfaz, es un tipo de relación más débil que la generalización.
   - Una interfaz es un conjunto de métodos que una clase debe implementar.
@@ -1015,9 +991,7 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
-
-### Estructura
+## Diagramas de Clases
 
 - En resumen, los diagramas de clases en UML son una herramienta fundamental para el diseño y modelado de sistemas de software en programación orientada a objetos.
 - Permiten visualizar la estructura y el comportamiento de un sistema de software, de manera gráfica y sencilla, incluyendo las relaciones entre clases y objetos derivados de ellas.
@@ -1028,14 +1002,11 @@ public class Prueba {
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Objetos
 
-### Comportamiento
-
-- Los diagramas de objetos en UML son una herramienta fundamental para el diseño y modelado de sistemas de software en programación orientada a objetos.
-- Son una representación gráfica que muestra los objetos y sus relaciones en un momento determinado.
+- Los diagramas de objetos en UML son una representación gráfica que muestra el estado de los objetos y sus relaciones en un momento determinado.
 - Proporciona una instantánea 📸 de la estructura del sistema, capturando la visión estática de las instancias presentes y sus asociaciones.
-- La principal diferencia entre un diagrama de clases y un diagrama de objetos es que el primero se enfoca en la estructura de un sistema, mientras que el segundo se enfoca en el comportamiento de un sistema.
+- La principal diferencia entre un diagrama de clases y un diagrama de objetos es que el primero se enfoca en la estructura de un sistema, mientras que el segundo se enfoca en la interacción entre los estados de los objetos en un momento específico.
 - Utilizan los mismos elementos que los diagramas de clases, pero se centran en la interacción entre objetos en lugar de en la estructura de las clases.
 
 ::: ok
@@ -1050,11 +1021,9 @@ Este tipo de diagramas se utilizan para modelar un sistema en un momento especí
 
 # Unified Modeling Language (UML)
 
-## POO
+## Diagramas de Objetos
 
-### Comportamiento
-
-- En un diagrama de objetos, los objetos se representan como instancias de clases.
+- En un diagrama de objetos, los objetos se representan como **instancias** de clases.
 - Si se requiere, puede incluirse información adicional sobre los objetos, como sus atributos y métodos.
 - Las relaciones entre los objetos se representan generalmente con líneas simples que conectan los objetos.
   - Estas líneas también pueden ser de diferentes tipos de relaciones: asociaciones, agregaciones, composiciones y dependencias.
@@ -1063,6 +1032,148 @@ Este tipo de diagramas se utilizan para modelar un sistema en un momento especí
 ---
 
 ![bg h:90%](../src/diagrams/out/object_relationships.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+> La **cardinalidad** es una propiedad de las relaciones entre clases en UML que indica cuántos objetos de una clase están relacionados con cuántos objetos de otra clase.
+
+- La cardinalidad se representa en un diagrama de clases u objetos, con un número o un rango de números que indica cuántos objetos de una clase están relacionados con cuántos objetos de otra clase.
+- Las relaciones de cardinalidad se "anotan" en las líneas que conectan las clases en un diagrama de clases, y se utilizan para indicar cuántos objetos de una clase están relacionados con cuántos objetos de otra clase.
+  - Se puede expresar de diferentes maneras, dependiendo de la relación entre las clases, aunque si no se describen, se pueden inferir del tipo de dato que se está utilizando.
+  - Es una buena práctica incluirlas, para evitar ambigüedades y malentendidos en el diseño del sistema.
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Tipos
+
+|  Cardinalidad   | Descripción                                                |
+| :-------------: | :--------------------------------------------------------- |
+|       `1`       | Relación con **exactamente** una entidad                   |
+|     `0..1`      | Relación con **cero** o **una** entidad                    |
+|  `*` (`0..*`)   | Relación con **cero** o **más** entidades                  |
+| `0..n` / `1..n` | Relación con **cero** / **una** y **máximo** `n` entidades |
+|     `1..*`      | Relación con **al menos** una entidad                      |
+|     `m..n`      | Relación con **mínimo** `m` y **máximo** `n` entidades     |
+|       `n`       | Relación con **exactamente** `n` entidades                 |
+
+---
+
+![bg h:90%](../src/diagrams/out/class_diagram_cardinalities.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Uno a Uno
+
+> Supongamos un sistema de gestión de empleados, donde cada `Empleado` tiene sólo **un cubículo** asignado, y cada `Cubículo` está asignado a **un solo empleado**.
+
+![bg left:35% fit](../src/diagrams/out/one_to_one.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Uno a Muchos
+
+> Consideremos un sistema de gestión escolar en una universidad, donde un `Profesor` puede impartir **varios cursos**, pero un `Curso` solo puede ser impartido por **un profesor** a la vez.
+
+![bg left:35% fit](../src/diagrams/out/one_to_many.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Uno a Muchos
+
+> En un restaurante, un `Cliente` puede hacer **varios pedidos**, sin embargo, un `Pedido` solo puede ser hecho por **un cliente**.
+
+![bg left:35% fit](../src/diagrams/out/many_to_one.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Muchos a Muchos
+
+> Dentro del sistema de control de una biblioteca, un `Libro` puede haber sido escrito por **varios autores**, y un `Autor` puede haber escrito **varios libros**.
+
+![bg left:35% fit](../src/diagrams/out/many_to_many.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Cero o Uno a Uno
+
+> Una empresa de logística de transporte tiene múltiples `Vehículos`, pero no todos tienen asignado un `Empleado` que los conduzca, y cada `Empleado` esta asignado a **exactamente un** `Vehículo`.
+
+![bg left:35% fit](../src/diagrams/out/zero_or_one_to_one.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Cero o Uno a Muchos
+
+> Una empresa de desarrollo de software tiene múltiples `Proyectos`, pero no todos tienen asignado un `Líder`, y cada `Líder` puede estar asignado a **varios** `Proyectos`.
+
+![bg left:35% fit](../src/diagrams/out/zero_or_one_to_many.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Cero o Muchos a Uno
+
+> Una tienda de pedidos en línea tiene múltiples `Clientes`, pero no todos han realizado un `Pedido`, y cada `Pedido` es realizado por **exactamente un** `Cliente`.
+
+![bg left:35% fit](../src/diagrams/out/zero_or_many_to_one.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+### Uno o Muchos<sup>2</sup>
+
+> En una escuela, un `Estudiante` debe estar inscrito en **al menos un** `Clase` (puede estar en varias), y cada `Clase` tiene debe tener **al menos un** `Estudiante` para ser impartida.
+
+![bg left:35% fit](../src/diagrams/out/one_or_many_to_one_or_many.svg)
+
+---
+
+# Unified Modeling Language (UML)
+
+## Cardinalidad
+
+- Es importante tener en cuenta que la cardinalidad es una propiedad de las relaciones entre clases en UML que indica cuántos objetos de una clase están relacionados con cuántos objetos de otra clase.
+  - También puede utilizarse en otros contextos como los diagramas de entidad-relación en bases de datos.
+- Se mostraron ejemplos de las relaciones más comunes, pero existen muchas otras combinaciones posibles de cardinalidades, dependiendo de la relación entre las clases y la especificación del sistema.
+- Aunque no es necesario incluir la cardinalidad en un diagrama de clases, es una buena práctica hacerlo para evitar ambigüedades y malentendidos en el diseño del sistema, especialmente en sistemas complejos o que requieren una mayor precisión en cuanto a la cantidad de objetos relacionados.
 
 ---
 
@@ -1115,7 +1226,7 @@ Para propósitos de la asignatura, se revisarán los diagramas de clases y objet
 
 ## PlantUML
 
-### Estructura base
+### EstruClases
 
 ::: top
 Sin importar si se trabaja con PlantUML de manera local o en línea, la estructura básica de un diagrama UML es la misma.
