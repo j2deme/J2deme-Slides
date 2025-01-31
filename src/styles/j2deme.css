@@ -1120,21 +1120,21 @@ table .dot {
 
   &.ti-yes:before {
     content: "\f704";
-    color: var(--green-350);
+    color: var(--green-450);
   }
 
   &.ti-yep:before {
     content: "\ea5e";
-    color: var(--green-350);
+    color: var(--green-450);
   }
 
   &.ti-no::before {
     content: "\f739";
-    color: var(--red-350);
+    color: var(--red-450);
   }
 
   &.ti-nop::before {
     content: "\eb55";
-    color: var(--red-350);
+    color: var(--red-450);
   }
 }
