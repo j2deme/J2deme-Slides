@@ -5,7 +5,7 @@ class Maestro {
   +nombre: String
   +direccion: String
   +telefono: String
-  +materias: List<Materia>
+  +materias: List<Curso>
 }
 
 class Curso {

@@ -19,6 +19,6 @@ note top of Contacto: Clase Componente
 
 title Composición entre Clases
 
-caption "Si la <b>Agenda</b> se borra o se destruye,\nlos <b>Contactos</b> también se eliminarán"
+caption "Si la <b>Agenda</b> se borra o se destruye, cada <b>Contacto</b>\nregistrado en ella también se eliminará"
 
 @enduml

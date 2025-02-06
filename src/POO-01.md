@@ -830,8 +830,8 @@ public class Prueba {
   - **Composición**, que indica que una clase es parte de otra, pero **no puede existir** sin ella.
   - **Dependencia**, que indica que una clase depende de otra.
   - **Uso**, que indica que una clase utiliza otra (tipo de dependencia).
-  - **Generalización**, que indica que una clase tien relación con otra, pero es una **especialización** de ella.
-  - **Realización**, que indica que una clase implementa una interfaz.
+  - **Generalización**, que indica que una clase tiene relación con otra, pero es una **especialización** de ella.
+  - **Realización**, que indica que una clase implementa una interfaz[*:Una interfaz es un conjunto de métodos abstractos que una clase debe implementar.].
 
 ---
 
@@ -841,11 +841,11 @@ public class Prueba {
 
 ### Asociación
 
-- La **asociación** es una relación entre dos clases que indica que un objeto de una clase está relacionado con un objeto de otra clase.
-- Una asociación representa una relación bidireccional entre dos clases, indica que las instancias de una clase están conectadas a instancias de otra clase.
+- La **asociación** es una relación entre dos clases, que indica que un objeto de una clase está relacionado con un objeto de otra clase.
+- Este tipo de relación se representa como una relación bidireccional entre dos clases, e indica que las instancias de una clase están conectadas a instancias de otra clase.
 - Se representan como una línea sólida que conecta las clases.
 
-> Supongamos un sistema para administra bibliotecas, con dos clases principales `Biblioteca` y `Libro`, cada libro pertenece a una biblioteca, y una biblioteca puede tener muchos libros.
+> Supongamos un sistema para administrar bibliotecas, que tiene dos clases principales `Biblioteca` y `Libro`, cada libro puede pertenecer a una biblioteca, y una biblioteca puede tener muchos libros.
 > La relación entre las clases `Biblioteca` y `Libro` se representa como una asociación.
 
 ---
@@ -860,7 +860,7 @@ public class Prueba {
 
 ### Asociación dirigida
 
-- La **asociación dirigida** es una relación entre dos clases que indica que un objeto de una clase está relacionado con un objeto de otra clase, pero solo en una dirección.
+- La **asociación dirigida** es una relación entre dos clases, que indica que un objeto de una clase está relacionado con un objeto de otra clase, pero **solo en una dirección**.
 - En este tipo de relación, una clase es la clase **principal** y la otra es la clase **dependiente**.
 - Se representan como una línea sólida con una flecha que indica la dirección de la relación.
 
@@ -878,11 +878,11 @@ public class Prueba {
 
 ### Agregación
 
-- La **agregación** es una relación entre dos clases que indica que una clase **es parte** de otra clase.
+- La **agregación** es una relación entre dos clases, que indica que una clase **es parte** de otra clase.
 - En este tipo de relación, una clase es la clase **compuesta** (todo) y la otra es la clase **componente** (parte).
 - Se representan como una línea sólida con un rombo en el extremo de la clase compuesta.
 
-> Si se tiene un sistema de gestión de personal, la `Empresa` sería vista todo el todo, mientras que los `Empleados` serían las partes, los empleados son parte de la empresa, y la empresa puede tener muchos empleados.
+> Si se tiene un sistema de gestión de personal, la `Empresa` sería vista como el todo, mientras que los `Empleados` serían las partes; los empleados son parte de la empresa, y la empresa puede tener muchos empleados.
 > La relación entre `Empresa` y `Empleado` es una agregación, ya que incluso si la empresa desaparece, los empleados seguirán existiendo.
 
 ---
@@ -898,9 +898,9 @@ public class Prueba {
 ### Composición
 
 - La **composición** es una relación entre dos clases que indica que una clase **es parte** de otra clase, pero **no puede existir** sin ella.
+- La composición es una relación **más fuerte** que la agregación.
 - Una clase es la clase **compuesta** (todo) y la otra es la clase **componente** (parte).
 - Se representan como una línea sólida con un rombo relleno en el extremo de la clase compuesta.
-- La composición es una relación **más fuerte** que la agregación.
 
 > En el caso de una `Agenda` digital, los contactos registrados en la agenda son parte de la agenda, y no pueden existir sin ella.
 > La relación entre `Agenda` y `Contacto` es una composición, ya que si la agenda se elimina, los contactos también se eliminarían.
@@ -917,9 +917,9 @@ public class Prueba {
 
 ### Dependencia
 
-- La **dependencia** es una relación entre dos clases que indica que una clase **depende** de otra clase, es decir, que una clase utiliza a la otra, pero no forma parte de ella.
-- En este tipo de relación, una clase es la clase **dependiente** y la otra es la clase **principal**.
-- Se representan como una flecha punteada que conecta las clases, en dirección de la clase dependiente a la clase principal.
+- La **dependencia** es una relación entre dos clases, que indica que una clase depende de otra clase, es decir, que una clase **utiliza** a la otra, pero **no forma parte** de ella.
+- En este tipo de relación, una clase se conoce como la clase **dependiente** y la otra es la clase **principal**.
+- Se representan con una flecha punteada que conecta las clases, en dirección de la clase dependiente a la clase principal.
 
 > Si se modelará un `Automovil`, este dependería de un `Motor` para funcionar, con lo que se tendría una dependencia entre ambas clases.
 > El `Automovil` depende del `Motor` para funcionar, pero el `Motor` puede existir sin el `Automovil`.
@@ -936,8 +936,8 @@ public class Prueba {
 
 ### Uso (dependencia)
 
-- En UML, el **uso** es una forma más general de la dependencia, con un acoplamiento más débil.
-- En este tipo de relación, una clase es la clase **dependiente** y la otra es la clase **principal**, describe la relación entre dos clases que no forman parte de la otra.
+- En UML, el **uso** es una forma más general de la dependencia, pero con un acoplamiento más débil.
+- En este tipo de relación, una clase se identifica como la clase **dependiente** y la otra es la clase **principal**, describe la relación entre dos clases que no forman parte una de la otra.
 - Se representa como una flecha punteada, en dirección de la relación, etiquetada con la palabra `<<use>>`.
 
 > En el sistema de archivos del sistema operativo, un `Documento` puede **usar** una `Impresora` para imprimir, pero la impresora no forma parte del documento.
@@ -958,7 +958,7 @@ public class Prueba {
 - La **generalización** es una relación entre dos clases que indica que una clase es una **especialización** de otra clase.
   - Representa una relación de **herencia** entre las clases.
 - En este tipo de relación, una clase es la clase **general** y la otra es la clase **especializada**, también pueden ser llamadas clase **padre** y clase **hija**.
-- Se representan como una línea sólida con un triángulo en el extremo de la clase especializada.
+- Se representan como una línea sólida con un triángulo en el extremo opuesto de la clase especializada, apuntando hacia la clase general.
 
 > En un sistema bancario, un cliente tiene una `Cuenta` general, pero también puede tener una `Cuenta de Ahorro`, una `Cuenta de Cheques` e incluso una `Cuenta de Crédito`.
 > Todas estas cuentas son especializaciones de la clase `Cuenta`, por lo que la relación entre `Cuenta` y las cuentas especializadas es una generalización.
@@ -978,7 +978,7 @@ public class Prueba {
 - La **realización** es una relación entre dos clases que indica que una clase **implementa** una interfaz, es un tipo de relación más débil que la generalización.
   - Una interfaz es un conjunto de métodos que una clase debe implementar.
 - En este tipo de relación, una clase es la clase **implementadora** y la otra es la clase **interfaz**.
-- Se representan como una línea punteada con un triángulo en el extremo de la clase implementadora.
+- Se representan como una línea punteada con un triángulo en el extremo opuesto de la clase implementadora, apuntando hacia la clase interfaz.
 
 > En el campo de los bienes raíces, una `Propiedad` pertenece a un `Propietario`, el cual puede ser una `Persona física` o una `Persona moral`.
 > Ambas clases `Persona física` y `Persona moral` implementan la interfaz `Propietario`, por lo que la relación entre `Propietario` y las clases implementadoras es una **realización**, es decir, tendrán implementaciones concretas de los métodos de la interfaz.
