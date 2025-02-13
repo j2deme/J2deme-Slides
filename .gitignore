@@ -3,5 +3,7 @@ node_modules
 .vscode
 dist/*.html
 dist/*.pdf
-dist/*/*.png
+dist/**/*.png
 ./out/
+.venv/
+NUL
