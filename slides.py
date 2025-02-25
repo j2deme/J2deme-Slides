@@ -51,7 +51,7 @@ def get_slides():
     if len(slides) == 0:
         return False
     else:
-        return slides
+        return sorted(slides)
 
 # MARK: THEME SELECTOR
 
