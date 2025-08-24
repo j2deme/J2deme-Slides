@@ -72,9 +72,14 @@
   {
     "name": "Programación Orientada a Objetos",
     "acronym": "POO",
-    "code": "IAD - 2424",
+    "code": [
+      "AED - 1286",
+      "IAD - 2424"
+    ],
     "satca": "2 - 3 - 5",
     "careers": [
+      "Ingeniería en Sistemas Computacionales",
+      "Ingeniería en Desarrollo de Aplicaciones",
       "Ingeniería en Inteligencia Artificial"
     ],
     "units": [
@@ -112,18 +117,18 @@
         "topics": [
           "Definición de clases",
           {
-            "name": "Declaración de clases",
+            "name": "Declaración de Clases",
             "topics": [
               "Atributos",
               "Métodos",
               "Encapsulamiento",
               "Constructores",
-              "Sobrecarga de métodos"
+              "Sobrecarga de Métodos"
             ]
           },
-          "Instanciación de objetos",
-          "Referencia al objeto actual",
-          "Manejo de excepciones"
+          "Instanciación de Objetos",
+          "Referencia al Objeto Actual",
+          "Manejo de Excepciones"
         ]
       },
       {
@@ -133,12 +138,12 @@
         "topics": [
           "Definición",
           "Clasificación",
-          "Clase base y clase derivada",
-          "Referencia a la clase base",
-          "Atributos y métodos heredados",
-          "Implementación de clases derivadas",
-          "Clases abstractas",
-          "Métodos abstractos"
+          "Clase Base y Clase Derivada",
+          "Referencia a la Clase Base",
+          "Atributos y Métodos Heredados",
+          "Implementación de Clases Derivadas",
+          "Clases Abstractas",
+          "Métodos Abstractos"
         ]
       },
       {
@@ -152,29 +157,29 @@
             "topics": [
               "Declaración",
               "Implementación",
-              "Sobreescritura de métodos",
-              "Diferencia con clases abstractas"
+              "Sobreescritura de Métodos",
+              "Diferencia con Clases Abstractas"
             ]
           },
-          "Variables polimórficas",
-          "Reutilización de código",
-          "Herencia de interfaces"
+          "Variables Polimórficas",
+          "Reutilización de Código",
+          "Herencia de Interfaces"
         ]
       },
       {
         "unit": "5",
-        "name": "Flujos y archivos",
+        "name": "Flujos y Archivos",
         "skill": "Reconoce los distintos tipos de archivos y aplica el concepto de persistencia de datos en el desarrollo de proyectos",
         "topics": [
           "Definición",
           {
             "name": "Clasificación",
             "topics": [
-              "Archivos de texto",
-              "Archivos binarios"
+              "Archivos de Texto",
+              "Archivos Binarios"
             ]
           },
-          "Manejo de archivos"
+          "Manejo de Archivos"
         ]
       }
     ]
