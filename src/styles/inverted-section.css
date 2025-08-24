@@ -31,17 +31,22 @@ section.inverted,
   }
 
   code:not(pre > code) {
-    background-color: var(--neutral-700);
+    color: var(--text) !important;
+    background-color: var(--neutral-200) !important;
   }
 
   marp-pre {
     background-color: var(--text);
-    border-color: var(--secondary);
+    border: 1px solid var(--secondary) !important;
+  }
+
+  pre {
+    border: 1px solid var(--secondary) !important;
   }
 
   mjx-container {
-    color: var(--text-inverted);
-    background-color: var(--base-inverted);
+    color: var(--text-inverted) !important;
+    background-color: var(--base-inverted) !important;
   }
 
   table {
@@ -70,15 +75,41 @@ section.inverted,
     background-color: var(--base-inverted);
   }
 
-  .warning {
+  .info {
     p {
-      color: var(--amber-900);
+      color: var(--azure-900) !important;
     }
 
     strong,
     b {
-      color: var(--amber-600);
+      color: var(--azure-600) !important;
     }
+  }
+
+  .warning {
+    border-color: var(--yellow-100) !important;
+
+    p {
+      color: var(--yellow-900) !important;
+    }
+
+    strong,
+    b {
+      color: var(--yellow-600) !important;
+    }
+  }
+
+  .info,
+  .ok,
+  .warning,
+  .error,
+  .danger,
+  .primary,
+  .secondary,
+  .quote,
+  .note,
+  .tip {
+    box-shadow: none !important;
   }
 }
 
