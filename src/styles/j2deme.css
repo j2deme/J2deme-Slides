@@ -187,6 +187,10 @@ img[alt*='#c'] {
   margin: auto;
 }
 
+p:empty {
+  display: none;
+}
+
 p {
   font-weight: 500;
   margin-bottom: 0.2rem;
