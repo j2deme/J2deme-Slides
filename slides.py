@@ -315,6 +315,9 @@ def new_class_slide():
         # Elimina 2 saltos de línea al final de answers[contents]
         answers['contents'] = answers['contents'][:-2]
 
+    if isinstance(answers['code'], list):
+        subjectCode = answers['code'][0]
+
     # Toma como base el archivo CLASS_TEMPLATE, reemplaza las variables y crea un nuevo archivo
     with open(CLASS_TEMPLATE, 'r', encoding="utf-8") as file:
         filedata = file.read()
@@ -324,7 +327,7 @@ def new_class_slide():
             '===SUBJECT===', answers['subject']).replace(
             '===UNIT===', unit).replace(
             '===UNIT_NAME===', answers['unit_name']).replace(
-            '===CODE===', answers['code']).replace(
+            '===CODE===', subjectCode).replace(
             '===SATCA===', answers['satca']).replace(
             '===PRIMARY_COLOR===', answers['primary']).replace(
             '===SECONDARY_COLOR===', answers['secondary']).replace('===CONTENTS===', answers['contents']).replace('===CAREERS===', careers).replace('===TOC===', answers['toc'])
