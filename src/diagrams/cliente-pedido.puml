@@ -1,0 +1,17 @@
+@startuml cliente_pedido
+!include plantuml.config
+
+class Cliente {
+  +nombre: String
+  +direccion: String
+  +telefono: String
+}
+
+class Pedido {
+  +fecha: Date
+  +total: Double
+  +cliente: Cliente
+}
+
+Cliente -> Pedido: tiene
+@enduml

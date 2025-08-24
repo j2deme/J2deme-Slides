@@ -1,0 +1,39 @@
+@startuml coche_atributos
+!include plantuml.config
+
+class Coche {
+  +marca: String
+  +modelo: String
+  +año: String
+  +color: String
+  +kilometraje: int
+}
+
+@enduml
+
+@startuml coche_metodos
+!include plantuml.config
+
+class Coche {
+  +acelerar(): void
+  +frenar(): void
+  +cambiarMarcha(): void
+  +encenderLuces(): void
+}
+
+@enduml
+
+@startuml coche
+!include plantuml.config
+
+class Coche {
+  +velocidad: int
+  +marcha: int
+  +luces: boolean
+  +acelerar(): void
+  +frenar(): void
+  +cambiarMarcha(): void
+  +encenderLuces(): void
+}
+
+@enduml
