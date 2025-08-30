@@ -193,6 +193,11 @@ div.quote {
   background-position-y: -5px;
 }
 
+section.primary blockquote strong,
+section.primary blockquote b {
+  color: var(--text-inverted) !important;
+}
+
 div.quote p {
   font-size: x-large;
   color: var(--highlight-muted);
