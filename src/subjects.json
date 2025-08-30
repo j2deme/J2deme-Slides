@@ -393,5 +393,124 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Algoritmia y Estructuras de Datos",
+    "acronym": "AED",
+    "code": [
+      "IAD-2401"
+    ],
+    "satca": "2 - 3 - 5",
+    "careers": [
+      "Ingeniería en Inteligencia Artificial"
+    ],
+    "units": [
+      {
+        "unit": "1",
+        "name": "Análisis y Diseño de Algoritmos",
+        "skill": "Diseña, analiza y evalúa la eficiencia de algoritmos para resolver problemas computacionales diversos, comprendiendo diferentes técnicas de diseño y su implementación en código funcional.",
+        "topics": [
+          {
+            "name": "Definición",
+            "topics": [
+              "Algoritmo",
+              "Estructuras de datos"
+            ]
+          },
+          {
+            "name": "Complejidad algorítmica",
+            "topics": [
+              "Conceptos de complejidad algorítmica",
+              "Análisis de eficiencia (tiempo y espacio)",
+              "Notación Big O"
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "2",
+        "name": "Estructuras de Datos y Algoritmos de Búsqueda",
+        "skill": "Selecciona e implementa estructuras de datos lineales y dinámicas adecuadas para resolver problemas, aplicando algoritmos de búsqueda eficientes según el contexto.",
+        "topics": [
+          {
+            "name": "Estructuras de datos",
+            "topics": [
+              "Arreglos",
+              "Listas",
+              "Matrices multidimensionales",
+              "Pilas",
+              "Colas",
+              "Punteros"
+            ]
+          },
+          {
+            "name": "Algoritmos de búsqueda",
+            "topics": [
+              "Búsqueda lineal",
+              "Búsqueda binaria"
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "3",
+        "name": "Algoritmos de Ordenamiento y Estructuras Avanzadas",
+        "skill": "Aplica algoritmos de ordenamiento y estructuras avanzadas como árboles binarios y montículos para optimizar procesos de clasificación y gestión de datos prioritarios.",
+        "topics": [
+          {
+            "name": "Algoritmos de ordenamiento",
+            "topics": [
+              "Inserción",
+              "Selección",
+              "QuickSort"
+            ]
+          },
+          {
+            "name": "Árboles binarios de búsqueda (BST)",
+            "topics": [
+              "Definición y propiedades",
+              "Operaciones: inserción, búsqueda, recorridos"
+            ]
+          },
+          {
+            "name": "Montículos (heaps) y colas de prioridad",
+            "topics": [
+              "Montículo máximo y mínimo",
+              "Operaciones: inserción, extracción, heapify",
+              "Aplicaciones en colas de prioridad"
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "4",
+        "name": "Técnicas Avanzadas de Diseño de Algoritmos",
+        "skill": "Resuelve problemas complejos mediante algoritmos de búsqueda en grafos, técnicas informadas y estrategias avanzadas como programación dinámica y algoritmos voraces.",
+        "topics": [
+          {
+            "name": "Grafos",
+            "topics": [
+              "Conceptos y representaciones (matriz y lista de adyacencia)",
+              "Recorridos: DFS (Depth-First Search)",
+              "Recorridos: BFS (Breadth-First Search)"
+            ]
+          },
+          {
+            "name": "Algoritmos de búsqueda informada",
+            "topics": [
+              "A* (A-Estrella)",
+              "Greedy Best-First"
+            ]
+          },
+          {
+            "name": "Técnicas avanzadas de diseño",
+            "topics": [
+              "Programación dinámica",
+              "Algoritmos voraces (greedy)"
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
