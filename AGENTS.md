@@ -24,6 +24,123 @@ J2deme-Slides es una colección de plantillas, plugins y utilidades para crear y
 - `src/templates/Clase.md`, `src/templates/Ponencia.md` — Plantillas base para generación.
 - `dist/` — (Salida prevista) archivos exportados (PDF, HTML, imágenes).
 
+## Estructura de las presentaciones
+
+- Cada presentación es un archivo Markdown (`.md`) en `src/`, dividido en slides por separadores `---`.
+- Cada presentación incluye metadatos YAML al inicio para configuración (título, autor, tema, etc.) estos metadatos son procesados por Marp y `engine.js` y se utilizan para personalizar la apariencia y funcionalidad de la presentación.
+- Los metadatos YAML se generan automáticamente al crear nuevas presentaciones usando `slides.py` y pueden ser editados manualmente para ajustes específicos.
+- Los slides pueden contener código, imágenes y otros elementos multimedia, que son procesados por Marp durante la exportación.
+- Los slides pueden tener diferentes estructuras que se especifican mediante decoradores (comentarios HTML como `<!-- _class: lead -->`), que son interpretados por `engine.js` para aplicar estilos o comportamientos específicos (por ejemplo, secciones destacadas, listas numeradas, etc.).
+
+### Estructuras comunes en slides
+
+#### cover
+
+- Uso: `<!-- _class: cover -->`
+- Propósito: Indica que el slide es una portada o título principal.
+- Efecto: Aplica un estilo de portada (tipografía grande, centrado, etc.).
+- Solo puede haber un slide con esta clase por presentación.
+- Su estructura clásica incluye:
+
+```markdown
+<!-- _class: cover -->
+<!-- _paginate: false -->
+
+# {Nombre de la unidad}
+
+## {Nombre de la materia}
+
+Dr. Jaime Jesús Delgado Meraz
+
+### Unidad {01, 02, ...}
+
+#### {Clave de la materia}
+
+<img class="logo" alt="TecNM" src="../src/assets/Logo-TECNM.svg" />
+
+---
+```
+
+#### toc
+
+- Uso: `<!-- _class: toc -->`
+- Propósito: Indica que el slide es una tabla de contenidos (TOC).
+- Efecto: Aplica un estilo de tabla de contenidos (lista de secciones, numerada o con viñetas).
+- Su estructura clásica incluye:
+
+```markdown
+<!-- _class: toc -->
+
+# Contenidos
+
+1. {Sección 1}
+2. {Sección 2}
+3. {Sección 3}
+
+---
+```
+
+#### lead
+
+- Uso: `<!-- _class: lead -->`
+- Propósito: Indica que el slide es una diapositiva de introducción / título / sección.
+- Efecto: Aplica un estilo destacado (tipografía más grande, centrado, etc.).
+- Su estructura clásica incluye:
+
+```markdown
+<!-- _class: lead -->
+
+# {Título del slide}
+
+## {Subtítulo o descripción opcional}
+
+---
+```
+
+#### cols-2
+
+- Uso: `<!-- _class: cols-2 -->`
+- Propósito: Divide el slide en dos columnas simétricas.
+- Efecto: Aplica un diseño de dos columnas para organizar el contenido.
+- La segunda columna se usa regularmente para imágenes, gráficos, listas o snippets cortos de código (no más de 5 líneas).
+- Su estructura clásica incluye:
+
+```markdown
+<!-- _class: cols-2 -->
+
+::: left
+{Contenido de la columna izquierda}
+:::
+::: right
+{Contenido de la columna derecha}
+:::
+
+---
+```
+
+#### cols-3
+
+- Uso: `<!-- _class: cols-3 -->`
+- Propósito: Divide el slide en tres columnas simétricas.
+- Efecto: Aplica un diseño de tres columnas para organizar el contenido.
+- Su estructura clásica incluye:
+
+```markdown
+<!-- _class: cols-3 -->
+
+::: left
+{Contenido de la columna izquierda}
+:::
+::: center
+{Contenido de la columna central}
+:::
+::: right
+{Contenido de la columna derecha}
+:::
+
+---
+```
+
 ## Contrato (inputs/outputs) — acciones comunes
 
 1. Exportar una presentación a PDF
