@@ -34,6 +34,23 @@ J2deme-Slides es una colección de plantillas, plugins y utilidades para crear y
 
 ### Estructuras comunes en slides
 
+La estructura básica de un slide se describe mediante el siguiente esquema:
+
+```markdown
+<!-- _class: {clase} -->
+
+# {Título de la sección}
+
+## {Subtítulo o descripción (opcional)}
+
+### {Tema o punto clave (opcional)}
+
+{Contenido del slide (texto, listas, imágenes, código, etc.)
+}
+
+---
+```
+
 #### cover
 
 - Uso: `<!-- _class: cover -->`
