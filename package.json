@@ -1,6 +1,13 @@
 {
   "name": "j2deme-slides",
   "version": "1.0.0",
+  "scripts": {
+    "slides": "python slides.py",
+    "slides:pdf": "python slides.py --pdf",
+    "slides:preview": "python slides.py --preview",
+    "install:all": "npm install && pip install -r requirements.txt",
+    "check:shiki": "node -e \"try{require('markdown-it-shiki');console.log('markdown-it-shiki OK')}catch(e){console.error('markdown-it-shiki not installed')}\""
+  },
   "devDependencies": {
     "@marp-team/marp-cli": "^3.4.0"
   },
