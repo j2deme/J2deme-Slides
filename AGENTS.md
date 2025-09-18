@@ -141,6 +141,122 @@ Dr. Jaime Jesús Delgado Meraz
 ---
 ```
 
+#### Callouts / Admonitions (note, warning, primary, centered, etc.)
+
+- Uso: `::: note`, `::: warning`, `::: quote`, o clases adicionales `<!-- _class: primary centered -->` en combinación con bloque de cita.
+- Propósito: Crear bloques destacados (notas, advertencias, citas en foco) con estilo consistente en la plantilla.
+- Ejemplo clásico:
+
+```markdown
+::: note
+Texto breve de nota que se muestra con estilo y una pequeña cinta lateral.
+:::
+
+::: warning
+Texto de advertencia que se destaca visualmente.
+:::
+
+<!-- _class: primary centered -->
+
+> _Cita en foco para una diapositiva independiente_
+
+---
+```
+
+Notas:
+
+- Los bloques `::: note` y `::: warning` son soportados por el motor `engine.js` y aplican estilos CSS específicos.
+- Para citas en foco se recomienda usar la directiva `_class` con `primary centered` y un bloque de cita `>` para centrar y destacar la cita.
+
+#### Flex layout y columnas avanzadas
+
+- Uso: `::::: flex` junto con `:::: col <fracción> [clases]` para layouts flexibles y responsivos.
+- Propósito: Permitir layouts personalizados con columnas de anchos relativos y espaciado.
+- Ejemplo:
+
+```markdown
+::::: flex
+:::: col 1/2 px-2
+
+Contenido de la columna 1
+
+::::
+:::: col 1/2 px-2
+
+Contenido de la columna 2
+
+::::
+:::::
+
+---
+```
+
+Notas:
+
+- Esta sintaxis es utilizada en `Playground.md` para demostrar combinaciones de columnas con padding (`px-2`) y funciona bien para comparaciones lado a lado.
+
+#### Directivas e indicaciones para imágenes
+
+- Sintaxis enriquecida: `![bg right:40% w:50%](ruta)` o `![#l]` / `![#c]` / `![#r]` para imágenes flotantes.
+- Propósito: ajustar posición, tamaño y comportamiento (fondo, cover, fit) directamente desde Markdown.
+- Opciones comunes:
+
+  - `bg` — coloca la imagen como fondo de la diapositiva.
+  - `right`, `left` — posición relativa (puede combinarse con `w:50%` para ancho).
+  - `w:<n>` o `w:<n>%` — ancho absoluto o porcentual.
+  - `h:<n>` — altura en píxeles.
+  - `cover`, `fit` — modos de ajuste.
+  - `[#l]`, `[#c]`, `[#r]` — atajos para imágenes flotantes a la izquierda/centro/derecha.
+
+Ejemplos:
+
+```markdown
+![bg right:30% w:50%](../src/assets/pattern-alt.svg)
+
+![#l](https://unsplash.it/200/100)
+
+![w:100](../src/assets/avatar.png)
+
+---
+```
+
+Notas:
+
+- Estas directivas son interpretadas por el `engine.js` para generar los atributos y estilos adecuados en la salida HTML/PDF.
+
+#### Inline notes y etiquetas especiales
+
+- Uso: tag inline `<note>...</note>` para pequeñas marcas en una línea o dentro de párrafos.
+- Propósito: proporcionar una nota embebida que se estiliza de forma discreta.
+
+Ejemplo:
+
+```markdown
+Texto con nota <note>\*</note>
+```
+
+#### Paginado y saltos (paginate)
+
+- Uso en portada u otras diapositivas: `<!-- _paginate: false -->` para desactivar la paginación en una diapositiva; `<!-- paginate: skip -->` para saltar en el índice/tabla de contenidos.
+- Propósito: controlar la numeración y el comportamiento de paginación en slides específicos.
+
+Ejemplo:
+
+```markdown
+<!-- _paginate: false -->
+
+# Portada
+
+---
+
+<!-- paginate: skip -->
+<!-- class: references -->
+```
+
+Notas:
+
+- Usar estas directivas en slides tipo portada o referencias ayuda a mantener la numeración correcta en el material exportado.
+
 ## Contrato (inputs/outputs) — acciones comunes
 
 1. Exportar una presentación a PDF
