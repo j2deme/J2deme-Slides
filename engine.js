@@ -1,6 +1,7 @@
 const container = require("markdown-it-container");
 const deflist = require("markdown-it-deflist");
-const { default: markdownItShiki } = require("markdown-it-shiki");
+// Note: markdown-it-shiki is loaded lazily below only when not in preview mode.
+// This avoids the costly/high-frequency rendering issues when Marp runs in live preview.
 
 function iconPlugin(md) {
   md.inline.ruler.push("icon", (state, silent) => {
@@ -176,18 +177,144 @@ function dotPlugin(md) {
   };
 }
 
-module.exports = ({ marp }) =>
-  marp
+const tablerIcons = {
+  folder:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>',
+  file: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M13 2v7h7"/></svg>',
+  placeholder:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>',
+  // Add more mappings as needed
+};
+
+function renderIcon(type) {
+  return tablerIcons[type] || tablerIcons.file; // Fallback to a generic file icon
+}
+
+function renderFileTree(items, level = 0) {
+  let html = '<div class="file-tree">';
+  items.forEach((item) => {
+    if (item === "...") {
+      // Handle placeholder
+      html += `<div class="file-tree-item placeholder" style="padding-left: ${
+        level * 20
+      }px;">${tablerIcons.placeholder} ...</div>`;
+      return;
+    }
+
+    const isFolder = item.trim().endsWith("/");
+    const icon = isFolder
+      ? tablerIcons.folder
+      : renderIcon(item.split(".").pop());
+    const name = isFolder ? item.slice(0, -1) : item;
+    html += `<div class="file-tree-item ${
+      isFolder ? "folder" : "file"
+    }" style="padding-left: ${level * 20}px;">${icon} ${name}</div>`;
+
+    if (isFolder && item.children) {
+      // Recursively render nested items
+      html += renderFileTree(item.children, level + 1);
+    }
+  });
+  html += "</div>";
+  return html;
+}
+
+function parseListTokens(tokens, idx) {
+  const items = [];
+  let currentToken = tokens[idx + 1]; // Start with the first list item
+
+  while (currentToken && currentToken.type === "list_item_open") {
+    const contentToken = currentToken.next;
+    if (contentToken && contentToken.type === "inline") {
+      const item = {
+        name: contentToken.content.trim(),
+        children: [],
+      };
+
+      // Check for nested lists
+      let nextToken = contentToken.next;
+      if (nextToken && nextToken.type === "bullet_list_open") {
+        item.children = parseListTokens(tokens, tokens.indexOf(nextToken));
+      }
+
+      items.push(item.name === "..." ? "..." : item);
+    }
+    currentToken = currentToken.next.next; // Move to the next list item
+  }
+
+  return items;
+}
+
+function fileTreePlugin(md) {
+  // Capture <tree> tags
+  md.renderer.rules.html_block = (tokens, idx, options, env, self) => {
+    const token = tokens[idx];
+    if (
+      token.content.startsWith("<tree>") &&
+      token.content.endsWith("</tree>")
+    ) {
+      // Extract the Markdown list inside the <tree> tag
+      const listContent = token.content.slice(6, -7).trim();
+
+      // Parse the Markdown list
+      const listTokens = md.parse(listContent, env);
+      const items = parseListTokens(listTokens, 0);
+
+      // Render the file tree
+      return renderFileTree(items);
+    }
+    return token.content; // Default behavior for other HTML blocks
+  };
+}
+
+module.exports = ({ marp }) => {
+  // Detect preview/watch mode. Marp CLI commonly uses --preview or --watch;
+  // also allow environment variables to force behavior (MARP_PREVIEW or MARP_WATCH).
+  const argv = Array.isArray(process.argv) ? process.argv : [];
+  const isPreview =
+    argv.some(
+      (a) =>
+        a === "--preview" ||
+        a === "--watch" ||
+        a === "--server" ||
+        a === "--serve"
+    ) ||
+    process.env.MARP_PREVIEW === "true" ||
+    process.env.MARP_WATCH === "true";
+
+  // Base engine with lightweight plugins registered first.
+  let engine = marp
     .use(iconPlugin)
     .use(blockPlugin)
     .use(stickyNotePlugin)
     .use(notePlugin)
-    .use(dotPlugin)
-    .use(markdownItShiki, {
-      theme: "material-theme",
-      highlightLines: true,
-    })
+    .use(dotPlugin);
+
+  // Register markdown-it-shiki only when not in preview mode (e.g., PDF/HTML export).
+  if (!isPreview) {
+    try {
+      // Lazy require to avoid loading heavy module during live preview.
+      const { default: markdownItShiki } = require("markdown-it-shiki");
+      engine = engine.use(markdownItShiki, {
+        theme: "material-theme",
+        highlightLines: true,
+      });
+    } catch (err) {
+      // If shiki isn't installed, avoid throwing — fall back silently.
+      // Log a warning only when running in interactive dev mode.
+      if (process.env.NODE_ENV !== "production") {
+        // eslint-disable-next-line no-console
+        console.warn(
+          "markdown-it-shiki not available: code highlighting with shiki disabled."
+        );
+      }
+    }
+  }
+
+  // Continue registering remaining plugins.
+  engine = engine
     .use(deflist)
+    .use(fileTreePlugin)
     .use(container, "col", {
       render(tokens, idx) {
         const token = tokens[idx];
@@ -218,3 +345,6 @@ module.exports = ({ marp }) =>
         }
       },
     });
+
+  return engine;
+};
