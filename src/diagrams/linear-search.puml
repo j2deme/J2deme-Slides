@@ -1,0 +1,21 @@
+@startuml linear_search
+!include plantuml.config
+
+start
+
+:Entrada:\nArreglo A, Objetivo O;
+:Inicializa index i = 0;
+
+while (i < tamaño de A) is (sí)
+  if (A[i] == T) then (sí)
+    :Devuelve index i;
+    stop
+  else (no)
+    :Incrementa i = i + 1;
+  endif
+endwhile (no)
+
+:Devuelve -1 (No encontrado);
+stop
+
+@enduml
