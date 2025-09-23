@@ -1,0 +1,26 @@
+@startuml binary_search
+!include plantuml.config
+
+start
+
+:Calcular tamaño de la lista;
+:Establecer inicio = 0, fin = tamaño-1;
+
+while (inicio <= fin) is (sí)
+  :calcular medio = (inicio + fin) // 2;
+  :obtener elemento_medio = lista[medio];
+
+  if (elemento_medio == objetivo) then (sí)
+    :Devolver VERDADERO;
+    stop
+  else if (elemento_medio < objetivo) then (sí)
+    :inicio = medio + 1;
+  else (no)
+    :fin = medio - 1;
+  endif
+endwhile (no)
+
+:Devolver FALSO;
+stop
+
+@enduml
