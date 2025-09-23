@@ -1186,7 +1186,7 @@ Las escalas de colores van de 50 a 950 (en escalas +50), indicando la luminancia
 </div>
 
 <div class="boxes full text-center text-sm">
-  <div class="bg-slate-500 w-32 rounded">500</div>
+  <div class="bg-slate-500 w-32 rounded">slate</div>
   <div class="bg-slate-50 rounded">50</div>
   <div class="bg-slate-100 rounded">100</div>
   <div class="bg-slate-150 rounded">150</div>
@@ -1196,7 +1196,7 @@ Las escalas de colores van de 50 a 950 (en escalas +50), indicando la luminancia
   <div class="bg-slate-350 rounded">350</div>
   <div class="bg-slate-400 rounded">400</div>
   <div class="bg-slate-450 rounded">450</div>
-  <div class="bg-slate rounded">slate</div>
+  <div class="bg-slate rounded">500</div>
   <div class="bg-slate-550 rounded">550</div>
   <div class="bg-slate-600 rounded">600</div>
   <div class="bg-slate-650 rounded">650</div>
