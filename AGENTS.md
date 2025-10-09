@@ -217,7 +217,6 @@ Notas:
 - Sintaxis enriquecida: `![bg right:40% w:50%](ruta)` o `![#l]` / `![#c]` / `![#r]` para imágenes flotantes.
 - Propósito: ajustar posición, tamaño y comportamiento (fondo, cover, fit) directamente desde Markdown.
 - Opciones comunes:
-
   - `bg` — coloca la imagen como fondo de la diapositiva.
   - `right`, `left` — posición relativa (puede combinarse con `w:50%` para ancho).
   - `w:<n>` o `w:<n>%` — ancho absoluto o porcentual.
@@ -277,13 +276,11 @@ Notas:
 ## Contrato (inputs/outputs) — acciones comunes
 
 1. Exportar una presentación a PDF
-
    - Input: nombre del archivo sin extensión (ej. "FP-01")
    - Acción: ejecutar Marp (o `npx marp`) sobre `src/{slide}.md` con flags para PDF
    - Output: archivo `{dist}/{slide}.pdf` si éxito. Mensaje de error si falla.
 
 2. Crear una nueva presentación desde JSON
-
    - Input: selección de `subjects.json` y unidad
    - Acción: Combinar plantilla `Clase.md` o `Ponencia.md` con datos y escribir `src/{filename}.md`
    - Output: nuevo archivo Markdown en `src/` y mensaje de confirmación.
@@ -363,7 +360,6 @@ Nota: `engine.js` detecta flags comunes (`--preview`, `--watch`, `--server`, `--
 ## Ejemplos de prompts (para LLMs)
 
 - Permitidos (responsable):
-
   - "Crea un PR que añada un script `npm run build` en `package.json` para exportar todas las slides a PDF usando Marp. Añade también un `README` breve con el comando."
   - "Corrige el bug en `slides.py` donde se llama `main` en vez de `main()` y añade una prueba sintáctica rápida."
 
