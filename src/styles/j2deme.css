@@ -10,7 +10,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url(https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka/iosevka.min.css);
+/* @import url(https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka/iosevka.min.css); */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 /* @import url(https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css); */
 @import "../src/styles/tabler-icons.css";
 
@@ -69,7 +71,8 @@
 
   --font-header: "Poppins", "Segoe UI", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   --font-body: "Figtree", "Segoe UI", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-code: Iosevka, "Iosevka Web", "Fira Code", monospace;
+  --font-code: "JetBrains Mono", "Iosevka", "Iosevka Web", "Fira Code", monospace;
+  --font-code-size: 0.7em;
   --font-footer: Iosevka, "Iosevka Web", monospace;
   --font-caligraphic: "Victor Mono", Iosevka, "Iosevka Web", serif, cursive;
 
@@ -206,7 +209,7 @@ code,
 pre {
   font-family: var(--font-code);
   font-variant-ligatures: none;
-  font-size: 0.85em;
+  font-size: var(--font-code-size);
 }
 
 code {
@@ -661,7 +664,7 @@ section pre>code .hljs-comment {
   font-family: var(--font-caligraphic);
   color: var(--gray-400);
   font-style: italic;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
 }
 
 section pre>code .hljs-regexp {
@@ -1141,4 +1144,33 @@ table .dot {
     content: "\eb55";
     color: var(--red-450);
   }
+}
+
+.file-tree {
+  font-family: Arial, sans-serif;
+}
+
+.file-tree-item {
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.file-tree-item svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.file-tree-item.folder {
+  font-weight: bold;
+}
+
+.file-tree-item.file {
+  font-weight: normal;
+}
+
+.file-tree-item.placeholder {
+  color: #666;
+  font-style: italic;
 }
