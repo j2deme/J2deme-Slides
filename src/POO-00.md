@@ -197,9 +197,26 @@ Es importante establecer que la asignatura se enfoca en el paradigma de programa
 
 # Contenido Temático
 
-## Calendarización
+## Temarios
 
-- La asignatura se desarrollará en 15 semanas, distribuidas de la siguiente manera:
+La asignatura cuenta con dos temarios disponibles según el programa de estudios:
+
+| Unidad | `AED - 1286`                                                     | `IAD-2424`                                                       |
+| :----: | :--------------------------------------------------------------- | :--------------------------------------------------------------- |
+|   1    | Introducción al paradigma de la programación orientada a objetos | Introducción al paradigma de la programación orientada a objetos |
+|   2    | Clases y objetos                                                 | Clases y objetos (+ Excepciones)                                 |
+|   3    | Herencia                                                         | Herencia                                                         |
+|   4    | Polimorfismo                                                     | Polimorfismo                                                     |
+|   5    | Excepciones                                                      | Flujos y archivos                                                |
+|   6    | Flujos y archivos                                                |                                                                  |
+
+Sin embargo, para abordar un rango de teórico y práctico más amplio, se propone una secuencia conceptual basada en los subtemas de ambos temarios.
+
+---
+
+# Contenido Temático
+
+## Calendarización
 
 |         Tema          |    1     |    2     |    3     |    4     |    5     |    6     |    7     |    8     |    9     |    10    |    11    |    12    |    13    |    14    |    15    |
 | :-------------------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
@@ -209,8 +226,9 @@ Es importante establecer que la asignatura se enfoca en el paradigma de programa
 |       Herencia        |          |          |          |          |          | [o:--t1] | [o:--t1] | [o:--t1] |          |          |          |          |          |          |          |
 |     Polimorfismo      |          |          |          |          |          |          |          |          | [o:--t1] | [o:--t1] | [o:--t2] |          |          |          |          |
 |   Flujos y Archivos   |          |          |          |          |          |          |          |          |          |          |          | [o:--t1] | [o:--t1] | [o:--t1] | [o:--t2] |
+|  **Proyecto Final**   |          |          |          |          |          |          |          |          |          |          |          |          | [o:--t3] | [o:--t3] | [o:--t3] |
 
-[info:Para el semestre Ene - Junio, se tiene el período de Semana Santa en la semana 11.]
+[info:El semestre Ene - Junio, tiene un receso vacacional en la semana 10 ~ 11.]
 
 ---
 
@@ -224,10 +242,10 @@ Es importante establecer que la asignatura se enfoca en el paradigma de programa
 
 ## Estrategias Didácticas
 
-- El curso se desarrollará a través de clases teórico-prácticas, donde se presentarán los conceptos teóricos y se realizarán ejercicios prácticos para reforzar los conocimientos adquiridos.
-- Se fomentará la participación activa de los estudiantes en clase, a través de la resolución de ejercicios y problemas.
-- Se promoverá el trabajo en equipo para la resolución de problemas y la realización de proyectos.
-- Se fomentará la investigación y el autoaprendizaje, a través de la consulta de bibliografía y recursos en línea.
+- El curso se desarrollará a través de clases **teórico-prácticas**, donde se presentarán los conceptos teóricos y se realizarán ejercicios prácticos para reforzar los conocimientos adquiridos.
+- Se fomentará la **participación activa** de los estudiantes en clase, a través de la resolución de ejercicios y problemas.
+- Se promoverá el **trabajo en equipo** para la resolución de problemas y la realización de proyectos.
+- Se fomentará la **investigación** y el **autoaprendizaje**, a través de la consulta de bibliografía y recursos en línea.
 
 ---
 
@@ -238,16 +256,16 @@ Es importante establecer que la asignatura se enfoca en el paradigma de programa
 ### Reglas de Clase
 
 ⏱ Asistencia y Puntualidad
-: La asistencia es **responsabilidad** del estudiante pero **no** es obligatoria, sin embargo, pero se recomienda asistir a todas las clases para un mejor aprovechamiento de la asignatura.
-: Se sugiere ser puntuales y en caso de no poder asistir, notificar al docente con anticipación.
-: Se puede ingresar al aula una vez iniciada la clase, sin interrumpir la actividad en curso.
+: - La asistencia es **responsabilidad** del estudiante pero **no** es obligatoria, sin embargo, se recomienda una asistencia regular para un mejor aprovechamiento de la asignatura.
+: - Se puede ingresar al aula una vez iniciada la clase, siempre que no se interrumpa la actividad en curso.
 
 ::: warning
-La inasistencia reiterada puede causar el ser etiquetado como **desertor** de la asignatura.
+Se considerará **desertor** de la unidad, a aquel estudiante con inasistencias reiteradas, condición que se reportará a la coordinación de carrera y tutoría correspondiente.
 :::
 
 🤝🏻 Respeto
-: La interacción en clase debe ser respetuosa y constructiva, para mantener un ambiente de aprendizaje adecuado, se permiten comentarios y bromas, siempre y cuando no afecten el desarrollo de la clase, ni incomoden a los demás estudiantes.
+: - Para mantener un ambiente de aprendizaje adecuado, la interacción en clase debe ser respetuosa y constructiva.
+: - Los comentarios y opiniones deben ser expresados de manera respetuosa, evitando actitudes ofensivas o que distraigan la atención del grupo.
 
 ---
 
@@ -258,14 +276,15 @@ La inasistencia reiterada puede causar el ser etiquetado como **desertor** de la
 ### Reglas de Clase
 
 🖐🏻 Participación
-: La participación activa en clase es fundamental para el aprendizaje, por lo que se espera que los estudiantes participen en las actividades y ejercicios propuestos.
+: - La participación activa en clase es fundamental para el aprendizaje, tanto en las actividades prácticas como en las discusiones teóricas.
 
 📱 Tecnología
-: El uso de dispositivos electrónicos está permitido, siempre y cuando se utilicen para fines académicos.
+: - Se permite el uso de dispositivos electrónicos (laptops, tablets, smartphones) para actividades relacionadas con la clase.
+: - Si se recibe una llamada se deberá salir del aula para atenderla y regresar una vez finalizada.
 
-📚 Materiales
-: Se recomienda a los estudiantes contar con un equipo de cómputo para el desarrollo de las actividades de la asignatura; aunque no es obligatorio, facilitará el desarrollo de las actividades.
-: Se proporcionará bibliografía y recursos en línea para el estudio de los temas.
+📚 Materiales y equipos
+: - Se recomienda a los estudiantes contar con un equipo de cómputo personal; para facilitar el desarrollo de las actividades y su continuidad entre clases.
+: - El docente proporcionará el software necesario para el desarrollo de las actividades en clase, o indicará las fuentes oficiales para su descarga e instalación.
 
 ---
 
@@ -276,16 +295,16 @@ La inasistencia reiterada puede causar el ser etiquetado como **desertor** de la
 ### Reglas de Clase
 
 🥇 Honestidad Académica
-: Se espera que los estudiantes realicen sus actividades de forma honesta y ética, evitando el plagio y la copia de trabajos.
-: El uso de inteligencia artificial está permitido, siempre que el estudiante evidencie el dominio del tema.
+: - Toda actividad de evaluación, deberá realizarse de forma honesta y ética, evitando el plagio y la copia de trabajos.
+: - El uso de inteligencia artificial está permitido, siempre que el estudiante evidencie el dominio del tema.
 
 ::: danger
-El plagio y la copia de trabajos serán sancionados con la **anulación** de la actividad para quién resulte responsable.
+El estudiante / equipo que se identifique realizando plagio o copia de trabajo será penalizado con la **anulación** de la actividad que corresponda.
 :::
 
 🥪 Alimentos y Bebidas
-: Por políticas del uso de los laboratorios de cómputo, **no** se permite el consumo de alimentos en general y bebidas azucaradas y/o carbonatadas en el aula.
-: Se permitirá el consumo de agua, por las condiciones climáticas de la región.
+: - Por políticas del uso de los laboratorios de cómputo, **no** se permite el consumo de alimentos en general y bebidas azucaradas y/o carbonatadas en el aula.
+: - Se permitirá el consumo de agua simple en envases cerrados.
 
 ---
 
@@ -296,10 +315,11 @@ El plagio y la copia de trabajos serán sancionados con la **anulación** de la 
 ### Reglas de Clase
 
 📝 Generales
-: El material de la clase se proporcionará a través de la plataforma de gestión de aprendizaje, y se recomienda a los estudiantes revisar el material de la clase.
-: Se recomienda a los estudiantes tomar apuntes de las clases, para facilitar el estudio de los temas, así como aclarar dudas en el momento.
+: - El material de la clase (diapositivas, diagramas, código fuente de ejemplo, etc.) se proporcionará a través de la plataforma de gestión de aprendizaje.
+: - Se recomienda encarecidamente, resolver las dudas de manera oportuna durante las clases para facilitar el avance temático.
+: - Si las condiciones administrativas o logísticas lo requieren, se podrán realizar ajustes no programados en las estrategias de evaluación y distribución temática.
 
-::: info
+::: ok
 Cualquier punto no previsto en las reglas de clase, será resuelto por el docente, previa consulta con los estudiantes, si es necesario.
 :::
 
@@ -315,7 +335,7 @@ Para facilitar el seguimiento de los temas, la asignatura se dividirá en tres p
 
 Primer Parcial
 : - **Unidad 1**: Introducción a la Programación Orientada a Objetos
-: - **Unidad 2** Clases y Objetos
+: - **Unidad 2** Clases y Objetos (+ Excepciones)
 
 Segundo Parcial
 : - **Unidad 3**: Herencia
@@ -337,7 +357,7 @@ Tercer Parcial
 ::: top
 Unidades
 : 1. Introducción al Paradigma de Programación Orientada a Objetos
-: 2. Clases y Objetos
+: 2. Clases y Objetos (+ Excepciones)
 :::
 
 ::: left
@@ -354,12 +374,11 @@ Evaluación
 :::
 ::: bottom
 
-| Actividad                          | Porcentaje |    Modalidad     |
-| ---------------------------------- | :--------: | :--------------: |
-| Examen Téorico (U1)                |    20%     |   :icon:user:    |
-| Práctica Diagramas de Clases UML   |    20%     | :icon:users: x 2 |
-| Práctica de Objetos y Clases       |    30%     | :icon:users: x 4 |
-| Identificación de Objetos y Clases |    30%     | :icon:users: x 4 |
+| Actividad                                          | Porcentaje |     Modalidad      |
+| -------------------------------------------------- | :--------: | :----------------: |
+| 1.1 Examen Téorico (U1)                            |    20%     |    :icon:user:     |
+| 1.2 UML + App CLI                                  |    40%     | :icon:users: x 2~3 |
+| 1.3 Práctica guiada: Encapsulamiento y excepciones |    40%     |    :icon:user:     |
 
 :::
 
@@ -392,11 +411,11 @@ Evaluación
 :::
 ::: bottom
 
-| Actividad                  | Porcentaje |    Modalidad     |
-| -------------------------- | :--------: | :--------------: |
-| Portafolio de Prácticas    |    20%     |   :icon:user:    |
-| Ejercicios de Programación |    30%     | :icon:users: x 2 |
-| Examen Práctico            |    50%     | :icon:users: x 3 |
+| Actividad                                         | Porcentaje |     Modalidad      |
+| ------------------------------------------------- | :--------: | :----------------: |
+| 2.1 Práctica guiada: Herencia + clases abstractas |    30%     | :icon:users: x 2~3 |
+| 2.2 Práctica guiada: Polimorfismo + interfaces    |    30%     | :icon:users: x 2~3 |
+| 2.3 Mini proyecto TUI                             |    40%     |  :icon:users: x 2  |
 
 :::
 
@@ -428,10 +447,10 @@ Evaluación
 :::
 ::: bottom
 
-| Actividad               | Porcentaje |    Modalidad     |
-| ----------------------- | :--------: | :--------------: |
-| Portafolio de Prácticas |    20%     |   :icon:user:    |
-| Proyecto Final          |    80%     | :icon:users: x 5 |
+| Actividad                       | Porcentaje |    Modalidad     |
+| ------------------------------- | :--------: | :--------------: |
+| 3.1 Presentación Proyecto Final |    50%     | :icon:users: x 5 |
+| 3.2 Evaluación técnica          |    50%     |   :icon:user:    |
 
 :::
 
@@ -444,16 +463,32 @@ Evaluación
 ### Proyecto Final
 
 Objetivo
-: Evaluar la capacidad de los estudiantes para diseñar e implementar un proyecto de programación orientada a objetos que haga uso de los pilares de la programación orientada a objetos, en conjunto con el almacenamiento de información en archivos.
+: - Evaluar la capacidad de los estudiantes para diseñar e implementar un proyecto de programación orientada a objetos que haga uso de los pilares de la programación orientada a objetos, en conjunto con el almacenamiento de información en archivos y una interfaz de gestión para el usuario.
+: - Ofrecer una experiencia práctica que integre los conocimientos adquiridos durante el curso.
+: - Fomentar el trabajo en equipo y la aplicación de buenas prácticas de desarrollo de software.
 
-| Actividad        | Porcentaje |    Modalidad     |
-| ---------------- | :--------: | :--------------: |
-| Documentación    |     5%     | :icon:users: x 5 |
-| Implementación   |    45%     | :icon:users: x 5 |
-| Dominio del Tema |    50%     |   :icon:user:    |
+Alcance
+: - El proyecto final deberá incluir el diseño de diagramas UML, la implementación de una aplicación funcional con interfaz gráfica y lógica de negocio, así como la demostración del dominio técnico del proyecto.
 
-- El proyecto final se evaluará como máximo, en la semana de evaluación complementaria, en la fecha que el docente determine.
-  - La entrega posterior a la fecha límite, se penalizará con un 10% por día de retraso.
+---
+
+# Estrategias Didácticas y de Evaluación
+
+## Estrategias de Evaluación
+
+### Proyecto Final
+
+La evaluación del proyecto final se distribuirá de la siguiente manera:
+
+| Actividad                               | Porcentaje | Modalidad        |
+| --------------------------------------- | :--------: | ---------------- |
+| Diagramas UML                           |     5%     | :icon:users: x 5 |
+| Implementación funcional (GUI + lógica) |    45%     | :icon:users: x 5 |
+| Dominio técnico                         |    50%     | :icon:user:      |
+| **Total**                               |  **100%**  |                  |
+
+- El proyecto final se evaluará como **máximo**, en la semana de evaluación complementaria.
+- Es responsabilidad del estudiante entregar el proyecto final en la fecha establecida, y no retirarse de la asignatura sin haber entregado el proyecto final.
 
 ---
 
