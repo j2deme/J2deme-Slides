@@ -108,7 +108,9 @@ SATCA
 
 ---
 
-# Try-Catch
+# Excepciones
+
+## Try-Catch
 
 ::: primary
 El bloque **try** se utiliza para probar un bloque de código en busca de errores, por su parte, el bloque **catch / except** se utiliza para manejar los errores.
@@ -140,7 +142,9 @@ except Exception as e:
 
 ---
 
-# Excepciones != Errores
+# Excepciones
+
+## Excepciones != Errores
 
 Es importante entender la diferencia entre errores y excepciones.
 
@@ -161,7 +165,9 @@ System.out.println(nums[5]); // Excepción
 
 ---
 
-# ¿Cómo detectar excepciones y manejarlas?
+# Excepciones
+
+## ¿Cómo detectar excepciones y manejarlas?
 
 - Para desarrolladores novatos, es difícil detectar excepciones y manejarlas, sin embargo, con la práctica se vuelve más fácil.
 - Los siguientes puntos pueden ayudar a detectar excepciones:
@@ -177,11 +183,11 @@ La mejor forma de aprender a manejar excepciones es practicando 😉.
 
 <!-- _class: lead -->
 
-# Tipos de Excepciones
+# Tipos de excepciones
 
 ---
 
-# Tipos de Excepciones
+# Tipos de excepciones
 
 En general, las excepciones se pueden dividir en dos tipos:
 
@@ -193,7 +199,9 @@ Unchecked Exceptions
 
 ---
 
-# Checked Exceptions
+# Tipos de excepciones
+
+## Checked exceptions
 
 <div class="flex">
   <div class="w-1/2">
@@ -220,7 +228,9 @@ Las excepciones que heredan de la clase `Exception` o `RuntimeException` son lla
 
 ---
 
-# Unchecked Exceptions
+# Tipos de excepciones
+
+## Unchecked exceptions
 
 <div class="flex">
   <div class="w-1/2">
@@ -246,7 +256,9 @@ Las excepciones que heredan de la clase **Error** son llamadas **unchecked excep
 
 ---
 
-# Excepciones más comunes
+# Tipos de excepciones
+
+## Excepciones más comunes
 
 - **ArithmeticException**: Se lanza cuando ocurre una excepción aritmética, por ejemplo, cuando se intenta dividir entre cero.
 - **ArrayIndexOutOfBoundsException**: Se lanza cuando se intenta acceder a un índice inválido de un arreglo.
@@ -258,7 +270,9 @@ Las excepciones que heredan de la clase **Error** son llamadas **unchecked excep
 
 <!-- _class: inverted -->
 
-# Notas sobre Excepciones
+# Tipos de excepciones
+
+## Notas sobre excepciones
 
 Cada lenguaje de programación tiene su propia forma de manejar las excepciones, así también la nomenclatura de las excepciones puede variar de un lenguaje a otro.
 
@@ -271,11 +285,11 @@ Se recomienda leer la documentación de cada lenguaje para conocer las excepcion
 
 <!-- _class: lead -->
 
-# Propagación de Excepciones
+# Propagación de excepciones
 
 ---
 
-# Propagación de Excepciones 🏓
+# Propagación de excepciones 🏓
 
 > Propagar una excepción significa lanzar una excepción de un método a otro.
 
@@ -286,7 +300,7 @@ Se recomienda leer la documentación de cada lenguaje para conocer las excepcion
 
 ---
 
-# Propagación de Excepciones 🏓
+# Propagación de excepciones 🏓
 
 - La propagación de excepciones se utiliza para propagar una excepción de un método a otro, es decir, que si un método lanza una excepción, entonces el método que lo invoca debe manejarla o propagarla.
 - En caso de que ningún método la maneje, entonces el programa terminará de forma inesperada.
@@ -296,6 +310,8 @@ La propagación de excepciones también se conoce como _burbujeo de excepciones_
 :::
 
 ---
+
+# Propagación de excepciones
 
 # Ejemplo (Java)
 
@@ -321,7 +337,9 @@ public class Main {
 
 ---
 
-# Ejemplo (Python)
+# Propagación de excepciones
+
+## Ejemplo (Python)
 
 ```python
 def divide(a, b):
@@ -340,7 +358,9 @@ if __name__ == '__main__':
 
 ---
 
-# ¿Cómo prevenir la propagación de excepciones?
+# Propagación de excepciones
+
+## ¿Cómo prevenir la propagación de excepciones?
 
 - Para prevenir la propagación de excepciones, se debe manejar la excepción en el mismo método que la lanza.
 - Esto se hace usando un bloque **try-catch**.
@@ -354,11 +374,11 @@ Si no se maneja la excepción, entonces el programa terminará de forma inespera
 
 <!-- _class: lead -->
 
-# Gestión de Excepciones
+# Gestión de excepciones
 
 ---
 
-# Gestión de Excepciones
+# Gestión de excepciones
 
 - La gestión de excepciones se refiere a cómo se manejan las excepciones, es decir, cómo se controla el flujo del programa cuando ocurre una excepción.
 - La correcta gestión de excepciones es importante para evitar que el programa termine de forma inesperada.
@@ -371,7 +391,9 @@ La gestión de excepciones también se conoce como _manejo de excepciones_ 🤹.
 
 ---
 
-# Bloque Try-Catch / Try-Except
+# Gestión de excepciones
+
+## Bloques Try-Catch / Try-Except
 
 - El bloque **try-catch** o **try-except** (según el lenguaje) se utiliza para manejar excepciones o errores.
 - Son el componente principal de la gestión de excepciones.
@@ -380,7 +402,9 @@ La gestión de excepciones también se conoce como _manejo de excepciones_ 🤹.
 
 ---
 
-# Implementación (Java)
+# Gestión de excepciones
+
+## Implementación (Java)
 
 Supongamos que queremos dividir dos números, pero no sabemos si el divisor será cero.
 
@@ -432,7 +456,9 @@ public class Main {
 
 ---
 
-# Implementación (Python)
+# Gestión de excepciones
+
+## Implementación (Python)
 
 Supongamos que queremos dividir dos números, pero no sabemos si el divisor será cero.
 
@@ -476,7 +502,9 @@ En adelante entenderemos que el bloque **try-catch** o **try-except** se refiere
 
 ---
 
-# Estructura del Bloque Try-Catch
+# Gestión de excepciones
+
+## Estructura del bloque Try-Catch
 
 ![bg right:40%](https://media.istockphoto.com/id/172765853/photo/baseball-equipment.jpg?s=612x612&w=0&k=20&c=bW-nYGd3D9xSuT-QeA7QgfPhEv0xW8giEYLlwTuI8qE= "baseball ball and mitt on grass")
 
@@ -489,7 +517,9 @@ En adelante entenderemos que el bloque **try-catch** o **try-except** se refiere
 
 ---
 
-# Bloques Catch Adicionales
+# Gestión de excepciones
+
+## Bloques catch adicionales
 
 - Un bloque **try-catch** puede tener varios bloques **catch**.
 - Cada bloque **catch** maneja un tipo de excepción diferente.
@@ -502,7 +532,9 @@ Antes de poner un bloque **catch** para manejar una excepción, es importante sa
 
 ---
 
-# Uso de Bloques Catch Adicionales
+# Gestión de excepciones
+
+## Uso de bloques catch adicionales
 
 - Un bloque **try-catch** puede tener varios bloques **catch**.
 
@@ -552,7 +584,9 @@ if __name__ == '__main__':
 
 ---
 
-# Bloque Finally
+# Gestión de excepciones
+
+## Bloque Finally
 
 El bloque **finally** se utiliza para ejecutar código que debe ejecutarse **siempre**, independientemente de si se lanza una excepción o no, este bloque es opcional.
 
@@ -566,7 +600,9 @@ El bloque **finally** puede ejecutarse después de alguna de las siguientes situ
 
 ---
 
-# Uso del Bloque Finally
+# Gestión de excepciones
+
+## Uso del bloque Finally
 
 <div class="flex flex-wrap">
 
@@ -614,7 +650,9 @@ if __name__ == '__main__':
 
 ---
 
-# Lanzamiento de Excepciones
+# Gestión de excepciones
+
+## Lanzamiento de Excepciones
 
 - Las operaciones y métodos pueden lanzar excepciones cuando se produce un error.
 - Ademas de las excepciones que se lanzan automáticamente, también podemos lanzar nuestras propias excepciones.
@@ -623,7 +661,9 @@ if __name__ == '__main__':
 
 ---
 
-# Lanzamiento de Excepciones
+# Gestión de excepciones
+
+## Lanzamiento de excepciones
 
 <div class="flex flex-wrap">
 
@@ -678,11 +718,11 @@ En Java, no se debe confundir la palabra clave **throw** con el método **throws
 
 <!-- _class: lead -->
 
-# Excepciones Personalizadas
+# Excepciones personalizadas
 
 ---
 
-# Excepciones Personalizadas
+# Excepciones personalizadas
 
 - Además de las excepciones existentes en cada lenguaje, también podemos crear nuestras propias excepciones.
 - Las excepciones personalizadas se utilizan para manejar situaciones específicas en las que se produce un error.
@@ -691,7 +731,9 @@ En Java, no se debe confundir la palabra clave **throw** con el método **throws
 
 ---
 
-# ¿Para Qué Crear Excepciones Personalizadas?
+# Excepciones personalizadas
+
+## Propósito
 
 - El propósito de crear excepciones personalizadas es poder manejar situaciones específicas en las que se produce un error. _P.e._
   - Si se está desarrollando una aplicación de un banco, se podría crear una excepción personalizada para cuando un usuario intente retirar más dinero del que tiene en su cuenta (`NotEnoughMoneyException`).
@@ -703,7 +745,9 @@ Se puede decir que las excepciones personalizadas se utilizan para manejar las e
 
 ---
 
-# Creación de Excepciones Personalizadas
+# Excepciones personalizadas
+
+## Creación de excepciones personalizadas
 
 Para crear una excepción personalizada, se debe crear una clase que extienda la clase **Exception**.
 
@@ -735,7 +779,38 @@ En ambos casos, se debe sobrescribir el constructor de la clase **Exception** y 
 
 ---
 
-# Lanzamiento de Excepciones Personalizadas
+# Excepciones personalizadas
+
+## Creación de excepciones personalizadas
+
+```python
+# excepciones.py
+class ValidationError(Exception):
+    """Excepción base para errores de validación."""
+    pass
+
+class InvalidNameError(ValidationError):
+    """Excepción lanzada cuando el nombre no es válido."""
+    pass
+
+class InvalidEmailError(ValidationError):
+    """Excepción lanzada cuando el email no es válido."""
+    pass
+
+class InvalidAgeError(ValidationError):
+    """Excepción lanzada cuando la edad no es válida."""
+    pass
+
+class DuplicateEmailError(Exception):
+    """Excepción lanzada cuando el email ya está registrado."""
+    pass
+```
+
+---
+
+# Excepciones personalizadas
+
+## Lanzamiento de excepciones personalizadas
 
 Para lanzar una excepción personalizada, se debe crear una instancia de la excepción y lanzarla usando la palabra clave **throw** en Java o **raise** en Python.
 
@@ -775,7 +850,66 @@ Ocurrió un error
 
 ---
 
-# Excepción de Lógica de Negocio en Java
+# Excepciones personalizadas
+
+## Lanzamiento de excepciones personalizadas
+
+```python
+from .excepciones import InvalidNameError, InvalidEmailError, InvalidAgeError, DuplicateEmailError
+
+class Usuario:
+    def __init__(self, nombre, email):
+        self._nombre = None
+        self._email = None
+        self.nombre = nombre  # Usa el setter para validar
+        self.email = email    # Usa el setter para validar
+
+    @property
+    def nombre(self):
+        return self._nombre
+
+    @nombre.setter
+    def nombre(self, valor):
+        if not isinstance(valor, str) or len(valor) < 2:
+            raise InvalidNameError("El nombre debe tener al menos 2 caracteres y ser texto.")
+        self._nombre = valor
+
+    @property
+    def email(self):
+        return self._email
+
+    @email.setter
+    def email(self, valor):
+        if "@" not in valor or "." not in valor:
+            raise InvalidEmailError(f"El email '{valor}' no es válido. Debe contener '@' y '.'.")
+        self._email = valor
+```
+
+# Excepciones personalizadas
+
+## Lanzamiento de excepciones personalizadas
+
+```python
+from dataclasses import dataclass
+from .excepciones import InvalidNameError, InvalidAgeError # Importación asumida
+
+@dataclass
+class UsuarioData:
+    nombre: str
+    edad: int
+
+    def __post_init__(self):
+        if not isinstance(self.nombre, str) or len(self.nombre) < 2:
+            raise InvalidNameError("El nombre debe tener al menos 2 caracteres.")
+        if not isinstance(self.edad, int) or not (15 <= self.edad <= 100):
+            raise InvalidAgeError("La edad debe ser un entero entre 15 y 100.")
+```
+
+---
+
+# Excepciones personalizadas
+
+## Excepción de lógica de negocio en Java
 
 Supongamos una aplicación para un banco y un usuario intenta retirar más dinero del que tiene en su cuenta.
 
@@ -817,7 +951,9 @@ public class Main {
 
 ---
 
-# Excepción de Lógica de Negocio en Python
+# Excepciones personalizadas
+
+## Excepción de lógica de negocio en Python
 
 Supongamos una aplicación para un restaurante y un usuario intenta pedir un platillo que no existe en el menú.
 
@@ -840,7 +976,9 @@ class Main:
 
 ---
 
-# Miembros Adicionales en Excepciones Personalizadas
+# Excepciones personalizadas
+
+## Miembros adicionales
 
 - Las excepciones personalizadas pueden tener miembros adicionales.
 - Estos miembros pueden ser de cualquier tipo de dato.
@@ -851,7 +989,9 @@ class Main:
 
 ---
 
-# Miembros Adicionales en Excepciones Personalizadas en Java
+# Excepciones personalizadas
+
+## Miembros adicionales en Java
 
 <div class="flex flex-wrap">
 
@@ -893,7 +1033,9 @@ public class MyException extends Exception {
 
 ---
 
-# Miembros Adicionales en Excepciones Personalizadas en Python
+# Excepciones personalizadas
+
+## Miembros adicionales en Python
 
 <div class="flex flex-wrap">
 
@@ -935,7 +1077,9 @@ No se encontró el producto: 🍍
 
 ---
 
-# Consideraciones Adicionales
+# Excepciones personalizadas
+
+## Consideraciones adicionales
 
 - Es posible crear jerarquías de excepciones personalizadas.
 - Se pueden crear excepciones personalizadas que extiendan de otras excepciones personalizadas.
