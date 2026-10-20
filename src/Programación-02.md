@@ -898,7 +898,7 @@ turtle.color("#FF0000") # Cambia el color de la pluma a rojo
 turtle.bgcolor("blue") # Cambia el color del fondo a azul
 ```
 
-- La lista de colores por nombre se puede consultar en <https://trinket.io/docs/colors>
+- La lista de colores por nombre se puede consultar en <https://coddy.tech/tools/es/color-converter#named-colors>
 
 ---
 
